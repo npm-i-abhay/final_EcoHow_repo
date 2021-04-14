@@ -55,7 +55,8 @@ text-align:right;
 const AnimContainer = (
     {
         text = "vegetables or whatever",
-        bgColor= "#AFCF68"
+        bgColor= "#AFCF68",
+        TxtAlign = "center"
     })=>
 
 
