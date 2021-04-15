@@ -34,7 +34,6 @@ const TipsCont = styled.div `
             flex-direction:column;
             justify-content:space-around;
         }
-
         .containerAndButton
         {
             width:100%;
@@ -57,22 +56,36 @@ export default function Tips ({
 
     return <TipsCont >
        
-    <Head>
-     <title> tips page </title>    
-     </Head>
-     
-     
-     <div className="mainContainer"> 
-            
-             <div className="iconHeader">
-                 <MakeIcon/>
-                 <MakeIcon/>
-             </div>  
-             
-             <div className="banner">
-                     <MyBanner bgColor="#E5E5E5" />
-                     <MyBanner textColor="#E5E5E5"/> 
-             </div>
+       <Head>
+        <title> tips page </title>    
+        </Head>
+        
+        
+        <div className="mainContainer"> 
+               
+                <div className="iconHeader">
+                    <MakeIcon/>
+                    <MakeIcon/>
+                </div>  
+                
+                <div className="banner">
+                        <MyBanner bgColor="#E5E5E5" />
+                        <MyBanner textColor="#E5E5E5"/> 
+                </div>
+
+                <div className = "containerAndButton" >
+                    <Results/>
+                    <Button text="Test Your Knowledge"/>
+                </div>
+                
+                <div>
+                </div>
+
+
+                    
+                   
+                    
+                
 
              <div className = "containerAndButton" >
                  <Results/>

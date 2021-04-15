@@ -28,7 +28,7 @@ const MyBanner = (
             alignment={justifyText}
             dynamicHeight={bannerHeight}
             background = {bgColor}
-            colorOfText = {textColor}  > {text} </Banner>
+            colorOfText = {textColor}> {text} </Banner>
 }
 
 export default MyBanner
