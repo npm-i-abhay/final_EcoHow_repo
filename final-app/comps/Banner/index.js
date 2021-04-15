@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Banner = styled.div `
-height:2.375em;
-width:20em;
+height:${props => props.dynamicHeight};
+width:100%;
 background-color:#5EBA92;
 // margin-top:2em;
 text-align:center;
@@ -18,10 +18,11 @@ color:white;
 const MyBanner = (
     {
         text ="your tips",
-        justifyText = "center"
+        justifyText = "center",
+        bannerHeight= "38px"
     })=>
 {
-    return <Banner alignment={justifyText} > {text} </Banner>
+    return <Banner alignment={justifyText} dynamicHeight={bannerHeight}  > {text} </Banner>
 }
 
 export default MyBanner
