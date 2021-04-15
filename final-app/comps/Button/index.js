@@ -15,6 +15,7 @@ const ButtonInput = styled.button`
  padding:15px;
  border-radius: 12px;
  border:none;
+ margin-left:15px;
 `;
 const ButtonCont = styled.span`
 

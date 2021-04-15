@@ -2,23 +2,28 @@ import Head from 'next/head'
 import React from 'react'
 import Results from '../comps/Results'
 import MyBanner from '../comps/Banner'
+import Button from '../comps/Button'
 import MakeIcon from '../comps/CircleIcons'
 import styled from 'styled-components'
 
 const TipsCont = styled.div `
 
+
 .mainContainer
 {
     display:flex;
     flex-direction:column;
+    align-items: center;
     height:812px;
     width:375px;
-    background-color:red;
+    background-color:#376293;
 
         .iconHeader
         {
             display:flex;
+            width:100%;
             justify-content:space-between;
+            
         } 
         
         .banner
@@ -28,6 +33,16 @@ const TipsCont = styled.div `
             display:flex;
             flex-direction:column;
             justify-content:space-around;
+        }
+        .containerAndButton
+        {
+            width:100%;
+            height:500px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:space-between;
+
         }
 }
 
@@ -50,15 +65,25 @@ export default function Tips ({
                 <div className="iconHeader">
                     <MakeIcon/>
                     <MakeIcon/>
-                    </div>  
+                </div>  
+                
                 <div className="banner">
-             
-                        <MyBanner/>
-                        <MyBanner/> 
+                        <MyBanner bgColor="#E5E5E5" />
+                        <MyBanner textColor="#E5E5E5"/> 
+                </div>
+
+                <div className = "containerAndButton" >
+                    <Results/>
+                    <Button text="Test Your Knowledge"/>
+                </div>
+                
+                <div>
+                </div>
+
+
                     
                    
                     
-                </div>
                 
 
         </div>

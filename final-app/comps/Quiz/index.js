@@ -15,6 +15,7 @@ border-radius:16px;
 
 const QuestionText = styled.div`
 font-size:16px;
+padding:20px;
 `;
 
 
