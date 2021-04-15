@@ -11,6 +11,7 @@ const MainSlider = styled.input.attrs(props => ({type:"range"})) `
 
 &::-webkit-slider-thumb {
     -webkit-appearance: none;
+    appearance:none;
     position: relative;
     appearance: none;
     height: 25px;
@@ -21,8 +22,8 @@ const MainSlider = styled.input.attrs(props => ({type:"range"})) `
 }
 &::-webkit-slider-runnable-track {
     width: 100%;
-    height: 20px;
-    background: green};
+    height: 10px;
+    background: yellow};
   }
 `
 
