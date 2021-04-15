@@ -42,8 +42,8 @@ export default function Evalution ({})
     return  <EvaluationCont> 
 
                 <div className="EvHeader">
-                    <MakeIcon/>
-                    <MakeIcon/>
+                    <MakeIcon routeTo="/organicSub"/>
+                    <MakeIcon text="?"/>
                 </div>  
 
                 <div className="EvBanner">
@@ -59,6 +59,6 @@ export default function Evalution ({})
 
                 </div>
 
-                <Button text="Lets See How You Did"/>
+                <Button text="Lets See How You Did" routeTo="/tips"/>
             </EvaluationCont>
 }

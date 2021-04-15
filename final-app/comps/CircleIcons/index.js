@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import {useRouter} from 'next/router';
 
-const IconContainer = styled.div `
+const IconContainer = styled.button `
 height:2.125em;
 width:2.125em;
 border-radius:1.5em;
@@ -20,10 +21,10 @@ font-size:2em;
 const MakeIcon = ({
     
     text= '\u21FD',
-
+    routeTo=""
 })=>
-{
-    return <IconContainer> 
+{   const router = useRouter();
+    return <IconContainer onClick={()=>router.push(routeTo)}> 
     
         <IconText> 
       {text}

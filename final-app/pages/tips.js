@@ -64,8 +64,8 @@ export default function Tips ({
         <div className="mainContainer"> 
                
                 <div className="iconHeader">
-                    <MakeIcon/>
-                    <MakeIcon/>
+                    <MakeIcon routeTo="/evaluation"/>
+                    <MakeIcon text="?"/>
                 </div>  
                 
                 <div className="banner">
@@ -75,7 +75,7 @@ export default function Tips ({
 
                 <div className = "containerAndButton" >
                     <Results/>
-                    <Button text="Test Your Knowledge"/>
+                    <Button text="Test Your Knowledge" routeTo="/quiz"/>
                 </div>
                 
                 <div>
@@ -87,11 +87,7 @@ export default function Tips ({
                     
                 
 
-             <div className = "containerAndButton" >
-                 <Results/>
-                 <Button text="Test Your Knowledge"/>
-             </div>
-             
+          
              <div>
              </div>
 

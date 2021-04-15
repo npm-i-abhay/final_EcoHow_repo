@@ -100,7 +100,7 @@ export default function Tips ({
         <div className="mainContainer"> 
                
                 <div className="iconHeader">
-                    <MakeIcon/>
+                    <MakeIcon text="?"/>
                 </div>
 
                 <div className="starsContainer">
@@ -113,7 +113,7 @@ export default function Tips ({
                     <MyPlant/>
                 </div>
                 <br></br>
-                <MyButton text="Back to Categories" routeTo="/quiz"/>
+                <MyButton text="Back to Categories" routeTo="/category"/>
                
         </div>
         </TipsCont>

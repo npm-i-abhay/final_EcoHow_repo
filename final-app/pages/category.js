@@ -57,8 +57,8 @@ export default function Category ({})
                     
                     
                 <div className="CatHeader">
-                    <MakeIcon/>
-                    <MakeIcon/>
+                    <MakeIcon routeTo="/home"/>
+                    <MakeIcon text="?"/>
                 </div>  
                        
                 <div className="CatBanner">
@@ -71,7 +71,7 @@ export default function Category ({})
                 <HeroContainer
                  borderRadius="200px"
                  source= "/empower.gif"/>
-                <Button text="ENTER" />
+                <Button text="ENTER" routeTo="/organicSub"/>
                 </div>
 
                 </div>
