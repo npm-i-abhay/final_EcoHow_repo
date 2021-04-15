@@ -45,7 +45,7 @@ const QuizQuestions = ({
   <br></br>
   <input type="radio" id="other" name="gender" value="other"/>
   <label for="other">{answer3}</label>
-    </div>
+</div>
 }
 
 export default QuizQuestions;

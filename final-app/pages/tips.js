@@ -53,6 +53,7 @@ export default function Tips ({
     screenHeight= 620
 })
 {
+
     return <TipsCont >
        
        <Head>
@@ -86,6 +87,15 @@ export default function Tips ({
                     
                 
 
-        </div>
+             <div className = "containerAndButton" >
+                 <Results/>
+                 <Button text="Test Your Knowledge"/>
+             </div>
+             
+             <div>
+             </div>
+
+             </div>
         </TipsCont>
 }
+
