@@ -85,8 +85,8 @@ export default function Tips ({
         <div className="mainContainer"> 
                
                 <div className="iconHeader">
-                    <MakeIcon/>
-                    <MakeIcon/>
+                    <MakeIcon routeTo="/tips"/>
+                    <MakeIcon text="?"/>
                     </div>  
                 <div className="banner">
                     <MyBanner text="Test Your Knowledge" bgColor="#F5F1ED"/>   
@@ -97,7 +97,7 @@ export default function Tips ({
 
                 <div className="buttonCont">
                     <MyButton text="hint"/>
-                    <MyCircle/>
+                    <MyCircle routeTo="/results"/>
                 </div>
 
                 <div className="toggleCont">

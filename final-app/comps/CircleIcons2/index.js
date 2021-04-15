@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {useRouter} from 'next/router';
 
-const IconContainer = styled.div `
+const IconContainer = styled.button `
 height:3.125em;
 width:3.125em;
 border-radius:1.5em;

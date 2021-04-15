@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import MyVeggie from '../comps/VeggieFruitIcon'
 import MyBanner from '../comps/Banner'
 import MyInfo from '../comps/RecycleInfo'
+import MyButton from '../comps/Button'
 
 
 const TipsCont = styled.div `
@@ -70,6 +71,12 @@ const TipsCont = styled.div `
             justify-content:center;
             margin:50px;
         }
+        
+
+        .buttonCont{
+            display:flex;
+            justify-content:space-between;
+            width:200px;
         }
 
 }
@@ -91,8 +98,8 @@ export default function Tips ({
         <div className="mainContainer"> 
                
                 <div className="iconHeader">
-                    <MakeIcon/>
-                    <MakeIcon/>
+                    <MakeIcon routeTo="/category"/>
+                    <MakeIcon text="?"/>
                     </div>  
                 <div className="banner">
                     <MyVeggie/>
@@ -105,6 +112,11 @@ export default function Tips ({
 It is important to know that vegetables contain a nitrogen, an ideal chemical compound for  compost. 
 
 Just remember to bury it deep in the pile to avoid rodents."/>
+                </div>
+
+                <div className="buttonCont">
+                    <MyButton text="Next Section" routeTo="/evaluation"/>
+                    <MyButton text="Quiz" bgcolor="#B5C6C9"/>
                 </div>
                
 

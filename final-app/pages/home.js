@@ -45,7 +45,7 @@ export default function HomePage ({})
 
                         <div className = "button">
 
-                            <Button text="ENTER" />
+                            <Button text="ENTER" routeTo="/category" />
 
                         </div>    
 
