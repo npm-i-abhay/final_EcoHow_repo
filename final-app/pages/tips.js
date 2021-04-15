@@ -80,18 +80,6 @@ export default function Tips ({
                 
                 <div>
                 </div>
-
-
-                    
-                   
-                    
-                
-
-             <div className = "containerAndButton" >
-                 <Results/>
-                 <Button text="Test Your Knowledge"/>
-             </div>
-             
              <div>
              </div>
 
