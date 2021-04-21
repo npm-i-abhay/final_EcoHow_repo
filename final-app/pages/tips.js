@@ -5,6 +5,7 @@ import MyBanner from '../comps/Banner'
 import Button from '../comps/Button'
 import MakeIcon from '../comps/CircleIcons'
 import styled from 'styled-components'
+import MyHelp from '../comps/HelpButton'
 
 const TipsCont = styled.div `
 
@@ -65,7 +66,7 @@ export default function Tips ({
                
                 <div className="iconHeader">
                     <MakeIcon routeTo="/evaluation"/>
-                    <MakeIcon text="?"/>
+                    <MyHelp text="?"/>
                 </div>  
                 
                 <div className="banner">
