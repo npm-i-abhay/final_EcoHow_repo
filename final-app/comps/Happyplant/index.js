@@ -2,11 +2,6 @@ import styled from 'styled-components'
 import React from 'react'
 
 
-
-
-
-
-
 const GifContainer = styled.div`
 display:flex;
 justify-content:center;
@@ -29,7 +24,7 @@ position:relative;
 const PlantContainer = ({})=>
 {
     return      <GifContainer>
-                    <ContainerImage src="/happyPlant.gif" />
+                    <ContainerImage src="./happyPlant.gif" />    
                 </GifContainer>
         
 }       

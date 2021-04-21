@@ -30,6 +30,7 @@ font-weight:900;
 
 const SliderContainer = styled.div`
 
+justify-content:center;
 background-color:#F5F1ED;
 border-radius:10px;
 width:342px;
@@ -39,24 +40,32 @@ margin:.5em;
 
 `
 const MainSlider = styled.input.attrs(props => ({type:"range"})) `
-    margin-top:15px;
-    margin-left:80px;
-// &::-webkit-slider-thumb {
-//     -webkit-appearance: none;
-//     appearance:none;
-//     position: relative;
-//     appearance: none;
-//     height: 25px;
-//     width: 25px;
-//     background: yellow;
-//     border-radius: 100%;
-//     border: 0;
-// }
-// &::-webkit-slider-runnable-track {
-//     width: 100%;
-//     height: 10px;
-//     background: yellow};
-//   }
+
+    width:100%;
+    -webkit-appearance: none;
+    // appearance:none;
+
+&::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance:none;
+    position: relative;
+    appearance: none;
+    height: 25px;
+    width: 25px;
+    border:1px solid black;
+    background: red;
+    border-radius: 100%;
+    border: 1px solid black;
+}
+&::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance:none;
+    max-width:500px;
+    outline:none;
+    height: 10px;
+    border-radius:10px;
+    background: green;
+  }
 `
 
 const Slider = ({
@@ -74,6 +83,7 @@ justify="center"
                     <SliderContainer>
                     
                         <MainSlider/>
+                        
                     
                     </SliderContainer>
                     
@@ -83,6 +93,7 @@ justify="center"
                         <p> Strong</p>    
                     </OptionsContainer>         
 
+                    <veggieContainer/>
                    
              </MainContainer>
 }           

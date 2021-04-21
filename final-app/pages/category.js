@@ -11,11 +11,11 @@ const CategoryContainer = styled.div`
 
     .CatContainer 
     {
-        display:flex;
+        display:;
         flex-direction:column;
         align-items: center;
-        height:812px;
-        width:375px;
+        height:100vh;
+        width:100vw;
         background-color:#376293;
 
 

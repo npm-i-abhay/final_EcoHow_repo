@@ -3,14 +3,15 @@ import styled from 'styled-components'
 import MakeIcon from '../comps/CircleIcons'
 import MyBanner from '../comps/Banner'
 import Slider from '../comps/Slider'
+import Menu from '../comps/Menu'
 import Button from '../comps/Button'
 
 const EvaluationCont = styled.div `
         display:flex;
         flex-direction:column;
         align-items: center;
-        height:812px;
-        width:375px;
+        height:100vh;
+        width:100vw;
         background-color:#376293;
 
         .EvHeader
@@ -18,6 +19,11 @@ const EvaluationCont = styled.div `
             display:flex;
             width:100%;
             justify-content:space-between;
+
+            .leftButtons
+            {
+                display:flex;
+            }
         }
 
         .EvBanner
@@ -42,8 +48,11 @@ export default function Evalution ({})
     return  <EvaluationCont> 
 
                 <div className="EvHeader">
-                    <MakeIcon routeTo="/organicSub"/>
-                    <MakeIcon text="?"/>
+                    
+                    <div className="hamburger">
+                        <Menu/>
+                    </div>
+
                 </div>  
 
                 <div className="EvBanner">
@@ -53,12 +62,12 @@ export default function Evalution ({})
                 </div>
 
                 <div className = "SliderQuestion" > 
-                    <Slider/>
+                    <Slider Labeltext="blarg blarg that's how nick types"/>
                     <Slider/>
                     <Slider/>
 
                 </div>
 
-                <Button text="Lets See How You Did" routeTo="/tips"/>
+                <Button text="Lets See How " routeTo="/tips"/>
             </EvaluationCont>
 }

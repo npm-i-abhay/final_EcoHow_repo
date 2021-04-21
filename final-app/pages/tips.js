@@ -5,6 +5,7 @@ import MyBanner from '../comps/Banner'
 import Button from '../comps/Button'
 import MakeIcon from '../comps/CircleIcons'
 import styled from 'styled-components'
+import MyHelp from '../comps/HelpButton'
 
 const TipsCont = styled.div `
 
@@ -14,8 +15,8 @@ const TipsCont = styled.div `
     display:flex;
     flex-direction:column;
     align-items: center;
-    height:812px;
-    width:375px;
+    height:100vh;
+    width:100vw;
     background-color:#376293;
 
         .iconHeader
@@ -65,7 +66,7 @@ export default function Tips ({
                
                 <div className="iconHeader">
                     <MakeIcon routeTo="/evaluation"/>
-                    <MakeIcon text="?"/>
+                    <MyHelp text="?"/>
                 </div>  
                 
                 <div className="banner">
@@ -80,6 +81,7 @@ export default function Tips ({
                 
                 <div>
                 </div>
+<<<<<<< HEAD
 
 
                     
@@ -88,6 +90,8 @@ export default function Tips ({
                 
 
           
+=======
+>>>>>>> abhay-bakshi
              <div>
              </div>
 
