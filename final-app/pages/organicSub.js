@@ -116,7 +116,7 @@ Just remember to bury it deep in the pile to avoid rodents."/>
 
                 <div className="buttonCont">
                     <MyButton text="Next Section" routeTo="/evaluation"/>
-                    <MyButton text="Quiz" bgcolor="#B5C6C9"/>
+                    <MyButton text="Quiz" bgcolor="#B5C6C9" routeTo="/quiz"/>
                 </div>
                
 

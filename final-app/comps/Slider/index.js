@@ -41,22 +41,19 @@ margin:.5em;
 const MainSlider = styled.input.attrs(props => ({type:"range"})) `
     margin-top:15px;
     margin-left:80px;
-// &::-webkit-slider-thumb {
-//     -webkit-appearance: none;
-//     appearance:none;
-//     position: relative;
-//     appearance: none;
-//     height: 25px;
-//     width: 25px;
-//     background: yellow;
-//     border-radius: 100%;
-//     border: 0;
-// }
-// &::-webkit-slider-runnable-track {
-//     width: 100%;
-//     height: 10px;
-//     background: yellow};
-//   }
+    appearance:none;
+    &::-webkit-slider-thumb {
+        background:white;
+    }
+    
+
+    &::-webkit-slider-runnable-track {
+    width: 100%;
+    
+    background: #376293;
+    border-radius:20px;
+  }
+
 `
 
 const Slider = ({
@@ -73,7 +70,7 @@ justify="center"
                     
                     <SliderContainer>
                     
-                        <MainSlider/>
+                        <MainSlider className="slider"/>
                     
                     </SliderContainer>
                     

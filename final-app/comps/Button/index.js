@@ -4,11 +4,11 @@ import {useRouter} from 'next/router';
 
 
 
-const ButtonImg = styled.img`
-width:20px;
-height:auto;
-object-fit:contain;
-`;
+// const ButtonImg = styled.img`
+// width:20px;
+// height:auto;
+// object-fit:contain;
+// `;
 
 
 const ButtonInput = styled.button`
@@ -38,3 +38,5 @@ const Button = ({
 }
 
 export default Button;
+
+

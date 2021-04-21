@@ -18,14 +18,14 @@ font-size:16px;
 padding:20px;
 `;
 
+const MainRadio = styled.input.attrs(props => ({type:"radio"})) `
+
+`
 
 
 
 
 const QuizQuestions = ({
-    answer1="chicken",
-    answer2="egg",
-    answer3="Henry",
     question="What came first the chicken or the egg?"
 }) => {
 
@@ -34,17 +34,14 @@ const QuizQuestions = ({
             <QuestionText>{question}</QuestionText>
         </QuestionCont>
         <br></br>
-
-<input type="radio" id="male" name="gender" value="male"/>
-  <label for="male">{answer1}</label>
-  <br></br>
-  <br></br>
-  <input type="radio" id="female" name="gender" value="female"/>
-  <label for="female">{answer2}</label>
-  <br></br>
-  <br></br>
-  <input type="radio" id="other" name="gender" value="other"/>
-  <label for="other">{answer3}</label>
+        <br></br>
+        <MainRadio/>
+        <br></br>
+        <br></br>
+        <MainRadio/>
+        <br></br>
+        <br></br>
+        <MainRadio/>
 </div>
 }
 
