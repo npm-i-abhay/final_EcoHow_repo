@@ -26,10 +26,11 @@ const ButtonCont = styled.span`
 const Button = ({
     text="Test Button",
     bgcolor="#F7D488",
-    routeTo="/tips"
+    routeTo="/tips", 
+    onClick = ()=> {}
 }) => {
     const router = useRouter();
-    return <div> <ButtonCont onClick={()=>router.push(routeTo)}>
+    return <div> <ButtonCont onClick={onClick}>
         <ButtonInput backgroundColor={bgcolor}>
             {text}
         </ButtonInput>

@@ -12,8 +12,8 @@ const HomeContainer = styled.div`
     display:flex;
     flex-direction:column;
     align-items: center;
-    height:812px;
-    width:375px;
+    height:100vh;
+    width:100vw;
     background-color:#376293;
 
         .button
