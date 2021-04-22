@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Button from '../Button'
+import HelpButton from '../HelpButton'
 import MakeIcon from '../CircleIcons'
 import React, {useState} from 'react';
 
@@ -105,7 +106,7 @@ const Menu = ({
 
                     <CircleIconsCont hiddenIcons = {hideIcons}>
                          <MakeIcon />
-                         <MakeIcon text="?" />
+                         <HelpButton text="?" />
                     </CircleIconsCont>
 
 

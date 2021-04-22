@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import {useState} from 'react'
+import {useRouter} from 'next/router'
 import MakeIcon from '../comps/CircleIcons'
 import MyBanner from '../comps/Banner'
 import Slider from '../comps/Slider'
@@ -45,6 +47,25 @@ const EvaluationCont = styled.div `
 export default function Evalution ({})
 
 {
+    const router = useRouter();
+    const [valOne, setVal] = useState (0)
+    const [valTwo, setValTwo] = useState (0)
+    const [valThree, setValThree] = useState (0)
+    const [newEvRoute, setEvRoute] = useState("/home")
+
+const handleResult = ()=>
+     {
+         if (valOne - (-valTwo)- (-valThree) < 150)
+         {
+            setEvRoute(()=>router.push("/home"))
+         }
+
+         if (valOne - (-valTwo)- (-valThree) >= 150)
+         {
+            setEvRoute(()=>router.push("/tips"))
+         }
+     }
+       console.log(valOne - (-valTwo)- (-valThree))
     return  <EvaluationCont> 
 
                 <div className="EvHeader">
@@ -62,12 +83,17 @@ export default function Evalution ({})
                 </div>
 
                 <div className = "SliderQuestion" > 
-                    <Slider Labeltext="blarg blarg that's how nick types"/>
-                    <Slider/>
-                    <Slider/>
+                    <Slider 
+                    Labeltext="blarg blarg that's how nick types"
+                    onChangeTwo = {(e)=>setVal(e.target.value)}
+                    />                    
+                    <Slider onChangeTwo = {(e)=>setValTwo(e.target.value)} />
+                    <Slider onChangeTwo = {(e)=>setValThree(e.target.value)}/>
 
                 </div>
-
-                <Button text="Lets See How " routeTo="/tips"/>
+        
+                <Button 
+                text="Lets See How"
+                onClick = {handleResult} />
             </EvaluationCont>
 }

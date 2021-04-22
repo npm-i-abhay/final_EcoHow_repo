@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import IsoSliderComp from '../IsolatedSlider';
 import Button from '../Button';
+import {useState} from 'react';
 
 
 const MainContainer = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
+width:100%;
 justify-content:space-around;
 `
 
@@ -30,49 +33,26 @@ font-weight:900;
 
 const SliderContainer = styled.div`
 
-justify-content:center;
+align-items:center;
+justify-content:space-between;
 background-color:#F5F1ED;
 border-radius:10px;
-width:342px;
+width:80%;
 height:57px;
 margin:.5em;
 
 
 `
-const MainSlider = styled.input.attrs(props => ({type:"range"})) `
 
-    width:100%;
-    -webkit-appearance: none;
-    // appearance:none;
-
-&::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance:none;
-    position: relative;
-    appearance: none;
-    height: 25px;
-    width: 25px;
-    border:1px solid black;
-    background: red;
-    border-radius: 100%;
-    border: 1px solid black;
-}
-&::-webkit-slider-runnable-track {
-    -webkit-appearance: none;
-    appearance:none;
-    max-width:500px;
-    outline:none;
-    height: 10px;
-    border-radius:10px;
-    background: green;
-  }
-`
 
 const Slider = ({
 Labeltext="How strong is your knowledge of composting & organic waste?",
-justify="center"
+justify="center",
+onChangeTwo = ()=> {}
 })=>
-{
+{   
+    
+
     return <MainContainer>
 
 
@@ -80,9 +60,11 @@ justify="center"
                         {Labeltext}
                     </TextContainer>
                     
-                    <SliderContainer>
+                    <SliderContainer 
+                   >
                     
-                        <MainSlider/>
+                    <IsoSliderComp onChange = {onChangeTwo} />
+                    
                         
                     
                     </SliderContainer>
@@ -93,9 +75,6 @@ justify="center"
                         <p> Strong</p>    
                     </OptionsContainer>         
 
-                    <veggieContainer/>
-                   
              </MainContainer>
 }           
-
 export default Slider

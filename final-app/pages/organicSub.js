@@ -6,7 +6,7 @@ import MyVeggie from '../comps/VeggieFruitIcon'
 import MyBanner from '../comps/Banner'
 import Menu from '../comps/Menu'
 import MyInfo from '../comps/RecycleInfo'
-
+import Expander from '../comps/ExpandCat'
 import MyButton from '../comps/Button'
 
 
@@ -16,7 +16,7 @@ const SubCatCont = styled.div `
 {
     display:flex;
     flex-direction:column;
-    height:100vh;
+    height:100%;
     width:100vw;
     background-color:#376293;
     align-items:center;
@@ -25,6 +25,12 @@ const SubCatCont = styled.div `
     {
         width:100%;
     }
+
+    .expandingConts
+    {
+        
+    }
+
 
 }
 
@@ -58,6 +64,16 @@ export default function Tips ({
                     bannerHeight="50px"/>
 
                 </div>
+
+                <div className = "expandingConts">
+                    <Expander/>
+                    <Expander/>
+                    <Expander/>
+                    <Expander/>
+                </div>
+
+                <MyButton/>
+
 
 
               
