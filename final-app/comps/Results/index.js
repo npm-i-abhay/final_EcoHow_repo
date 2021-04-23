@@ -6,28 +6,30 @@ display:flex;
 flex-direction: column;
 justify-content:center;
 align-items:center;
-width:265px;
-height:242px;
+width:80%;
+height:100%;
+margin:2em;
+position:relative;
 border-radius:53px;
 background-color:#5EBA92;
 `;
 
 const ResultsTextCont = styled.div`
 display:flex;
-justify-items:center;
+justify-content:center;
 align-items:center;
-width:193px;
-height:178px;
-border-radius:18px;
-background-color:#21AAB5;
-`;
-
-const ResultsText = styled.div`
 color:white;
 font-size:14px;
 padding:15px;
 text-align:center;
+width:90%;
+height:90%;
+position:relative;
+border-radius:25px;
+background-color:#21AAB5;
 `;
+
+
 
 
 
@@ -35,13 +37,14 @@ const Results = ({
     text="Abhay sucks Abhay Steve miller Henry Leung The fearless flyers Test",
 }) => {
 
-    return <div> 
+    return (
     <ResultsCont>
         <ResultsTextCont>
-            <ResultsText>{text}</ResultsText>
+            {text}
+            {/* <ResultsText>{text}</ResultsText> */}
         </ResultsTextCont>
     </ResultsCont>
-    </div>
+    )
 }
 
 export default Results;
