@@ -85,11 +85,11 @@ export default function Category ({})
     {   
         if (newHeader === "Inorganic")
         {
-            setRoute(()=>router.push("/evaluation"))
+            setRoute(()=>router.push("./subcat/inorganic"))
         }
         if (newHeader === "Organic")
         {
-            setRoute(()=>router.push("/organicSub"))
+            setRoute(()=>router.push("./subcat/organic"))
         }
     }
 

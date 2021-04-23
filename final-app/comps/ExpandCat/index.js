@@ -78,10 +78,12 @@ transition:all 1s;
 
  const Expander = ({
      text ="Vegetables",
+     textLong="blarg blarg some more blarg",
      expandHeight = "15vh",
      showDisplay= 0,
      imageHeight = "100%",
-     imageblur = "blur(3px)"
+     imageblur = "blur(3px)",
+     source = "/team4.gif"
 
  }) =>
 {   
@@ -118,12 +120,13 @@ transition:all 1s;
                         </div>
 
                         <CategoryAnim 
-                        src="/team4.gif"
+                        src={source}
                         heightImage = {imageHeight}
                         blury={imageblur}/>
                        
                        
-                        <div className="textLots"> As Elizabeth had no longer any interest of her own to pursue, she turned her attention almost entirely on her sister and Mr. Bingley; and the train of agreeable reflections which her observations gave birth to, made her perhaps almost as happy as Jane. She saw her in idea settled in that very house, in all the felicity which a marriage of true affection could bestow; and she felt capable, under such circumstances, of endeavouring   </div>
+                        <div className="textLots"> 
+                        {textLong}</div>
                        
 
             
