@@ -28,14 +28,13 @@ transition:all 1s;
         display:flex;
         justify-content:space-around;
         width:50%;
-        height:6vh;
-        align-items:;
+        align-items:flex-start;
+        
         
             
             .labelText, .labelIcon
             {
                 display:flex;
-                margin-top:2.2em;
                 align-items:center;
                 justify-content:center;
                 font-size:2em;

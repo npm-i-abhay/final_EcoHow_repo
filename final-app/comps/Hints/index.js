@@ -6,6 +6,7 @@ const HintCont = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
+justify-content:center;
 height:16.75em;
 width: 20em;
 background-color:#F7D488;
@@ -14,31 +15,21 @@ opacity:${props=>props.opacity};
 transition:0.2s;
 z-index:2;
 position:absolute;
-left:2em;
+left:${props=>props.left}px;
 top:3.5em;
 
 `;
 
-const HintBanner = styled.div`
-height:5em;
-display:flex;
-justify-content:space-between;
-align-items:center;
-width:100%;
-`;
+
 const Text1 = styled.span`
 font-size:2.5em;
-margin:0.5em;
+width:80%
 `
-const Text2 = styled.span`
-margin:0.5em;
-font-size 3.5em
-`
+
 
 const Text3 = styled.span`
 font-size:1em;
 width:80%;
-margin:0.5em;
 `;
 
 
@@ -47,26 +38,20 @@ margin:0.5em;
 const HintCard =({
     hint="That malfunctioning little twerp. This is all his fault! He tricked me into going this way, but he'll do no better. Wait, what's that? A transport! I'm saved! Over here! Help! Please, help! Artoo-Detoo! It's you! It's you!",
     op1=1,
-    
+    leftValue=2000
 
 })=> 
 {
         
-        return <HintCont opacity={op1}>
+        return <HintCont opacity={op1} left={leftValue}>
 
-        <HintBanner>
+    
             <Text1>
                 Help
             </Text1>
-            
-            <Text2>
-            &#10006;
-            </Text2>
-            </HintBanner>
-        
+            <br></br>
             <Text3>
             {hint}    
-
             </Text3> 
          </HintCont>
 }
