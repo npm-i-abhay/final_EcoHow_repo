@@ -49,7 +49,8 @@ export default function Evalution ({
     labelTextChain2= "",
     labelTextChain3= "",
     routeToChain2 = "",
-    onClickChain = ()=> {}
+    onClickChain = ()=> {},
+    hintChain4 = ""
 
 
 
@@ -63,6 +64,7 @@ export default function Evalution ({
 
     {
        routeToChain2="/subcat/inorganic"
+       hintChain4 = "blarg blarg more blarg"
     }
 
     const [valOne, setVal] = useState (0)
@@ -74,12 +76,12 @@ const handleResult = ()=>
      {
          if (valOne - (-valTwo)- (-valThree) < 150 && evaluation === "inorganic")
          {
-            setEvRoute(()=>router.push("/home"))
+            setEvRoute(()=>router.push("/tips/inorganicBad"))
          }
 
          if (valOne - (-valTwo)- (-valThree) >= 150 && evaluation === "inorganic" )
          {
-            setEvRoute(()=>router.push("/tips"))
+            setEvRoute(()=>router.push("/tips/inorganicGood"))
          }
      }
        console.log(valOne - (-valTwo)- (-valThree))
@@ -88,7 +90,9 @@ const handleResult = ()=>
                 <div className="EvHeader">
                     
                     <div className="hamburger">
-                        <Menu routeToChain = {routeToChain2} />
+                        <Menu 
+                            routeToChain = {routeToChain2}
+                            hintChain3 =    {hintChain4} />
                     </div>
 
                 </div>  

@@ -1,11 +1,14 @@
 import Head from 'next/head'
 import React from 'react'
-import Results from '../comps/Results'
-import MyBanner from '../comps/Banner'
-import Button from '../comps/Button'
-import MakeIcon from '../comps/CircleIcons'
+import Results from '../../comps/Results'
+import MyBanner from '../../comps/Banner'
+import Button from '../../comps/Button'
+import MakeIcon from '../../comps/CircleIcons'
 import styled from 'styled-components'
-import MyHelp from '../comps/HelpButton'
+import MyHelp from '../../comps/HelpButton'
+import Menu from '../../comps/Menu'
+import {useState} from 'react'
+import {useRouter} from 'next/router'
 
 const TipsCont = styled.div `
 
@@ -51,9 +54,37 @@ const TipsCont = styled.div `
 `
 
 export default function Tips ({
-    screenHeight= 620
+   
+    resultText = "",
+    routeToChain2 ="",
+    hintChain4 = ""
 })
 {
+
+    const router = useRouter()
+    const {tips} = router.query
+
+    if (tips === "inorganicGood")
+    {
+        resultText = "nick likes eating dick sausage"
+        routeToChain2 = "/evaluation/inorganic"
+    }
+    
+    if (tips === "inorganicBad")
+    {
+        resultText = "nick fucks anything that walks"
+        routeToChain2 = "/evaluation/inorganic"
+    }
+    if (tips === "organicGood")
+    {
+        resultText = "nick likes eating dick 3 times a day"
+    }
+
+    if (tips === "organicBad")
+    {
+        resultText = "nick nick nick sucka dick"
+    }
+
 
     return <TipsCont >
        
@@ -64,18 +95,20 @@ export default function Tips ({
         
         <div className="mainContainer"> 
                
-                <div className="iconHeader">
-                    <MakeIcon routeTo="/evaluation"/>
-                    <MyHelp text="?"/>
-                </div>  
+                     <div className="hamburger">
+                        <Menu 
+                            routeToChain = {routeToChain2}
+                            hintChain3 =    {hintChain4} />
+                    </div>
                 
                 <div className="banner">
-                        <MyBanner bgColor="#E5E5E5" />
+                        {/* <MyBanner bgColor="#E5E5E5" /> */}
                         <MyBanner textColor="#E5E5E5"/> 
                 </div>
 
                 <div className = "containerAndButton" >
-                    <Results/>
+                    <Results
+                        text = {resultText}/>
                     <Button text="Test Your Knowledge" routeTo="/quiz"/>
                 </div>
                 
