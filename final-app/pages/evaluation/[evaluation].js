@@ -83,6 +83,16 @@ const handleResult = ()=>
          {
             setEvRoute(()=>router.push("/tips/inorganicGood"))
          }
+        //  =============================================================================
+         if (valOne - (-valTwo)- (-valThree) < 150 && evaluation === "organic")
+         {
+            setEvRoute(()=>router.push("/tips/organicBad"))
+         }
+
+         if (valOne - (-valTwo)- (-valThree) >= 150 && evaluation === "organic" )
+         {
+            setEvRoute(()=>router.push("/tips/organicGood"))
+         }
      }
        console.log(valOne - (-valTwo)- (-valThree))
     return  <EvaluationCont> 

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const GifContainer = styled.div`
 width:304px;
 height:316px;
+margin-top:.5em;
 // border:10px solid black;
 // border-radius:50px;
 `

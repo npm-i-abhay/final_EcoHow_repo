@@ -2,6 +2,7 @@ import Head from 'next/head'
 import React from 'react'
 import Results from '../../comps/Results'
 import MyBanner from '../../comps/Banner'
+import HeroContainer from '../../comps/HeroImage'
 import Button from '../../comps/Button'
 import MakeIcon from '../../comps/CircleIcons'
 import styled from 'styled-components'
@@ -17,9 +18,10 @@ const TipsCont = styled.div `
 {
     display:flex;
     flex-direction:column;
+    // justify-content:space-evenly;
     align-items: center;
-    height:100vh;
-    width:100vw;
+    height:100%;
+    width:100%  ;
     background-color:#376293;
 
         .iconHeader
@@ -57,7 +59,8 @@ export default function Tips ({
    
     resultText = "",
     routeToChain2 ="",
-    hintChain4 = ""
+    hintChain4 = "",
+    onClickChain = ()=>{}
 })
 {
 
@@ -68,12 +71,14 @@ export default function Tips ({
     {
         resultText = "nick likes eating dick sausage"
         routeToChain2 = "/evaluation/inorganic"
+        onClickChain = ()=>router.push("/quiz/question-one")
     }
     
     if (tips === "inorganicBad")
     {
         resultText = "nick fucks anything that walks"
         routeToChain2 = "/evaluation/inorganic"
+        onClickChain = ()=>router.push("/quiz/question-one")
     }
     if (tips === "organicGood")
     {
@@ -94,28 +99,33 @@ export default function Tips ({
         
         
         <div className="mainContainer"> 
-               
-                     <div className="hamburger">
+                <div className="hamburger">
                         <Menu 
                             routeToChain = {routeToChain2}
                             hintChain3 =    {hintChain4} />
-                    </div>
+                </div>
                 
                 <div className="banner">
                         {/* <MyBanner bgColor="#E5E5E5" /> */}
                         <MyBanner textColor="#E5E5E5"/> 
                 </div>
 
+                <div className="animation container">
+                        <HeroContainer/>
+                </div>
+                
+                
                 <div className = "containerAndButton" >
                     <Results
                         text = {resultText}/>
-                    <Button text="Test Your Knowledge" routeTo="/quiz"/>
+                    <Button 
+                    text="Test Your Knowledge"
+                    onClick = {onClickChain}
+                    />
                 </div>
                 
-                <div>
-                </div>
-             <div>
-             </div>
+               
+             
 
              </div>
         </TipsCont>

@@ -1,16 +1,17 @@
 import Head from 'next/head'
 import React from 'react'
-import Results from '../comps/Results'
-import MyBanner from '../comps/Banner'
-import MakeIcon from '../comps/CircleIcons'
-import MyHeader from '../comps/RecycleInfo'
-import MyAnswers from '../comps/Quiz'
-import MyButton from '../comps/Button'
-import MyCircle from '../comps/CircleIcons2'
+import Results from '../../comps/Results'
+import MyBanner from '../../comps/Banner'
+import MakeIcon from '../../comps/CircleIcons'
+import MyHeader from '../../comps/RecycleInfo'
+import MyAnswers from '../../comps/Quiz'
+import MyButton from '../../comps/Button'
+import MyCircle from '../../comps/CircleIcons2'
 import styled from 'styled-components'
+import {useRouter} from 'next/router'
 
 
-const TipsCont = styled.div `
+const QuizCont = styled.div `
 
 .mainContainer
 {
@@ -71,33 +72,59 @@ const TipsCont = styled.div `
 
 `
 
-export default function Tips ({
-    screenHeight= 620
+export default function Quiz ({
+    screenHeight= 620,
+    questionChain = "",
+    onClickChain = ()=>{},
+    routeToChain= ""
 })
-{
-    return <TipsCont >
+{   
+    const router = useRouter()
+    const {quiz} = router.query
+
+    if (quiz === "question-one")
+    {
+        questionChain = "Which Ones of the following should not be recycled"
+        routeToChain= "/tips/inorganicbad"
+        onClickChain = ()=> router.push("/quiz/question-two")
+    }
+    if (quiz === "question-two")
+    {
+        questionChain = "Which Ones of the following"
+        routeToChain= "/quiz/question-one"
+        onClickChain = ()=> router.push("/quiz/question-three")
+    }
+    if (quiz === "question-three")
+    {
+        questionChain = "Which Ones of"
+        routeToChain= "/quiz/question-two"
+        onClickChain = ()=> router.push("/results")
+    }
+
+    return <QuizCont >
        
        <Head>
-        <title> tips page </title>    
+        <title> Quiz page </title>    
         </Head>
         
         
         <div className="mainContainer"> 
                
                 <div className="iconHeader">
-                    <MakeIcon routeTo="/tips"/>
+                    <MakeIcon routeTo={routeToChain}/>
                     <MakeIcon text="?"/>
                     </div>  
                 <div className="banner">
                     <MyBanner text="Test Your Knowledge" bgColor="#F5F1ED"/>   
                 </div>
                 <div className="answersCont">
-                    <MyAnswers/>
+                    <MyAnswers
+                    question= {questionChain}/>
                 </div>
 
                 <div className="buttonCont">
                     <MyButton text="hint"/>
-                    <MyCircle routeTo="/results"/>
+                    <MyButton text="next Question" onClick={onClickChain}/>
                 </div>
 
                 <div className="toggleCont">
@@ -106,7 +133,7 @@ export default function Tips ({
                 
 
         </div>
-        </TipsCont>
+        </QuizCont>
 }
 
 

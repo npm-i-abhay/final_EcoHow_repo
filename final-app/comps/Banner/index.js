@@ -6,6 +6,7 @@ height:${props => props.dynamicHeight};
 width:100%;
 background-color:${props => props.background};
 // margin-top:2em;
+
 text-align:center;
 font-size:1.5em;
 display:flex;
