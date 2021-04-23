@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Button from '../Button'
+import HelpButton from '../HelpButton'
 import MakeIcon from '../CircleIcons'
 import React, {useState} from 'react';
 
@@ -83,7 +84,9 @@ const Menu = ({
     revealMenu = "flex",
     menuHeight="10vh",
     hideIcons = 1,
-    toggle = false
+    toggle = false,
+    hintChain3 = "coding is pain but I like using rusted gears of my brain",
+    routeToChain = ""
     // hamieBarAlign = "center"
 })=> 
 {
@@ -104,8 +107,10 @@ const Menu = ({
                <TopBarContainer> 
 
                     <CircleIconsCont hiddenIcons = {hideIcons}>
-                         <MakeIcon />
-                         <MakeIcon text="?" />
+                         <MakeIcon routeTo = {routeToChain}/>
+                         <HelpButton 
+                         text="?"
+                         hintChain2 = {hintChain3} />
                     </CircleIconsCont>
 
 

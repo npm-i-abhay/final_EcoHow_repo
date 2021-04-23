@@ -9,16 +9,17 @@ const ExpansionCont = styled.div`
 `
 const AnimTextCont = styled.div`
 
-width:100%;
+width:90vw;
 position:relative;
 height:${props => props.expansion};
-border:1.5px solid green;
+border:3px solid green;
 border-radius:12px;
 display:flex;
+margin-top:1.5em;
 flex-direction:column;
 justify-content:space-between;
 align-items:center;
-box-shadow:1px 1px 10px 1px  lightgrey;
+// box-shadow:1px 1px 10px 1px  lightgrey;
 transition:all 1s;
 
 
@@ -34,12 +35,13 @@ transition:all 1s;
             .labelText, .labelIcon
             {
                 display:flex;
-                margin-top:1em;
+                margin-top:2.2em;
                 align-items:center;
                 justify-content:center;
                 font-size:2em;
                 color:black;
                 font-weight:900;
+                z-index:1;
                 
             }
     }
@@ -61,7 +63,7 @@ border-radius:${props => props.radius};
 position:absolute;
 filter: ${props => props.blury};
 opacity:.8;
-z-index:-1;
+z-index:0;
 border-radius:10px;
 transition:all 1s;
 
@@ -76,13 +78,15 @@ transition:all 1s;
 
  const Expander = ({
      text ="Vegetables",
-     expandHeight = "10vh",
+     textLong="blarg blarg some more blarg",
+     expandHeight = "15vh",
      showDisplay= 0,
      imageHeight = "100%",
-     imageblur = "blur(5px)"
+     imageblur = "blur(3px)",
+     source = "/team4.gif"
 
  }) =>
-{
+{   
     const [expand, setExpand] = useState(false)
 
     if (expand)
@@ -116,12 +120,13 @@ transition:all 1s;
                         </div>
 
                         <CategoryAnim 
-                        src="/team4.gif"
+                        src={source}
                         heightImage = {imageHeight}
                         blury={imageblur}/>
                        
                        
-                        <div className="textLots"> As Elizabeth had no longer any interest of her own to pursue, she turned her attention almost entirely on her sister and Mr. Bingley; and the train of agreeable reflections which her observations gave birth to, made her perhaps almost as happy as Jane. She saw her in idea settled in that very house, in all the felicity which a marriage of true affection could bestow; and she felt capable, under such circumstances, of endeavouring   </div>
+                        <div className="textLots"> 
+                        {textLong}</div>
                        
 
             

@@ -81,17 +81,6 @@ export default function Tips ({
                 
                 <div>
                 </div>
-<<<<<<< HEAD
-
-
-                    
-                   
-                    
-                
-
-          
-=======
->>>>>>> abhay-bakshi
              <div>
              </div>
 

@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import MakeIcon from '../comps/CircleIcons'
 import MyBanner from '../comps/Banner'
 import Button from '../comps/Button'
+import Carousel from '../comps/Carousel'
+import {useState} from 'react'
+import {useRouter} from 'next/router'
 import HeroContainer from '../comps/HeroImage'
 
 const CategoryContainer = styled.div`
@@ -51,6 +54,46 @@ export default function Category ({})
 
 
 {
+    var toggle = null
+    
+    // var arbitSourceNew = "/empower.gif"
+    const router = useRouter();
+    const [newSource, setSource] = useState("/team4.gif")
+    const [newHeader, setHeader] = useState("Organic")
+    const [newRoute, setRoute] = useState("/home")
+
+    const handleCarouselRight = ()=>
+    {
+
+        setSource ("/empower.gif")
+        setHeader ("Inorganic")
+        console.log(newHeader)
+        // toggle = true
+        // newRoute = "/evaluation"
+    }
+  
+    const handleCarouselLeft = ()=>
+    {
+
+        setSource ("/team4.gif")
+        setHeader ("Organic")
+        // newRoute = "/tips"
+        // toggle = false
+    }
+
+    const handleButton = () =>
+    {   
+        if (newHeader === "Inorganic")
+        {
+            setRoute(()=>router.push("./subcat/inorganic"))
+        }
+        if (newHeader === "Organic")
+        {
+            setRoute(()=>router.push("./subcat/organic"))
+        }
+    }
+
+    console.log(newSource)
 
     return   <CategoryContainer>
                 <div className="CatContainer">
@@ -64,14 +107,20 @@ export default function Category ({})
                 <div className="CatBanner">
                     <MyBanner 
                     bgColor="#E5E5E5" bannerHeight="70px"
-                    text="ORGANIC"/>
+                    text={newHeader}/>
                 </div>
 
                 <div className = "CatGraphic"> 
-                <HeroContainer
+                {/* <HeroContainer
                  borderRadius="200px"
-                 source= "/empower.gif"/>
-                <Button text="ENTER" routeTo="/organicSub"/>
+                 source= "/empower.gif"/> */}
+                <Carousel 
+                CarouselSource = {newSource}
+                onClick = {handleCarouselRight}
+                onClickLeft = {handleCarouselLeft}
+                     />
+
+                <Button text="ENTER" onClick= {handleButton}/>
                 </div>
 
                 </div>

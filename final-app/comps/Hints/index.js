@@ -12,10 +12,10 @@ background-color:#F7D488;
 border-radius:12px;
 opacity:${props=>props.opacity};
 transition:0.2s;
-z-index:1;
+z-index:2;
 position:absolute;
-left:0em;
-top:5em;
+left:2em;
+top:3.5em;
 
 `;
 

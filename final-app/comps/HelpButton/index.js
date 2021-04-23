@@ -18,6 +18,7 @@ border-radius:1.5em;
 background-color:#F7D488;
 display:flex;
 margin:10px;
+border:none;
 justify-content:center;
 align-items:center;
 font-size:1.2em;
@@ -33,13 +34,15 @@ font-size:2em;
 const MakeHelp = ({
 
     text= '\u21FD',
+    hintChain2 = "whatever whatever sometimes Coding is  pain but I like using the rusted gears in my brain"
     
 })=>
 {   
     var helpFadeIn = 0
     const[help, setHelp] = useState(false)
  
-        if (help){
+        if (help)
+        {
             helpFadeIn=1
         }
  
@@ -47,13 +50,15 @@ const MakeHelp = ({
     <IconContainer onClick={()=>setHelp(!help)}> 
     
         <IconText> 
-      {text}
+            {text}
         </IconText>
 
         
     </IconContainer>
     
-    <MyHint op1={helpFadeIn}/>
+    <MyHint 
+    op1={helpFadeIn}
+    hint={hintChain2}/>
     </Wrapper>
 }
 
