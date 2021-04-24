@@ -73,7 +73,7 @@ export default function SubCat (
         
         hintChain4 = OrganicHelp.Subcat.content,
 
-        routeToChain2 = "",
+        routeToChain2 = "/category",
 
         onClickChain = ()=> {}
     }
@@ -113,6 +113,11 @@ export default function SubCat (
             
 
             onClickChain = ()=>router.push("/evaluation/inorganic")
+        }
+
+        if (subcat === "organic")
+        {
+            onClickChain = ()=>router.push("/evaluation/organic")
         }
 
     return <SubCatCont >

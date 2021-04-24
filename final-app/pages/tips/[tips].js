@@ -77,7 +77,7 @@ export default function Tips ({
     {
         resultText = InorganicTips.GoodTips.content
         routeToChain2 = "/evaluation/inorganic"
-        onClickChain = ()=>router.push("/quiz/question-one")
+        onClickChain = ()=>router.push("/quiz/question-one-inorg")
         hintChain4 = InorganicHelp.TipsGood.content
     }
     
@@ -86,18 +86,22 @@ export default function Tips ({
         resultText = InorganicTips.BadTips.content
         routeToChain2 = "/evaluation/inorganic"
         hintChain4 = InorganicHelp.TipsBad.content
-        onClickChain = ()=>router.push("/quiz/question-one")
+        onClickChain = ()=>router.push("/quiz/question-one-inorg")
     }
     if (tips === "organicgood")
     {
         resultText = OrganicTips.GoodTips.content
         hintChain4 = OrganicHelp.TipsGood.content
+        routeToChain2 = "/evaluation/organic"
+        onClickChain = ()=>router.push("/quiz/question-one-org")
     }
 
     if (tips === "organicbad")
     {
         resultText = InorganicTips.BadTips.content
         hintChain4 = OrganicHelp.TipsBad.content
+        routeToChain2 = "/evaluation/organic"
+        onClickChain = ()=>router.push("/quiz/question-one-org")
     }
 
 

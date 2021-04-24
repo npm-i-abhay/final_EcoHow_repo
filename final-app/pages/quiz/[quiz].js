@@ -8,6 +8,7 @@ import MyAnswers from '../../comps/Quiz'
 import MyButton from '../../comps/Button'
 import MyCircle from '../../comps/CircleIcons2'
 import styled from 'styled-components'
+import Menu from '../../comps/Menu'
 import {useRouter} from 'next/router'
 
 
@@ -76,30 +77,54 @@ export default function Quiz ({
     screenHeight= 620,
     questionChain = "",
     onClickChain = ()=>{},
-    routeToChain= ""
+    routeToChain2= ""
 })
 {   
     const router = useRouter()
     const {quiz} = router.query
 
-    if (quiz === "question-one")
+    if (quiz === "question-one-inorg")
     {
         questionChain = "Which Ones of the following should not be recycled"
-        routeToChain= "/tips/inorganicbad"
-        onClickChain = ()=> router.push("/quiz/question-two")
+        routeToChain2= "/tips/inorganicbad"
+        onClickChain = ()=> router.push("/quiz/question-two-inorg")
     }
-    if (quiz === "question-two")
+    if (quiz === "question-two-inorg")
     {
         questionChain = "Which Ones of the following"
-        routeToChain= "/quiz/question-one"
-        onClickChain = ()=> router.push("/quiz/question-three")
+        routeToChain2= "/quiz/question-one-inorg"
+        onClickChain = ()=> router.push("/quiz/question-three-inorg")
     }
-    if (quiz === "question-three")
+    if (quiz === "question-three-inorg")
     {
         questionChain = "Which Ones of"
-        routeToChain= "/quiz/question-two"
+        routeToChain2= "/quiz/question-two-inorg"
         onClickChain = ()=> router.push("/results")
     }
+// ====================================================
+
+if (quiz === "question-one-org")
+    {
+        questionChain = "What kind of chemical elements  can generate a healthy compost?"
+        routeToChain2= "/tips/organicbad"
+        onClickChain = ()=> router.push("/quiz/question-two-org")
+    }
+    if (quiz === "question-two-org")
+    {
+        questionChain = "What happens if you add fresh citrus to your compost?"
+        routeToChain2= "question-one-org"
+        onClickChain = ()=> router.push("/quiz/question-three-org")
+    }
+    if (quiz === "question-three-org")
+    {
+        questionChain = "Is it okay to add meat scraps to your compost?"
+        routeToChain2= "/quiz/question-two-org"
+        onClickChain = ()=> router.push("/results")
+    }
+
+
+
+
 
     return <QuizCont >
        
@@ -111,8 +136,9 @@ export default function Quiz ({
         <div className="mainContainer"> 
                
                 <div className="iconHeader">
-                    <MakeIcon routeTo={routeToChain}/>
-                    <MakeIcon text="?"/>
+                    
+
+                    <Menu routeToChain = {routeToChain2} />
                     </div>  
                 <div className="banner">
                     <MyBanner text="Test Your Knowledge" bgColor="#F5F1ED"/>   
