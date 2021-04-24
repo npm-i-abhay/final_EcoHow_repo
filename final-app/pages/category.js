@@ -4,10 +4,12 @@ import styled from 'styled-components'
 import MakeIcon from '../comps/CircleIcons'
 import MyBanner from '../comps/Banner'
 import Button from '../comps/Button'
+import Menu from '../comps/Menu'
 import Carousel from '../comps/Carousel'
 import {useState} from 'react'
 import {useRouter} from 'next/router'
 import HeroContainer from '../comps/HeroImage'
+import {OrganicHelp} from '../data/text'
 
 const CategoryContainer = styled.div`
     
@@ -50,7 +52,10 @@ const CategoryContainer = styled.div`
 `
 
 
-export default function Category ({})
+export default function Category ({
+    routeToChain2 = "/home",
+    hintChain4 = ""
+})
 
 
 {
@@ -58,14 +63,14 @@ export default function Category ({})
     
     // var arbitSourceNew = "/empower.gif"
     const router = useRouter();
-    const [newSource, setSource] = useState("/team4.gif")
+    const [newSource, setSource] = useState("/happyPlant.gif")
     const [newHeader, setHeader] = useState("Organic")
     const [newRoute, setRoute] = useState("/home")
 
     const handleCarouselRight = ()=>
     {
 
-        setSource ("/empower.gif")
+        setSource ("/styrofoam-scene.gif")
         setHeader ("Inorganic")
         console.log(newHeader)
         // toggle = true
@@ -75,7 +80,7 @@ export default function Category ({})
     const handleCarouselLeft = ()=>
     {
 
-        setSource ("/team4.gif")
+        setSource ("/happyPlant.gif")
         setHeader ("Organic")
         // newRoute = "/tips"
         // toggle = false
@@ -86,10 +91,12 @@ export default function Category ({})
         if (newHeader === "Inorganic")
         {
             setRoute(()=>router.push("./subcat/inorganic"))
+            
         }
         if (newHeader === "Organic")
         {
             setRoute(()=>router.push("./subcat/organic"))
+            hintChain4 = OrganicHelp.CategorySelection.content
         }
     }
 
@@ -100,8 +107,9 @@ export default function Category ({})
                     
                     
                 <div className="CatHeader">
-                    <MakeIcon routeTo="/home"/>
-                    <MakeIcon text="?"/>
+                    <Menu
+                    routeToChain = {routeToChain2}
+                    hintChain3 = {hintChain4} />
                 </div>  
                        
                 <div className="CatBanner">

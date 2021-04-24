@@ -17,11 +17,11 @@ export const OrganicContent = {
         title:"Sewage",
         content:"It takes up to 24 for hours for a single drop of water to be treated in the Treatment Plant Process and be safe for consumption.If you own a pet, you might be interested to know that animal manure is a great add addition to your compost as it is rich in Nitrogren."
     },
-    Vegetable:{
+    Meat:{
         title:"Meat",
         content:"Producing meat requires excessive amounts of resources, this includes land, water, and energy. With that said, we still should not add meat to your compost since meat may be infected with bacteria like Salmonella and E. coli that can make you ill. Furthermore, as compost material It also attracts pests and rodents. "
     },
-    Vegetable:{
+    Wood:{
         title:"Wood",
         content:"In the United States alone, it was estimated that 18.1 million tons of wood was wasted in 2018. 90% of that waste was wood palettes for packaging.Wood chips and sawdust contains high levels of carbon which is a great addition to your compost."
     }
@@ -88,6 +88,15 @@ export const OrganicHelp = {
         content:"There are a total of three questions. You may click on the hint button at any time to help yourself throughout the quiz."
     },
 
+    TipsGood:{
+        content:"Click on “Test Your Knowledge” button to continue to quiz"
+    },
+
+    
+    TipsBad:{
+        content:"This evaluation result is suggestive, it is intended to motivate you to keep improving. Even if you are already doing great, there is always room for improvement. "
+    },
+
 }
 
 
@@ -110,7 +119,7 @@ export const OrganicHints = {
 
 export const OrganicTips = {
     GoodTips:{
-        content:"Click on “Test Your Knowledge” button to continue to quiz"
+        content:"Based on your score, you are helping to reduce waste in our landfills and green house gases in our envirnment. Great job!"
     },
     BadTips:{
         content:"This evaluation result is suggestive, it is intended to motivate you to keep improving. Even if you are already doing great, there is always room for improvement. "
@@ -140,6 +149,16 @@ export const InorganicHelp = {
     Quiz3:{
         content:"There are a total of three questions. You may click on the hint button at any time to help yourself throughout the quiz."
     },
+
+    TipsGood:{
+        content:"Click on “Test Your Knowledge” button to continue to quiz"
+    },
+
+    
+    TipsBad:{
+        content:"This evaluation result is suggestive, it is intended to motivate you to keep improving. Even if you are already doing great, there is always room for improvement. "
+    },
+
 
 }
 

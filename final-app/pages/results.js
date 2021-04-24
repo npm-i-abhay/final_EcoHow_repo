@@ -5,6 +5,7 @@ import MakeIcon from '../comps/CircleIcons'
 import MyPlant from '../comps/Happyplant'
 import MyStar from '../comps/Stars'
 import MyButton from '../comps/Button'
+import {useRouter} from 'next/router'
 
 import styled from 'styled-components'
 
@@ -90,6 +91,7 @@ export default function Tips ({
 
 
 {
+    const router = useRouter()
     return <TipsCont >
        
        <Head>
@@ -113,7 +115,9 @@ export default function Tips ({
                     <MyPlant/>
                 </div>
                 <br></br>
-                <MyButton text="Back to Categories" routeTo="/category"/>
+                <MyButton 
+                text="Back to Categories"
+                onClick = {()=> router.push ("/category")}/>
                
         </div>
         </TipsCont>

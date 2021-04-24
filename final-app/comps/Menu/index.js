@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Button from '../Button'
 import HelpButton from '../HelpButton'
 import MakeIcon from '../CircleIcons'
+import {useRouter} from 'next/router'
 import React, {useState} from 'react';
 
 const MenuContainer = styled.div `
@@ -10,6 +11,7 @@ width:100vw;
 left:0;
 border:2px solid black;
 display:flex;
+// box-shadow:21px 20px 20px 6px black;
 justify-content:center;
 position:realtive;
 transition:all 1s;
@@ -90,6 +92,7 @@ const Menu = ({
     // hamieBarAlign = "center"
 })=> 
 {
+    const router = useRouter()
     const[moveHam, setMoveHam] = useState (false)
     if (moveHam)
     {
@@ -131,10 +134,11 @@ const Menu = ({
                     righty={rightPosition}
                     showMenu = {revealMenu}>
                         
-                            <MenuItemsHead>Home</MenuItemsHead>
-                            <MenuItemsHead>Categories</MenuItemsHead>
-                            <MenuItemsHead>{menuText}</MenuItemsHead>
-                            <MenuItemsHead>Evalutaion</MenuItemsHead>
+                            <MenuItemsHead onClick = {()=> router.push("/home")} >Home</MenuItemsHead>
+                            <MenuItemsHead onClick = {()=> router.push("/category")} >Categories</MenuItemsHead>
+                            <MenuItemsHead onClick = {()=> router.push("/subcat/organic")} >Organic Info</MenuItemsHead>
+                            <MenuItemsHead onClick = {()=> router.push("/subcat/inorganic")}>InOrganic Info</MenuItemsHead>
+                           
                 
                 </MenuItemsConatiner>
 

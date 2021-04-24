@@ -3,7 +3,9 @@ import React from 'react'
 import styled from 'styled-components'
 import HeroContainer from '../comps/HeroImage'
 import MyLogo from '../comps/Logo'
+import {Router, useRouter} from 'next/router'
 import Button from '../comps/Button'
+
 
 const HomeContainer = styled.div`
 
@@ -29,9 +31,13 @@ const HomeContainer = styled.div`
 }
 
 `
-export default function HomePage ({})
+export default function HomePage (
+    {
+        
+    })
 
 {
+   const router = useRouter()
     return  <HomeContainer>
                     <div className="wrapper"> 
                     <div className="logo">
@@ -39,13 +45,13 @@ export default function HomePage ({})
                         </div>
 
                         <div className="graphic">
-                            <HeroContainer/>
+                            <HeroContainer />
 
                         </div>
 
                         <div className = "button">
 
-                            <Button text="ENTER" routeTo="/category" />
+                            <Button text="ENTER" onClick ={ ()=> router.push("/category") }/>
 
                         </div>    
 

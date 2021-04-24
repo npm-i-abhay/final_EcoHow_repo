@@ -12,36 +12,40 @@ const AnimTextCont = styled.div`
 width:90vw;
 position:relative;
 height:${props => props.expansion};
-border:3px solid green;
-border-radius:12px;
+border:${props => props.borderExpand};
+border-radius:8px;
 display:flex;
 margin-top:1.5em;
 flex-direction:column;
 justify-content:space-between;
 align-items:center;
-// box-shadow:1px 1px 10px 1px  lightgrey;
+box-shadow:${props => props.shadowBox};
 transition:all 1s;
 
 
     .labelContainer
     {
         display:flex;
-        justify-content:space-around;
-        width:50%;
-        height:6vh;
-        align-items:;
+        justify-content:center;
+        width:100%;
+        height:100%;
+        margin-top:2em;
+        position:relative;
+        border:1px solid black;
+        align-items:center;
+        
         
             
             .labelText, .labelIcon
             {
-                display:flex;
-                margin-top:2.2em;
-                align-items:center;
-                justify-content:center;
-                font-size:2em;
-                color:black;
-                font-weight:900;
-                z-index:1;
+                // display:${props => props.displayLabel};
+                // align-items:center;
+                // justify-content:center;
+                // font-size:2em;
+                // color:black;
+                // white-space:no-wrap;
+                // font-weight:900;
+                // z-index:1;
                 
             }
     }
@@ -62,7 +66,7 @@ width:100%;
 border-radius:${props => props.radius};
 position:absolute;
 filter: ${props => props.blury};
-opacity:.8;
+opacity:.5;
 z-index:0;
 border-radius:10px;
 transition:all 1s;
@@ -70,7 +74,20 @@ transition:all 1s;
 
 `        
         
-            
+ const LabelText = styled.div `
+ 
+ display:${props => props.displayLabel};
+ align-items:center;
+ justify-content:center;
+ font-size:2em;
+ color:black;
+    border:2px solid red;
+ white-space:no-wrap;
+ font-weight:900;
+ z-index:1;
+ 
+ 
+ `           
 
 
 
@@ -82,8 +99,11 @@ transition:all 1s;
      expandHeight = "15vh",
      showDisplay= 0,
      imageHeight = "100%",
-     imageblur = "blur(3px)",
-     source = "/team4.gif"
+     imageblur = "blur(0px)",
+     source = "/team4.gif",
+     expandBorder = "1px solid blue",
+     shadowShad = "2px 2px 10px 1px  lightgrey",
+     labelDisplay = "flex"
 
  }) =>
 {   
@@ -95,6 +115,8 @@ transition:all 1s;
         showDisplay= 1
         imageHeight = "70%"
         imageblur = "blur(0px)"
+        expandBorder = "1px solid green"
+        shadowShad = "4px 4px 10px 3px  lightgrey"
     }
 
 
@@ -103,20 +125,21 @@ transition:all 1s;
 
                 <AnimTextCont 
                     expansion = {expandHeight}
-
-                    reveal = {showDisplay}>
+                    borderExpand = {expandBorder}
+                    shadowBox = {shadowShad}
+                    reveal = {showDisplay}
+                    onClick = {()=>setExpand(!expand)}>
                          
                      
                         <div className = "labelContainer" > 
                          
-                            <div className="labelText" >
-                              {text}
-                            </div>
-                            
-                            <div className="labelIcon" onClick = {()=>setExpand(!expand)}>
-                              <BsFillCaretDownFill/>
-                            </div>
                         
+                            
+                            <LabelText displayLabel = {labelDisplay}>
+                                {text}
+                                </LabelText>
+
+                         
                         </div>
 
                         <CategoryAnim 
