@@ -10,6 +10,12 @@ import MyHelp from '../../comps/HelpButton'
 import Menu from '../../comps/Menu'
 import {useState} from 'react'
 import {useRouter} from 'next/router'
+import {InorganicTips} from '../../data/text'
+import {OrganicTips} from '../../data/text'
+import {InorganicHelp} from '../../data/text'
+import {OrganicHelp} from '../../data/text'
+
+
 
 const TipsCont = styled.div `
 
@@ -57,7 +63,7 @@ const TipsCont = styled.div `
 
 export default function Tips ({
    
-    resultText = "",
+    resultText = "ojhjkjhh",
     routeToChain2 ="",
     hintChain4 = "",
     onClickChain = ()=>{}
@@ -67,27 +73,31 @@ export default function Tips ({
     const router = useRouter()
     const {tips} = router.query
 
-    if (tips === "inorganicGood")
+    if (tips === "inorganicgood")
     {
-        resultText = "nick likes eating dick sausage"
+        resultText = InorganicTips.GoodTips.content
         routeToChain2 = "/evaluation/inorganic"
         onClickChain = ()=>router.push("/quiz/question-one")
+        hintChain4 = InorganicHelp.TipsGood.content
     }
     
-    if (tips === "inorganicBad")
+    if (tips === "inorganicbad")
     {
-        resultText = "nick fucks anything that walks"
+        resultText = InorganicTips.BadTips.content
         routeToChain2 = "/evaluation/inorganic"
+        hintChain4 = InorganicHelp.TipsBad.content
         onClickChain = ()=>router.push("/quiz/question-one")
     }
-    if (tips === "organicGood")
+    if (tips === "organicgood")
     {
-        resultText = "nick likes eating dick 3 times a day"
+        resultText = OrganicTips.GoodTips.content
+        hintChain4 = OrganicHelp.TipsGood.content
     }
 
-    if (tips === "organicBad")
+    if (tips === "organicbad")
     {
-        resultText = "nick nick nick sucka dick"
+        resultText = InorganicTips.BadTips.content
+        hintChain4 = OrganicHelp.TipsBad.content
     }
 
 

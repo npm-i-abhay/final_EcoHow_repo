@@ -9,6 +9,13 @@ import MyInfo from '../../comps/RecycleInfo'
 import Expander from '../../comps/ExpandCat'
 import MyButton from '../../comps/Button'
 import {useRouter} from 'next/router'
+import {OrganicContent} from '../../data/text'
+import {OrganicHelp} from '../../data/text'
+import {OrganicHint} from '../../data/text'
+import {InorganicContent} from '../../data/text'
+import {InorganicHelp} from '../../data/text'
+import {InorganicHint} from '../../data/text'
+
 
 
 
@@ -41,30 +48,30 @@ const SubCatCont = styled.div `
 
 export default function SubCat (
     {
-        bannerText = "",
+        bannerText = "Organic",
         
-        sourceNew1 = "",
-        sourceNew2 = "",
-        sourceNew3 = "",
-        sourceNew4 = "",
-        sourceNew5 = "",
-        sourceNew6 = "",
+        sourceNew1 = "../../veg.gif",
+        sourceNew2 = "../../fruit.gif",
+        sourceNew3 = "../../garden waste.gif",
+        sourceNew4 = "../../sewage_3.gif",
+        sourceNew5 = "../../meat.gif",
+        sourceNew6 = "../../Wood.gif",
         
-        textHeadNew1 = "",
-        textHeadNew2 = "",
-        textHeadNew3 = "",
-        textHeadNew4 = "",
-        textHeadNew5 = "",
-        textHeadNew6 = "",
+        textHeadNew1 = OrganicContent.Vegetable.title,
+        textHeadNew2 =  OrganicContent.Fruits.title,
+        textHeadNew3 = OrganicContent.GardenWaste.title,
+        textHeadNew4 = OrganicContent.Sewage.title,
+        textHeadNew5 = OrganicContent.Meat.title,
+        textHeadNew6 = OrganicContent.Wood.title,
         
-        textLongNew1 = "",
-        textLongNew2= "",
-        textLongNew3 = "",
-        textLongNew4 = "",
-        textLongNew5 = "",
-        textLongNew6 = "",
+        textLongNew1 = OrganicContent.Vegetable.content,
+        textLongNew2= OrganicContent.Fruits.content,
+        textLongNew3 = OrganicContent.GardenWaste.content,
+        textLongNew4 = OrganicContent.Sewage.content,
+        textLongNew5 = OrganicContent.Meat.content,
+        textLongNew6 = OrganicContent.Wood.content,
         
-        hintChain4 = "",
+        hintChain4 = OrganicHelp.Subcat.content,
 
         routeToChain2 = "",
 
@@ -77,11 +84,33 @@ export default function SubCat (
 
     if (subcat === "inorganic")
         {
-            hintChain4 = "whatever"
-            bannerText = "InOrganic"
+            hintChain4 = InorganicHelp.Subcat.content
+            bannerText = "Inorganic"
             routeToChain2 = "../category"
-            textHeadNew1 = "blarg"
-            textHeadNew2 = "bleh"
+            textHeadNew1 = InorganicContent.Plastic.title,
+            textHeadNew2 = InorganicContent.PlasticStraws.title,
+            textHeadNew3 = InorganicContent.Styrofoam.title,
+            textHeadNew4 = InorganicContent.Cardboard.title,
+            textHeadNew5 = InorganicContent.Aluminium.title,
+            textHeadNew6 = InorganicContent.Reuse.title,
+
+            textLongNew1 = InorganicContent.Plastic.content,
+            textLongNew2= InorganicContent.PlasticStraws.content,
+            textLongNew3 = InorganicContent.Styrofoam.content,
+            textLongNew4 = InorganicContent.Cardboard.content,
+            textLongNew5 = InorganicContent.Aluminium.content,
+            textLongNew6 = InorganicContent.Reuse.content,
+
+            sourceNew1 = "../../",
+            sourceNew2 = "../../plastic-straws-scene.gif",
+            sourceNew3 = "../../styrofoam-scene.gif",
+            sourceNew4 = "../../cardboard-scene.gif",
+            sourceNew5 = "../../aluminium-scene.gif",
+            sourceNew6 = "../../reuse-scene.gif",
+        
+
+
+            
 
             onClickChain = ()=>router.push("/evaluation/inorganic")
         }

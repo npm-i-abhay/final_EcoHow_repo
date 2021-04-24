@@ -7,6 +7,9 @@ import MyBanner from '../../comps/Banner'
 import Slider from '../../comps/Slider'
 import Menu from '../../comps/Menu'
 import Button from '../../comps/Button'
+import {OrganicHelp} from '../../data/text'
+import {InorganicHelp} from '../../data/text'
+
 
 const EvaluationCont = styled.div `
         display:flex;
@@ -45,12 +48,12 @@ const EvaluationCont = styled.div `
 `
 
 export default function Evalution ({
-    labelTextChain1= "",
-    labelTextChain2= "",
-    labelTextChain3= "",
+    labelTextChain1= "How strong is your knowledge of composting & organic waste?",
+    labelTextChain2= "Do you have a compost at home or in your building?",
+    labelTextChain3= "How often do use your compost a week?",
     routeToChain2 = "",
     onClickChain = ()=> {},
-    hintChain4 = ""
+    hintChain4 = OrganicHelp.Evaluation.content
 
 
 
@@ -63,8 +66,11 @@ export default function Evalution ({
     if (evaluation === "inorganic")
 
     {
-       routeToChain2="/subcat/inorganic"
-       hintChain4 = "blarg blarg more blarg"
+        labelTextChain1= "Do you understand how to sort recyclable items?",
+        labelTextChain2= "Do you remember to recycle items properly at home?",
+        labelTextChain3= "Do you purchase second-hand items?",
+        routeToChain2="/subcat/inorganic"
+        hintChain4 = InorganicHelp.Evaluation.content
     }
 
     const [valOne, setVal] = useState (0)
@@ -76,12 +82,22 @@ const handleResult = ()=>
      {
          if (valOne - (-valTwo)- (-valThree) < 150 && evaluation === "inorganic")
          {
-            setEvRoute(()=>router.push("/tips/inorganicBad"))
+            setEvRoute(()=>router.push("/tips/inorganicbad"))
          }
 
          if (valOne - (-valTwo)- (-valThree) >= 150 && evaluation === "inorganic" )
          {
-            setEvRoute(()=>router.push("/tips/inorganicGood"))
+            setEvRoute(()=>router.push("/tips/inorganicgood"))
+         }
+
+         if (valOne - (-valTwo)- (-valThree) < 150 && evaluation === "organic")
+         {
+            setEvRoute(()=>router.push("/tips/organicbad"))
+         }
+
+         if (valOne - (-valTwo)- (-valThree) >= 150 && evaluation === "organic" )
+         {
+            setEvRoute(()=>router.push("/tips/organicgood"))
          }
         //  =============================================================================
          if (valOne - (-valTwo)- (-valThree) < 150 && evaluation === "organic")
