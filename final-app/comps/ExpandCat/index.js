@@ -38,14 +38,14 @@ transition:all 1s;
             
             .labelText, .labelIcon
             {
-                // display:${props => props.displayLabel};
-                // align-items:center;
-                // justify-content:center;
-                // font-size:2em;
-                // color:black;
-                // white-space:no-wrap;
-                // font-weight:900;
-                // z-index:1;
+                display:flex;
+                margin-top:2.2em;
+                align-items:center;
+                justify-content:center;
+                font-size:2em;
+                color:black;
+                font-weight:900;
+                z-index:1;
                 
             }
     }
