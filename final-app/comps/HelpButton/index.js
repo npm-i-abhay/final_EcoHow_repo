@@ -39,13 +39,13 @@ const MakeHelp = ({
 })=>
 {   
     var helpFadeIn = 0
-    var leftIn = -500
+    var leftIn = -100
     const[help, setHelp] = useState(false)
  
         if (help)
         {
             helpFadeIn=1
-            leftIn = 15
+            leftIn = 30
         }
  
     return <Wrapper> 

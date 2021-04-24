@@ -12,7 +12,7 @@ const AnimTextCont = styled.div`
 width:90vw;
 position:relative;
 height:${props => props.expansion};
-border:1px solid #376293;
+border:3px solid green;
 border-radius:12px;
 display:flex;
 margin-top:1.5em;
@@ -21,7 +21,6 @@ justify-content:space-between;
 align-items:center;
 // box-shadow:1px 1px 10px 1px  lightgrey;
 transition:all 1s;
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 
     .labelContainer

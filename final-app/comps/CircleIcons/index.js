@@ -22,7 +22,7 @@ font-size:2em;
 const MakeIcon = ({
     
     text= '\u21FD',
-    routeTo= window.history.back()
+    routeTo=""
 })=>
 {   const router = useRouter();
     return <IconContainer onClick={()=>router.push(routeTo)}> 

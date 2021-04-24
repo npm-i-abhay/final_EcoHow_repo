@@ -19,7 +19,7 @@ position:relative;
 
 const HeroContainer = ({
     borderRadius="50px",
-    source = "/page1.gif"
+    source = "/team4.gif"
 })=>
 {
     return  <GifContainer>

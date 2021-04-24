@@ -75,24 +75,6 @@ export default function Tips ({
     screenHeight= 620
 })
 {
-    const Page = () =>{
-	//set a state here
-	const [radioVal, setRadioVal] = useState("");
-	
-	//when a button is click
-	const HandleClick = () => {
-		if(radioVal === "male"){
-			alert("MALE!")	
-		}
-	}
-	return <div>
-		<RadioComp onClick={(e)=>setRadioVal(e.target.value)} />
-	</div>
-}
-
-
-    
-    
     return <TipsCont >
        
        <Head>
