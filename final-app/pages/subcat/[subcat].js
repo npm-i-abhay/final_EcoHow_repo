@@ -27,7 +27,7 @@ const SubCatCont = styled.div `
     flex-direction:column;
     height:100%;
     width:100vw;
-    background-color:#376293;
+    // background-color:#376293;
     align-items:center;
 
     .banner
@@ -101,7 +101,7 @@ export default function SubCat (
             textLongNew5 = InorganicContent.Aluminium.content,
             textLongNew6 = InorganicContent.Reuse.content,
 
-            sourceNew1 = "../../",
+            sourceNew1 = "../../plasticbag.gif",
             sourceNew2 = "../../plastic-straws-scene.gif",
             sourceNew3 = "../../styrofoam-scene.gif",
             sourceNew4 = "../../cardboard-scene.gif",

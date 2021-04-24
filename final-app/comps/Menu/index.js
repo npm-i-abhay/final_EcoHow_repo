@@ -130,6 +130,7 @@ const Menu = ({
                     <MenuItemsConatiner 
                     righty={rightPosition}
                     showMenu = {revealMenu}>
+                    
                         
                             <MenuItemsHead>Home</MenuItemsHead>
                             <MenuItemsHead>Categories</MenuItemsHead>
