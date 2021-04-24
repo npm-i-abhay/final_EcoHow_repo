@@ -11,10 +11,9 @@ const QuizCont = styled.div`
 
 
 const RadioComp = ({
-	onClick=()=>{}	//past the radio button value back out
+	onClick=()=>{}	
 }) =>{
-	
-	//w3 radio example, pass the click handler back out
+
 	return <QuizCont>
 		<input type="radio" id="male" name="gender" value="male" onClick={onClick} />
 		<label for="male">Male</label>
