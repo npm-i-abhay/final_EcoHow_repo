@@ -51,7 +51,7 @@ export default function Evalution ({
     labelTextChain1= "How strong is your knowledge of composting & organic waste?",
     labelTextChain2= "Do you have a compost at home or in your building?",
     labelTextChain3= "How often do use your compost a week?",
-    routeToChain2 = "",
+    routeToChain2 = "/subcat/organic",
     onClickChain = ()=> {},
     hintChain4 = OrganicHelp.Evaluation.content
 
@@ -90,6 +90,16 @@ const handleResult = ()=>
             setEvRoute(()=>router.push("/tips/inorganicgood"))
          }
 
+         if (valOne - (-valTwo)- (-valThree) < 150 && evaluation === "organic")
+         {
+            setEvRoute(()=>router.push("/tips/organicbad"))
+         }
+
+         if (valOne - (-valTwo)- (-valThree) >= 150 && evaluation === "organic" )
+         {
+            setEvRoute(()=>router.push("/tips/organicgood"))
+         }
+        //  =============================================================================
          if (valOne - (-valTwo)- (-valThree) < 150 && evaluation === "organic")
          {
             setEvRoute(()=>router.push("/tips/organicbad"))
