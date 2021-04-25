@@ -39,7 +39,7 @@ const MakeHelp = ({
 })=>
 {   
     var helpFadeIn = 0
-    var leftIn = -100
+    var leftIn = -500
     const[help, setHelp] = useState(false)
  
         if (help)

@@ -19,7 +19,7 @@ const CategoryContainer = styled.div`
         display:;
         flex-direction:column;
         align-items: center;
-        height:100vh;
+        height:100%;
         width:100vw;
         background-color:#376293;
 
@@ -54,7 +54,7 @@ const CategoryContainer = styled.div`
 
 export default function Category ({
     routeToChain2 = "/home",
-    hintChain4 = ""
+    hintChain4 = "",
 })
 
 
@@ -63,16 +63,19 @@ export default function Category ({
     
     // var arbitSourceNew = "/empower.gif"
     const router = useRouter();
-    const [newSource, setSource] = useState("/team4.gif")
+    const [newSource, setSource] = useState("/organic.gif")
     const [newHeader, setHeader] = useState("Organic")
     const [newRoute, setRoute] = useState("/home")
+    const [newLabel, setLabel] = useState("Organic Content")
+
 
     const handleCarouselRight = ()=>
     {
 
-        setSource ("/empower.gif")
+        setSource ("/inorganic.gif")
         setHeader ("Inorganic")
         console.log(newHeader)
+        setLabel("Inorganic Content")
         // toggle = true
         // newRoute = "/evaluation"
     }
@@ -80,8 +83,9 @@ export default function Category ({
     const handleCarouselLeft = ()=>
     {
 
-        setSource ("/team4.gif")
+        setSource ("/organic.gif")
         setHeader ("Organic")
+        setLabel("Organic Content")
         // newRoute = "/tips"
         // toggle = false
     }
@@ -128,7 +132,7 @@ export default function Category ({
                 onClickLeft = {handleCarouselLeft}
                      />
 
-                <Button text="ENTER" onClick= {handleButton}/>
+                <Button text={newLabel} onClick= {handleButton}/>
                 </div>
 
                 </div>

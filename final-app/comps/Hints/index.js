@@ -16,7 +16,7 @@ transition:0.2s;
 z-index:2;
 position:absolute;
 left:${props=>props.left}px;
-top:3.5em;
+top:${props=>props.top}em;
 
 `;
 
@@ -38,16 +38,17 @@ width:80%;
 const HintCard =({
     hint="That malfunctioning little twerp. This is all his fault! He tricked me into going this way, but he'll do no better. Wait, what's that? A transport! I'm saved! Over here! Help! Please, help! Artoo-Detoo! It's you! It's you!",
     op1=1,
-    leftValue=2000
-
+    leftValue=2000,
+    top=3.5,
+    hintHeader="Help"
 })=> 
 {
         
-        return <HintCont opacity={op1} left={leftValue}>
+        return <HintCont opacity={op1} left={leftValue} top={top}>
 
     
             <Text1>
-                Help
+                {hintHeader}
             </Text1>
             <br></br>
             <Text3>

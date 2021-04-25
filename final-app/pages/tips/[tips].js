@@ -66,10 +66,11 @@ export default function Tips ({
     resultText = "ojhjkjhh",
     routeToChain2 ="",
     hintChain4 = "",
-    onClickChain = ()=>{}
+    onClickChain = ()=>{},
+    newSource="/blackbin.gif"
 })
 {
-
+    
     const router = useRouter()
     const {tips} = router.query
 
@@ -79,6 +80,7 @@ export default function Tips ({
         routeToChain2 = "/evaluation/inorganic"
         onClickChain = ()=>router.push("/quiz/question-one-inorg")
         hintChain4 = InorganicHelp.TipsGood.content
+        newSource="/bluebin.gif"
     }
     
     if (tips === "inorganicbad")
@@ -87,6 +89,7 @@ export default function Tips ({
         routeToChain2 = "/evaluation/inorganic"
         hintChain4 = InorganicHelp.TipsBad.content
         onClickChain = ()=>router.push("/quiz/question-one-inorg")
+        newSource="/blackbin.gif"
     }
     if (tips === "organicgood")
     {
@@ -94,14 +97,19 @@ export default function Tips ({
         hintChain4 = OrganicHelp.TipsGood.content
         routeToChain2 = "/evaluation/organic"
         onClickChain = ()=>router.push("/quiz/question-one-org")
+        newSource="/pot.gif"
+    
+    //ADD ALL SOURCES IN CONDTIONS
+    
     }
 
     if (tips === "organicbad")
     {
-        resultText = InorganicTips.BadTips.content
+        resultText = OrganicTips.BadTips.content
         hintChain4 = OrganicHelp.TipsBad.content
         routeToChain2 = "/evaluation/organic"
         onClickChain = ()=>router.push("/quiz/question-one-org")
+        newSource="/greenbin.gif"
     }
 
 
@@ -125,7 +133,9 @@ export default function Tips ({
                 </div>
 
                 <div className="animation container">
-                        <HeroContainer/>
+                        <HeroContainer
+                        source={newSource}
+                        />
                 </div>
                 
                 

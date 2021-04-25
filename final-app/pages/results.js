@@ -16,7 +16,7 @@ const TipsCont = styled.div `
 {
     display:flex;
     flex-direction:column;
-    height:100vh;
+    height:100%;
     width:100vw;
     background-color:#376293;
     align-items:center;
@@ -101,9 +101,7 @@ export default function Tips ({
         
         <div className="mainContainer"> 
                
-                <div className="iconHeader">
-                    <MakeIcon text="?"/>
-                </div>
+               
 
                 <div className="starsContainer">
                     <MyStar/>
