@@ -119,10 +119,10 @@ export const OrganicHints = {
 
 export const OrganicTips = {
     GoodTips:{
-        content:"Based on your score, you are helping to reduce waste in our landfills and green house gases in our envirnment. Great job!"
+        content:"Based on your score, you are helping to reduce waste in our landfills and green house gases in our environment. Great job!"
     },
     BadTips:{
-        content:"This evaluation result is suggestive, it is intended to motivate you to keep improving. Even if you are already doing great, there is always room for improvement. "
+        content:"When we throw away yard or food waste, it decomposes in the landfill. Overtime, it releases methane gas, a potent greenhouse gas."
     },
 }
 

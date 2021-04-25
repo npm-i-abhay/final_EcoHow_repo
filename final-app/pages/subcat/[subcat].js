@@ -179,7 +179,8 @@ export default function SubCat (
 
                 <MyButton
                     onClick={onClickChain}
-                    text="Next Section"/>
+                    text="Next Section"
+                    />
 
 
 
