@@ -27,7 +27,7 @@ const SubCatCont = styled.div `
     flex-direction:column;
     height:100%;
     width:100vw;
-    background-color:#376293;
+    background-color:#F5F1ED;
     align-items:center;
 
     .banner

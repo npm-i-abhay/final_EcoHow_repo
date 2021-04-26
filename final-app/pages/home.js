@@ -45,7 +45,7 @@ export default function HomePage (
                         </div>
 
                         <div className="graphic">
-                            <HeroContainer/>
+                            <HeroContainer />
 
                         </div>
 

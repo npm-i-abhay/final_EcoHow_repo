@@ -24,6 +24,7 @@ padding:15px;
 text-align:center;
 width:90%;
 height:90%;
+font-size:1.3em;
 position:relative;
 border-radius:25px;
 background-color:#21AAB5;
