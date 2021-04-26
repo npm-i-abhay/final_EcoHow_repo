@@ -9,7 +9,7 @@ const MenuContainer = styled.div `
 height:${props => props.expandMenu};
 width:100vw;
 left:0;
-border:2px solid black;
+// border:2px solid black;
 display:flex;
 // box-shadow:21px 20px 20px 6px black;
 justify-content:center;

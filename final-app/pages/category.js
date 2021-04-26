@@ -19,7 +19,7 @@ const CategoryContainer = styled.div`
         display:;
         flex-direction:column;
         align-items: center;
-        height:100%;
+        height:100vh;
         width:100vw;
         background-color:#376293;
 
@@ -72,7 +72,7 @@ export default function Category ({
     const handleCarouselRight = ()=>
     {
 
-        setSource ("/empower.gif")
+        setSource ("/inorganic.gif")
         setHeader ("Inorganic")
         console.log(newHeader)
         setLabel("Inorganic Content")
@@ -83,7 +83,7 @@ export default function Category ({
     const handleCarouselLeft = ()=>
     {
 
-        setSource ("/team4.gif")
+        setSource ("/organic.gif")
         setHeader ("Organic")
         setLabel("Organic Content")
         // newRoute = "/tips"

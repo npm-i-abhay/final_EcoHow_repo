@@ -31,7 +31,7 @@ transition:all 1s;
         height:100%;
         margin-top:2em;
         position:relative;
-        border:1px solid black;
+        // border:1px solid black;
         align-items:center;
         
         
@@ -55,6 +55,7 @@ transition:all 1s;
         opacity:${props => props.reveal};
         transition:all 1s;
         margin:1em;
+        display:${props => props.displayLots};
         
     }
 `
@@ -81,7 +82,7 @@ transition:all 1s;
  justify-content:center;
  font-size:2em;
  color:black;
-    border:2px solid red;
+    // border:2px solid red;
  white-space:no-wrap;
  font-weight:900;
  z-index:1;
@@ -103,7 +104,8 @@ transition:all 1s;
      source = "/team4.gif",
      expandBorder = "1px solid blue",
      shadowShad = "2px 2px 10px 1px  lightgrey",
-     labelDisplay = "flex"
+     labelDisplay = "flex",
+     lotsDisplay = "none"
 
  }) =>
 {   
