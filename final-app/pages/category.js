@@ -10,6 +10,7 @@ import {useState} from 'react'
 import {useRouter} from 'next/router'
 import HeroContainer from '../comps/HeroImage'
 import {OrganicHelp} from '../data/text'
+import ProgressDots from '../comps/progressDots'
 
 const CategoryContainer = styled.div`
     
@@ -51,6 +52,16 @@ const CategoryContainer = styled.div`
     }
 `
 
+const DotCont= styled.div`
+display:flex;
+align-items:center;
+justify-content:center;
+margin:.5em;
+`;
+
+
+
+
 
 export default function Category ({
     routeToChain2 = "/home",
@@ -67,6 +78,12 @@ export default function Category ({
     const [newHeader, setHeader] = useState("Organic")
     const [newRoute, setRoute] = useState("/home")
     const [newLabel, setLabel] = useState("Organic Content")
+    const [ProgressDotColour, setColour] = useState("#5EBA92")
+    const [dotWidth, setWidth] = useState("25px")
+    const [dotHeight, setHeight] = useState("25px")
+    const [ProgressDotColour2, setColour2] = useState("#F5F1ED")
+    const [dotWidth2, setWidth2] = useState("15px")
+    const [dotHeight2, setHeight2] = useState("15px")
 
 
     const handleCarouselRight = ()=>
@@ -76,8 +93,13 @@ export default function Category ({
         setHeader ("Inorganic")
         console.log(newHeader)
         setLabel("Inorganic Content")
-        // toggle = true
-        // newRoute = "/evaluation"
+        setColour("#f5f1ed")
+        setWidth("15px")
+        setHeight("15px")
+        setColour2("#5EBA92")
+        setWidth2("25px")
+        setHeight2("25px")
+
     }
   
     const handleCarouselLeft = ()=>
@@ -86,8 +108,15 @@ export default function Category ({
         setSource ("/organic.gif")
         setHeader ("Organic")
         setLabel("Organic Content")
+        setColour("#5EBA92")
+        setWidth("25px")
+        setHeight("25px")
+        setColour2("#F5F1ED")
+        setWidth2("15px")
+        setHeight2("15px")
         // newRoute = "/tips"
         // toggle = false
+
     }
 
     const handleButton = () =>
@@ -132,8 +161,21 @@ export default function Category ({
                 onClickLeft = {handleCarouselLeft}
                      />
 
+                <DotCont>      
+                    <ProgressDots
+                    width={dotWidth}
+                    height={dotHeight}
+                    dotColour={ProgressDotColour}
+                    />
+                    <ProgressDots
+                    width={dotWidth2}
+                    height={dotHeight2}
+                    dotColour={ProgressDotColour2}
+                    />
+                </DotCont>                      
                 <Button text={newLabel} onClick= {handleButton}/>
                 </div>
+       
 
                 </div>
              
