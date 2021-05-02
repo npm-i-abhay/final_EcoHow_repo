@@ -6,6 +6,7 @@ const QuizCont = styled.div`
 // display:flex;
 // width:80%;
 // flex-direction:column;
+
 `;
 
 const QuestionCont = styled.div`

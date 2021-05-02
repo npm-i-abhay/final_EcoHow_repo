@@ -16,7 +16,9 @@ const HomeContainer = styled.div`
     align-items: center;
     height:100%;
     width:100vw;
-    background-color:#376293;
+    background: linear-gradient(180deg, rgba(136, 247, 234, 0.3) -22.28%, rgba(33, 170, 181, 0.3) 78.05%),
+linear-gradient(0deg, #EDEDED, #EDEDED);
+
 
         .button
         {
@@ -45,13 +47,15 @@ export default function HomePage (
                         </div>
 
                         <div className="graphic">
-                            <HeroContainer />
+                            <HeroContainer 
+                            source="./homePage.svg"
+                            />
 
                         </div>
 
                         <div className = "button">
 
-                            <Button text="ENTER" onClick ={ ()=> router.push("/category") }/>
+                            <Button text="Start"  bgcolor="#368B8B"onClick ={ ()=> router.push("/category") }/>
 
                         </div>    
 

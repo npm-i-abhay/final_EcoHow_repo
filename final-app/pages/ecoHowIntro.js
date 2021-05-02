@@ -10,7 +10,7 @@ import {useState} from 'react'
 import {useRouter} from 'next/router'
 import HeroContainer from '../comps/HeroImage'
 import {OrganicHelp} from '../data/text'
-import CategoryCards from '../comps/CategoryCards'
+import ProgressDots from '../comps/progressDots'
 
 const CategoryContainer = styled.div`    
 
@@ -20,9 +20,13 @@ const CategoryContainer = styled.div`
         juatify-content:center;
         flex-direction:column;
         align-items: center;
-        height:100%;
+        height:100vh;
         width:100vw;
         background-color:#F5F1ED;
+        background-image:url("./ecoHowIntro.svg");
+        background-repeat:no-repeat;
+        // background-position:50% 10%;
+        background-size: 100%;
 
 
             .CatHeader
@@ -43,7 +47,16 @@ const CategoryContainer = styled.div`
                 justify-content:space-around;
     
             } 
-        
+            .buttonCont
+            {
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                justify-content:space-between;
+                height:10%;
+                // border:2px solid black;
+    
+            }
 
 
             .animCont{
@@ -51,60 +64,39 @@ const CategoryContainer = styled.div`
                 height:40vh;
                 width:50%;
             }
-}
-
-            .textCont{
-                display:flex;
-                flex-direction:column;
-                align-items:center;
-                width:70%;
-                justify-content:flex-start;
-                text-align:center;
-            }
     }
 `
+
+const TextCont= styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
+width:70%;
+justify-content:flex-start;
+text-align:center;
+
+.boldFont{
+    font-weight:bold
+}
+`;
+
+
 
 
 
 export default function Category ({
     routeToChain2 = "/home",
     hintChain4 = "",
-   
+    newLabel="Next",
 })
 
 
 {
-
-const [bgcolorChain, setbgcolor] = useState("#85817D");
-const [textChain, setText] = useState("Organic");
-const [sourceChain, setSource] = useState("./Organic.gif");
-const [shadowChain, setShadow] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
-const [bgcolorChain2, setbgcolor2] = useState("#85817D");
-const [textChain2, setText2] = useState("Inorganic");
-const [sourceChain2, setSource2] = useState("./inorganic.gif");
-
     var toggle = null
     
     // var arbitSourceNew = "/empower.gif"
     const router = useRouter();
 
-    const HandleClickOrganic = () => {
-        if (textChain==="Organic"){
-            setbgcolor("#5EBA92")
-            setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
-            setbgcolor2("#85817D")
-
-        }
-    }
-    const HandleClickInorganic = () =>{
-        if (textChain2==="Inorganic"){
-            setbgcolor2("#21AAB5")
-            setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
-            setbgcolor("#85817D")
-
-        }
-    }
-    
 
 
     const handleButton = () =>
@@ -121,6 +113,7 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
         }
     }
 
+ 
 
     return   <CategoryContainer>
                 <div className="CatContainer">
@@ -132,26 +125,27 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
                     hintChain3 = {hintChain4} />
                 </div>  
                 
-                <div className="textCont">
-                <h1>Pick a Category</h1>
-                <p>To learn about a category, tap the respective category, then hit the select button to move on to that section.</p>
+
+                <TextCont>
+                    <p>While you are enjoying EcoHow, you will gain knowledge, tips and have fun while doing so.</p>
+                </TextCont>
+               
+            
+               <div className="animCont">
+               <HeroContainer
+                source="./lightBulb.svg"
+                borderRadius="0px"
+                />
                 </div>
-                <CategoryCards
-                bgcolor={bgcolorChain}
-                text={textChain}
-                gifSource={sourceChain}
-                boxShadowDefault={shadowChain}
-                onClick={HandleClickOrganic}
-                />   
-                <CategoryCards
-                bgcolor={bgcolorChain2}
-                text={textChain2}
-                gifSource={sourceChain2}
-                boxShadowDefault={shadowChain}
-                onClick={HandleClickInorganic}
-                />             
-                <Button text="Select" onClick= {handleButton} bgcolor="#368B8B"/>
+ 
+                <TextCont>
+                    <p>Always check the help button if you are feeling lost.Now, enjoy learning! </p>
+                </TextCont>
               
+
+                <div className = "buttonCont">                    
+                <Button text={newLabel} onClick= {handleButton} bgcolor="#368B8B"/>
+                </div>
        
 
                 </div>
