@@ -10,18 +10,19 @@ import {useState} from 'react'
 import {useRouter} from 'next/router'
 import HeroContainer from '../comps/HeroImage'
 import {OrganicHelp} from '../data/text'
+import CategoryCards from '../comps/CategoryCards'
 
-const CategoryContainer = styled.div`
-    
+const CategoryContainer = styled.div`    
 
     .CatContainer 
     {
-        display:;
+        display:flex;
+        juatify-content:center;
         flex-direction:column;
         align-items: center;
         height:100vh;
         width:100vw;
-        background-color:#376293;
+        background-color:#F5F1ED;
 
 
             .CatHeader
@@ -30,6 +31,8 @@ const CategoryContainer = styled.div`
                 display:flex;
                 width:100%;
                 justify-content:space-between;
+                margin-bottom:2em;
+        
             }
             .CatBanner
             {
@@ -38,57 +41,91 @@ const CategoryContainer = styled.div`
                 display:flex;
                 flex-direction:column;
                 justify-content:space-around;
+    
             } 
-            .CatGraphic
-            {
+        
+
+
+            .animCont{
+                display:flex;
+                height:40vh;
+                width:50%;
+            }
+}
+
+            .textCont{
                 display:flex;
                 flex-direction:column;
                 align-items:center;
-                justify-content:space-between;
-                height:400px;
-                // border:2px solid black;
+                width:70%;
+                justify-content:flex-start;
+                text-align:center;
             }
     }
 `
 
 
+
 export default function Category ({
     routeToChain2 = "/home",
     hintChain4 = "",
+   
 })
 
 
 {
+
+const [bgcolorChain, setbgcolor] = useState("#85817D");
+const [textChain, setText] = useState("Organic");
+const [sourceChain, setSource] = useState("./Organic.gif");
+const [shadowChain, setShadow] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
+const [bgcolorChain2, setbgcolor2] = useState("#85817D");
+const [textChain2, setText2] = useState("Inorganic");
+const [sourceChain2, setSource2] = useState("./inorganic.gif");
+
     var toggle = null
     
     // var arbitSourceNew = "/empower.gif"
     const router = useRouter();
-    const [newSource, setSource] = useState("/organic.gif")
-    const [newHeader, setHeader] = useState("Organic")
-    const [newRoute, setRoute] = useState("/home")
-    const [newLabel, setLabel] = useState("Organic Content")
 
+    const HandleClickOrganic = () => {
+        if (textChain==="Organic"){
+            setbgcolor("#5EBA92")
+            setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
+            setbgcolor2("#85817D")
 
     const handleCarouselRight = ()=>
     {
 
+<<<<<<<<< Temporary merge branch 1
+        setSource ("/styrofoam-scene.gif")
+=========
         setSource ("/inorganic.gif")
+>>>>>>>>> Temporary merge branch 2
         setHeader ("Inorganic")
         console.log(newHeader)
         setLabel("Inorganic Content")
         // toggle = true
         // newRoute = "/evaluation"
     }
-  
-    const handleCarouselLeft = ()=>
-    {
+    const HandleClickInorganic = () =>{
+        if (textChain2==="Inorganic"){
+            setbgcolor2("#21AAB5")
+            setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
+            setbgcolor("#85817D")
 
+<<<<<<<<< Temporary merge branch 1
+        setSource ("/happyPlant.gif")
+=========
         setSource ("/organic.gif")
+>>>>>>>>> Temporary merge branch 2
         setHeader ("Organic")
         setLabel("Organic Content")
         // newRoute = "/tips"
         // toggle = false
     }
+    
+
 
     const handleButton = () =>
     {   
@@ -104,7 +141,6 @@ export default function Category ({
         }
     }
 
-    console.log(newSource)
 
     return   <CategoryContainer>
                 <div className="CatContainer">
@@ -115,25 +151,28 @@ export default function Category ({
                     routeToChain = {routeToChain2}
                     hintChain3 = {hintChain4} />
                 </div>  
-                       
-                <div className="CatBanner">
-                    <MyBanner 
-                    bgColor="#E5E5E5" bannerHeight="70px"
-                    text={newHeader}/>
+                
+                <div className="textCont">
+                <h1>Pick a Category</h1>
+                <p>To learn about a category, tap the respective category, then hit the select button to move on to that section.</p>
                 </div>
-
-                <div className = "CatGraphic"> 
-                {/* <HeroContainer
-                 borderRadius="200px"
-                 source= "/empower.gif"/> */}
-                <Carousel 
-                CarouselSource = {newSource}
-                onClick = {handleCarouselRight}
-                onClickLeft = {handleCarouselLeft}
-                     />
-
-                <Button text={newLabel} onClick= {handleButton}/>
-                </div>
+                <CategoryCards
+                bgcolor={bgcolorChain}
+                text={textChain}
+                gifSource={sourceChain}
+                boxShadowDefault={shadowChain}
+                onClick={HandleClickOrganic}
+                />   
+                <CategoryCards
+                bgcolor={bgcolorChain2}
+                text={textChain2}
+                gifSource={sourceChain2}
+                boxShadowDefault={shadowChain}
+                onClick={HandleClickInorganic}
+                />             
+                <Button text="Select" onClick= {handleButton} bgcolor="#368B8B"/>
+              
+       
 
                 </div>
              

@@ -60,7 +60,6 @@ const Carousel = (
                 <RightArrow onClick = {onClick} >
                      <AiFillCaretRight/>
                 </RightArrow>
-            
             </Wrapper>
 }
 
