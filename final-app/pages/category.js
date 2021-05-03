@@ -20,7 +20,7 @@ const CategoryContainer = styled.div`
         juatify-content:center;
         flex-direction:column;
         align-items: center;
-        height:100%;
+        height:100vh;
         width:100vw;
         background-color:#F5F1ED;
 
@@ -87,21 +87,24 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
     
     const router = useRouter();
 
-    const HandleClickOrganic = () => {
-        if (textChain==="Organic"){
+    const HandleClickOrganic = () => 
+    {
+        if (textChain==="Organic")
+        {
             setbgcolor("#5EBA92")
             setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
             setbgcolor2("#85817D")
-
         }
     }
-    const HandleClickInorganic = () =>{
-        if (textChain2==="Inorganic"){
+    const HandleClickInorganic = () =>
+    {
+        if (textChain2==="Inorganic")
+        {
             setbgcolor2("#21AAB5")
             setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
             setbgcolor("#85817D")
-
         }
+    
     }
     
     if (bgcolorChain=== "#5EBA92"){
@@ -152,4 +155,4 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
              
              
              </CategoryContainer>
-}
+        }

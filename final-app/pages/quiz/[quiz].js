@@ -6,7 +6,7 @@ import MakeIcon from '../../comps/CircleIcons'
 import MyHeader from '../../comps/RecycleInfo'
 import RadioComp from '../../comps/Quiz'
 import MyButton from '../../comps/Button'
-import MyCircle from '../../comps/CircleIcons2'
+// import MyCircle from '../../comps/CircleIcons2'
 import styled from 'styled-components'
 import Menu from '../../comps/Menu'
 import {useRouter} from 'next/router'
@@ -19,15 +19,23 @@ const QuizCont = styled.div `
 {
     display:flex;
     flex-direction:column;
-    height:100%;
+    height:100vh;
     width:100vw;
-    background-color:#376293;
+    background-color:#F5F1ED;
+    background-image: url(${props => props.imageBg}.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position-x: -10em;
+    background-position-y: 20em;
+    // background-blend-mode: overlay;
+
 
         .iconHeader
         {
             width:100%;
             display:flex;
             justify-content:space-between;
+            
         } 
         
         .banner
@@ -44,7 +52,7 @@ const QuizCont = styled.div `
             flex-direction:column
             height:50%;
             width:100%;
-            background-color:#376293;
+            // background-color:#E5E5E5;
             justify-content:center;
             margin-bottom:50px;
         }
@@ -54,8 +62,8 @@ const QuizCont = styled.div `
             flex-direction:column
             height:30%;
             width:100%;
-            background-color:#376293; 
             justify-content:space-between;
+            
             margin-bottom:10px;
         }
 
@@ -84,7 +92,9 @@ export default function Quiz ({
     q3="test",
     buttonText="Next Question",
     hintText="blarg",
-    hintHeaderText="Hint"
+    hintHeaderText="Hint",
+    bgImage = "/bluearrow",
+    bgColorChain1 = "#71C4CA"
 })
 {   
     const router = useRouter()
@@ -98,6 +108,9 @@ export default function Quiz ({
     q2="Hydrogen and Nitrogen"
     q3="Oxygen and carbon"
     hintText="One element creates energy and the other breaks organic matter."
+    bgImage = "/leafbg"
+    bgColorChain1 = "#7CC39F"
+    
     }
 
 
@@ -109,6 +122,8 @@ export default function Quiz ({
         q2="It speeds up the decomposition rate"
         q3="It may kill the kill worms, and the microorganisms"
         hintText="Citrus is very acidic and takes a very long time to decompose."
+        bgImage = "/leafbg"
+        bgColorChain1 = "#7CC39F"
     }
 
     if (quiz === "question-three-org")
@@ -120,7 +135,8 @@ export default function Quiz ({
         q3="Yes,  but only bones, they add calcium to your pile."
         buttonText="See Results"
         hintText="Do we want rodents and pests in our compost?"
-        
+        bgImage = "/leafbg"
+        bgColorChain1 = "#7CC39F"
     }
     
     if (quiz === "question-one-inorg")
@@ -157,51 +173,51 @@ export default function Quiz ({
 
 
     const handleResult = ()=>
-     {
+{
 
-    if (quiz === "question-one-inorg" && radioVal == "female")
-    {
-     
-        routeToChain2= "/tips/inorganicbad"
-        setRadioVal(()=> router.push("/quiz/question-two-inorg"))
-    }
-    if (quiz === "question-two-inorg" && radioVal == "male")
-    {
-       
-        routeToChain2= "/quiz/question-one-inorg"
-        setRadioVal(()=> router.push("/quiz/question-three-inorg"))
-    }
-    if (quiz === "question-three-inorg" && radioVal == "female")
-    {
-       
-        routeToChain2= "/quiz/question-two-inorg"
-        setRadioVal(()=> router.push("/results"))
-    }
+            if (quiz === "question-one-inorg" && radioVal == "female")
+            {
+            
+                routeToChain2= "/tips/inorganicbad"
+                setRadioVal(()=> router.push("/quiz/question-two-inorg"))
+            }
+            if (quiz === "question-two-inorg" && radioVal == "male")
+            {
+            
+                routeToChain2= "/quiz/question-one-inorg"
+                setRadioVal(()=> router.push("/quiz/question-three-inorg"))
+            }
+            if (quiz === "question-three-inorg" && radioVal == "female")
+            {
+            
+                routeToChain2= "/quiz/question-two-inorg"
+                setRadioVal(()=> router.push("/results"))
+            }
 
 
 
 // ====================================================
 
 
-if (quiz === "question-one-org" && radioVal == "male")
-    {
-        routeToChain2= "/tips/organicbad",
-        setRadioVal(()=> router.push("/quiz/question-two-org"))
-    }
+            if (quiz === "question-one-org" && radioVal == "male")
+            {
+                routeToChain2= "/tips/organicbad",
+                setRadioVal(()=> router.push("/quiz/question-two-org"))
+            }
 
-    if (quiz === "question-two-org" && radioVal == "other")
-    {
-       
-        routeToChain2= "question-one-org"
-        setRadioVal(()=> router.push("/quiz/question-three-org"))
+            if (quiz === "question-two-org" && radioVal == "other")
+            {
+            
+                routeToChain2= "question-one-org"
+                setRadioVal(()=> router.push("/quiz/question-three-org"))
 
-    }
-    if (quiz === "question-three-org" && radioVal == "female")
-    {
+            }
+            if (quiz === "question-three-org" && radioVal == "female")
+            {
 
-        routeToChain2= "/quiz/question-two-org"
-        setRadioVal(()=> router.push("/results"))
-    }
+                routeToChain2= "/quiz/question-two-org"
+                setRadioVal(()=> router.push("/results"))
+            }
 }
 	//set a state here
 	const [radioVal, setRadioVal] = useState("");
@@ -220,8 +236,7 @@ if (quiz === "question-one-org" && radioVal == "male")
 
 
 
-    return <QuizCont >
-       
+    return <QuizCont  imageBg = {bgImage} >
        <Head>
         <title> Quiz page </title>    
         </Head>
@@ -245,6 +260,7 @@ if (quiz === "question-one-org" && radioVal == "male")
                     label2={q2}
                     label3={q3}
                     />
+     
                     <MyHint 
                     op1={helpFadeIn}
                     leftValue={leftIn}
@@ -255,8 +271,14 @@ if (quiz === "question-one-org" && radioVal == "male")
                 </div>
 
                 <div className="buttonCont">
-                    <MyButton text="hint"  onClick={()=>setHelp(!help)}/>
-                    <MyButton text={buttonText} onClick={handleResult}/>
+                    <MyButton 
+                    text="hint"
+                    onClick={()=>setHelp(!help)}
+                    bgcolor="#376293"/>
+                    <MyButton 
+                    text={buttonText}
+                    onClick={handleResult}
+                    bgcolor={bgColorChain1}/>
                 </div>
 
             

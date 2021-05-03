@@ -18,6 +18,7 @@ const ButtonInput = styled.button`
  border-radius: 12px;
  border:none;
  margin-left:15px;
+ 
  margin-top: 20px;
  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
  color:white;
