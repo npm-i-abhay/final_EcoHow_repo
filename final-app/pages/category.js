@@ -20,7 +20,7 @@ const CategoryContainer = styled.div`
         juatify-content:center;
         flex-direction:column;
         align-items: center;
-        height:100vh;
+        height:100%;
         width:100vw;
         background-color:#F5F1ED;
 

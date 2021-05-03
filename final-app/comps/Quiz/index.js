@@ -29,6 +29,7 @@ flex-direction:column;
         {
          margin-left:2em;
          width:80%;
+         font-size:1.25em;
         }
       }
   }
@@ -61,7 +62,7 @@ const RadioCont = styled.div`
   &::before {
     content: '';
     border-radius: 100%;
-    border: 1px solid green;
+    border: 1px solid black;
     background:#E5E5E5;
     width: 100%;
     height: 100%;

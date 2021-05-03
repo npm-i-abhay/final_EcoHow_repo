@@ -29,7 +29,7 @@ background-color:#F5F1ED;
     flex-direction:column;
     justify-content:center;
     align-items: center;
-    height:100vh;
+    height:100%;
     width:100%;
 
         .iconHeader
