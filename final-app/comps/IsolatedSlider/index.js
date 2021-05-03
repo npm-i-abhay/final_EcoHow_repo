@@ -7,7 +7,7 @@ const sliderThumbStyles = (props) => (`
 height: 25px;
 width: 25px;
 border:1px solid black;
-background: red;
+background: #4D4945;
 border-radius: 100%;
 cursor:pointer;
 border: 1px solid black;
@@ -49,46 +49,19 @@ const SliderCont = styled.div`
     outline:none;
     height: 10px;
     border-radius:10px;
-    background: green;
+    background: ${props => props.colorBg};
 
 }
 
 `
 
-
-
-
-
-
-// export default class IsolatedSlider extends React.Component
-// {
-//     state = 
-//     {
-//         value : 50
-//     }
-
-//     handleOnChange = (e)=> this.setState ({value: e.target.value})
-
-//     render()
-//     {
-//         return (
-//             <SliderCont>
-//                    <input type="range" min={0} max={100} value={this.state.value} className = "mainSlider" onChange={this.handleOnChange}/>
-//                    <div className = "valueDisplay"> {this.state.value + "%"} </div>
-//             </SliderCont>
-//         )
-//     }
-
-// }
-
 const IsoSliderComp = ({
-  onChange = ()=>{}  
+  onChange = ()=>{},
+  bgColor = "#5EBA92"  
 }) => 
 {
 
-
-
-    return <SliderCont>
+    return <SliderCont colorBg={bgColor}>
 
             <input 
             type= "range"

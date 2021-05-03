@@ -4,10 +4,9 @@ import styled from 'styled-components'
 const Banner = styled.div `
 height:${props => props.dynamicHeight};
 width:100%;
-background-color:${props => props.background};
-// margin-top:2em;
+border:2px solid yellow;
 
-text-align:center;
+// text-align:left;
 font-size:1.5em;
 display:flex;
 justify-content:${props => props.alignment};
@@ -20,15 +19,13 @@ const MyBanner = (
     {
         text ="your tips",
         textColor = "black",
-        justifyText = "center",
+        justifyText = "left",
         bannerHeight= "38px",
-        bgColor = "#5EBA92"
     })=>
 {
     return <Banner 
             alignment={justifyText}
             dynamicHeight={bannerHeight}
-            background = {bgColor}
             colorOfText = {textColor}> {text} </Banner>
 }
 
