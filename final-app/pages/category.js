@@ -88,44 +88,25 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
     // var arbitSourceNew = "/empower.gif"
     const router = useRouter();
 
-    const HandleClickOrganic = () => {
-        if (textChain==="Organic"){
+    const HandleClickOrganic = () => 
+    {
+        if (textChain==="Organic")
+        {
             setbgcolor("#5EBA92")
             setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
             setbgcolor2("#85817D")
-
-    const handleCarouselRight = ()=>
-    {
-
-<<<<<<<<< Temporary merge branch 1
-        setSource ("/styrofoam-scene.gif")
-=========
-        setSource ("/inorganic.gif")
->>>>>>>>> Temporary merge branch 2
-        setHeader ("Inorganic")
-        console.log(newHeader)
-        setLabel("Inorganic Content")
-        // toggle = true
-        // newRoute = "/evaluation"
+        }
     }
-    const HandleClickInorganic = () =>{
-        if (textChain2==="Inorganic"){
+    const HandleClickInorganic = () =>
+    {
+        if (textChain2==="Inorganic")
+        {
             setbgcolor2("#21AAB5")
             setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
             setbgcolor("#85817D")
-
-<<<<<<<<< Temporary merge branch 1
-        setSource ("/happyPlant.gif")
-=========
-        setSource ("/organic.gif")
->>>>>>>>> Temporary merge branch 2
-        setHeader ("Organic")
-        setLabel("Organic Content")
-        // newRoute = "/tips"
-        // toggle = false
-    }
+        }
     
-
+    }
 
     const handleButton = () =>
     {   
@@ -179,4 +160,4 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
              
              
              </CategoryContainer>
-}
+        }

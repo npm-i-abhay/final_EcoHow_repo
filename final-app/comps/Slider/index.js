@@ -10,7 +10,11 @@ display:flex;
 flex-direction:column;
 align-items:center;
 width:100%;
+height:100%;
 justify-content:space-around;
+background-color:${props=> props.colorBg};
+box-sizing:border-box;
+border:2px solid red;
 `
 
 const TextContainer = styled.div`
@@ -19,13 +23,13 @@ width:70%;
 margin-bottom:1em;
 color:#;
 justify-content:${props => props.alignment};
-color:#F5F1ED;
+color:black;
 `
 const OptionsContainer = styled.div`
 display:flex;
 justify-content:space-around;
 width:342px;
-color:#F5F1ED;
+color:Black;
 font-weight:900;
 
 `
@@ -48,14 +52,16 @@ margin:.5em;
 const Slider = ({
 Labeltext="How strong is your knowledge of composting & organic waste?",
 justify="center",
-onChangeTwo = ()=> {}
+onChangeTwo = ()=> {},
+bgColor="#CBE3E2"
 })=>
 {   
     
 
-    return <MainContainer>
+    return <MainContainer colorBg= {bgColor}>
 
 
+                    
                     <TextContainer alignment={justify}>  
                         {Labeltext}
                     </TextContainer>

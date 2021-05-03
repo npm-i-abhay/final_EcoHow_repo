@@ -22,12 +22,12 @@ const QuizCont = styled.div `
     height:100vh;
     width:100vw;
     background-color:#F5F1ED;
-    background-image: url(/bluearrowbg.png);
+    background-image: url(${props => props.imageBg}.png);
     background-size:contain;
     background-repeat:no-repeat;
     background-position-x: -10em;
     background-position-y: 20em;
-    background-blend-mode: overlay;
+    // background-blend-mode: overlay;
 
 
         .iconHeader
@@ -62,8 +62,8 @@ const QuizCont = styled.div `
             flex-direction:column
             height:30%;
             width:100%;
-            // background-color:#376293; 
             justify-content:space-between;
+            
             margin-bottom:10px;
         }
 
@@ -92,7 +92,9 @@ export default function Quiz ({
     q3="test",
     buttonText="Next Question",
     hintText="blarg",
-    hintHeaderText="Hint"
+    hintHeaderText="Hint",
+    bgImage = "/bluearrow",
+    bgColorChain1 = "#71C4CA"
 })
 {   
     const router = useRouter()
@@ -106,6 +108,9 @@ export default function Quiz ({
     q2="Hydrogen and Nitrogen"
     q3="Oxygen and carbon"
     hintText="One element creates energy and the other breaks organic matter."
+    bgImage = "/leafbg"
+    bgColorChain1 = "#7CC39F"
+    
     }
 
 
@@ -117,6 +122,8 @@ export default function Quiz ({
         q2="It speeds up the decomposition rate"
         q3="It may kill the kill worms, and the microorganisms"
         hintText="Citrus is very acidic and takes a very long time to decompose."
+        bgImage = "/leafbg"
+        bgColorChain1 = "#7CC39F"
     }
 
     if (quiz === "question-three-org")
@@ -128,7 +135,8 @@ export default function Quiz ({
         q3="Yes,  but only bones, they add calcium to your pile."
         buttonText="See Results"
         hintText="Do we want rodents and pests in our compost?"
-        
+        bgImage = "/leafbg"
+        bgColorChain1 = "#7CC39F"
     }
     
     if (quiz === "question-one-inorg")
@@ -228,7 +236,7 @@ export default function Quiz ({
 
 
 
-    return <QuizCont >
+    return <QuizCont  imageBg = {bgImage} >
        <Head>
         <title> Quiz page </title>    
         </Head>
@@ -263,8 +271,14 @@ export default function Quiz ({
                 </div>
 
                 <div className="buttonCont">
-                    <MyButton text="hint"  onClick={()=>setHelp(!help)}/>
-                    <MyButton text={buttonText} onClick={handleResult}/>
+                    <MyButton 
+                    text="hint"
+                    onClick={()=>setHelp(!help)}
+                    bgcolor="#376293"/>
+                    <MyButton 
+                    text={buttonText}
+                    onClick={handleResult}
+                    bgcolor={bgColorChain1}/>
                 </div>
 
             
