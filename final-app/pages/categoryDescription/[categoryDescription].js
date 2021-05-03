@@ -85,6 +85,8 @@ export default function Category ({
     heading="Organic",
     catDescription="The organic sectcion will teach you about composting, we will share insight on different materials that can help create balanced compost Click “enter” to begin",
     bgcolor1="#5EBA92",
+    gifSource="",
+    onClickChain = ()=> {}
 })
 
 
@@ -93,23 +95,23 @@ export default function Category ({
     const {categoryDescription} = router.query
 
     if (categoryDescription == "organic"){
+        heading="Organic",
+        catDescription="The organic sectcion will teach you about composting, we will share insight on different materials that can help create balanced compost Click “enter” to begin",
+        bgcolor1="#5EBA92",
+        gifSource="../organic-2.gif"
+        onClickChain = ()=>router.push("/subcat/organic")
 
     }
 
+    if (categoryDescription == "inorganic"){
+        heading="Inorganic",
+        catDescription="The inorganic sectcion will talk about non-green waste, we will teach you about the proper ways to dispose of waste and recycle. Click “enter” to begin",
+        bgcolor1="#71C4CA",
+        gifSource="../inorganic-2.gif"
+        onClickChain = ()=>router.push("/subcat/inorganic")
 
-    const handleButton = () =>
-    {   
-        if (newHeader === "Inorganic")
-        {
-            setRoute(()=>router.push("./subcat/inorganic"))
-            
-        }
-        if (newHeader === "Organic")
-        {
-            setRoute(()=>router.push("./subcat/organic"))
-            hintChain4 = OrganicHelp.CategorySelection.content
-        }
     }
+
 
  
 
@@ -126,7 +128,7 @@ export default function Category ({
 
                <div className="animCont">
                <HeroContainer
-                source="../organic-2.gif"
+                source={gifSource}
                 borderRadius="0px"
                 />
                 </div>
@@ -139,7 +141,7 @@ export default function Category ({
               
 
                 <div className = "buttonCont">                    
-                <Button text="Enter"  bgcolor={bgcolor1}/>
+                <Button text="Enter"  bgcolor={bgcolor1} onClick={onClickChain}/>
                 <Button text="Back to Categories"  bgcolor="#368B8B"/>
                 </div>
        

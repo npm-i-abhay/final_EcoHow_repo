@@ -10,7 +10,7 @@ margin-top:.5em;
 `
 
 const ContainerImage = styled.img`
-object-fit:cover;
+object-fit:contain;
 height:100%;
 width:100%;
 border-radius:${props => props.radius};

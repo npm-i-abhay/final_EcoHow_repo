@@ -88,15 +88,14 @@ export default function Category ({
     routeToChain2 = "/home",
     hintChain4 = "",
     newLabel="Next",
+    onClick = () =>{}
 })
 
 
 {
-    var toggle = null
-    
-    // var arbitSourceNew = "/empower.gif"
+  
     const router = useRouter();
-
+    onClick = ()=>router.push("category")
 
 
     const handleButton = () =>
@@ -144,7 +143,7 @@ export default function Category ({
               
 
                 <div className = "buttonCont">                    
-                <Button text={newLabel} onClick= {handleButton} bgcolor="#368B8B"/>
+                <Button text={newLabel} onClick= {onClick} bgcolor="#368B8B"/>
                 </div>
        
 

@@ -18,7 +18,7 @@ const ResultsCont = styled.div `
 {
     display:flex;
     flex-direction:column;
-    height:100vh;
+    height:100%;
     width:100vw;
     justify-content:space-around;
     background-color:#F5F1ED;
@@ -27,7 +27,7 @@ const ResultsCont = styled.div `
 
         .yourResult
         {
-            border:2px solid red;
+    
             align-items:center;
             // height:100%;
             display:flex;
