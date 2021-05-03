@@ -1,16 +1,10 @@
 import Head from 'next/head'
 import React from 'react'
 import styled from 'styled-components'
-import MakeIcon from '../comps/CircleIcons'
-import MyBanner from '../comps/Banner'
 import Button from '../comps/Button'
 import Menu from '../comps/Menu'
-import Carousel from '../comps/Carousel'
-import {useState} from 'react'
-import {useRouter} from 'next/router'
 import HeroContainer from '../comps/HeroImage'
-import {OrganicHelp} from '../data/text'
-import ProgressDots from '../comps/progressDots'
+import {useRouter} from 'next/router'
 
 const CategoryContainer = styled.div`    
 
@@ -86,30 +80,14 @@ export default function Category ({
     routeToChain2 = "/home",
     hintChain4 = "",
     newLabel="Next",
+    onClick = () =>{}
 })
 
 
 {
-    var toggle = null
-    
-    // var arbitSourceNew = "/empower.gif"
-    const router = useRouter();
+   const router = useRouter();
+   onClick = ()=>router.push("ecoHowIntro")
 
-
-
-    const handleButton = () =>
-    {   
-        if (newHeader === "Inorganic")
-        {
-            setRoute(()=>router.push("./subcat/inorganic"))
-            
-        }
-        if (newHeader === "Organic")
-        {
-            setRoute(()=>router.push("./subcat/organic"))
-            hintChain4 = OrganicHelp.CategorySelection.content
-        }
-    }
 
  
 
@@ -139,7 +117,7 @@ export default function Category ({
               
 
                 <div className = "buttonCont">                    
-                <Button text={newLabel} onClick= {handleButton} bgcolor="#368B8B"/>
+                <Button text={newLabel} onClick= {onClick} bgcolor="#368B8B"/>
                 </div>
        
 

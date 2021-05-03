@@ -1,50 +1,95 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ResultsCont = styled.div`
-display:flex;
-flex-direction: column;
-justify-content:center;
-align-items:center;
-width:80%;
+
+
+const Wrapper = styled.div`
+width:100%;
 height:100%;
-margin:2em;
-position:relative;
-border-radius:53px;
-background-color:#5EBA92;
-`;
-
-const ResultsTextCont = styled.div`
 display:flex;
 justify-content:center;
 align-items:center;
-color:white;
-font-size:14px;
-padding:15px;
-text-align:center;
-width:90%;
-height:90%;
-font-size:1.3em;
-position:relative;
-border-radius:25px;
-background-color:#21AAB5;
+flex-direction:column;
+
+.heading{
+    font-size:2em;
+    width:70%;
+    text-align:center;
+}
+
 `;
 
 
+
+
+
+const ResultsCont = styled.div`
+height:100%;
+width:80%;
+background-color:#5EBA92;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+border-radius:11px;
+padding:1em;
+opacity:0.8;
+
+.textCont{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    // width:80%;
+    // height:60%;
+}
+
+
+`;
+
+
+const GifContainer = styled.div`
+background-color:white;
+height:70%;
+width:80%;
+margin:2em;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+ `;
+
+const GifImage = styled.img`
+object-fit:cover;
+height:100%;
+width:100%;
+position:relative;
+border-radius:10px;
+`;
 
 
 
 const Results = ({
-    text="Abhay sucks Abhay Steve miller Henry Leung The fearless flyers Test",
+    text="Based on your score, you are doing a great job at keeping your personal waste generation at a minimum. You are keeping our environment healthy" ,
+    gifSource = "../blackbin.gif",
+    heading="You are doing a great job!"
 }) => {
 
-    return (
-    <ResultsCont>
-        <ResultsTextCont>
-            {text}
-            {/* <ResultsText>{text}</ResultsText> */}
-        </ResultsTextCont>
-    </ResultsCont>
+    return (<Wrapper>
+    
+            <p className="heading">{heading}</p>
+            
+            <ResultsCont>          
+                <GifContainer>
+                    
+                    <GifImage src={gifSource}></GifImage>
+                
+                </GifContainer>
+                <div className="textCont">
+                {text}
+                </div>
+            </ResultsCont>
+        </Wrapper>
     )
 }
 

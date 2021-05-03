@@ -69,12 +69,13 @@ const CategoryContainer = styled.div`
 export default function Category ({
     routeToChain2 = "/home",
     hintChain4 = "",
+    onClickChain = ()=> {}
    
 })
 
 
 {
-
+const [route, setRoute] = useState("");
 const [bgcolorChain, setbgcolor] = useState("#85817D");
 const [textChain, setText] = useState("Organic");
 const [sourceChain, setSource] = useState("./Organic.gif");
@@ -83,9 +84,7 @@ const [bgcolorChain2, setbgcolor2] = useState("#85817D");
 const [textChain2, setText2] = useState("Inorganic");
 const [sourceChain2, setSource2] = useState("./inorganic.gif");
 
-    var toggle = null
     
-    // var arbitSourceNew = "/empower.gif"
     const router = useRouter();
 
     const HandleClickOrganic = () => {
@@ -105,21 +104,15 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
         }
     }
     
-
-
-    const handleButton = () =>
-    {   
-        if (newHeader === "Inorganic")
-        {
-            setRoute(()=>router.push("./subcat/inorganic"))
-            
-        }
-        if (newHeader === "Organic")
-        {
-            setRoute(()=>router.push("./subcat/organic"))
-            hintChain4 = OrganicHelp.CategorySelection.content
-        }
+    if (bgcolorChain=== "#5EBA92"){
+        onClickChain = ()=>router.push("/categoryDescription/organic")
     }
+    
+    
+    if (bgcolorChain2 === "#21AAB5"){
+        onClickChain = ()=>router.push("/categoryDescription/inorganic")
+    }
+
 
 
     return   <CategoryContainer>
@@ -150,7 +143,7 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
                 boxShadowDefault={shadowChain}
                 onClick={HandleClickInorganic}
                 />             
-                <Button text="Select" onClick= {handleButton} bgcolor="#368B8B"/>
+                <Button text="Select" onClick={onClickChain} bgcolor="#368B8B"/>
               
        
 

@@ -18,17 +18,19 @@ import {OrganicHelp} from '../../data/text'
 
 
 const TipsCont = styled.div `
-
+display:flex;
+flex-direction:column;
+justify-content:center;
+background-color:#F5F1ED;
 
 .mainContainer
 {
     display:flex;
     flex-direction:column;
-    // justify-content:space-evenly;
+    justify-content:center;
     align-items: center;
-    height:100%;
-    width:100%  ;
-    background-color:#376293;
+    height:100vh;
+    width:100%;
 
         .iconHeader
         {
@@ -46,15 +48,9 @@ const TipsCont = styled.div `
             flex-direction:column;
             justify-content:space-around;
         }
-        .containerAndButton
-        {
+        .buttonCont{
             width:100%;
-            height:500px;
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            justify-content:space-between;
-
+            margin:2em;
         }
 }
 
@@ -123,34 +119,20 @@ export default function Tips ({
         <div className="mainContainer"> 
                 <div className="hamburger">
                         <Menu 
-                            routeToChain = {routeToChain2}
-                            hintChain3 =    {hintChain4} />
+                        routeToChain = {routeToChain2}
+                        hintChain3 =    {hintChain4} />
                 </div>
+                    
+                <Results
+                text = {resultText}/>
+                    
                 
-                <div className="banner">
-                        {/* <MyBanner bgColor="#E5E5E5" /> */}
-                        <MyBanner textColor="#E5E5E5"/> 
-                </div>
-
-                <div className="animation container">
-                        <HeroContainer
-                        source={newSource}
-                        />
-                </div>
-                
-                
-                <div className = "containerAndButton" >
-                    <Results
-                        text = {resultText}/>
+                <div className="buttonCont">
                     <Button 
                     text="Test Your Knowledge"
                     onClick = {onClickChain}
                     />
-                </div>
-                
-               
-             
-
+                </div>    
              </div>
         </TipsCont>
 }

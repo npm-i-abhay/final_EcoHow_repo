@@ -55,7 +55,7 @@ export default function HomePage (
 
                         <div className = "button">
 
-                            <Button text="Start"  bgcolor="#368B8B"onClick ={ ()=> router.push("/category") }/>
+                            <Button text="Start"  bgcolor="#368B8B"onClick ={ ()=> router.push("/teamIntro") }/>
 
                         </div>    
 
