@@ -167,7 +167,7 @@ export const InorganicTips = {
         content:"Based on your score, you are doing a great job at keeping your personal waste generation at a minimum. You are keeping our environment healthy"
     },
     BadTips:{
-        content:"Based on your score, you may want to continue to do research on proper recycling. The canadian overnemnt has a great resource that guides you how to become more knowledgeable. Finally, consider shopping at second-hand stores, this resourceful act cam reduce waste generation "
+        content: "Based on your score, you may want to continue to do research on proper recycling. The canadian governemnt has a great resource that guides you and helps you become more knowledgeable.Finally, consider shopping at second-hand stores,this resourceful act can reduce waste generation"
     },
 }
 

@@ -80,7 +80,7 @@ export default function Tips ({
         routeToChain2 = "/evaluation/inorganic"
         onClickChain = ()=>router.push("/quiz/question-one-inorg")
         hintChain4 = InorganicHelp.TipsGood.content
-        newSource="/bluebin.gif"
+        newSource="/bluebins.gif"
     }
     
     if (tips === "inorganicbad")

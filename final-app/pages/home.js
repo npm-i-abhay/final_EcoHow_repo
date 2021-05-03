@@ -14,7 +14,7 @@ const HomeContainer = styled.div`
     display:flex;
     flex-direction:column;
     align-items: center;
-    height:100%;
+    height:100vh;
     width:100vw;
     background: linear-gradient(180deg, rgba(136, 247, 234, 0.3) -22.28%, rgba(33, 170, 181, 0.3) 78.05%),
 linear-gradient(0deg, #EDEDED, #EDEDED);
