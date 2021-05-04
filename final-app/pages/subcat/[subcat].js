@@ -9,7 +9,7 @@ import {useRouter} from 'next/router'
 import {OrganicHelp} from '../../data/text'
 import {OrganicCards} from '../../data/text'
 import {InorganicCards} from '../../data/text'
-
+import styles from '../../styles/main.module.css'
 const SubCatCont = styled.div `
 
 .mainContainer
@@ -66,7 +66,7 @@ export default function SubCatMapped (
           onClickChain = ()=>router.push("/evaluation/inorganic")
         }
 
-    return <SubCatCont >
+    return <SubCatCont  >
        
        <Head>
         <title> tips page </title>    
@@ -91,7 +91,7 @@ export default function SubCatMapped (
                     justifyText="left"
                     bannerHeight="50px"/>
 
-                    <p className="instruction"> 
+                    <p className={styles.content}> 
                       Expand the card to read about each section  
                     </p>
                 </div>

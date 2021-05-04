@@ -3,6 +3,7 @@ import HeroContainer from '../HeroImage'
 import {BsFillCaretDownFill} from 'react-icons/bs';
 import React from 'react';
 import {useState} from 'react';
+import styles from '../../styles/main.module.css'
 
 
 const ExpansionCont = styled.div`
@@ -50,13 +51,23 @@ transition:all 1s;
             }
     }
 
-    .textLots
+    .textAndStatFlex
     {
-        opacity:${props => props.reveal};
-        transition:all 1s;
-        margin:1em;
-        display:${props => props.displayLots};
-        
+        // border:2px solid red;
+        display:flex;
+        height:100%;
+        flex-direction:column;
+        align-items:center;
+
+        .textLots
+        {
+            opacity:${props => props.reveal};
+            transition:all 1s;
+            transition-delay:.5s;
+            margin:1em;
+            display:${props => props.displayLots};
+            
+        }
     }
 `
 const CategoryAnim = styled.img `
@@ -67,7 +78,7 @@ width:100%;
 border-radius:${props => props.radius};
 position:absolute;
 filter: ${props => props.blury};
-opacity:.5;
+// opacity:.5;
 z-index:0;
 border-radius:10px;
 transition:all 1s;
@@ -77,7 +88,7 @@ transition:all 1s;
         
  const LabelText = styled.div `
  
- display:${props => props.displayLabel};
+ opacity:${props => props.displayLabel};
  align-items:center;
  justify-content:center;
  font-size:2em;
@@ -86,12 +97,21 @@ transition:all 1s;
  white-space:no-wrap;
  font-weight:900;
  z-index:1;
+ transition: .5s;
  
  
  `           
 
 
-
+const StatGraphic = styled.img 
+`
+object-fit:contain;
+height:${props => props.heightStat};
+width:${props => props.widthStat};
+position:relative;
+transition: all 1s;
+transition-delay:.5s;
+`
 
 
  const Expander = ({
@@ -100,12 +120,14 @@ transition:all 1s;
      expandHeight = "15vh",
      showDisplay= 0,
      imageHeight = "100%",
-     imageblur = "blur(0px)",
+     imageblur = "blur(2px)",
      source = "/team4.gif",
      expandBorder = "1px solid blue",
      shadowShad = "2px 2px 10px 1px  lightgrey",
-     labelDisplay = "flex",
-     lotsDisplay = "none"
+     labelDisplay = "1",
+     lotsDisplay = "none",
+     statHeight = "0",
+     statWidth = "0"
 
  }) =>
 {   
@@ -113,16 +135,20 @@ transition:all 1s;
 
     if (expand)
     {
-        expandHeight = "70vh"
+        expandHeight = "100vh"
         showDisplay= 1
-        imageHeight = "70%"
+        imageHeight = "30%"
         imageblur = "blur(0px)"
         expandBorder = "1px solid green"
         shadowShad = "4px 4px 10px 3px  lightgrey"
+        labelDisplay = "0"
+        statHeight = "50%"
+        statWidth = "50%"
+
     }
 
 
-    return <ExpansionCont> 
+    return <ExpansionCont className = {styles.content} > 
 
 
                 <AnimTextCont 
@@ -134,24 +160,27 @@ transition:all 1s;
                          
                      
                         <div className = "labelContainer" > 
-                         
-                        
-                            
-                            <LabelText displayLabel = {labelDisplay}>
+                            <LabelText 
+                            displayLabel = {labelDisplay}>
                                 {text}
-                                </LabelText>
+                            </LabelText>
+                        </div>
+
 
                          
-                        </div>
 
                         <CategoryAnim 
                         src={source}
                         heightImage = {imageHeight}
                         blury={imageblur}/>
                        
-                       
-                        <div className="textLots"> 
-                        {textLong}</div>
+                       <div className="textAndStatFlex">
+                        
+                            <StatGraphic heightStat={statHeight} widthStat={statWidth} src="/statbars.svg" />
+                            <div className={"textLots"}> 
+                            {textLong}</div>
+
+                        </div>
                        
 
             
