@@ -86,13 +86,14 @@ export default function Category ({
     catDescription="The organic sectcion will teach you about composting, we will share insight on different materials that can help create balanced compost Click “enter” to begin",
     bgcolor1="#5EBA92",
     gifSource="",
-    onClickChain = ()=> {}
+    onClickChain = ()=> {},
 })
 
 
 {
     const router = useRouter();
     const {categoryDescription} = router.query
+  
 
     if (categoryDescription == "organic"){
         heading="Organic",
@@ -142,7 +143,7 @@ export default function Category ({
 
                 <div className = "buttonCont">                    
                 <Button text="Enter"  bgcolor={bgcolor1} onClick={onClickChain}/>
-                <Button text="Back to Categories"  bgcolor="#368B8B"/>
+                <Button text="Back to Categories" bgcolor="#368B8B"/>
                 </div>
        
 
