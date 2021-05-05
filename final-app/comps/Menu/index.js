@@ -37,15 +37,13 @@ const MenuItemsHead = styled.div `
 const MenuItemsConatiner = styled.div`
 height:100vh;
 width:100vw;
-border:5px solid red;
 display:${props => props.showMenu};
 flex-direction:column;
 justify-content:space-evenly;
 align-items:center;
 position:relative;
 right:${props=> props.righty};
-transition: all 1s;
-// transition-delay:1s;
+transition: all 1s; 
 
 .headCont
 {
@@ -58,6 +56,7 @@ height:50px;
 // box-shadow:2px 2px 10px  black;
 // background-color:lightgreen;
 text-align:center;
+cursor:pointer;
 }
 
 `

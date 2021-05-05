@@ -18,6 +18,7 @@ border-radius:8px;
 display:flex;
 margin-top:1.5em;
 flex-direction:column;
+background-color:${props => props.bgCont};
 justify-content:space-between;
 align-items:center;
 box-shadow:${props => props.shadowBox};
@@ -127,7 +128,8 @@ transition-delay:.5s;
      labelDisplay = "1",
      lotsDisplay = "none",
      statHeight = "0",
-     statWidth = "0"
+     statWidth = "0", 
+     contBg = "#21AAB540"
 
  }) =>
 {   
@@ -156,6 +158,7 @@ transition-delay:.5s;
                     borderExpand = {expandBorder}
                     shadowBox = {shadowShad}
                     reveal = {showDisplay}
+                    bgCont = {contBg}
                     onClick = {()=>setExpand(!expand)}>
                          
                      
