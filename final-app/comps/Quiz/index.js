@@ -30,6 +30,8 @@ flex-direction:column;
          margin-left:2em;
          width:80%;
          font-size:1.25em;
+         font-family: 'Montserrat', sans-serif;
+         font-weight:bold;
         }
       }
   }
@@ -51,6 +53,7 @@ border-radius: 16px;
 margin-bottom:3em;
 padding:1.5em;
 text-align:center;
+font-family: 'Montserrat', sans-serif;
 `;
 
 const RadioCont = styled.div`

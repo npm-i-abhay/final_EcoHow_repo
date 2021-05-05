@@ -39,6 +39,7 @@ opacity:0.8;
     align-items:center;
     width:80%;
     color:#f5f1ed;
+    font-family: 'Montserrat', sans-serif;
     // height:60%;
 }
 
@@ -70,6 +71,8 @@ const Heading = styled.p`
     width:70%;
     text-align:center;
     color:${props => props.color};
+    font-family: 'Spartan', sans-serif;
+    font-weight:bolder;
 
 `;
 

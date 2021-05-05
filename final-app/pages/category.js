@@ -60,6 +60,11 @@ const CategoryContainer = styled.div`
                 width:70%;
                 justify-content:flex-start;
                 text-align:center;
+                font-family: 'Spartan', sans-serif;
+
+                .par{
+                    font-family: 'Montserrat', sans-serif;
+                }
             }
     }
 `
@@ -130,7 +135,7 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
                 
                 <div className="textCont">
                 <h1>Pick a Category</h1>
-                <p>To learn about a category, tap the respective category, then hit the select button to move on to that section.</p>
+                <p className="par">To learn about a category, tap the respective category, then hit the select button to move on to that section.</p>
                 </div>
                 <CategoryCards
                 bgcolor={bgcolorChain}

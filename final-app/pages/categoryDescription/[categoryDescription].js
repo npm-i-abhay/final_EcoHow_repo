@@ -70,7 +70,11 @@ align-items:center;
 width:70%;
 justify-content:flex-start;
 text-align:center;
-
+font-family: 'Spartan', sans-serif;
+    .par{
+        font-family: 'Montserrat', sans-serif;
+        text-align:left;
+    }
 
 `;
 
@@ -137,7 +141,7 @@ export default function Category ({
                 <TextCont>
                     <h1>{heading}</h1>
                    
-                    <p>{catDescription}</p>
+                    <p className="par">{catDescription}</p>
                 </TextCont>
               
 

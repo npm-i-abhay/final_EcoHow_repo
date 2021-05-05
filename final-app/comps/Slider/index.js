@@ -22,7 +22,7 @@ const TextContainer = styled.div`
 display:flex;
 width:70%;
 margin-bottom:1em;
-
+font-family: 'Montserrat', sans-serif;
 justify-content:${props => props.alignment};
 color:black;
 `
@@ -31,7 +31,8 @@ display:flex;
 justify-content:space-around;
 width:342px;
 color:Black;
-font-weight:900;
+font-weight: 600;
+font-family: 'Montserrat', sans-serif;
 
 `
 

@@ -60,6 +60,11 @@ export const InorganicContent = {
     Reuse:{
         title:"Reuse",
         content:"The average person generates 4.4 pounds of solid waste every day. This needs to change, we all need to look out for our planet. We hope this knowledge can generate momentum. We should all be responsible for handling our waste properly, as it can help our environemnt so much. Remember, consume less and  think abut your purchases often. Always ask youself whether  what you are buying is essential, and whether you can use it for many years to come. "
+    },
+
+    Glass:{
+        title:"Glass",
+        content:"Glass has an endless capacity to be recycled. Therefore, it is a great alternative to plastic.   The crux is that billions of glass bottles are directly thrown into the garbage bin, this is an issue because glass is non-degradable. It belongs in the blue bin. "
     }
    
 }
@@ -119,10 +124,10 @@ export const OrganicHints = {
 
 export const OrganicTips = {
     GoodTips:{
-        content:"Based on your score, you are helping to reduce waste in our landfills and green house gases in our environment. Great job!"
+        content:"Based on your score, you are helping to reduce waste in our landfills and green house gases in our envirnment.Great job!"
     },
     BadTips:{
-        content:"When we throw away yard or food waste, it decomposes in the landfill. Overtime, it releases methane gas, a potent greenhouse gas."
+        content:"Based on your score, you may want to continue to do research on proper composting. Remember that if you do not compost your yard or food waste, it will decompose in the landfill. Overtime, it releases methane gas, a potent greenhouse gas.It is best to always compost you vegetables, fruits, scrap food, pet manure, garden waste, and wood "
     },
 }
 
@@ -167,7 +172,7 @@ export const InorganicTips = {
         content:"Based on your score, you are doing a great job at keeping your personal waste generation at a minimum. You are keeping our environment healthy"
     },
     BadTips:{
-        content: "Based on your score, you may want to continue to do research on proper recycling. The canadian governemnt has a great resource that guides you and helps you become more knowledgeable.Finally, consider shopping at second-hand stores,this resourceful act can reduce waste generation"
+        content: "Based on your score, you may want to continue to do research on proper recycling. The canadian governemnt has a great resource that guides you and helps you become more knowledgeable. Finally, consider shopping at second-hand stores, this resourceful act can reduce waste generation "
     },
 }
 
@@ -227,7 +232,7 @@ export const OrganicCards =
 export const InorganicCards =
 [
     {
-        sourceNew : "../../",
+        sourceNew : "../../plasticbag.gif",
         textHeadNew : InorganicContent.Plastic.title,
         textLongNew : InorganicContent.Plastic.content,
 
@@ -257,14 +262,14 @@ export const InorganicCards =
 
     },
     {
-        sourceNew : "../../reuse-scene.gif",
-        textHeadNew : InorganicContent.Reuse.title,
-        textLongNew : InorganicContent.Reuse.content,
+        sourceNew : "../../glass-scene.gif",
+        textHeadNew : InorganicContent.Glass.title,
+        textLongNew : InorganicContent.Glass.content,
     },
     {
-        sourceNew : "../../reuse-scene.gif",
-        textLongNew : InorganicContent.Reuse.content,
-        textLongNew : InorganicContent.Reuse.content,
+        sourceNew : "../../electronics-scene.gif",
+        textLongNew : InorganicContent.Electronics.title,
+        textLongNew : InorganicContent.Electronics.content,
     },
     {
         sourceNew : "../../reuse-scene.gif",
