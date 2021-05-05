@@ -1,30 +1,36 @@
-import styled from 'styled-components'
-import Button from '../Button'
-import HelpButton from '../HelpButton'
-import MakeIcon from '../CircleIcons'
-import {useRouter} from 'next/router'
+import styled from 'styled-components';
+import Button from '../Button';
+import HelpButton from '../HelpButton';
+import MakeIcon from '../CircleIcons';
+import {useRouter} from 'next/router';
 import React, {useState} from 'react';
+import styles from '../../styles/main.module.css'
+import {GiMonsteraLeaf} from 'react-icons/gi'
+import {AiTwotoneHome} from 'react-icons/ai'
+import {RiRecycleFill} from 'react-icons/ri'
+import {CgDatabase} from 'react-icons/cg'
+
 
 const MenuContainer = styled.div `
 height:${props => props.expandMenu};
 width:100vw;
 left:0;
 display:flex;
+background-color:${props => props.bgMenu};
 // box-shadow:21px 20px 20px 6px black;
 justify-content:center;
 position:realtive;
 transition:all 1s;
-
 `
 
 
 
 const MenuItemsHead = styled.div `
-border:2px solid blue;
-width:100%;
-height:30px;
-background-color:lightgreen;
-text-align:center;
+// border:2px solid blue;
+// width:100%;
+// height:30px;
+// background-color:lightgreen;
+// text-align:center;
 `
 
 
@@ -40,6 +46,20 @@ position:relative;
 right:${props=> props.righty};
 transition: all 1s;
 // transition-delay:1s;
+
+.headCont
+{
+// border:.2px solid blue;
+display:flex;
+justify-content:space-between;
+align-items:center;
+width:90%;
+height:50px;
+// box-shadow:2px 2px 10px  black;
+// background-color:lightgreen;
+text-align:center;
+}
+
 `
 
 const HamContainer = styled.div `
@@ -87,7 +107,8 @@ const Menu = ({
     hideIcons = 1,
     toggle = false,
     hintChain3 = "coding is pain but I like using rusted gears of my brain",
-    routeToChain = ""
+    routeToChain = "",
+    menuBg = "none"
     // hamieBarAlign = "center"
 })=> 
 {
@@ -101,10 +122,13 @@ const Menu = ({
         menuHeight = "100vh"
         hideIcons = 0
         toggle = (!toggle)
+        menuBg = "#5EBA9240"
         
     }
     console.log(toggle);
-    return <MenuContainer expandMenu={menuHeight} >
+    return <MenuContainer 
+            expandMenu={menuHeight}
+            bgMenu = {menuBg} >
                 
                <TopBarContainer> 
 
@@ -133,10 +157,33 @@ const Menu = ({
                     righty={rightPosition}
                     showMenu = {revealMenu}>
                         
-                            <MenuItemsHead onClick = {()=> router.push("/home")} >Home</MenuItemsHead>
-                            <MenuItemsHead onClick = {()=> router.push("/category")} >Categories</MenuItemsHead>
-                            <MenuItemsHead onClick = {()=> router.push("/subcat/organic")} >Organic Info</MenuItemsHead>
-                            <MenuItemsHead onClick = {()=> router.push("/subcat/inorganic")}>InOrganic Info</MenuItemsHead>
+                        <div onClick = {()=> router.push("/home")}className="headCont">
+                            <MenuItemsHead className = {styles.hamHead}  >Home
+                            </MenuItemsHead>
+                            <AiTwotoneHome className = {styles.hamIcons}  />
+                        </div>
+                        
+                        <div  onClick = {()=> router.push("/category")} className="headCont">
+                            <MenuItemsHead className = {styles.hamHead} 
+                            >Categories
+                            </MenuItemsHead>
+                            <CgDatabase className = {styles.hamIcons}  />
+                        </div>
+                            
+                        <div onClick = {()=> router.push("/subcat/organic")} className="headCont">
+                            <MenuItemsHead className = {styles.hamHead} 
+                             >Organic Info
+                            </MenuItemsHead>
+                            <GiMonsteraLeaf className = {styles.hamIcons}  />
+                        </div>
+                            
+                        <div onClick = {()=> router.push("/subcat/inorganic")} 
+                        className="headCont">
+                            <MenuItemsHead className = {styles.hamHead} 
+                            >Inorganic Info
+                            </MenuItemsHead>
+                            <RiRecycleFill className = {styles.hamIcons}/>
+                        </div>
                            
                 
                 </MenuItemsConatiner>

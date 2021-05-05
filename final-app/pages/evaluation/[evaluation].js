@@ -17,8 +17,14 @@ const EvaluationCont = styled.div `
         align-items: center;
         height:100%;
         width:100vw;
-        background-color:#376293;
-
+        background-color:#F5F1ED;
+        background-color:#F5F1ED;
+        background-image: url(/tree.png);
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position-x: -10em;
+        background-position-y: 20em;
+        
         .EvHeader
         {
             display:flex;
@@ -33,16 +39,26 @@ const EvaluationCont = styled.div `
 
         .EvBanner
         {
-            width:100%;
+            width:90%;
         }
 
         .SliderQuestion
         {
-            height:600px;
+            // height:600px;
             display:flex;
             flex-direction:column;
             align-items:center;
             justify-content:space-around;
+            
+            height:100%;
+        }
+
+        .sliderContainers
+        {
+            display:flex;
+            flex-direction:column;
+            justify-content:space-around;
+        
         }
 
 `
@@ -53,7 +69,10 @@ export default function Evalution ({
     labelTextChain3= "How often do use your compost a week?",
     routeToChain2 = "/subcat/organic",
     onClickChain = ()=> {},
-    hintChain4 = OrganicHelp.Evaluation.content
+    hintChain4 = OrganicHelp.Evaluation.content,
+    bgColorTrackChain1= "#5EBA92",
+    bgColorCont = "#5EBA9250",
+    buttonBg = "#70B794"
 
 
 
@@ -70,7 +89,10 @@ export default function Evalution ({
         labelTextChain2= "Do you remember to recycle items properly at home?",
         labelTextChain3= "Do you purchase second-hand items?",
         routeToChain2="/subcat/inorganic"
-        hintChain4 = InorganicHelp.Evaluation.content
+        hintChain4 = InorganicHelp.Evaluation.content,
+        bgColorTrackChain1= "#71C4CA"
+        bgColorCont = "#CBE3E270"
+        buttonBg = "#71C4CA"
     }
 
     const [valOne, setVal] = useState (0)
@@ -129,22 +151,28 @@ const handleResult = ()=>
                     text="EVALUATION"/>
                 </div>
 
-                <div className = "SliderQuestion" > 
-                    <Slider 
-                    Labeltext={labelTextChain1}
-                    onChangeTwo = {(e)=>setVal(e.target.value)}
-                    />                    
-                    <Slider
-                    Labeltext = {labelTextChain2} 
-                    onChangeTwo = {(e)=>setValTwo(e.target.value)} />
-                    <Slider
-                    Labeltext = {labelTextChain3}
-                    onChangeTwo = {(e)=>setValThree(e.target.value)}/>
+               
 
-                </div>
-        
+                        <div className = "SliderQuestion" > 
+                            <Slider 
+                            Labeltext={labelTextChain1}
+                            onChangeTwo = {(e)=>setVal(e.target.value)}
+                            bgColorTrack = {bgColorTrackChain1}
+                            bgColor = {bgColorCont}
+                            />                    
+                            <Slider
+                            Labeltext = {labelTextChain2} 
+                            onChangeTwo = {(e)=>setValTwo(e.target.value)} bgColorTrack = {bgColorTrackChain1}
+                            bgColor = {bgColorCont}/>
+                            <Slider
+                            Labeltext = {labelTextChain3}
+                            onChangeTwo = {(e)=>setValThree(e.target.value)}bgColorTrack = {bgColorTrackChain1}
+                            bgColor = {bgColorCont}/>
+
+                        </div>
                 <Button 
                 text="Lets See How You Did"
-                onClick = {handleResult} />
+                onClick = {handleResult}
+                bgcolor = {buttonBg} />
             </EvaluationCont>
 }
