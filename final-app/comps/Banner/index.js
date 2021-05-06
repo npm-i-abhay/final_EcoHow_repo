@@ -6,7 +6,7 @@ const Banner = styled.div `
 height:${props => props.dynamicHeight};
 width:100%;
 // border:2px solid yellow;
-
+font-family: 'Spartan', sans-serif;
 // text-align:left;
 font-size:2.5em;
 display:flex;

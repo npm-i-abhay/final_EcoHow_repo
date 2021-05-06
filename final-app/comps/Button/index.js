@@ -18,8 +18,9 @@ const ButtonInput = styled.button`
  width:100%;
  border-radius: 6px;
  border:none;
-//  margin-left:15px;
-//  margin-top: 20px;
+ margin-left:15px;
+ font-family: 'Montserrat', sans-serif;
+ margin-top: 20px;
  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
  color:white;
  

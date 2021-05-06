@@ -16,7 +16,7 @@ const SubCatCont = styled.div `
 {
     display:flex;
     flex-direction:column;
-    height:100%;
+    height:100vh;
     width:100vw;
     background-color:#F5F1ED;
     align-items:center;
@@ -47,7 +47,7 @@ export default function SubCatMapped (
         contBgchain = "#21AAB535",
         subCatButton = "#71C4CA"
 
-
+        onClickChain = ()=> {}
     }
 )
 {   
@@ -66,8 +66,8 @@ export default function SubCatMapped (
     if (subcat === "inorganic")
         {
             cards = InorganicCards
-            bannerText = "InOrganic"
-            onClickChain = ()=>router.push("/evaluation/inorganic")
+            bannerText="InOrganic"
+          onClickChain = ()=>router.push("/evaluation/inorganic")
         }
 
     return <SubCatCont>
@@ -119,7 +119,6 @@ export default function SubCatMapped (
                 <MyButton
                     onClick={onClickChain}
                     text="Next Section"
-                    bgcolor = {subCatButton}
                     />
         </div>
         </SubCatCont>

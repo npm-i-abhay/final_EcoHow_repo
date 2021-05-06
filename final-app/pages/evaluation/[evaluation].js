@@ -148,7 +148,7 @@ const handleResult = ()=>
                 <div className="EvBanner">
                     <MyBanner 
                     bgColor="#E5E5E5" 
-                    text="EVALUATION"/>
+                    text="Your Habits"/>
                 </div>
 
                

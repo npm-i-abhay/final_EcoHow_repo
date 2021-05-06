@@ -26,8 +26,9 @@ font-size:1.2em;
 `;
 
 const IconText = styled.span`
-font-size:2em;
+font-size:1.5em;
 color:#21aab5;
+font-family: 'Spartan', sans-serif;
 `;
 
 

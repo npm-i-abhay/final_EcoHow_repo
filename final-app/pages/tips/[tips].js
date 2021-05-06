@@ -20,8 +20,14 @@ import {OrganicHelp} from '../../data/text'
 const TipsCont = styled.div `
 display:flex;
 flex-direction:column;
+height:100%;
 justify-content:center;
 background-color:#F5F1ED;
+background-image:${props => props.bg};
+background-repeat:no-repeat;
+background-position:${props => props.bgPos};
+// background-size: 40% 30%;
+
 
 .mainContainer
 {
@@ -29,7 +35,6 @@ background-color:#F5F1ED;
     flex-direction:column;
     justify-content:center;
     align-items: center;
-    height:100%;
     width:100%;
 
         .iconHeader
@@ -49,6 +54,8 @@ background-color:#F5F1ED;
             justify-content:space-around;
         }
         .buttonCont{
+            display:flex;
+            justify-content:center;
             width:100%;
             margin:2em;
         }
@@ -63,7 +70,12 @@ export default function Tips ({
     routeToChain2 ="",
     hintChain4 = "",
     onClickChain = ()=>{},
-    newSource="/blackbin.gif"
+    newSource="/blackbin.gif",
+    newbgcolor="",
+    newHeading="Oh no...",
+    newHeadingColour="#7CC5A4",
+    tipsBackground="url(../backgroundTree.svg)",
+    backgroundPosition="0% 100%"
 })
 {
     
@@ -77,6 +89,8 @@ export default function Tips ({
         onClickChain = ()=>router.push("/quiz/question-one-inorg")
         hintChain4 = InorganicHelp.TipsGood.content
         newSource="/bluebins.gif"
+        newbgcolor="#5EBA92"
+        newHeading="Great job!"
     }
     
     if (tips === "inorganicbad")
@@ -86,6 +100,10 @@ export default function Tips ({
         hintChain4 = InorganicHelp.TipsBad.content
         onClickChain = ()=>router.push("/quiz/question-one-inorg")
         newSource="/blackbin.gif"
+        newbgcolor="#BA5E5E"
+        newHeadingColour="#C67B7B"
+        tipsBackground="url(../backgroundTree2.svg)"
+        backgroundPosition="100% 60%"
     }
     if (tips === "organicgood")
     {
@@ -93,7 +111,9 @@ export default function Tips ({
         hintChain4 = OrganicHelp.TipsGood.content
         routeToChain2 = "/evaluation/organic"
         onClickChain = ()=>router.push("/quiz/question-one-org")
-        newSource="/pot.gif"
+        newSource="/Mypot.gif"
+        newbgcolor="#5EBA92"
+        newHeading="Great job!"
     
     //ADD ALL SOURCES IN CONDTIONS
     
@@ -106,10 +126,14 @@ export default function Tips ({
         routeToChain2 = "/evaluation/organic"
         onClickChain = ()=>router.push("/quiz/question-one-org")
         newSource="/greenbin.gif"
+        newbgcolor="#BA5E5E"
+        newHeadingColour="#C67B7B"
+        tipsBackground="url(../backgroundTree2.svg)"
+        backgroundPosition="90% 70%"
     }
 
 
-    return <TipsCont >
+    return <TipsCont bg={tipsBackground} bgPos={backgroundPosition}>
        
        <Head>
         <title> tips page </title>    
@@ -124,13 +148,19 @@ export default function Tips ({
                 </div>
                     
                 <Results
-                text = {resultText}/>
+                text = {resultText}
+                gifSource={newSource}
+                bgcolor={newbgcolor}
+                heading={newHeading}
+                headingColour={newHeadingColour}
+                />
                     
                 
                 <div className="buttonCont">
                     <Button 
                     text="Test Your Knowledge"
                     onClick = {onClickChain}
+                    bgcolor="#376293"
                     />
                 </div>    
              </div>

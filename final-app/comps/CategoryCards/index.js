@@ -17,6 +17,8 @@ transition:0.5s;
 
 .textCont{
     font-size:24px;
+    font-family: 'Spartan', sans-serif;
+    font-weight:bold;
 }
 
 `
