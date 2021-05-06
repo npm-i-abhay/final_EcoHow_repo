@@ -16,18 +16,18 @@ const ButtonInput = styled.button`
  color:black;
  padding:15px;
  width:100%;
- border-radius: 6px;
+ border-radius: 9px;
  border:none;
- margin-left:15px;
  font-family: 'Montserrat', sans-serif;
- margin-top: 20px;
  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
  color:white;
+
+
  
 
 `;
 const ButtonCont = styled.div`
-// border:2px solid red;
+margin:.8em 0 .8em 0;
 width:8em;
 `;
 //PROPS

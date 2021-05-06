@@ -45,9 +45,9 @@ export default function SubCatMapped (
         routeToChain2 = "/category",
         onClickChain = ()=> {},
         contBgchain = "#21AAB535",
-        subCatButton = "#71C4CA"
+        subCatButton = "#71C4CA",
+        
 
-        onClickChain = ()=> {}
     }
 )
 {   
