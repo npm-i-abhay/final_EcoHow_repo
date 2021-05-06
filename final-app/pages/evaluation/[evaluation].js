@@ -67,15 +67,16 @@ const EvaluationCont = styled.div `
 `
 
 export default function Evalution ({
-    labelTextChain1= "How strong is your knowledge of composting & organic waste?",
-    labelTextChain2= "Do you have a compost at home or in your building?",
-    labelTextChain3= "How often do use your compost a week?",
+    labelTextChain1= "How often do use your compost a week?",
+    labelTextChain2= "How often do you educate yourself on proper ways to compost?",
+    labelTextChain3= "How often do you make use of unconsumed food in your household (Donation, Composting)?",
     routeToChain2 = "/subcat/organic",
     onClickChain = ()=> {},
     hintChain4 = OrganicHelp.Evaluation.content,
     bgColorTrackChain1= "#5EBA92",
     bgColorCont = "#5EBA9250",
-    buttonBg = "#70B794"
+    buttonBg = "#70B794",
+
 
 
 
@@ -88,9 +89,9 @@ export default function Evalution ({
     if (evaluation === "inorganic")
 
     {
-        labelTextChain1= "Do you understand how to sort recyclable items?",
+        labelTextChain1= "How often do you use reusable items (water bottles, bags, straws etc.) ?",
         labelTextChain2= "Do you remember to recycle items properly at home?",
-        labelTextChain3= "Do you purchase second-hand items?",
+        labelTextChain3= "Do you purchase second-hand items (Clothes, Appliances, Furniture)?",
         routeToChain2="/subcat/inorganic"
         hintChain4 = InorganicHelp.Evaluation.content,
         bgColorTrackChain1= "#71C4CA"

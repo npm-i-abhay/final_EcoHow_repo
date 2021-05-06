@@ -17,35 +17,29 @@ width:100vw;
 left:0;
 display:flex;
 background-color:${props => props.bgMenu};
-// box-shadow:21px 20px 20px 6px black;
 justify-content:center;
 position:realtive;
 transition:all 1s;
+
 `
 
 
 
 const MenuItemsHead = styled.div `
-// border:2px solid blue;
-// width:100%;
-// height:30px;
-// background-color:lightgreen;
-// text-align:center;
+
 `
 
 
 const MenuItemsConatiner = styled.div`
 height:100vh;
 width:100vw;
-border:5px solid red;
 display:${props => props.showMenu};
 flex-direction:column;
 justify-content:space-evenly;
 align-items:center;
 position:relative;
 right:${props=> props.righty};
-transition: all 1s;
-// transition-delay:1s;
+transition: all 1s; 
 
 .headCont
 {
@@ -55,9 +49,8 @@ justify-content:space-between;
 align-items:center;
 width:90%;
 height:50px;
-// box-shadow:2px 2px 10px  black;
-// background-color:lightgreen;
 text-align:center;
+cursor:pointer;
 }
 
 `
@@ -66,7 +59,9 @@ const HamContainer = styled.div `
 position:absolute;
 right:${props => props.hamRight};
 z-index:1;
-transition: all 1s;`
+transition: all 1s;
+margin:10px;
+cursor:pointer;`
 
 
 const HamIcon = styled.div
@@ -83,15 +78,16 @@ const HamIcon = styled.div
 const TopBarContainer = styled.div `
 display:flex;
 justify-content:center;
-// align-items:${props => props.hamAlign};
-// transition:all 1s;
 
 `
+
+
 
 const CircleIconsCont = styled.div`
 
 display:flex;
 margin-left:7em;
+
 opacity : ${props => props.hiddenIcons};
 transition:all 1s;
 `

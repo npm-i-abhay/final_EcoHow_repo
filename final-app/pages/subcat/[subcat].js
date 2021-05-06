@@ -23,7 +23,7 @@ const SubCatCont = styled.div `
 
     .banner
     {
-        margin:2em;
+        // margin:2em;
         width:90%;
 
     }
@@ -40,15 +40,14 @@ const SubCatCont = styled.div `
 export default function SubCatMapped (
     {
         bannerText = "",
-        
         hintChain4 = OrganicHelp.Subcat.content,
-
         routeToChain2 = "/category",
-
         onClickChain = ()=> {},
-
-        newbgcolor="#71C4CA"
+        contBgchain = "#21AAB535",
+        subCatButton = "#71C4CA",
     }
+
+        
 )
 {   
     const router = useRouter();
@@ -60,7 +59,8 @@ export default function SubCatMapped (
         cards = OrganicCards
         bannerText="Organic"
         onClickChain = ()=>router.push("/evaluation/organic")
-        newbgcolor="#5EBA92"
+        contBgchain = "#D7E6DB"
+        subCatButton = "#5EBA92"
     }
     if (subcat === "inorganic")
         {
@@ -69,10 +69,12 @@ export default function SubCatMapped (
           onClickChain = ()=>router.push("/evaluation/inorganic")
         }
 
-    return <SubCatCont  >
+    return <SubCatCont>
        
        <Head>
-        <title> tips page </title>    
+        <title> 
+            tips page
+        </title>    
         </Head>
         
         
@@ -95,7 +97,7 @@ export default function SubCatMapped (
                     bannerHeight="50px"/>
 
                     <p className={styles.content}> 
-                      Expand the card to read about each section  
+                    Expand the Cards to read about each of the item, close when you are done. 
                     </p>
                 </div>
 
@@ -106,7 +108,8 @@ export default function SubCatMapped (
                     key = {index}
                     source = {value.sourceNew}
                     text=   {value.textHeadNew}
-                    textLong = {value.textLongNew}/>
+                    textLong = {value.textLongNew}
+                    contBg = {contBgchain}/>
                
 
                 })}
@@ -115,7 +118,7 @@ export default function SubCatMapped (
                 <MyButton
                     onClick={onClickChain}
                     text="Next Section"
-                    bgcolor={newbgcolor}
+                    bgcolor = {subCatButton}
                     />
         </div>
         </SubCatCont>

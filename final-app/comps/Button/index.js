@@ -28,6 +28,7 @@ const ButtonInput = styled.button`
 const ButtonCont = styled.span`
 width:8em;
 margin-bottom:.8em;
+cursor:pointer;
 `;
 //PROPS
 const Button = ({
@@ -46,5 +47,3 @@ const Button = ({
 }
 
 export default Button;
-
-
