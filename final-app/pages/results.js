@@ -36,8 +36,9 @@ const ResultsCont = styled.div `
                 .resultText
                 {
                     font-size:1.5em;
-                    width:50%;
+                    width:80%;
                     margin-top:1.5em;
+                    font-family: 'Montserrat', sans-serif;
                 }
 
         }

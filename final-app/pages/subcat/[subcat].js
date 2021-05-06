@@ -16,14 +16,14 @@ const SubCatCont = styled.div `
 {
     display:flex;
     flex-direction:column;
-    height:100vh;
+    height:100%;
     width:100vw;
     background-color:#F5F1ED;
     align-items:center;
 
     .banner
     {
-
+        margin:2em;
         width:90%;
 
     }

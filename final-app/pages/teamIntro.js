@@ -20,7 +20,7 @@ const CategoryContainer = styled.div`
         background-image:url("./teamIntro.svg");
         background-repeat:no-repeat;
         background-position:50% 10%;
-        background-size: 40% 30%;
+        background-size: 70% 60%;
 
 
             .CatHeader

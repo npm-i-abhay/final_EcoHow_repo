@@ -22,12 +22,13 @@ linear-gradient(0deg, #EDEDED, #EDEDED);
 
         .button
         {
-            height:200px;
+            // height:200px;
             width:100%;
             display:flex;
             flex-direction:column;
             justify-content:flex-end;
             align-items:center;
+            margin:2em;
         }
 
 }
@@ -55,7 +56,7 @@ export default function HomePage (
 
                         <div className = "button">
 
-                            <Button text="Start"  bgcolor="#368B8B"onClick ={ ()=> router.push("/teamIntro") }/>
+                            <Button text="Start"  bgcolor="#368B8B"onClick ={ ()=> router.push("/teamIntro") } />
 
                         </div>    
 

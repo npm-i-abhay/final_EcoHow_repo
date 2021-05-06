@@ -91,8 +91,10 @@ transition:all 1s;
  opacity:${props => props.displayLabel};
  align-items:center;
  justify-content:center;
- font-size:2em;
- color:black;
+ font-size:1em;
+ color:#DDDDD;
+ text-shadow:0px 8px 8px rgba(0, 0, 0, 0.25);
+ 
     // border:2px solid red;
  white-space:no-wrap;
  font-weight:900;

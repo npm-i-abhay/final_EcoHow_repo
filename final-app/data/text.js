@@ -76,7 +76,7 @@ export const OrganicHelp = {
     },
 
     Subcat:{
-        content:"Read each category carefully! This will help you gain the most from using this app.Once you have finished this section and completed your evaluation. You can skip ahead to the quiz"
+        content:"Read each category carefully! This will help you gain the most from using this app. Once you have finished this section and completed your evaluation. You can skip ahead to the quiz"
     },
 
     Evaluation:{
@@ -181,7 +181,7 @@ export const InorganicHints = {
     Quiz1:{
         content:"Remember, the blue bin is where we place all our recylable items.  "
     },
-    Quiz2:{
+    Quiz2:{ 
         content:"Our priority is to reduce waste, which of the following actions will help us do that"
     },
 
@@ -268,7 +268,7 @@ export const InorganicCards =
     },
     {
         sourceNew : "../../electronics-scene.gif",
-        textLongNew : InorganicContent.Electronics.title,
+        textHeadNew : InorganicContent.Electronics.title,
         textLongNew : InorganicContent.Electronics.content,
     },
     {
