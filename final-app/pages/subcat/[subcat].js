@@ -44,7 +44,8 @@ export default function SubCatMapped (
         hintChain4 = OrganicHelp.Subcat.content,
         routeToChain2 = "/category",
         onClickChain = ()=> {},
-        contBgchain = "#21AAB535"
+        contBgchain = "#21AAB535",
+        subCatButton = "#71C4CA"
 
 
     }
@@ -60,18 +61,21 @@ export default function SubCatMapped (
         bannerText="Organic"
         onClickChain = ()=>router.push("/evaluation/organic")
         contBgchain = "#D7E6DB"
+        subCatButton = "#5EBA92"
     }
     if (subcat === "inorganic")
         {
             cards = InorganicCards
-            bannerText="InOrganic"
-          onClickChain = ()=>router.push("/evaluation/inorganic")
+            bannerText = "InOrganic"
+            onClickChain = ()=>router.push("/evaluation/inorganic")
         }
 
     return <SubCatCont>
        
        <Head>
-        <title> tips page </title>    
+        <title> 
+            tips page
+        </title>    
         </Head>
         
         
@@ -115,7 +119,7 @@ export default function SubCatMapped (
                 <MyButton
                     onClick={onClickChain}
                     text="Next Section"
-                    bgcolor = " "
+                    bgcolor = {subCatButton}
                     />
         </div>
         </SubCatCont>
