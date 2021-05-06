@@ -70,7 +70,7 @@ export default function Tips ({
     routeToChain2 ="",
     hintChain4 = "",
     onClickChain = ()=>{},
-    newSource="/blackbin.gif",
+    newSource="/transparent-blackbin.gif",
     newbgcolor="",
     newHeading="Oh no...",
     newHeadingColour="#7CC5A4",
@@ -88,7 +88,7 @@ export default function Tips ({
         routeToChain2 = "/evaluation/inorganic"
         onClickChain = ()=>router.push("/quiz/question-one-inorg")
         hintChain4 = InorganicHelp.TipsGood.content
-        newSource="/bluebins.gif"
+        newSource="/transparent-bluebins.gif"
         newbgcolor="#5EBA92"
         newHeading="Great job!"
     }
@@ -99,7 +99,7 @@ export default function Tips ({
         routeToChain2 = "/evaluation/inorganic"
         hintChain4 = InorganicHelp.TipsBad.content
         onClickChain = ()=>router.push("/quiz/question-one-inorg")
-        newSource="/blackbin.gif"
+        newSource="/transparent-blackbin.gif"
         newbgcolor="#BA5E5E"
         newHeadingColour="#C67B7B"
         tipsBackground="url(../backgroundTree2.svg)"
@@ -111,7 +111,7 @@ export default function Tips ({
         hintChain4 = OrganicHelp.TipsGood.content
         routeToChain2 = "/evaluation/organic"
         onClickChain = ()=>router.push("/quiz/question-one-org")
-        newSource="/Mypot.gif"
+        newSource="/transparent-pot.gif"
         newbgcolor="#5EBA92"
         newHeading="Great job!"
     
@@ -125,7 +125,7 @@ export default function Tips ({
         hintChain4 = OrganicHelp.TipsBad.content
         routeToChain2 = "/evaluation/organic"
         onClickChain = ()=>router.push("/quiz/question-one-org")
-        newSource="/greenbin.gif"
+        newSource="/transparent-greenbin.gif"
         newbgcolor="#BA5E5E"
         newHeadingColour="#C67B7B"
         tipsBackground="url(../backgroundTree2.svg)"
