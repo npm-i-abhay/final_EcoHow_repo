@@ -81,11 +81,11 @@ export default function Category ({
 
 {
 const [route, setRoute] = useState("");
-const [bgcolorChain, setbgcolor] = useState("#85817D");
+const [bgcolorChain, setbgcolor] = useState("#85817D50");
 const [textChain, setText] = useState("Organic");
 const [sourceChain, setSource] = useState("./Organic.gif");
 const [shadowChain, setShadow] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
-const [bgcolorChain2, setbgcolor2] = useState("#85817D");
+const [bgcolorChain2, setbgcolor2] = useState("#85817D50");
 const [textChain2, setText2] = useState("Inorganic");
 const [sourceChain2, setSource2] = useState("./inorganic.gif");
 
@@ -98,7 +98,7 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
         {
             setbgcolor("#5EBA92")
             setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
-            setbgcolor2("#85817D")
+            setbgcolor2("#85817D50")
         }
     }
     const HandleClickInorganic = () =>
@@ -107,7 +107,7 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
         {
             setbgcolor2("#21AAB5")
             setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
-            setbgcolor("#85817D")
+            setbgcolor("#85817D50")
         }
     
     }

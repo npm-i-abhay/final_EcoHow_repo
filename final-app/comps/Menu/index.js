@@ -124,6 +124,8 @@ const Menu = ({
         menuBg = "#5EBA9240"
         
     }
+
+   
     console.log(toggle);
     return <MenuContainer 
             expandMenu={menuHeight}

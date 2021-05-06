@@ -129,7 +129,7 @@ export default function Tips ({
         newbgcolor="#BA5E5E"
         newHeadingColour="#C67B7B"
         tipsBackground="url(../backgroundTree2.svg)"
-        backgroundPosition="90% 70%"
+        backgroundPosition="100% 70%"
     }
 
 

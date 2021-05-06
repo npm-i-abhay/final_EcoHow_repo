@@ -39,6 +39,9 @@ const EvaluationCont = styled.div `
 
         .EvBanner
         {
+            display:flex;
+            justify-content:center;
+            margin:2em;
             width:90%;
         }
 

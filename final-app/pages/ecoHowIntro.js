@@ -143,7 +143,7 @@ export default function Category ({
               
 
                 <div className = "buttonCont">                    
-                <Button text={newLabel} onClick= {onClick} bgcolor="#368B8B"/>
+                <Button text={newLabel} onClick= {onClick} bgcolor="#368B8B" text="Let's Begin"/>
                 </div>
        
 

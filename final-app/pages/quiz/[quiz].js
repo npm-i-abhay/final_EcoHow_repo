@@ -6,7 +6,6 @@ import MakeIcon from '../../comps/CircleIcons'
 import MyHeader from '../../comps/RecycleInfo'
 import RadioComp from '../../comps/Quiz'
 import MyButton from '../../comps/Button'
-// import MyCircle from '../../comps/CircleIcons2'
 import styled from 'styled-components'
 import Menu from '../../comps/Menu'
 import {useRouter} from 'next/router'
@@ -40,11 +39,12 @@ const QuizCont = styled.div `
         
         .banner
         {
-            width: 100%;
+            width: 90%;
             height:125px;
             display:flex;
             flex-direction:column;
-            justify-content:space-around;
+            justify-content:center;
+            align-items:center
         }
 
         .answersCont{

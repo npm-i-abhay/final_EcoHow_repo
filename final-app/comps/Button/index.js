@@ -14,11 +14,12 @@ import {useRouter} from 'next/router';
 const ButtonInput = styled.button`
  background-color:${props=>props.backgroundColor};
  color:black;
- padding:15px;
+ padding:1em;
  width:100%;
  border-radius: 9px;
  border:none;
  font-family: 'Montserrat', sans-serif;
+ margin-top: 20px;
  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
  color:white;
 
@@ -26,9 +27,7 @@ const ButtonInput = styled.button`
  
 
 `;
-const ButtonCont = styled.div`
-margin:.8em 0 .8em 0;
-width:8em;
+const ButtonCont = styled.span`
 `;
 //PROPS
 const Button = ({
@@ -43,7 +42,7 @@ const Button = ({
             {text}
         </ButtonInput>
     </ButtonCont>
-
+    </div>
 }
 
 export default Button;
