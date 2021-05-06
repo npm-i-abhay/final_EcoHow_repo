@@ -18,8 +18,9 @@ const QuizCont = styled.div `
 {
     display:flex;
     flex-direction:column;
-    height:100%;
+    height:100vh;
     width:100vw;
+    // padding-bottom:5em;
     background-color:#F5F1ED;
     background-image: url(${props => props.imageBg}.png);
     background-size:contain;
@@ -39,9 +40,11 @@ const QuizCont = styled.div `
         
         .banner
         {
-            width: 90%;
+            width: 100%;
+            // border:2px solid red;
             height:125px;
             display:flex;
+            text-align:center;
             flex-direction:column;
             justify-content:center;
             align-items:center
@@ -62,9 +65,10 @@ const QuizCont = styled.div `
             flex-direction:column
             height:30%;
             width:100%;
-            justify-content:space-between;
+            justify-content:space-around;
+            margin-top:2em;
+
             
-            margin-bottom:10px;
         }
 
         .toggleCont{
@@ -94,7 +98,8 @@ export default function Quiz ({
     hintText="blarg",
     hintHeaderText="Hint",
     bgImage = "/bluearrow",
-    bgColorChain1 = "#71C4CA"
+    bgColorChain1 = "#71C4CA",
+    fillColorChain = "#71C4CA"
 })
 {   
     const router = useRouter()
@@ -110,6 +115,7 @@ export default function Quiz ({
     hintText="One element creates energy and the other breaks organic matter."
     bgImage = "/leafbg"
     bgColorChain1 = "#7CC39F"
+    fillColorChain = "#7CC39F"
     
     }
 
@@ -124,6 +130,7 @@ export default function Quiz ({
         hintText="Citrus is very acidic and takes a very long time to decompose."
         bgImage = "/leafbg"
         bgColorChain1 = "#7CC39F"
+        fillColorChain = "#7CC39F"
     }
 
     if (quiz === "question-three-org")
@@ -137,6 +144,7 @@ export default function Quiz ({
         hintText="Do we want rodents and pests in our compost?"
         bgImage = "/leafbg"
         bgColorChain1 = "#7CC39F"
+        fillColorChain = "#7CC39F"
     }
     
     if (quiz === "question-one-inorg")
@@ -177,21 +185,45 @@ export default function Quiz ({
 
             if (quiz === "question-one-inorg" && radioVal == "female")
             {
-            
                 routeToChain2= "/tips/inorganicbad"
                 setRadioVal(()=> router.push("/quiz/question-two-inorg"))
             }
+            if (quiz === "question-one-inorg" && radioVal != "female")
+            {
+                
+                routeToChain2= "/tips/inorganicbad"
+                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
+            }
+
+
+            
             if (quiz === "question-two-inorg" && radioVal == "male")
             {
             
                 routeToChain2= "/quiz/question-one-inorg"
                 setRadioVal(()=> router.push("/quiz/question-three-inorg"))
             }
+            if (quiz === "question-two-inorg" && radioVal != "male")
+            {
+            
+                routeToChain2= "/quiz/question-one-inorg"
+                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
+            }
+
+
+
+
             if (quiz === "question-three-inorg" && radioVal == "female")
             {
             
                 routeToChain2= "/quiz/question-two-inorg"
                 setRadioVal(()=> router.push("/results"))
+            }
+            if (quiz === "question-three-inorg" && radioVal != "female")
+            {
+            
+                routeToChain2= "/quiz/question-two-inorg"
+                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
             }
 
 
@@ -200,9 +232,20 @@ export default function Quiz ({
 
 
             if (quiz === "question-one-org" && radioVal == "male")
-            {
+            {   
                 routeToChain2= "/tips/organicbad",
                 setRadioVal(()=> router.push("/quiz/question-two-org"))
+            }
+            
+            if (radioVal == "male")
+            {
+                fillColorChain="red"
+            }
+
+            if (quiz === "question-one-org" && radioVal != "male")
+            {
+                routeToChain2= "/tips/organicbad",
+                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
             }
 
             if (quiz === "question-two-org" && radioVal == "other")
@@ -212,11 +255,26 @@ export default function Quiz ({
                 setRadioVal(()=> router.push("/quiz/question-three-org"))
 
             }
+            if (quiz === "question-two-org" && radioVal != "other")
+            {
+            
+                routeToChain2= "question-one-org"
+                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
+
+            }
+
+
             if (quiz === "question-three-org" && radioVal == "female")
             {
 
                 routeToChain2= "/quiz/question-two-org"
                 setRadioVal(()=> router.push("/results"))
+            }
+            if (quiz === "question-three-org" && radioVal != "female")
+            {
+
+                routeToChain2= "/quiz/question-two-org"
+                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
             }
 }
 	//set a state here
@@ -245,12 +303,15 @@ export default function Quiz ({
         <div className="mainContainer"> 
                
                 <div className="iconHeader">
+                    <Menu routeToChain = {routeToChain2} />
+                </div>  
                     
 
-                    <Menu routeToChain = {routeToChain2} />
-                    </div>  
                 <div className="banner">
-                    <MyBanner text="Test Your Knowledge" bgColor="#F5F1ED"/>   
+                    <MyBanner 
+                    text="Test Your Knowledge" 
+                    bgColor="#F5F1ED"
+                    justifyText="center"/>   
                 </div>
                 <div className="answersCont">
                     <RadioComp
@@ -259,6 +320,7 @@ export default function Quiz ({
                     label1={q1}
                     label2={q2}
                     label3={q3}
+                    fillColor = {fillColorChain}
                     />
      
                     <MyHint 

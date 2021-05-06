@@ -22,6 +22,7 @@ background-color:${props => props.bgCont};
 justify-content:space-between;
 align-items:center;
 box-shadow:${props => props.shadowBox};
+cursor:pointer;
 transition:all 1s;
 
 
@@ -92,8 +93,8 @@ transition:all 1s;
  opacity:${props => props.displayLabel};
  align-items:center;
  justify-content:center;
- font-size:1em;
- color:#DDDDD;
+ font-size:1.3em;
+ color:black;
  text-shadow:0px 8px 8px rgba(0, 0, 0, 0.25);
  
     // border:2px solid red;
@@ -125,7 +126,7 @@ transition-delay:.5s;
      imageHeight = "100%",
      imageblur = "blur(2px)",
      source = "/team4.gif",
-     expandBorder = "1px solid blue",
+     expandBorder = "1px solid black",
      shadowShad = "2px 2px 10px 1px  lightgrey",
      labelDisplay = "1",
      lotsDisplay = "none",
@@ -148,6 +149,7 @@ transition-delay:.5s;
         labelDisplay = "0"
         statHeight = "50%"
         statWidth = "50%"
+        lotsDisplay = "flex"
 
     }
 
@@ -161,7 +163,8 @@ transition-delay:.5s;
                     shadowBox = {shadowShad}
                     reveal = {showDisplay}
                     bgCont = {contBg}
-                    onClick = {()=>setExpand(!expand)}>
+                    onClick = {()=>setExpand(!expand)}
+                    displayLots = {lotsDisplay}>
                          
                      
                         <div className = "labelContainer" > 

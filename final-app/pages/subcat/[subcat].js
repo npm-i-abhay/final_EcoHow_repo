@@ -23,7 +23,7 @@ const SubCatCont = styled.div `
 
     .banner
     {
-        margin:2em;
+        // margin:2em;
         width:90%;
 
     }
@@ -40,15 +40,14 @@ const SubCatCont = styled.div `
 export default function SubCatMapped (
     {
         bannerText = "",
-        
         hintChain4 = OrganicHelp.Subcat.content,
         routeToChain2 = "/category",
         onClickChain = ()=> {},
         contBgchain = "#21AAB535",
         subCatButton = "#71C4CA",
-        
-
     }
+
+        
 )
 {   
     const router = useRouter();
@@ -66,7 +65,7 @@ export default function SubCatMapped (
     if (subcat === "inorganic")
         {
             cards = InorganicCards
-            bannerText="InOrganic"
+            bannerText="Inorganic"
           onClickChain = ()=>router.push("/evaluation/inorganic")
         }
 
@@ -98,7 +97,7 @@ export default function SubCatMapped (
                     bannerHeight="50px"/>
 
                     <p className={styles.content}> 
-                      Expand the card to read about each section  
+                    Expand the Cards to read about each of the item, close when you are done. 
                     </p>
                 </div>
 
@@ -119,6 +118,7 @@ export default function SubCatMapped (
                 <MyButton
                     onClick={onClickChain}
                     text="Next Section"
+                    bgcolor = {subCatButton}
                     />
         </div>
         </SubCatCont>

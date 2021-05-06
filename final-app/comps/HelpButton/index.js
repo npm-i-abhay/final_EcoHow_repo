@@ -2,31 +2,26 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import {useRouter} from 'next/router';
 import MyHint from '../Hints';
-
+import {IoHelpCircleOutline} from 'react-icons/io5'
 
 
 const Wrapper = styled.div`
-position:relative;
+// position:relative;
 `;
 
 
 
-const IconContainer = styled.button `
-height:2.125em;
-width:2.125em;
-border-radius:1.5em;
-border: 5px solid #21AAB5;
-filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
-background-color:#F5F1ED;
+const IconContainer = styled.div`
+// filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.7));
 display:flex;
-margin:10px;
+margin:7.9px;
 justify-content:center;
 align-items:center;
-font-size:1.2em;
+
 `;
 
 const IconText = styled.span`
-font-size:1.5em;
+font-size:2.7em;
 color:#21aab5;
 font-family: 'Spartan', sans-serif;
 `;
@@ -55,7 +50,7 @@ const MakeHelp = ({
     <IconContainer onClick={()=>setHelp(!help)}> 
     
         <IconText> 
-            {text}
+            <IoHelpCircleOutline/>
         </IconText>
 
         

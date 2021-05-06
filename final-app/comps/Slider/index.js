@@ -11,6 +11,7 @@ flex-direction:column;
 align-items:center;
 width:90vw;
 height:100%;
+padding-top:1em;
 border-radius:10px;
 justify-content:space-around;
 background-color:${props=> props.colorBg};
@@ -56,7 +57,10 @@ Labeltext="How strong is your knowledge of composting & organic waste?",
 justify="center",
 onChangeTwo = ()=> {},
 bgColor="#CBE3E2",
-bgColorTrack = "#5EBA92"
+bgColorTrack = "#5EBA92",
+opt1 = "Never",
+opt2 = "Sometimes",
+opt3 = "Always"
 })=>
 {   
     
@@ -81,9 +85,9 @@ bgColorTrack = "#5EBA92"
                     </SliderContainer>
                     
                     <OptionsContainer>
-                        <p> Low </p>    
-                        <p> Average </p>    
-                        <p> Strong</p>    
+                        <p> {opt1} </p>    
+                        <p> {opt2} </p>    
+                        <p> {opt3}</p>    
                     </OptionsContainer>         
 
              </MainContainer>

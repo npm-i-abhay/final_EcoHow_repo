@@ -29,9 +29,11 @@ flex-direction:column;
         {
          margin-left:2em;
          width:80%;
-         font-size:1.25em;
+         text-shadow:0px 5px 7px grey;
+         font-size:2em;
+         color:black;
          font-family: 'Montserrat', sans-serif;
-         font-weight:bold;
+         font-weight:thin;
         }
       }
   }
@@ -57,8 +59,8 @@ font-family: 'Montserrat', sans-serif;
 `;
 
 const RadioCont = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   position: relative;
   
   
@@ -74,6 +76,7 @@ const RadioCont = styled.div`
     box-sizing: border-box;
     pointer-events: none;
     z-index: 0;
+   
   }
 
         .radioInput
@@ -88,11 +91,12 @@ const RadioCont = styled.div`
             
             &:focus {
                 outline: none;
+                
               }
         }
 
         .radioFill {
-            background:#21AAB5;
+            background:${props => props.colorFill};
             width: 0;
             height: 0;
             border-radius: 100%;
@@ -103,11 +107,12 @@ const RadioCont = styled.div`
             transition: width 0.2s ease-in, height 0.2s ease-in;
             pointer-events: none;
             z-index: 1;
+            box-shadow:0px 3px 3px black;
           }
           
           .radioInput:checked ~ .radioFill {
-            width: calc(100% - 4px);
-            height: calc(100% - 4px);
+            width: calc(100% - 2px);
+            height: calc(100% - 2px);
             transition: width 0.2s ease-out, height 0.2s ease-out;
           }
 
@@ -121,7 +126,8 @@ const RadioComp = ({
     question="What came first the chicken or the egg?",
     label1="",
     label2="",
-    label3=""
+    label3="",
+    fillColor="#71C4CA"
 }) =>{
 
 	return <QuizCont>
@@ -137,7 +143,7 @@ const RadioComp = ({
 
               <div className ="flex-container">
                 
-                <RadioCont>
+                <RadioCont colorFill={fillColor}>
                     <input 
                     type="radio"
                     id="male" 
@@ -159,7 +165,7 @@ const RadioComp = ({
               
               <div className ="flex-container">
                   
-                  <RadioCont>
+                  <RadioCont colorFill={fillColor}>
                     
                       <input 
                       type="radio"
@@ -178,14 +184,14 @@ const RadioComp = ({
               <br></br>
               <br></br>
               <div className ="flex-container">
-                  <RadioCont>
+                  <RadioCont colorFill={fillColor}>
                       <input 
-                      type="radio"
-                      id="male" 
-                      className = "radioInput"
-                      name="gender" 
-                      value="other" 
-                      onClick={onClick} />
+                        type="radio"
+                        id="male" 
+                        className = "radioInput"
+                        name="gender" 
+                        value="other" 
+                        onClick={onClick} />
                       
                       <div className="radioFill"> </div>
                   

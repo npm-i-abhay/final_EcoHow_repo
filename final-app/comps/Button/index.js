@@ -19,15 +19,16 @@ const ButtonInput = styled.button`
  border-radius: 9px;
  border:none;
  font-family: 'Montserrat', sans-serif;
- margin-top: 20px;
+ font-size: 0.8em;
+ font-weight:bold;
  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
  color:white;
 
-
- 
-
 `;
 const ButtonCont = styled.span`
+width:8em;
+margin-bottom:.8em;
+cursor:pointer;
 `;
 //PROPS
 const Button = ({
@@ -42,9 +43,7 @@ const Button = ({
             {text}
         </ButtonInput>
     </ButtonCont>
-    </div>
+   
 }
 
 export default Button;
-
-
