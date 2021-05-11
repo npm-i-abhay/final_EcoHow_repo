@@ -4,37 +4,46 @@ import {useRouter} from 'next/router';
 
 
 
-const ButtonImg = styled.img`
-width:20px;
-height:auto;
-object-fit:contain;
-`;
+// const ButtonImg = styled.img`
+// width:20px;
+// height:auto;
+// object-fit:contain;
+// `;
 
 
 const ButtonInput = styled.button`
  background-color:${props=>props.backgroundColor};
  color:black;
- padding:15px;
- border-radius: 12px;
+ padding:1em;
+ width:100%;
+ border-radius: 9px;
  border:none;
- margin-left:15px;
- margin-top: 20px;
+ font-family: 'Montserrat', sans-serif;
+ font-size: 0.8em;
+ font-weight:bold;
+ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ color:white;
+
 `;
 const ButtonCont = styled.span`
+width:8em;
+margin-bottom:.8em;
+cursor:pointer;
 `;
 //PROPS
 const Button = ({
     text="Test Button",
     bgcolor="#F7D488",
-    routeTo="/tips"
+    
+    onClick = ()=> {}
 }) => {
     const router = useRouter();
-    return <div> <ButtonCont onClick={()=>router.push(routeTo)}>
+    return <ButtonCont onClick={onClick}>
         <ButtonInput backgroundColor={bgcolor}>
             {text}
         </ButtonInput>
     </ButtonCont>
-    </div>
+   
 }
 
 export default Button;

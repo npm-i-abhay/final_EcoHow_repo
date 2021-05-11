@@ -6,19 +6,42 @@ import MyPlant from '../comps/Happyplant'
 import MyStar from '../comps/Stars'
 import MyButton from '../comps/Button'
 
+import {useRouter} from 'next/router'
+
 import styled from 'styled-components'
+import Menu from '../comps/Menu'
 
 
-const TipsCont = styled.div `
+const ResultsCont = styled.div `
 
 .mainContainer
 {
     display:flex;
     flex-direction:column;
-    height:812px;
-    width:375px;
-    background-color:#376293;
+    height:100%;
+    width:100vw;
+    justify-content:space-around;
+    background-color:#F5F1ED;
     align-items:center;
+
+
+        .yourResult
+        {
+    
+            align-items:center;
+            // height:100%;
+            display:flex;
+            flex-direction:column;
+
+                .resultText
+                {
+                    font-size:1.5em;
+                    width:80%;
+                    margin-top:1.5em;
+                    font-family: 'Montserrat', sans-serif;
+                }
+
+        }
 
         .iconHeader
         {
@@ -36,7 +59,8 @@ const TipsCont = styled.div `
             justify-content:space-around;
         }
 
-        .answersCont{
+        .answersCont
+        {
             display:flex;
             flex-direction:column
             height:50%;
@@ -46,7 +70,8 @@ const TipsCont = styled.div `
             margin-bottom:50px;
         }
 
-        .buttonCont{
+        .buttonCont
+        {
             display:flex;
             flex-direction:column
             height:30%;
@@ -56,7 +81,8 @@ const TipsCont = styled.div `
             margin-bottom:10px;
         }
 
-        .toggleCont{
+        .toggleCont
+        {
             display:flex;
             flex-direction:column
             height:30%;
@@ -65,23 +91,17 @@ const TipsCont = styled.div `
             justify-content:center;
         }
 
-        .starsContainer{
-            display:flex;
-            justify-content:center;
-            width:100%;
-            height:60px;
-            margin:20px;
-            margin-bottom:60px;
-        }
-
-        .gifContainer{
-
-        }
 
 }
 
-
 `
+
+const ResultVisual = styled.img`
+object-fit:contain;
+height:70%;
+width:70%;
+`
+
 
 export default function Tips ({
     screenHeight= 620
@@ -90,33 +110,35 @@ export default function Tips ({
 
 
 {
-    return <TipsCont >
+    const router = useRouter()
+    return <ResultsCont >
        
        <Head>
-        <title> tips page </title>    
+        <title> Result page </title>    
         </Head>
         
         
-        <div className="mainContainer"> 
-               
-                <div className="iconHeader">
-                    <MakeIcon text="?"/>
-                </div>
+        <div className="mainContainer">
 
-                <div className="starsContainer">
-                    <MyStar/>
-                    <MyStar/>
-                    <MyStar/>
-                </div>
-
-                <div className="gifContainer">
-                    <MyPlant/>
+                <Menu/>
+                <div className="yourResult">
+                    
+                    
+                    <ResultVisual src="/positiveresult.png"/>
+                    <p className="resultText">
+                        Great job! You can now apply what you’ve learned today in your daily habits, remeber that you can continue learning about organic and inorganic waste by revisting the categories. 
+                    </p>
+                    
                 </div>
                 <br></br>
-                <MyButton text="Back to Categories" routeTo="/category"/>
+                
+                <MyButton 
+                    text="Back to Categories"
+                    bgcolor="#3AB5A5"
+                    onClick = {()=> router.push ("/category")}/>
                
         </div>
-        </TipsCont>
+        </ResultsCont>
 }
 
 

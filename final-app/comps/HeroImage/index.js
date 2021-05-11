@@ -2,14 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const GifContainer = styled.div`
-width:304px;
-height:316px;
+width:100%;
+height:100%;
+margin-top:.5em;
 // border:10px solid black;
 // border-radius:50px;
 `
 
 const ContainerImage = styled.img`
-object-fit:cover;
+object-fit:contain;
 height:100%;
 width:100%;
 border-radius:${props => props.radius};

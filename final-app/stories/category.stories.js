@@ -1,10 +1,10 @@
 
 import React from 'react';
-import AnimContainer from '../comps/CategoryContainer'
+import CategoryCard from '../comps/CategoryCards'
 
 export default 
 {
     title: "category container",
-    component : <AnimContainer/>
+    component : <CategoryCard/>
 }
-export const firstComp = () => <AnimContainer />
+export const firstComp = () => <CategoryCard />

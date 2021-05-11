@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import styles from '../../styles/main.module.css'
 
 const Banner = styled.div `
 height:${props => props.dynamicHeight};
 width:100%;
-background-color:${props => props.background};
-// margin-top:2em;
-text-align:center;
-font-size:1.5em;
+// border:2px solid yellow;
+font-family: 'Spartan', sans-serif;
+// text-align:left;
+font-size:2.5em;
 display:flex;
 justify-content:${props => props.alignment};
 align-items:center;
@@ -19,16 +20,15 @@ const MyBanner = (
     {
         text ="your tips",
         textColor = "black",
-        justifyText = "center",
+        justifyText = "left",
         bannerHeight= "38px",
-        bgColor = "#5EBA92"
     })=>
 {
     return <Banner 
             alignment={justifyText}
             dynamicHeight={bannerHeight}
-            background = {bgColor}
-            colorOfText = {textColor}> {text} </Banner>
+            colorOfText = {textColor}
+            className={styles.main}> {text} </Banner>
 }
 
 export default MyBanner

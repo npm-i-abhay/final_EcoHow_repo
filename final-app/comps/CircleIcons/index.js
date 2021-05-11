@@ -1,21 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import {useRouter} from 'next/router';
+import {MdKeyboardBackspace} from 'react-icons/md'
+import {IoArrowBackCircleOutline} from 'react-icons/io5'
 
-const IconContainer = styled.button `
-height:2.125em;
-width:2.125em;
-border-radius:1.5em;
-background-color:#F7D488;
+const Wrapper = styled.div``
+
+const IconContainer = styled.div `
+// filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
 display:flex;
 margin:10px;
 justify-content:center;
-align-items:center;
-font-size:1.2em;
-`;
+align-items:center;`;
 
 const IconText = styled.span`
-font-size:2em;
+font-size:2.5em;
+color:#21AAB5;
+font-family: 'Spartan', sans-serif;
 `;
 
 const MakeIcon = ({
@@ -24,14 +25,16 @@ const MakeIcon = ({
     routeTo=""
 })=>
 {   const router = useRouter();
-    return <IconContainer onClick={()=>router.push(routeTo)}> 
+    return <Wrapper> <IconContainer onClick={()=>router.push(routeTo)}> 
     
+      
         <IconText> 
-      {text}
+      <IoArrowBackCircleOutline/>
         </IconText>
 
 
     </IconContainer>
+    </Wrapper> 
 }
 
 export default MakeIcon;
