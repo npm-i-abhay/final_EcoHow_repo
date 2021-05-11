@@ -1,39 +1,33 @@
-export default function progressDots(){
-    return(
-        <div style={{
-            display: "flex",
-            flexDirection: "row no-wrap",
-            margin:"20px"
-        }}>
-                <div
-                className={['prog-dot']['current-dot']}
-                style={{
-                    margin:"8px",
-                    backgroundColor:"#5EBA92",
-                    width:"15px",
-                    height:"16px",
-                    border:"2px solid #F5F1ED",
-                    borderRadius:"100px"
-                }}></div>
-                <div className={['prog-dot']} style={{
-                    margin:"8px",
-                    backgroundColor:"#F5F1ED",
-                    width:"15px",
-                    height:"16px",
-                    border:"2px solid #F5F1ED",
-                    borderRadius:"100px"
-                }}></div>
-                <div className={['prog-dot']} style={{
-                    margin:"8px",
-                    backgroundColor:"#F5F1ED",
-                    width:"15px",
-                    height:"16px",
-                    border:"2px solid #F5F1ED",
-                    borderRadius:"100px"
-                }}></div>
-        </div> 
-    )
+import React from 'react';
+import styled from 'styled-components';
+
+
+const DotCont = styled.div`
+display:flex;
+`;
+
+const Dot1 = styled.div`
+width: ${props=>props.width};
+height: ${props=>props.height};
+background-color: ${props=>props.colour};
+border: 2px solid #F5F1ED;
+border-radius:50%;
+margin:0.2em;
+`;
+
+
+const ProgressDotComp = ({
+width = "15px",
+height = "15px",
+dotColour = "#5EBA92"
+}) =>{
+
+	return <DotCont>
+		<Dot1 width={width} height={height} colour={dotColour}/>
+	
+   
+   
+	</DotCont>
 }
 
-//for main.js later:
-//import ProgressDots from '../comps/ProgressDots'; 
+export default ProgressDotComp;
