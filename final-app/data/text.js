@@ -293,9 +293,9 @@ var people =
         {"head": "Jimmy",  "sub":48, "city":"Brooklyn","body": "four"},
         {"head": "Henry",  "sub":25, "city":"Manhattan","body": "cha"},
         {"head": "Robert", "sub":69, "city":"Hogwartz","body": "cha"},
-        {"head": "Ramin",  "sub":101,"city":"BCIT","body": "cha"}
+        {"head": "Ramin",  "sub":101,"city":"BCIT","body": "cha"},
+        {"head": "Nick",   "sub":101,"city":"BCIT","body": "cha"}
         
     ]`
 
     export default people;
-// localStorage.setItem("people", people)

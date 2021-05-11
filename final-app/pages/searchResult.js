@@ -140,23 +140,9 @@ export default function SearchResults ({
 
    const handleStorage = ()=>
     {
-        // var searchBar = document.getElementById("inputField")
-        // var peeps = JSON.parse(localStorage.getItem("people"))
-
-        // if(searchBar.value.includes('nick') )
-        // {
-            
-        //     setResultText(JSON.stringify(peeps[0].name))
-        // }
-
-
         var searchBar = document.getElementById("inputField")
-        
-        // if(people.toLowerCase().includes(searchBar.value) )
-        // {
+
             var peeps = JSON.parse(localStorage.getItem("people"))
-            // alert(JSON.stringify(peeps[0].name))
-        
             let i = null
 
             for (i=0; i<peeps.length; i++)
