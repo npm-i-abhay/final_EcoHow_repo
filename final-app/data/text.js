@@ -278,3 +278,24 @@ export const InorganicCards =
     }
 ]
 
+
+
+// ====================================================
+
+var people = 
+ `[
+        {"head": "Jason",  "sub":48, "city":"Vancouver","body": "one" },
+        {"head": "Gurvir", "sub":82, "city":"Narnia","body": "two"},
+        {"head": "Willus", "sub":12, "city":"Guelph","body": "cha"},
+        {"head": "Izzy",   "sub":22, "city":"Vancouver","body": "cha"},
+        {"head": "Abhay",  "sub":44, "city":"London","body": "cha"},
+        {"head": "Bertha", "sub":21, "city":"Alabama","body": "three"},
+        {"head": "Jimmy",  "sub":48, "city":"Brooklyn","body": "four"},
+        {"head": "Henry",  "sub":25, "city":"Manhattan","body": "cha"},
+        {"head": "Robert", "sub":69, "city":"Hogwartz","body": "cha"},
+        {"head": "Ramin",  "sub":101,"city":"BCIT","body": "cha"}
+        
+    ]`
+
+    export default people;
+// localStorage.setItem("people", people)

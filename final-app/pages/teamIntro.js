@@ -5,7 +5,7 @@ import Button from '../comps/Button'
 import Menu from '../comps/Menu'
 import HeroContainer from '../comps/HeroImage'
 import {useRouter} from 'next/router'
-
+import people from '../data/text'
 const CategoryContainer = styled.div`    
 
     .CatContainer 
@@ -68,12 +68,13 @@ align-items:center;
 width:70%;
 justify-content:flex-start;
 text-align:center;
-
-
 `;
 
 
 
+
+
+// localStorage.setItem("people", people)
 
 
 export default function Category ({
@@ -85,6 +86,8 @@ export default function Category ({
 
 
 {
+
+
    const router = useRouter();
    onClick = ()=>router.push("ecoHowIntro")
 
