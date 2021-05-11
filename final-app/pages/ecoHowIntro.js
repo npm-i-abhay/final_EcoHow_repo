@@ -132,7 +132,7 @@ export default function Category ({
             
                <div className="animCont">
                <HeroContainer
-                source="./lightBulb.gif"
+                source="./light-bulb.gif"
                 borderRadius="0px"
                 />
                 </div>

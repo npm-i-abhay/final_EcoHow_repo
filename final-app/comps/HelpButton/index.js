@@ -17,7 +17,16 @@ display:flex;
 margin:7.9px;
 justify-content:center;
 align-items:center;
+font-size:1.2em;
+animation: shake 0.5s;
+  animation-iteration-count: ${props=>props.count};
+}
 
+// @keyframes shake {
+//   0% { transform: translate(1px, 1px) rotate(0deg); }
+
+//   100% { transform: translate(1px, -2px) rotate(-1deg); }
+// }
 `;
 
 const IconText = styled.span`
@@ -39,7 +48,13 @@ const MakeHelp = ({
     var helpFadeIn = 0
     var leftIn = -500
     const[help, setHelp] = useState(false)
+    const [animationCount, setAnimationCount] = useState("infinite");
  
+        if (IconContainer.onClick){
+            setAnimationCount("0")
+        }
+
+
         if (help)
         {
             helpFadeIn=1
@@ -47,7 +62,7 @@ const MakeHelp = ({
         }
  
     return <Wrapper> 
-    <IconContainer onClick={()=>setHelp(!help)}> 
+    <IconContainer onClick={()=>setHelp(!help)} count={animationCount}> 
     
         <IconText> 
             <IoHelpCircleOutline/>
