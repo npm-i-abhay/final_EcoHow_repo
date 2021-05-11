@@ -48,8 +48,8 @@ opacity:0.8;
 
 
 const GifContainer = styled.div`
-height:60%;
-width:90%;
+height:50%;
+width:80%;
 margin:2em;
 border-radius:10px;
 display:flex;
@@ -58,7 +58,7 @@ justify-content:center;
  `;
 
 const GifImage = styled.img`
-object-fit:contain;
+object-fit:cover;
 height:100%;
 width:100%;
 position:relative;

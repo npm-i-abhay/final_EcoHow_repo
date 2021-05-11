@@ -111,7 +111,7 @@ export default function Tips ({
         hintChain4 = OrganicHelp.TipsGood.content
         routeToChain2 = "/evaluation/organic"
         onClickChain = ()=>router.push("/quiz/question-one-org")
-        newSource="/organicgood.gif"
+        newSource="/transparent-pot.gif"
         newbgcolor="#5EBA92"
         newHeading="Great job!"
     
