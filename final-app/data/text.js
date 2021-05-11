@@ -284,20 +284,18 @@ export const InorganicCards =
 
 var people = 
  `[
-        {"head": "Vegetables",  "sub": "Green Bin", "source":"../../veg.gif","body": "Vegetables belong in the Green Bin as they are compostable." },
-        {"head": "Fruits", "sub": "Green Bin", "source":"../../fruit.gif","body": "Fruits belong in the green bin as they are compostable."},
-        {"head": "Garden waste", "sub": "Green Bin", "source":"../../garden waste.gif","body": "Garden waste belongs in the Green Bin as it is compostable."},
-        {"head": "Animal Poo",   "sub": "Green Bin", "source":"../../sewage_3.gif","body": "Animal poo is accepted in the green bin either loose or in a compostable bag"},
-        {"head": "Meat",  "sub": "Black Bin", "source":"../../meat.gif","body": "Meat is not compostable, please put it in the Black Bin instead"},
-        {"head": "Wood", "sub":"Green Bin", "source":"../../wood.gif","body": "Wood belongs in the green bin as it is compostable."},
-
-
-        {"head": "Plastic Bags & wrappers",  "sub":"Blue Bin", "source":"../../plasticbag.gif","body": "Plastic bags and wrappers belong in the blue bin as they are recyclable."},
-        {"head": "Plastic Straws",  "sub":"Blue Bin", "source":"../../plastic-straws-scene.gif","body": "Plastic straws and wrappers belong in the blue bin as they are recyclable."},
-        {"head": "Styrofoam", "sub":"Black Bin", "source":"../../styrofoam-scene.gif","body": "Sometimes styrofoam can be recycled, however, most times it belongs in the Black Bin. Check the bottom of your container to confirm."},
-        {"head": "Cardboard & Paper",  "sub":"Blue Bin","source":"../../cardboard-scene.gif","body": "Cardboard and paper belong in the blue bin as they are recyclable."},
-        {"head": "Glass", "sub":"Blue Bin","source":"../../glass-scene.gif","body": "Glass belongs in the blue bin as it is recyclable."}
-        {"head": "Aluminum", "sub":"Blue Bin","source":"../../aluminium-scene.gif","body": "Aluminum belongs in the blue bin as it is recyclable."}
+        {"head": "Vegetables",  "sub": "Green Bin", "source": "../../veg.gif","body": "Vegetables belong in the Green Bin as they are compostable."},
+        {"head": "Fruits", "sub": "Green Bin", "source": "../../fruit.gif","body": "Fruits belong in the green bin as they are compostable."},
+        {"head": "Garden waste", "sub": "Green Bin", "source": "../../garden waste.gif","body": "Garden waste belongs in the Green Bin as it is compostable."},
+        {"head": "Animal Poo",   "sub": "Green Bin", "source": "../../sewage_3.gif","body": "Animal poo is accepted in the green bin either loose or in a compostable bag"},
+        {"head": "Meat",  "sub": "Black Bin", "source": "../../meat.gif","body": "Meat is not compostable, please put it in the Black Bin instead"},
+        {"head": "Wood", "sub":"Green Bin", "source": "../../wood.gif","body": "Wood belongs in the green bin as it is compostable."},
+        {"head": "Plastic Bags & wrappers",  "sub":"Blue Bin", "source": "../../plasticbag.gif","body": "Plastic bags and wrappers belong in the blue bin as they are recyclable."},
+        {"head": "Plastic Straws",  "sub":"Blue Bin", "source": "../../plastic-straws-scene.gif","body": "Plastic straws and wrappers belong in the blue bin as they are recyclable."},
+        {"head": "Styrofoam", "sub":"Black Bin", "source": "../../styrofoam-scene.gif","body": "Sometimes styrofoam can be recycled, however, most times it belongs in the Black Bin. Check the bottom of your container to confirm."},
+        {"head": "Cardboard & Paper",  "sub":"Blue Bin","source": "../../cardboard-scene.gif","body": "Cardboard and paper belong in the blue bin as they are recyclable."},
+        {"head": "Glass", "sub":"Blue Bin","source": "../../glass-scene.gif","body": "Glass belongs in the blue bin as it is recyclable."}
+        {"head": "Aluminum", "sub":"Blue Bin","source": "../../aluminium-scene.gif","body": "Aluminum belongs in the blue bin as it is recyclable."}
     ]`
 
     export default people;

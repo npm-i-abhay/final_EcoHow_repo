@@ -150,7 +150,7 @@ export default function SearchResults ({
                 if (searchBar.value == JSON.stringify(peeps[i].head))
                 {
                     setResultText(JSON.stringify(peeps[i].sub))
-                    setBigText(JSON.stringify(peeps[i].city))
+                    setBigText(JSON.stringify(peeps[i].source))
                     setSmallText(JSON.stringify(peeps[i].body))
                 }
             }
