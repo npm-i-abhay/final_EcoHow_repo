@@ -104,7 +104,7 @@ export default function Category ({
 
                <div className="animCont">
                <HeroContainer
-                source="./team4.gif"
+                source="./Team4.gif"
                 borderRadius="0px"
                 />
                 </div>

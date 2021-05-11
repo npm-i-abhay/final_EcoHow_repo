@@ -88,6 +88,7 @@ const [shadowChain, setShadow] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
 const [bgcolorChain2, setbgcolor2] = useState("#85817D50");
 const [textChain2, setText2] = useState("Inorganic");
 const [sourceChain2, setSource2] = useState("./inorganic.gif");
+const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
 
     
     const router = useRouter();
@@ -99,6 +100,7 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
             setbgcolor("#5EBA92")
             setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
             setbgcolor2("#85817D50")
+            setShadow2("0px 0px 0px rgba(0, 0, 0, 0.25)")
         }
     }
     const HandleClickInorganic = () =>
@@ -106,8 +108,9 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
         if (textChain2==="Inorganic")
         {
             setbgcolor2("#21AAB5")
-            setShadow("0px 4px 4px rgba(0, 0, 0, 0.25)")
+            setShadow2("0px 4px 4px rgba(0, 0, 0, 0.25)")
             setbgcolor("#85817D50")
+            setShadow("0px 0px 0px rgba(0, 0, 0, 0.25)")
         }
     
     }
@@ -148,7 +151,7 @@ const [sourceChain2, setSource2] = useState("./inorganic.gif");
                 bgcolor={bgcolorChain2}
                 text={textChain2}
                 gifSource={sourceChain2}
-                boxShadowDefault={shadowChain}
+                boxShadowDefault={shadowChain2}
                 onClick={HandleClickInorganic}
                 />             
                 <Button text="Select" onClick={onClickChain} bgcolor="#368B8B"/>
