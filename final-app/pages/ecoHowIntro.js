@@ -140,7 +140,7 @@ export default function Category ({
                 </div>
  
                 <TextCont>
-                    <p>Always check the help button if you are feeling lost.Now, enjoy learning! </p>
+                    <p>Always check the help button if you are feeling lost. Now, enjoy learning! </p>
                 </TextCont>
               
 

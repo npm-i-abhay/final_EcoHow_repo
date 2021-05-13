@@ -51,7 +51,7 @@ const CategoryContainer = styled.div`
         .dynamicCont
         {   
             height:60%;
-            border:2px solid blue;
+            // border:2px solid blue;
             display:flex;
             flex-direction:column;
             align-items:center;
@@ -109,6 +109,7 @@ align-items:center;
 width:70%;
 justify-content:flex-start;
 text-align:center;
+margin-bottom:2em;
 
 
 `;
@@ -148,12 +149,15 @@ export default function SearchResults ({
 
             for (i=0; i<peeps.length; i++)
             {
-                if (searchBar.value == JSON.stringify(peeps[i].head))
+                
+                var valueCheck = peeps[i].head.toLowerCase()
+                var searchValueLower = searchBar.value.toLowerCase()
+                if (valueCheck.includes(searchValueLower))
                 {
-                    setBigText(JSON.stringify(peeps[i].head))
-                    setSmallText(JSON.stringify(peeps[i].sub))
-                    setImgSource(JSON.stringify(peeps[i].source))
-                    setResultText(JSON.stringify(peeps[i].body))
+                    setBigText(peeps[i].head)
+                    setSmallText(peeps[i].sub)
+                    setImgSource(peeps[i].source)
+                    setResultText(peeps[i].body)
                 }
             }
     }
@@ -175,7 +179,7 @@ export default function SearchResults ({
 
                     <input 
                     type = "text"
-                    placeholder = "search for henry's missing soul"
+                    placeholder = "search to see where to properly recycle an item"
                     id = "inputField"/>
                     
                     <div 

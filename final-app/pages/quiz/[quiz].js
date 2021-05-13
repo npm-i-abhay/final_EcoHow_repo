@@ -18,7 +18,7 @@ const QuizCont = styled.div `
 {
     display:flex;
     flex-direction:column;
-    height:100vh;
+    height:100%;
     width:100vw;
     // padding-bottom:5em;
     background-color:#F5F1ED;

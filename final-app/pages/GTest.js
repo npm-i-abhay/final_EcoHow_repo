@@ -115,7 +115,7 @@ export default function DnD({
     const onDrop3 = (e) =>
     {   
         e.preventDefault()
-        console.log("I dropped")
+        // console.log("I dropped")
         if(boxInd === 1)
 
         {
@@ -141,7 +141,7 @@ export default function DnD({
                 change = 0
             }
             setSource ("/blackbins/black" + change + ".png")
-            console.log(change, sourceN)
+            // console.log(change, sourceN)
         
         },50)
        
@@ -163,7 +163,7 @@ export default function DnD({
                 change = 0
             }
             setSource2 ("/bluebins/blue" + change + ".png")
-            console.log(change, sourceN)
+            // console.log(change, sourceN)
         
         },50)
        
