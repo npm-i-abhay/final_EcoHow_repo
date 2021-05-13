@@ -2,23 +2,35 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 
 const DropCont = styled.img`
-position:absolute;
-left:20%;
-top:50%;
-height:300px;
-width:300px;
+position:relative;
+object-fit:cover;
+top:70%;
+height:100%;
+width:100%;
+border:2px solid black;
 // background-color:blue;
 margin-left:-5em;
 transition:all .5s;
 
 `;
-const DropCont2 = styled.div`
-position:absolute;
-left:50%;
+const DropCont2 = styled.img`
+position:relative;
+// left:50%;
 top:50%;
-height:200px;
-width:300px;
-background-color:green;
+border:2px solid black;
+height:100%;
+width:100%;
+// background-color:green;
+
+`;
+const DropCont3 = styled.img`
+position:relative;
+// left:50%;
+top:50%;
+border:2px solid black;
+height:100%;
+width:100%;
+// background-color:green;
 
 `;
 
@@ -41,7 +53,9 @@ export default function DnD({
 {
 
     const [box, setBox] = useState([true, true])
-    const [changeSrc, setSource] = useState("/bluebinframes/bin1.gif")
+    const [changeSrc, setSource] = useState("/blackbins/black1.png")
+    const [changeSrc2, setSource2] = useState("/bluebins/blue1.png")
+    const [changeSrc3, setSource3] = useState("/greenbins/green1.png")
     // const [box2, setBox2] = useState(true)
 
     const onDragStart = (ind) =>
@@ -74,7 +88,7 @@ export default function DnD({
         clearInterval(timer)
         e.target.style.backgroundColor = ""
         timer =null
-        setSource ("/bluebinframes/bin1.gif")
+        setSource ("/blackbins/black1.png")
         if (boxInd === 0)
 
         {
@@ -98,10 +112,23 @@ export default function DnD({
             
         }
     }
+    const onDrop3 = (e) =>
+    {   
+        e.preventDefault()
+        console.log("I dropped")
+        if(boxInd === 1)
+
+        {
+            box[boxInd] = false;
+            setBox([...box]);
+            
+        }
+    }
 
 
     const onDragEnter = (e)=>
     {
+        e.preventDefault()
         e.target.style.backgroundColor = "red"
         
 
@@ -109,25 +136,86 @@ export default function DnD({
         {
 
             change++
-            if (change>150)
+            if (change>90)
             {
                 change = 0
             }
-            setSource ("/bluebinframes/bin" + change + ".gif")
+            setSource ("/blackbins/black" + change + ".png")
             console.log(change, sourceN)
         
         },50)
        
     }
+
+
+    const onDragEnter2 = (e)=>
+    {
+        e.preventDefault()
+        e.target.style.backgroundColor = "red"
+        
+
+    timer =  setInterval(function()
+        {
+
+            change++
+            if (change>90)
+            {
+                change = 0
+            }
+            setSource2 ("/bluebins/blue" + change + ".png")
+            console.log(change, sourceN)
+        
+        },50)
+       
+    }
+    const onDragEnter3 = (e)=>
+    {
+        e.preventDefault()
+        e.target.style.backgroundColor = "red"
+        
+
+    timer =  setInterval(function()
+        {
+
+            change++
+            if (change>90)
+            {
+                change = 0
+            }
+            setSource3 ("/greenbins/green" + change + ".png")
+            console.log(change, sourceN)
+        
+        },50)
+       
+    }
+
+
     const onDragLeave = (e)=>
     {
+        e.preventDefault()
         clearInterval(timer)
         timer =null
-        setSource ("/bluebinframes/bin1.gif")
+        setSource ("/blackbins/black1.png")
+        e.target.style.backgroundColor = ""
+    }
+    const onDragLeave2 = (e)=>
+    {
+        e.preventDefault()
+        clearInterval(timer)
+        timer =null
+        setSource2 ("/bluebins/blue1.png")
+        e.target.style.backgroundColor = ""
+    }
+    const onDragLeave3 = (e)=>
+    {
+        e.preventDefault()
+        clearInterval(timer)
+        timer =null
+        setSource3 ("/greenbins/green1.png")
         e.target.style.backgroundColor = ""
     }
     return<div>
-
+    <div>
         {box[0] && 
             <DragBox 
                 draggable = {true}
@@ -136,10 +224,10 @@ export default function DnD({
                 onDragEnd = {onDragEnd}
                 src = "/broccoli.png"
              /> 
-            
-               
-            
         }
+            
+             
+    </div>           
         {box[1] && 
             <DragBox 
                 draggable = {true}
@@ -162,8 +250,18 @@ export default function DnD({
         <DropCont2
         onDragOver = {onDragOver}
         onDrop = {onDrop2}
-        > 
-            Drop Container2 
-        </DropCont2>
+        onDragEnter = {onDragEnter2}
+        onDragLeave = {onDragLeave2}
+        src = {changeSrc2}
+        /> 
+         
+        <DropCont3
+        onDragOver = {onDragOver}
+        onDrop = {onDrop3}
+        onDragEnter = {onDragEnter3}
+        onDragLeave = {onDragLeave3}
+        src = {changeSrc3}
+        /> 
+         
         </div>
 }
