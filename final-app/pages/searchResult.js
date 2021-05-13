@@ -129,6 +129,7 @@ export default function SearchResults ({
 {
    const router = useRouter();
    const [resultText, setResultText] = useState("test");
+   const [imgSource, setImgSource] = useState("/bluearrow.png");
    const [bigText, setBigText] = useState("bigText");
    const [smallText, setSmallText] = useState("smallText");
    onClick = ()=>router.push("ecoHowIntro")
@@ -149,9 +150,10 @@ export default function SearchResults ({
             {
                 if (searchBar.value == JSON.stringify(peeps[i].head))
                 {
-                    setResultText(JSON.stringify(peeps[i].sub))
-                    setBigText(JSON.stringify(peeps[i].source))
-                    setSmallText(JSON.stringify(peeps[i].body))
+                    setBigText(JSON.stringify(peeps[i].head))
+                    setSmallText(JSON.stringify(peeps[i].sub))
+                    setImgSource(JSON.stringify(peeps[i].source))
+                    setResultText(JSON.stringify(peeps[i].body))
                 }
             }
     }
@@ -193,7 +195,7 @@ export default function SearchResults ({
 
                 <div className="searchImage">
                     <HeroContainer
-                        source="/bluearrow.png"
+                        source={imgSource}
                         borderRadius="0px"/>
                 </div>
                 
