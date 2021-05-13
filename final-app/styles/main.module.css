@@ -26,4 +26,40 @@
 {
     font-family: 'Montserrat', sans-serif;
     font-size:1.2em;
+
+}
+
+
+.dragContainer
+{
+    background-color:#dddd99;
+    display: flex;
+    /* flex-direction:column; */
+    justify-content: space-between;
+    width:100%;
+    max-width:786px;
+    height: 100vh;
+    overflow: hidden;
+    margin:0 auto;
+    padding:15px;
+}
+.drag{
+    box-sizing:border-box;
+}
+
+.board 
+{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    max-width:300px;
+    background-color: #313131;
+    cursor: pointer;
+}
+
+
+.dragItem
+{
+    background-color: #21AAB5;
+    padding:2em;
 }

@@ -104,7 +104,7 @@ export default function Quiz ({
 {   
     const router = useRouter()
     const {quiz} = router.query
-
+    const[quizCol, setQuizCol] = useState("#71C4CA")
     if (quiz === "question-one-org")
     {
     questionChain = "What kind of chemical elements  can generate a healthy compost?",

@@ -78,6 +78,8 @@ text-align:center;
 .boldFont{
     font-weight:bold
 }
+
+
 `;
 
 
