@@ -79,7 +79,7 @@ text-align:center;
 
 export default function Category ({
     routeToChain2 = "/home",
-    hintChain4 = "",
+    hintChain4 = "Welcome to our app, this is our team of innovative individuals who share the same passion of making the world a better place.",
     newLabel="Next",
     onClick = () =>{}
 })
@@ -107,7 +107,7 @@ export default function Category ({
 
                <div className="animCont">
                <HeroContainer
-                source="./team4.gif"
+                source="./ourTeam.gif"
                 borderRadius="0px"
                 />
                 </div>

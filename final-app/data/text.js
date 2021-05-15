@@ -284,7 +284,7 @@ export const InorganicCards =
 
 var people = 
  `[
-        {"head": "Vegetables",  "sub": "Green Bin", "source": "../../veg.gif"},
+        {"head": "Vegetables",  "sub": "Green Bin", "source": "../../veg.gif", "body":"Vegetables belong in the green bin as they are compostable"},
         
         {"head": "Fruits", "sub": "Green Bin", "source": "../../fruit.gif","body": "Fruits belong in the green bin as they are compostable."},
         

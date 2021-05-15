@@ -169,7 +169,7 @@ export default function DnD({
                 change = 0
             }
             setSource ("/blackbins/black" + change + ".png")
-            console.log(change, sourceN)
+            // console.log(change, sourceN)
         
         },50)
        
@@ -191,7 +191,7 @@ export default function DnD({
                 change = 0
             }
             setSource2 ("/bluebins/blue" + change + ".png")
-            console.log(change, sourceN)
+            // console.log(change, sourceN)
         
         },50)
        

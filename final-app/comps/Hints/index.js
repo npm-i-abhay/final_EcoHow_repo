@@ -9,7 +9,7 @@ align-items:center;
 justify-content:center;
 height:16.75em;
 width: 20em;
-background-color:#F7D488;
+background-color:#D7E6DB;
 border-radius:12px;
 opacity:${props=>props.opacity};
 transition:0.2s;

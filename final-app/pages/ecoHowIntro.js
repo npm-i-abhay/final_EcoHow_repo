@@ -88,7 +88,7 @@ text-align:center;
 
 export default function Category ({
     routeToChain2 = "/home",
-    hintChain4 = "",
+    hintChain4 = "Here at EcoHow we place the utmost priority on cleaning up our earth and adjusting our harmful habits. In this app you will learsn valuable knowledge in a fun and interactive way.",
     newLabel="Next",
     onClick = () =>{}
 })
@@ -140,7 +140,7 @@ export default function Category ({
                 </div>
  
                 <TextCont>
-                    <p>Always check the help button if you are feeling lost.Now, enjoy learning! </p>
+                    <p>Always check the help button if you are feeling lost. Now, enjoy learning! </p>
                 </TextCont>
               
 
