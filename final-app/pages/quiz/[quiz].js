@@ -11,7 +11,7 @@ import Menu from '../../comps/Menu'
 import {useRouter} from 'next/router'
 import {useState} from 'react'
 import MyHint from '../../comps/Hints';
-
+import {ImCross} from 'react-icons/im'
 const QuizCont = styled.div `
 
 .mainContainer
@@ -29,7 +29,7 @@ const QuizCont = styled.div `
     background-position-y: 20em;
     // background-blend-mode: overlay;
 
-
+    
         .iconHeader
         {
             width:100%;
@@ -79,12 +79,40 @@ const QuizCont = styled.div `
             background-color#376293; 
             justify-content:center;
         }
+        .promptCont
+    {
+        border:2px solid red;
+        height:100%;
+        display:flex;
+        justify-content:center;
+        position:absolute;
+        top:10%;
+        width:100%;
 
 
+            .closeIcon
+            {
+                font-size:2em;
+                margin:.5em;
+            }
+    }
 }
-
-
 `
+const Prompt = styled.div`
+height:50vh;
+width:85%;
+position:absolute;
+display:flex;
+justify-content:flex-end;
+background-color:#dddddd;
+z-index:2;
+top:20%;
+`
+
+
+
+
+
 
 export default function Quiz ({
     screenHeight= 620,
@@ -104,7 +132,8 @@ export default function Quiz ({
 {   
     const router = useRouter()
     const {quiz} = router.query
-    const[quizCol, setQuizCol] = useState("#71C4CA")
+    // const[quizCol, setQuizCol] = useState("#71C4CA")
+    const[prompt, setPrompt] = useState(false)
     if (quiz === "question-one-org")
     {
     questionChain = "What kind of chemical elements  can generate a healthy compost?",
@@ -116,7 +145,7 @@ export default function Quiz ({
     bgImage = "/leafbg"
     bgColorChain1 = "#7CC39F"
     fillColorChain = "#7CC39F"
-    
+    // setQuizCol("green") 
     }
 
 
@@ -237,15 +266,13 @@ export default function Quiz ({
                 setRadioVal(()=> router.push("/quiz/question-two-org"))
             }
             
-            if (radioVal == "male")
-            {
-                fillColorChain="red"
-            }
+
 
             if (quiz === "question-one-org" && radioVal != "male")
             {
                 routeToChain2= "/tips/organicbad",
-                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
+                // setRadioVal(alert("Wrong Answer! Read The hint and try again."))
+                setPrompt(!prompt)
             }
 
             if (quiz === "question-two-org" && radioVal == "other")
@@ -277,7 +304,6 @@ export default function Quiz ({
                 setRadioVal(alert("Wrong Answer! Read The hint and try again."))
             }
 }
-	//set a state here
 	const [radioVal, setRadioVal] = useState("");
     var helpFadeIn = 0
     var leftIn = -500
@@ -288,19 +314,18 @@ export default function Quiz ({
         {
             helpFadeIn=1
             leftIn = "50%"
-        }
-	//when a button is click
-	
+        }	
 
 
-
-    return <QuizCont  imageBg = {bgImage} >
+    return <QuizCont imageBg = {bgImage} >
        <Head>
         <title> Quiz page </title>    
         </Head>
         
         
         <div className="mainContainer"> 
+               
+               
                
                 <div className="iconHeader">
                     <Menu routeToChain = {routeToChain2} />
@@ -313,6 +338,10 @@ export default function Quiz ({
                     bgColor="#F5F1ED"
                     justifyText="center"/>   
                 </div>
+
+               
+                
+
                 <div className="answersCont">
                     <RadioComp
                     question={questionChain}
@@ -331,6 +360,19 @@ export default function Quiz ({
                     hintHeader={hintHeaderText}
                     />
                 </div>
+                
+                { prompt &&
+                    <div className = "promptCont">
+                        <Prompt>
+                            <ImCross className="closeIcon"
+                            onClick = {()=> setPrompt(false)}>
+                            </ImCross>
+
+                        </Prompt>
+                    </div>
+                }
+
+
 
                 <div className="buttonCont">
                     <MyButton 

@@ -1,37 +1,30 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 
+
+
 const DropCont = styled.img`
-position:relative;
+
 object-fit:cover;
-top:70%;
 height:100%;
 width:100%;
 border:2px solid black;
-// background-color:blue;
-margin-left:-5em;
 transition:all .5s;
 
 `;
 const DropCont2 = styled.img`
-position:relative;
-// left:50%;
-top:50%;
+
+object-fit:cover;
 border:2px solid black;
 height:100%;
 width:100%;
-// background-color:green;
-
 `;
 const DropCont3 = styled.img`
-position:relative;
-// left:50%;
-top:50%;
+
+object-fit:cover;
 border:2px solid black;
 height:100%;
 width:100%;
-// background-color:green;
-
 `;
 
 
@@ -41,10 +34,33 @@ border:1px solid black;
 margin:1em;
 
 `;
+const Wrapper = styled.div`
+
+.dropTragetsCont
+{
+    // background-color:#fad;
+    display:flex;
+    border:2px solid red;
+    justify-content:space-around;
+    height:60vh;
+    width:100%;
+
+    .imgConts
+    {
+        border:2px solid yellow;
+        height:80%;
+        width:80%;
+    }
+}
+
+`
+
 
 var boxInd = null
 var change = 1;
 var timer = null
+var timer2 = null
+var timer3 = null
 export default function DnD({
     
     sourceN = "/alien 2/alienrwalk19.gif"
@@ -97,6 +113,10 @@ export default function DnD({
             setBox([...box]);
         
         }
+        else
+        {
+            alert("wrong")
+        }
 
     }
 
@@ -104,6 +124,10 @@ export default function DnD({
     {   
         e.preventDefault()
         console.log("I dropped")
+        clearInterval(timer2)
+        e.target.style.backgroundColor = ""
+        timer =null
+        setSource2 ("/bluebins/blue1.png")
         if(boxInd === 1)
 
         {
@@ -116,6 +140,10 @@ export default function DnD({
     {   
         e.preventDefault()
         console.log("I dropped")
+        clearInterval(timer3)
+        e.target.style.backgroundColor = ""
+        setSource3 ("/greenbins/green1.png")
+        timer =null
         if(boxInd === 1)
 
         {
@@ -154,7 +182,7 @@ export default function DnD({
         e.target.style.backgroundColor = "red"
         
 
-    timer =  setInterval(function()
+    timer2 =  setInterval(function()
         {
 
             change++
@@ -174,7 +202,7 @@ export default function DnD({
         e.target.style.backgroundColor = "red"
         
 
-    timer =  setInterval(function()
+    timer3 =  setInterval(function()
         {
 
             change++
@@ -201,21 +229,21 @@ export default function DnD({
     const onDragLeave2 = (e)=>
     {
         e.preventDefault()
-        clearInterval(timer)
-        timer =null
+        clearInterval(timer2)
+        timer2 =null
         setSource2 ("/bluebins/blue1.png")
         e.target.style.backgroundColor = ""
     }
     const onDragLeave3 = (e)=>
     {
         e.preventDefault()
-        clearInterval(timer)
-        timer =null
+        clearInterval(timer3)
+        timer3 =null
         setSource3 ("/greenbins/green1.png")
         e.target.style.backgroundColor = ""
     }
-    return<div>
-    <div>
+    return<Wrapper>
+  
         {box[0] && 
             <DragBox 
                 draggable = {true}
@@ -227,7 +255,7 @@ export default function DnD({
         }
             
              
-    </div>           
+           
         {box[1] && 
             <DragBox 
                 draggable = {true}
@@ -238,30 +266,41 @@ export default function DnD({
             
 
         }
-        <DropCont
-        onDragOver = {onDragOver}
-        onDrop = {onDrop}
-        onDragEnter = {onDragEnter}
-        onDragLeave = {onDragLeave}
-        src = {changeSrc}
-        id = "cont-one"/>
-        
-        
-        <DropCont2
-        onDragOver = {onDragOver}
-        onDrop = {onDrop2}
-        onDragEnter = {onDragEnter2}
-        onDragLeave = {onDragLeave2}
-        src = {changeSrc2}
-        /> 
-         
-        <DropCont3
-        onDragOver = {onDragOver}
-        onDrop = {onDrop3}
-        onDragEnter = {onDragEnter3}
-        onDragLeave = {onDragLeave3}
-        src = {changeSrc3}
-        /> 
-         
-        </div>
+
+        <div className = "dropTragetsCont">     
+            
+            <div className= "imgConts">  
+                <DropCont
+                onDragOver = {onDragOver}
+                onDrop = {onDrop}
+                onDragEnter = {onDragEnter}
+                onDragLeave = {onDragLeave}
+                src = {changeSrc}
+                id = "cont-one"/>
+            </div>    
+
+
+            <div className= "imgConts">    
+                <DropCont2
+                onDragOver = {onDragOver}
+                onDrop = {onDrop2}
+                onDragEnter = {onDragEnter2}
+                onDragLeave = {onDragLeave2}
+                src = {changeSrc2}
+                /> 
+            </div>    
+
+
+            <div className= "imgConts">
+                <DropCont3
+                onDragOver = {onDragOver}
+                onDrop = {onDrop3}
+                onDragEnter = {onDragEnter3}
+                onDragLeave = {onDragLeave3}
+                src = {changeSrc3}
+                /> 
+            </div>   
+
+        </div>  
+            </Wrapper>
 }
