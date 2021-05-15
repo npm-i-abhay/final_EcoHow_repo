@@ -303,7 +303,7 @@ export default function Quiz ({
         <div className="mainContainer"> 
                
                 <div className="iconHeader">
-                    <Menu routeToChain = {routeToChain2} />
+                    <Menu routeToChain = {routeToChain2} hintChain3="There are a total of three questions.You may click on the hint button at any time to help yourself throughout the quiz." />
                 </div>  
                     
 

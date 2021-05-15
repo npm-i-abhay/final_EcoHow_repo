@@ -84,7 +84,7 @@ font-family: 'Spartan', sans-serif;
 
 export default function Category ({
     routeToChain2 = "/home",
-    hintChain4 = "",
+    hintChain4 = "Organics include things like produce and meat. Inorganics include things like plastic cardboard and electronics.",
     newLabel="Next",
     heading="Organic",
     catDescription="The organic sectcion will teach you about composting, we will share insight on different materials that can help create balanced compost Click “enter” to begin",

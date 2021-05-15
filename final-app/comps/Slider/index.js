@@ -31,9 +31,21 @@ const OptionsContainer = styled.div`
 display:flex;
 justify-content:space-around;
 width:342px;
-color:Black;
+color:#21aab5;
 font-weight: 600;
 font-family: 'Montserrat', sans-serif;
+
+.a1{
+color:grey;
+}
+
+.a2{
+color:#21aab5;    
+}
+
+.a3{
+color:#5EBA92;
+}
 
 `
 
@@ -85,9 +97,9 @@ opt3 = "Always"
                     </SliderContainer>
                     
                     <OptionsContainer>
-                        <p> {opt1} </p>    
-                        <p> {opt2} </p>    
-                        <p> {opt3}</p>    
+                        <p className="a1"> {opt1} </p>    
+                        <p className="a2"> {opt2} </p>    
+                        <p className="a3"> {opt3}</p>    
                     </OptionsContainer>         
 
              </MainContainer>
