@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+
+.main
+{
+    font-family: 'Spartan', sans-serif;
+    font-weight: 500;
+}
+
+.hamHead
+{
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+    font-size:1.5em;
+    color:#21AAB5;
+}
+
+.hamIcons
+{
+    font-size:2.2em;
+    color: #21AAB5;
+}
+
+.content
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size:1.2em;
+
+}
+
+
+.dragContainer
+{
+    background-color:#dddd99;
+    display: flex;
+    /* flex-direction:column; */
+    justify-content: space-between;
+    width:100%;
+    max-width:786px;
+    height: 100vh;
+    overflow: hidden;
+    margin:0 auto;
+    padding:15px;
+}
+.drag{
+    box-sizing:border-box;
+}
+
+.board 
+{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    max-width:300px;
+    background-color: #313131;
+    cursor: pointer;
+}
+
+
+.dragItem
+{
+    background-color: #21AAB5;
+    padding:2em;
+}
