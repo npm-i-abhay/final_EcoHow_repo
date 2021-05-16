@@ -19,6 +19,8 @@ justify-content:center;
 align-items:center;
 font-size:1.02em;
 animation: shake 0.5s;
+cursor:pointer;
+opacity:${props => props.toggleDisplay};
   animation-iteration-count: ${props=>props.count};
 }
 
@@ -41,7 +43,9 @@ font-family: 'Spartan', sans-serif;
 const MakeHelp = ({
 
     text= '\u21FD',
-    hintChain2 = "whatever whatever sometimes Coding is  pain but I like using the rusted gears in my brain"
+    hintChain2 = "whatever whatever sometimes Coding is  pain but I like using the rusted gears in my brain",
+    displayToggle = "1",
+    displayHintChain = ""
     
 })=>
 {   
@@ -62,7 +66,10 @@ const MakeHelp = ({
         }
  
     return <Wrapper> 
-    <IconContainer onClick={()=>setHelp(!help)} count={animationCount}> 
+    <IconContainer 
+    onClick={()=>setHelp(!help)} 
+    count={animationCount}
+   toggleDisplay = {displayToggle} > 
     
         <IconText> 
             <IoHelpCircleOutline/>
@@ -75,6 +82,7 @@ const MakeHelp = ({
     op1={helpFadeIn}
     hint={hintChain2}
     leftValue={leftIn}
+    displayHint = {displayHintChain}
     />
     </Wrapper>
 }

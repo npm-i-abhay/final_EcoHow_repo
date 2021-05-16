@@ -6,6 +6,7 @@ import HeroContainer from '../../comps/HeroImage'
 import Button from '../../comps/Button'
 import MakeIcon from '../../comps/CircleIcons'
 import styled from 'styled-components'
+import styles from '../../styles/main.module.css'
 import MyHelp from '../../comps/HelpButton'
 import Menu from '../../comps/Menu'
 import {useState} from 'react'
@@ -133,7 +134,10 @@ export default function Tips ({
     }
 
 
-    return <TipsCont bg={tipsBackground} bgPos={backgroundPosition}>
+    return <TipsCont 
+            bg={tipsBackground} 
+            bgPos={backgroundPosition}
+            className= {styles.scroller}>
        
        <Head>
         <title> tips page </title>    

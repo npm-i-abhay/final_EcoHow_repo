@@ -9,6 +9,7 @@ import Menu from '../../comps/Menu'
 import Button from '../../comps/Button'
 import {OrganicHelp} from '../../data/text'
 import {InorganicHelp} from '../../data/text'
+import styles from '../../styles/main.module.css'
 
 
 const EvaluationCont = styled.div `
@@ -137,7 +138,7 @@ const handleResult = ()=>
          }
      }
        console.log(valOne - (-valTwo)- (-valThree))
-    return  <EvaluationCont> 
+    return  <EvaluationCont className = {styles.scroller}> 
 
                 <div className="EvHeader">
                     

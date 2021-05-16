@@ -16,7 +16,7 @@ margin:1em;
 transition:0.5s;
 
 .textCont{
-    font-size:24px;
+    font-size:2em;
     font-family: 'Spartan', sans-serif;
     font-weight:bold;
 }
@@ -26,8 +26,8 @@ transition:0.5s;
 const GifContainer = styled.div`
 background-color:white;
 border-radius:50%;
-height:170px;
-width:170px;
+height:300px;
+width:300px;
 margin:2em;
 // `;
 

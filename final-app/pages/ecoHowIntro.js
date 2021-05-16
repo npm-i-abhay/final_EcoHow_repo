@@ -10,6 +10,7 @@ import {useState} from 'react'
 import {useRouter} from 'next/router'
 import HeroContainer from '../comps/HeroImage'
 import {OrganicHelp} from '../data/text'
+import styles from '../styles/main.module.css'
 
 
 const CategoryContainer = styled.div`    
@@ -27,7 +28,16 @@ const CategoryContainer = styled.div`
         background-repeat:no-repeat;
         // background-position:50% 10%;
         background-size: 100%;
+        
 
+        .spacer
+        {
+            display:flex;
+            justify-content:space-evenly;
+            height:80vh;
+            flex-direction:column;
+            align-items: center;
+        }
 
             .CatHeader
             {
@@ -61,8 +71,9 @@ const CategoryContainer = styled.div`
 
             .animCont{
                 display:flex;
-                height:40vh;
-                width:50%;
+                align-items:center;
+                height:60vh;
+                width:70%;
             }
     }
 `
@@ -74,7 +85,8 @@ align-items:center;
 width:70%;
 justify-content:flex-start;
 text-align:center;
-
+font-family: 'Montserrat', sans-serif;
+font-size:1.2em;
 .boldFont{
     font-weight:bold
 }
@@ -87,7 +99,7 @@ text-align:center;
 
 
 export default function Category ({
-    routeToChain2 = "/home",
+    routeToChain2 = "/teamIntro",
     hintChain4 = "Here at EcoHow we place the utmost priority on cleaning up our earth and adjusting our harmful habits. In this app you will learsn valuable knowledge in a fun and interactive way.",
     newLabel="Next",
     onClick = () =>{}
@@ -116,7 +128,7 @@ export default function Category ({
 
  
 
-    return   <CategoryContainer>
+    return   <CategoryContainer className = {styles.scroller} >
                 <div className="CatContainer">
                     
                     
@@ -126,7 +138,8 @@ export default function Category ({
                     hintChain3 = {hintChain4} />
                 </div>  
                 
-
+                                    
+                <div className = "spacer">
                 <TextCont>
                     <p>While you are enjoying EcoHow, you will gain knowledge, tips and have fun while doing so.</p>
                 </TextCont>
@@ -148,7 +161,7 @@ export default function Category ({
                 <Button text={newLabel} onClick= {onClick} bgcolor="#368B8B" text="Let's Begin"/>
                 </div>
        
-
+            </div>
                 </div>
              
              
