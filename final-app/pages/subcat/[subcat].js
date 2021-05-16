@@ -69,7 +69,7 @@ export default function SubCatMapped (
           onClickChain = ()=>router.push("/evaluation/inorganic")
         }
 
-    return <SubCatCont>
+    return <SubCatCont className = {styles.scroller}>
        
        <Head>
         <title> 

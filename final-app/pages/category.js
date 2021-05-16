@@ -10,7 +10,7 @@ import {useRouter} from 'next/router'
 import HeroContainer from '../comps/HeroImage'
 import {OrganicHelp} from '../data/text'
 import CategoryCards from '../comps/CategoryCards'
-
+import styles from '../styles/main.module.css'
 const CategoryContainer = styled.div`    
 
     .CatContainer 
@@ -125,7 +125,7 @@ const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
 
 
 
-    return   <CategoryContainer>
+    return   <CategoryContainer className ={styles.scroller} >
             <div className="CatContainer">
                     
                     

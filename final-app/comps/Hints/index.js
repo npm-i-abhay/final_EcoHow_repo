@@ -13,8 +13,9 @@ background-color:#D7E6DB;
 border-radius:12px;
 opacity:${props=>props.opacity};
 transition:0.2s;
-z-index:2;
 position:absolute;
+z-index:3;
+display:${props => props.hintDisplay};
 left:${props=>props.left}px;
 top:${props=>props.top}em;
 
@@ -40,11 +41,16 @@ const HintCard =({
     op1=1,
     leftValue=2000,
     top=3.5,
-    hintHeader="Help"
+    hintHeader="Help",
+    displayHint = ""
 })=> 
 {
         
-        return <HintCont opacity={op1} left={leftValue} top={top}>
+        return <HintCont 
+                opacity={op1} l
+                eft={leftValue} 
+                top={top}
+                hintDisplay = {displayHint}>
 
     
             <Text1>

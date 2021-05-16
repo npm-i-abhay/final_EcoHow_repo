@@ -38,8 +38,9 @@ flex-direction:column;
 justify-content:space-evenly;
 align-items:center;
 position:relative;
-right:${props=> props.righty};
+left:${props=> props.righty};
 transition: all 1s; 
+visibility:${props=> props.visibleCont};
 
 .headCont
 {
@@ -105,8 +106,9 @@ const Menu = ({
     hintChain3 = "coding is pain but I like using rusted gears of my brain",
     routeToChain = "",
     menuBg = "none",
-    carryState = null
-    // hamieBarAlign = "center"
+    contVisble = "hidden",
+    displayToggleChain = "",
+    displayHintChain1 = ""
 })=> 
 {
     const router = useRouter()
@@ -114,13 +116,18 @@ const Menu = ({
     const[position, setPosition] = useState (false)
     if (moveHam)
     {
-        rightPosition="7.4em"
-        // rightHam = "5em"
-        revealMenu = "flex"
-        menuHeight = "100vh"
-        hideIcons = 0
-        toggle = (!toggle)
-        menuBg = "#5EBA9240"
+        // setTimeout(function()
+        // {
+
+            rightPosition="-7.8em"
+            contVisble = "visible"
+            revealMenu = "flex"
+            menuHeight = "100vh"
+            hideIcons = 0
+            toggle = (!toggle)
+            menuBg = "#5EBA9240"
+        // },100)
+     
         
     }
 
@@ -136,7 +143,10 @@ const Menu = ({
                          <MakeIcon routeTo = {routeToChain}/>
                          <HelpButton 
                          text="?"
-                         hintChain2 = {hintChain3} />
+                         hintChain2 = {hintChain3}
+                         displayToggle = {displayToggleChain} 
+                         displayHintChain = {displayHintChain1}
+                         />
                     </CircleIconsCont>
 
 
@@ -152,18 +162,22 @@ const Menu = ({
                         </HamIcon>
                     
                     </HamContainer>
+                    
+                    
+
                 
                     <MenuItemsConatiner 
-                    righty={rightPosition}
-                    showMenu = {revealMenu}>
+                        righty={rightPosition}
+                        showMenu = {revealMenu}
+                        visibleCont ={contVisble}>
                         
                         <div onClick = {()=> router.push("/home")}className="headCont">
-                            <MenuItemsHead className = {styles.hamHead}  >Home
+                            <MenuItemsHead className = {styles.hamHead}>Home
                             </MenuItemsHead>
-                            <AiTwotoneHome className = {styles.hamIcons}  />
+                            <AiTwotoneHome className = {styles.hamIcons}/>
                         </div>
                         
-                        <div  onClick = {()=> router.push("/category")} className="headCont">
+                        <div onClick = {()=> router.push("/category")} className="headCont">
                             <MenuItemsHead className = {styles.hamHead} 
                             >Categories
                             </MenuItemsHead>
@@ -187,7 +201,7 @@ const Menu = ({
                            
                 
                 </MenuItemsConatiner>
-
+            
                 </TopBarContainer> 
 
         </MenuContainer>

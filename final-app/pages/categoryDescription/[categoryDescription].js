@@ -6,7 +6,7 @@ import Menu from '../../comps/Menu'
 import {useRouter} from 'next/router'
 import HeroContainer from '../../comps/HeroImage'
 import {OrganicHelp} from '../../data/text'
-
+import styles from '../../styles/main.module.css'
 
 const CategoryContainer = styled.div`    
 
@@ -19,10 +19,23 @@ const CategoryContainer = styled.div`
         height:100%;
         width:100vw;
         background-color:#F5F1ED;
-        background-image:url("./teamIntro.svg");
-        background-repeat:no-repeat;
-        background-position:50% 10%;
-        background-size: 40% 30%;
+
+        .spacer
+        {
+            display:flex;
+            justify-content:space-evenly;
+            flex-direction:column;
+            align-items: center;
+            
+            
+            .flexContainer
+            {
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+            }
+        }
 
 
             .CatHeader
@@ -34,31 +47,25 @@ const CategoryContainer = styled.div`
                 margin-bottom:2em;
         
             }
-            .CatBanner
-            {
-                width: 100%;
-                height:200px;
-                display:flex;
-                flex-direction:column;
-                justify-content:space-around;
-    
-            } 
             .buttonCont
             {
                 display:flex;
-                flex-direction:column;
                 align-items:center;
-                justify-content:space-between;
+                justify-content:space-evenly;
                 height:10%;
-                // border:2px solid black;
+                width:100%;
+                margin:1em;
+                
     
             }
 
 
             .animCont{
                 display:flex;
-                height:60vh;
-                width:70%;
+                justify-content:center;
+                align-items:flex-start;
+                height:50vh;
+                width:100%;
             }
     }
 `
@@ -71,6 +78,12 @@ width:70%;
 justify-content:flex-start;
 text-align:center;
 font-family: 'Spartan', sans-serif;
+
+
+    .heading
+    {
+       
+    }
     .par{
         font-family: 'Montserrat', sans-serif;
         text-align:left;
@@ -78,7 +91,12 @@ font-family: 'Spartan', sans-serif;
 
 `;
 
+const DiscImg = styled.img`
+object-fit:contain;
+height:100%;
+margin-top:-1.5em;
 
+`
 
 
 
@@ -118,38 +136,37 @@ export default function Category ({
     }
 
 
- 
 
-    return   <CategoryContainer>
+    return   <CategoryContainer
+             className = {styles.scroller} >
                 <div className="CatContainer">
-                    
-                    
-                <div className="CatHeader">
-                    <Menu
-                    routeToChain = {routeToChain2}
-                    hintChain3 = {hintChain4} />
-                </div>  
-                
+                            
+                            
+                        <div className="CatHeader">
+                            <Menu
+                            routeToChain = {routeToChain2}
+                            hintChain3 = {hintChain4} />
+                        </div>  
+                            
+                    <div className ="spacer">
+                        <div className ="flexContainer">    
+                            <div className="animCont">
+                                <DiscImg src = {gifSource}/>
+                            </div>
+        
+                            <TextCont>
+                                <h1 className = "heading" >{heading}</h1>
+                                <p className="par">{catDescription}</p>
+                            </TextCont>
+                        </div>
+                            
 
-               <div className="animCont">
-               <HeroContainer
-                source={gifSource}
-                borderRadius="0px"
-                />
-                </div>
- 
-                <TextCont>
-                    <h1>{heading}</h1>
-                   
-                    <p className="par">{catDescription}</p>
-                </TextCont>
-              
-
-                <div className = "buttonCont">                    
-                <Button text="Enter"  bgcolor={bgcolor1} onClick={onClickChain}/>
-                <Button text="Back to Categories" bgcolor="#368B8B"/>
-                </div>
-       
+                            <div className = "buttonCont">                    
+                            <Button onClick = { ()=>router.push("/category")}text="Categories" bgcolor="#368B8B"/>
+                            <Button text="Enter"  bgcolor={bgcolor1} onClick={onClickChain}/>
+                            </div>
+                    
+                     </div>
 
                 </div>
              

@@ -9,10 +9,10 @@ import MyButton from '../../comps/Button'
 import styled from 'styled-components'
 import Menu from '../../comps/Menu'
 import {useRouter} from 'next/router'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import MyHint from '../../comps/Hints';
 import {ImCross} from 'react-icons/im'
-import useSound from 'use-sound'
+import styles from '../../styles/main.module.css'
 
 
 const QuizCont = styled.div `
@@ -87,9 +87,9 @@ const QuizCont = styled.div `
         }
         .promptCont
     {
-        // border:2px solid red;
         height:100%;
         display:flex;
+       
         justify-content:center;
         position:absolute;
         top:10%;
@@ -97,20 +97,42 @@ const QuizCont = styled.div `
 
 
             .closeIcon
-            {
+            {   
+                display:flex;
                 font-size:2em;
                 margin:.5em;
             }
+               
+        .flex-Icon
+        {
+            display:flex;
+            margin-top:1em;
+            width:100%;
+            justify-content:flex-end;
+        }
+        .wrongAns
+        {
+            
+            display:flex;
+            width:80%;
+            font-family: 'Montserrat', sans-serif;
+            font-size:2em;
+            margin-bottom:2em;
+        }
     }
 }
 `
 const Prompt = styled.div`
-height:50vh;
+height:40vh;
 width:85%;
 position:absolute;
 display:flex;
-justify-content:flex-end;
-background-color:#ddddbb;
+flex-direction:column;
+justify-content:space-around;
+align-items:center;
+background-color:#21aab5;
+color:#F5F1ED;
+border-radius:20px;
 z-index:2;
 top:20%;
 `
@@ -359,22 +381,26 @@ const correct = () =>
             helpFadeIn=1
             leftIn = "50%"
         }	
+    
         const [label, setLabels] = useState ("black")
         const [banner, setBanner] = useState ("black")
         const [background, setBackground] = useState ("#F5F1ED")
         const [theme, setTheme] = useState (false)
 
-        if (theme)
-        {
-            setLabels("white")
-            setBanner("white")
-            setBackground("Black")
-        }
 
+        //   useEffect(()=>{
+
+        //       setLabels("white")
+        //       setBanner("white")
+        //       setBackground("Black")
+            
+        //      }, [theme]);
+        
     return <QuizCont    
             imageBg = {bgImage}
             blurBg = {blury}
-            bgColMain = {background} >
+            bgColMain = {background}
+            className = {styles.scroller} >
        <Head>
         <title> Quiz page </title>    
         </Head>
@@ -385,7 +411,10 @@ const correct = () =>
                
                
                 <div className="iconHeader blur">
-                    <Menu routeToChain = {routeToChain2} hintChain3="There are a total of three questions.You may click on the hint button at any time to help yourself throughout the quiz." 
+                    <Menu
+                     routeToChain = {routeToChain2} hintChain3="There are a total of three questions.You may click on the hint button at any time to help yourself throughout the quiz."
+                     displayToggleChain = "0" 
+                     displayHintChain1 = "none"
                     />
                 </div>  
                     
@@ -393,7 +422,7 @@ const correct = () =>
                 <div className="banner blur" >
                     <MyBanner 
                     text="Test Your Knowledge" 
-                    textColpr = {banner}
+                    textColor = {banner}
                     bgColor="#F5F1ED"
                     justifyText="center"/>   
                 </div>
@@ -412,7 +441,8 @@ const correct = () =>
                     labelCol = {label}
 
                     />
-     
+
+            {help &&    
                     <MyHint 
                     op1={helpFadeIn}
                     leftValue={leftIn}
@@ -420,18 +450,29 @@ const correct = () =>
                     hint={hintText}
                     hintHeader={hintHeaderText}
                     />
+            }        
                 </div>
                 
                 { prompt &&
                     <div className = "promptCont">
+                        
                         <Prompt>
+                            <div className="flex-Icon">
                             <ImCross className="closeIcon"
                             onClick = {()=>{ 
                                 setPrompt(false), 
                                 setBlury("blur(0px)")}}>
                             </ImCross>
+                            </div>
 
+                            <div className ="wrongAns">
+                            <p >
+                                    Oops, Wrong Answer!
+                                    Please read the hint and try again.
+                            </p>   
+                            </div>
                         </Prompt>
+                        
                     </div>
                 }
 

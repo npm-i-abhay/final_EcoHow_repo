@@ -76,7 +76,7 @@ export const OrganicHelp = {
     },
 
     Subcat:{
-        content:"Read each category carefully! This will help you gain the most from using this app. Once you have finished this section and completed your evaluation. You can skip ahead to the quiz"
+        content:"Read each category carefully! This will help you gain the most from using this app. Once you have finished this section and completed your evaluation."
     },
 
     Evaluation:{
@@ -124,7 +124,7 @@ export const OrganicHints = {
 
 export const OrganicTips = {
     GoodTips:{
-        content:"Based on your score, you are helping to reduce waste in our landfills and green house gases in our envirnment.Great job!"
+        content:"Based on your score, you are helping to reduce waste in our landfills and green house gases in our environment. Great job!"
     },
     BadTips:{
         content:"Based on your score, you may want to continue to do research on proper composting. Remember that if you do not compost your yard or food waste, it will decompose in the landfill. Overtime, it releases methane gas, a potent greenhouse gas.It is best to always compost you vegetables, fruits, scrap food, pet manure, garden waste, and wood "
