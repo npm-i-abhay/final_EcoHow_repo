@@ -104,12 +104,14 @@ const Menu = ({
     toggle = false,
     hintChain3 = "coding is pain but I like using rusted gears of my brain",
     routeToChain = "",
-    menuBg = "none"
+    menuBg = "none",
+    carryState = null
     // hamieBarAlign = "center"
 })=> 
 {
     const router = useRouter()
     const[moveHam, setMoveHam] = useState (false)
+    const[position, setPosition] = useState (false)
     if (moveHam)
     {
         rightPosition="7.4em"
@@ -150,7 +152,7 @@ const Menu = ({
                         </HamIcon>
                     
                     </HamContainer>
-
+                
                     <MenuItemsConatiner 
                     righty={rightPosition}
                     showMenu = {revealMenu}>

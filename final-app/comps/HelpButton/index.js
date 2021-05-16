@@ -17,15 +17,15 @@ display:flex;
 margin:7.9px;
 justify-content:center;
 align-items:center;
-font-size:1.2em;
+font-size:1.02em;
 animation: shake 0.5s;
   animation-iteration-count: ${props=>props.count};
 }
 
 // @keyframes shake {
-//   0% { transform: translate(1px, 1px) rotate(0deg); }
+//   0% { transform: translate(1px, 1px) rotate(0deg);}
 
-//   100% { transform: translate(1px, -2px) rotate(-1deg); }
+//   100% { transform: translate(1px, -2px) rotate(-1deg);}
 // }
 `;
 

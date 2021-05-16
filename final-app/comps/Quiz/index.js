@@ -29,8 +29,8 @@ flex-direction:column;
         {
          margin-left:2em;
          width:80%;
-         text-shadow:0px 5px 7px grey;
-         font-size:2em;
+        //  text-shadow:0px 5px 7px grey;
+         font-size:1.5em;
          color:black;
          font-family: 'Montserrat', sans-serif;
          font-weight:thin;

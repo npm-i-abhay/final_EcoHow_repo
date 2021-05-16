@@ -73,7 +73,8 @@ const CategoryContainer = styled.div`
 export default function Category ({
     routeToChain2 = "/home",
     hintChain4 = "Organics include things like produce and meat. Inorganics include things like plastic cardboard and electronics.",
-    onClickChain = ()=> {}
+    onClickChain = ()=> {},
+    
    
 })
 
@@ -89,7 +90,6 @@ const [textChain2, setText2] = useState("Inorganic");
 const [sourceChain2, setSource2] = useState("./inorganic.gif");
 const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
 
-    
     const router = useRouter();
 
     const HandleClickOrganic = () => 
@@ -126,19 +126,24 @@ const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
 
 
     return   <CategoryContainer>
-                <div className="CatContainer">
+            <div className="CatContainer">
                     
                     
-                <div className="CatHeader">
+                <div >
                     <Menu
                     routeToChain = {routeToChain2}
-                    hintChain3 = {hintChain4} />
+                    hintChain3 = {hintChain4} 
+                   />
+                    
                 </div>  
                 
+         
                 <div className="textCont">
-                <h1>Pick a Category</h1>
-                <p className="par">To learn about a category, tap the respective category, then hit the select button to move on to that section.</p>
+                    <h1>Pick a Category</h1>
+                    <p className="par">To learn about a category, tap the respective category, then hit the select button to move on to that section.</p>
                 </div>
+            
+           
                 <CategoryCards
                 bgcolor={bgcolorChain}
                 text={textChain}
@@ -146,6 +151,9 @@ const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
                 boxShadowDefault={shadowChain}
                 onClick={HandleClickOrganic}
                 />   
+            
+
+            
                 <CategoryCards
                 bgcolor={bgcolorChain2}
                 text={textChain2}
@@ -153,11 +161,11 @@ const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
                 boxShadowDefault={shadowChain2}
                 onClick={HandleClickInorganic}
                 />             
+            
                 <Button text="Select" onClick={onClickChain} bgcolor="#368B8B"/>
-              
-       
+            
 
-                </div>
+            </div>
              
              
              

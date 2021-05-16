@@ -12,6 +12,9 @@ import {useRouter} from 'next/router'
 import {useState} from 'react'
 import MyHint from '../../comps/Hints';
 import {ImCross} from 'react-icons/im'
+import useSound from 'use-sound'
+
+
 const QuizCont = styled.div `
 
 .mainContainer
@@ -20,14 +23,12 @@ const QuizCont = styled.div `
     flex-direction:column;
     height:100%;
     width:100vw;
-    // padding-bottom:5em;
     background-color:#F5F1ED;
     background-image: url(${props => props.imageBg}.png);
     background-size:contain;
     background-repeat:no-repeat;
     background-position-x: -10em;
     background-position-y: 20em;
-    // background-blend-mode: overlay;
 
     
         .iconHeader
@@ -35,9 +36,13 @@ const QuizCont = styled.div `
             width:100%;
             display:flex;
             justify-content:space-between;
-            
         } 
-        
+            
+        .blur
+        {
+         filter:${props => props.blurBg};
+         transition: all .7s;
+        }
         .banner
         {
             width: 100%;
@@ -81,7 +86,7 @@ const QuizCont = styled.div `
         }
         .promptCont
     {
-        border:2px solid red;
+        // border:2px solid red;
         height:100%;
         display:flex;
         justify-content:center;
@@ -104,12 +109,10 @@ width:85%;
 position:absolute;
 display:flex;
 justify-content:flex-end;
-background-color:#dddddd;
+background-color:#ddddbb;
 z-index:2;
 top:20%;
 `
-
-
 
 
 
@@ -127,13 +130,29 @@ export default function Quiz ({
     hintHeaderText="Hint",
     bgImage = "/bluearrow",
     bgColorChain1 = "#71C4CA",
-    fillColorChain = "#71C4CA"
+    fillColorChain = "#71C4CA",
+    bgBlur = "blur(5px)"
 })
 {   
     const router = useRouter()
     const {quiz} = router.query
+    
+    var audio =  ("/audio/incorrect.wav")
+    const Incorrect = () => {
+    new Audio(audio).play()
+}
+    
+var audioCorrect =  ("/audio/correct.wav")
+const correct = () => 
+{
+    new Audio(audioCorrect).play()
+}
+
+
+
     // const[quizCol, setQuizCol] = useState("#71C4CA")
     const[prompt, setPrompt] = useState(false)
+    const [blury, setBlury] = useState ("blur(0px)")
     if (quiz === "question-one-org")
     {
     questionChain = "What kind of chemical elements  can generate a healthy compost?",
@@ -216,12 +235,15 @@ export default function Quiz ({
             {
                 routeToChain2= "/tips/inorganicbad"
                 setRadioVal(()=> router.push("/quiz/question-two-inorg"))
+                correct()
             }
             if (quiz === "question-one-inorg" && radioVal != "female")
             {
                 
                 routeToChain2= "/tips/inorganicbad"
-                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
+                Incorrect()
+                setPrompt(true)
+                setBlury ("blur(5px)")
             }
 
 
@@ -231,12 +253,15 @@ export default function Quiz ({
             
                 routeToChain2= "/quiz/question-one-inorg"
                 setRadioVal(()=> router.push("/quiz/question-three-inorg"))
+                correct()
             }
             if (quiz === "question-two-inorg" && radioVal != "male")
             {
             
                 routeToChain2= "/quiz/question-one-inorg"
-                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
+                setPrompt(true)
+                setBlury ("blur(5px)")
+                Incorrect()
             }
 
 
@@ -247,47 +272,61 @@ export default function Quiz ({
             
                 routeToChain2= "/quiz/question-two-inorg"
                 setRadioVal(()=> router.push("/results"))
+                correct()
             }
             if (quiz === "question-three-inorg" && radioVal != "female")
             {
             
                 routeToChain2= "/quiz/question-two-inorg"
-                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
+                setPrompt(true)
+                setBlury ("blur(5px)")
+                Incorrect()
             }
 
 
 
 // ====================================================
 
-
             if (quiz === "question-one-org" && radioVal == "male")
             {   
                 routeToChain2= "/tips/organicbad",
                 setRadioVal(()=> router.push("/quiz/question-two-org"))
+                correct()
             }
             
-
+           
 
             if (quiz === "question-one-org" && radioVal != "male")
             {
-                routeToChain2= "/tips/organicbad",
+                routeToChain2= "/tips/organicbad"
                 // setRadioVal(alert("Wrong Answer! Read The hint and try again."))
-                setPrompt(!prompt)
+                // setPrompt(true)
+                setPrompt(true)
+                setBlury ("blur(5px)")
+                Incorrect()
+                
+               
             }
+
+
+            
+
+
 
             if (quiz === "question-two-org" && radioVal == "other")
             {
             
                 routeToChain2= "question-one-org"
                 setRadioVal(()=> router.push("/quiz/question-three-org"))
-
+                correct()
             }
             if (quiz === "question-two-org" && radioVal != "other")
             {
             
                 routeToChain2= "question-one-org"
-                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
-
+                setPrompt(true)
+                setBlury ("blur(5px)")
+                Incorrect()
             }
 
 
@@ -296,12 +335,15 @@ export default function Quiz ({
 
                 routeToChain2= "/quiz/question-two-org"
                 setRadioVal(()=> router.push("/results"))
+                correct()
             }
             if (quiz === "question-three-org" && radioVal != "female")
             {
 
                 routeToChain2= "/quiz/question-two-org"
-                setRadioVal(alert("Wrong Answer! Read The hint and try again."))
+                setPrompt(true)
+                Incorrect ()
+                setBlury ("blur(5px)")
             }
 }
 	const [radioVal, setRadioVal] = useState("");
@@ -317,7 +359,11 @@ export default function Quiz ({
         }	
 
 
-    return <QuizCont imageBg = {bgImage} >
+
+
+    return <QuizCont    
+            imageBg = {bgImage}
+            blurBg = {blury} >
        <Head>
         <title> Quiz page </title>    
         </Head>
@@ -327,12 +373,13 @@ export default function Quiz ({
                
                
                
-                <div className="iconHeader">
-                    <Menu routeToChain = {routeToChain2} hintChain3="There are a total of three questions.You may click on the hint button at any time to help yourself throughout the quiz." />
+                <div className="iconHeader blur">
+                    <Menu routeToChain = {routeToChain2} hintChain3="There are a total of three questions.You may click on the hint button at any time to help yourself throughout the quiz." 
+                    />
                 </div>  
                     
 
-                <div className="banner">
+                <div className="banner blur" >
                     <MyBanner 
                     text="Test Your Knowledge" 
                     bgColor="#F5F1ED"
@@ -342,7 +389,7 @@ export default function Quiz ({
                
                 
 
-                <div className="answersCont">
+                <div className="answersCont blur">
                     <RadioComp
                     question={questionChain}
                     onClick={(e)=>setRadioVal(e.target.value)}
@@ -365,7 +412,9 @@ export default function Quiz ({
                     <div className = "promptCont">
                         <Prompt>
                             <ImCross className="closeIcon"
-                            onClick = {()=> setPrompt(false)}>
+                            onClick = {()=>{ 
+                                setPrompt(false), 
+                                setBlury("blur(0px)")}}>
                             </ImCross>
 
                         </Prompt>
@@ -374,15 +423,18 @@ export default function Quiz ({
 
 
 
-                <div className="buttonCont">
+                <div className="buttonCont blur">
                     <MyButton 
                     text="hint"
                     onClick={()=>setHelp(!help)}
                     bgcolor="#376293"/>
                     <MyButton 
                     text={buttonText}
-                    onClick={handleResult}
+                    onClick= {handleResult}
                     bgcolor={bgColorChain1}/>
+                   
+                     {/* <MyButton onClick= {start}/>        */}
+                        
                 </div>
 
             
