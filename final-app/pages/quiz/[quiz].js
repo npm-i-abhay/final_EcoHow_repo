@@ -92,7 +92,7 @@ const QuizCont = styled.div `
        
         justify-content:center;
         position:absolute;
-        top:10%;
+        top:20%;
         width:100%;
 
 
@@ -371,14 +371,14 @@ const correct = () =>
             }
 }
 	const [radioVal, setRadioVal] = useState("");
-    var helpFadeIn = 0
+    var helpFadeIn = 1
     var leftIn = -500
     var topIn=10
     const[help, setHelp] = useState(false)
  
         if (help)
         {
-            helpFadeIn=1
+            
             leftIn = "50%"
         }	
     
@@ -449,7 +449,7 @@ const correct = () =>
                     top={topIn}
                     hint={hintText}
                     hintHeader={hintHeaderText}
-                    />
+                    onClick = {()=>setHelp(!help)}/>
             }        
                 </div>
                 
