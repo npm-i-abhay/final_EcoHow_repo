@@ -31,7 +31,7 @@ flex-direction:column;
          width:80%;
         //  text-shadow:0px 5px 7px grey;
          font-size:1.5em;
-         color:black;
+         color:${props=> props.colLabel};
          font-family: 'Montserrat', sans-serif;
          font-weight:thin;
         }
@@ -53,6 +53,7 @@ width: 100%;
 font-size:1.5em;
 border-radius: 16px;
 margin-bottom:3em;
+color:${props=> props.colLabel};
 padding:1.5em;
 text-align:center;
 font-family: 'Montserrat', sans-serif;
@@ -127,12 +128,14 @@ const RadioComp = ({
     label1="",
     label2="",
     label3="",
-    fillColor="#71C4CA"
+    fillColor="#71C4CA",
+    labelCol = "black"
 }) =>{
 
-	return <QuizCont>
+	return <QuizCont colLabel = {labelCol} >
 		
-        <QuestionCont>
+        <QuestionCont
+        colLabel = {labelCol} >
         {question}
         </QuestionCont>
         
@@ -196,8 +199,8 @@ const RadioComp = ({
                       <div className="radioFill"> </div>
                   
                   </RadioCont>
+                  <label  className="labelText" for="other"  >{label3}</label> 
               
-                  <label  className="labelText" for="other">{label3}</label> 
                 
             </div>  
         

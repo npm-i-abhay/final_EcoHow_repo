@@ -23,7 +23,7 @@ const QuizCont = styled.div `
     flex-direction:column;
     height:100%;
     width:100vw;
-    background-color:#F5F1ED;
+    background-color:${props => props.bgColMain};
     background-image: url(${props => props.imageBg}.png);
     background-size:contain;
     background-repeat:no-repeat;
@@ -53,6 +53,7 @@ const QuizCont = styled.div `
             flex-direction:column;
             justify-content:center;
             align-items:center
+            
         }
 
         .answersCont{
@@ -125,6 +126,7 @@ export default function Quiz ({
     q1="test",
     q2="test",
     q3="test",
+    mainBgCol = "#F5F1ED" ,
     buttonText="Next Question",
     hintText="blarg",
     hintHeaderText="Hint",
@@ -357,13 +359,22 @@ const correct = () =>
             helpFadeIn=1
             leftIn = "50%"
         }	
+        const [label, setLabels] = useState ("black")
+        const [banner, setBanner] = useState ("black")
+        const [background, setBackground] = useState ("#F5F1ED")
+        const [theme, setTheme] = useState (false)
 
-
-
+        if (theme)
+        {
+            setLabels("white")
+            setBanner("white")
+            setBackground("Black")
+        }
 
     return <QuizCont    
             imageBg = {bgImage}
-            blurBg = {blury} >
+            blurBg = {blury}
+            bgColMain = {background} >
        <Head>
         <title> Quiz page </title>    
         </Head>
@@ -382,6 +393,7 @@ const correct = () =>
                 <div className="banner blur" >
                     <MyBanner 
                     text="Test Your Knowledge" 
+                    textColpr = {banner}
                     bgColor="#F5F1ED"
                     justifyText="center"/>   
                 </div>
@@ -397,6 +409,8 @@ const correct = () =>
                     label2={q2}
                     label3={q3}
                     fillColor = {fillColorChain}
+                    labelCol = {label}
+
                     />
      
                     <MyHint 
@@ -433,7 +447,7 @@ const correct = () =>
                     onClick= {handleResult}
                     bgcolor={bgColorChain1}/>
                    
-                     {/* <MyButton onClick= {start}/>        */}
+                     {/* <MyButton onClick={()=> setTheme(!theme)}/>        */}
                         
                 </div>
 
