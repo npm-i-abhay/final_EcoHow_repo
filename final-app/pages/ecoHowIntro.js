@@ -10,7 +10,7 @@ import {useState} from 'react'
 import {useRouter} from 'next/router'
 import HeroContainer from '../comps/HeroImage'
 import {OrganicHelp} from '../data/text'
-import ProgressDots from '../comps/progressDots'
+
 
 const CategoryContainer = styled.div`    
 
