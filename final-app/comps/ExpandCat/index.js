@@ -140,9 +140,9 @@ transition-delay:.5s;
 
     if (expand)
     {
-        expandHeight = "100vh"
+        expandHeight = "75vh"
         showDisplay= 1
-        imageHeight = "30%"
+        imageHeight = "50%"
         imageblur = "blur(0px)"
         expandBorder = "1px solid green"
         shadowShad = "4px 4px 10px 3px  lightgrey"
@@ -183,8 +183,6 @@ transition-delay:.5s;
                         blury={imageblur}/>
                        
                        <div className="textAndStatFlex">
-                        
-                            <StatGraphic heightStat={statHeight} widthStat={statWidth} src="/statbars.svg" />
                             <div className={"textLots"}> 
                             {textLong}</div>
 

@@ -7,12 +7,14 @@ import {Router, useRouter} from 'next/router'
 import Button from '../comps/Button'
 
 const HomeContainer = styled.div`
-
+height:100%;
+width:100%;
 .wrapper
 {
     display:flex;
     flex-direction:column;
     align-items: center;
+    justify-content:space-between;
     height:100vh;
     width:100vw;
     background: linear-gradient(180deg, rgba(136, 247, 234, 0.3) -22.28%, rgba(33, 170, 181, 0.3) 78.05%),
@@ -30,6 +32,11 @@ linear-gradient(0deg, #EDEDED, #EDEDED);
             margin:2em;
         }
 
+}
+.graphic
+{
+    width:80%;
+    height:80%;
 }
 
 `

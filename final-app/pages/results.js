@@ -18,7 +18,7 @@ const ResultsCont = styled.div `
 {
     display:flex;
     flex-direction:column;
-    height:100%;
+    height:100vh;
     width:100vw;
     justify-content:space-around;
     background-color:#F5F1ED;
@@ -29,7 +29,6 @@ const ResultsCont = styled.div `
         {
     
             align-items:center;
-            // height:100%;
             display:flex;
             flex-direction:column;
 
@@ -43,32 +42,6 @@ const ResultsCont = styled.div `
 
         }
 
-        .iconHeader
-        {
-            width:100%;
-            display:flex;
-            justify-content:flex-end;
-        } 
-        
-        .banner
-        {
-            width: 100%;
-            height:125px;
-            display:flex;
-            flex-direction:column;
-            justify-content:space-around;
-        }
-
-        .answersCont
-        {
-            display:flex;
-            flex-direction:column
-            height:50%;
-            width:100%;
-            background-color:#376293;
-            justify-content:center;
-            margin-bottom:50px;
-        }
 
         .buttonCont
         {
@@ -76,21 +49,10 @@ const ResultsCont = styled.div `
             flex-direction:column
             height:30%;
             width:100%;
-            background-color:#376293; 
-            justify-content:space-between;
+            
+            justify-content:space-around;
             margin-bottom:10px;
         }
-
-        .toggleCont
-        {
-            display:flex;
-            flex-direction:column
-            height:30%;
-            width:100%;
-            background-color#376293; 
-            justify-content:center;
-        }
-
 
 }
 
@@ -120,7 +82,7 @@ export default function Tips ({
         
         <div className="mainContainer">
 
-                <Menu/>
+                {/* <Menu/> */}
                 <div className="yourResult">
                     
                     
@@ -131,12 +93,16 @@ export default function Tips ({
                     
                 </div>
                 <br></br>
-                
+            <div className = "buttonCont">
                 <MyButton 
                     text="Back to Categories"
                     bgcolor="#3AB5A5"
                     onClick = {()=> router.push ("/category")}/>
-               
+                <MyButton 
+                    text="Walk To The Park"
+                    bgcolor="#21aab5"
+                    onClick = {()=> router.push ("/GTest")}/>
+             </div>  
         </div>
         </ResultsCont>
 }

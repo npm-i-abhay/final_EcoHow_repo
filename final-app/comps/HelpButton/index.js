@@ -17,15 +17,18 @@ display:flex;
 margin:7.9px;
 justify-content:center;
 align-items:center;
-font-size:1.2em;
+
+font-size:1.02em;
 animation: shake 0.5s;
+cursor:pointer;
+opacity:${props => props.toggleDisplay};
   animation-iteration-count: ${props=>props.count};
 }
 
 // @keyframes shake {
-//   0% { transform: translate(1px, 1px) rotate(0deg); }
+//   0% { transform: translate(1px, 1px) rotate(0deg);}
 
-//   100% { transform: translate(1px, -2px) rotate(-1deg); }
+//   100% { transform: translate(1px, -2px) rotate(-1deg);}
 // }
 `;
 
@@ -41,19 +44,15 @@ font-family: 'Spartan', sans-serif;
 const MakeHelp = ({
 
     text= '\u21FD',
-    hintChain2 = "whatever whatever sometimes Coding is  pain but I like using the rusted gears in my brain"
+    hintChain2 = "whatever whatever sometimes Coding is  pain but I like using the rusted gears in my brain",
+    displayToggle = "1",
+    displayHintChain = ""
     
 })=>
 {   
     var helpFadeIn = 0
     var leftIn = -500
     const[help, setHelp] = useState(false)
-    const [animationCount, setAnimationCount] = useState("infinite");
- 
-        if (IconContainer.onClick){
-            setAnimationCount("0")
-        }
-
 
         if (help)
         {
@@ -62,7 +61,9 @@ const MakeHelp = ({
         }
  
     return <Wrapper> 
-    <IconContainer onClick={()=>setHelp(!help)} count={animationCount}> 
+    <IconContainer 
+    onClick={()=>setHelp(!help)} 
+   toggleDisplay = {displayToggle} > 
     
         <IconText> 
             <IoHelpCircleOutline/>
@@ -75,6 +76,7 @@ const MakeHelp = ({
     op1={helpFadeIn}
     hint={hintChain2}
     leftValue={leftIn}
+    displayHint = {displayHintChain}
     />
     </Wrapper>
 }

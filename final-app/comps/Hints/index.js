@@ -1,22 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import {ImCross} from 'react-icons/im'
 
 const HintCont = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-content:center;
-height:16.75em;
-width: 20em;
+justify-content:space-around;
+height:40vh;
+width:85%;
 background-color:#D7E6DB;
-border-radius:12px;
+border-radius:20px;
 opacity:${props=>props.opacity};
-transition:0.2s;
-z-index:2;
+transition:.5s;
 position:absolute;
+z-index:3;
+display:${props => props.hintDisplay};
 left:${props=>props.left}px;
 top:${props=>props.top}em;
+
+    .closeIcon
+    {   display:flex;
+        justify-content:flex-end;
+        font-size:2em;
+        margin:.5em .5em 0 0 ;
+        // border:2px solid red;
+        width:93%;
+    }
+    .hintTexts
+    {   display:flex;
+        flex-direction:column;
+        margin-bottom:2.5em;
+        // border:2px solid red;
+        width:90%;
+        
+    }
 
 `;
 
@@ -29,6 +47,9 @@ width:80%
 
 const Text3 = styled.span`
 font-size:1em;
+font-family: 'Montserrat', sans-serif;
+font-size:1.5em;
+// margin-bottom:2.5em;
 width:80%;
 `;
 
@@ -40,20 +61,34 @@ const HintCard =({
     op1=1,
     leftValue=2000,
     top=3.5,
-    hintHeader="Help"
+    hintHeader="Help",
+    displayHint = "",
+    onClick = ()=> {}
 })=> 
 {
         
-        return <HintCont opacity={op1} left={leftValue} top={top}>
+        return <HintCont 
+                opacity={op1} l
+                left={leftValue} 
+                top={top}
+                hintDisplay = {displayHint}>
+                
+                <div className="closeIcon">
 
-    
-            <Text1>
-                {hintHeader}
-            </Text1>
-            <br></br>
-            <Text3>
-            {hint}    
-            </Text3> 
+                    <ImCross onClick = {onClick}>
+                    </ImCross>
+                </div>
+                
+                <div className="hintTexts">
+                    <Text1>
+                        {hintHeader}
+                    </Text1>
+                    <br>
+                    </br>
+                    <Text3>
+                        {hint}    
+                    </Text3> 
+                </div>    
          </HintCont>
 }
 

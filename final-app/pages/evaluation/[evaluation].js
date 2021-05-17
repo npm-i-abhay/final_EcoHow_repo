@@ -9,7 +9,9 @@ import Menu from '../../comps/Menu'
 import Button from '../../comps/Button'
 import {OrganicHelp} from '../../data/text'
 import {InorganicHelp} from '../../data/text'
-
+import styles from '../../styles/main.module.css'
+import {MenuReferences} from '../../data/text'
+import {MenuReferences2} from '../../data/text'
 
 const EvaluationCont = styled.div `
         display:flex;
@@ -76,15 +78,16 @@ export default function Evalution ({
     bgColorTrackChain1= "#5EBA92",
     bgColorCont = "#5EBA9250",
     buttonBg = "#70B794",
-
-
-
-
 })
+
+
+
 
 {
     const router = useRouter();
     const {evaluation} = router.query;
+
+    var references = MenuReferences
 
     if (evaluation === "inorganic")
 
@@ -93,16 +96,25 @@ export default function Evalution ({
         labelTextChain2= "Do you remember to recycle items properly at home?",
         labelTextChain3= "Do you purchase second-hand items (Clothes, Appliances, Furniture)?",
         routeToChain2="/subcat/inorganic"
-        hintChain4 = InorganicHelp.Evaluation.content,
+        hintChain4 = InorganicHelp.Evaluation.content
         bgColorTrackChain1= "#71C4CA"
         bgColorCont = "#CBE3E270"
         buttonBg = "#71C4CA"
+        
     }
 
     const [valOne, setVal] = useState (0)
     const [valTwo, setValTwo] = useState (0)
     const [valThree, setValThree] = useState (0)
     const [newEvRoute, setEvRoute] = useState("/home")
+    const[moveHam, setMoveHam] = useState (true)
+
+    if (moveHam === false)
+    {
+        references = MenuReferences2
+    }
+
+    
 
 const handleResult = ()=>
      {
@@ -137,26 +149,41 @@ const handleResult = ()=>
          }
      }
        console.log(valOne - (-valTwo)- (-valThree))
-    return  <EvaluationCont> 
+    return  <EvaluationCont className = {styles.scroller}> 
 
                 <div className="EvHeader">
                     
                     <div className="hamburger">
-                        <Menu 
-                            routeToChain = {routeToChain2}
-                            hintChain3 =    {hintChain4} />
+                       {references.map((value, index)=>{
+                           return <Menu 
+                           key = {index}
+                           routeToChain = {routeToChain2}
+                           hintChain3 =    {hintChain4}
+                           rightPosition = {value.rightPositionChain}
+                           contVisble = {value.contVisbleChain}
+                           revealMenu = {value.revealMenuChain}
+                           menuHeight = {value.menuHeightChain}
+                           hideIcons ={value.hideIconsChain}
+                           toggle = {value.toggleChain}
+                           menuBg = {value.menuBgChain}
+                           onClick = {()=> setMoveHam (!moveHam)}/>
+                        })} 
+
+
+                       
                     </div>
 
                 </div>  
-
+                
+            {moveHam &&
                 <div className="EvBanner">
                     <MyBanner 
                     bgColor="#E5E5E5" 
                     text="Your Habits"/>
                 </div>
-
+            }
                
-
+            {moveHam &&
                         <div className = "SliderQuestion" > 
                             <Slider 
                             Labeltext={labelTextChain1}
@@ -174,9 +201,12 @@ const handleResult = ()=>
                             bgColor = {bgColorCont}/>
 
                         </div>
+                }
+                {moveHam &&
                 <Button 
                 text="Lets See How You Did"
                 onClick = {handleResult}
                 bgcolor = {buttonBg} />
+                }
             </EvaluationCont>
 }

@@ -63,3 +63,7 @@
     background-color: #21AAB5;
     padding:2em;
 }
+.scroller
+{
+  overflow-x: hidden;
+}
