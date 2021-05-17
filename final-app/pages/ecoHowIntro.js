@@ -14,6 +14,7 @@ import {MenuReferences} from '../data/text'
 import {MenuReferences2} from '../data/text'
 import styles from '../styles/main.module.css'
 
+
 const CategoryContainer = styled.div`    
 
     .CatContainer 
