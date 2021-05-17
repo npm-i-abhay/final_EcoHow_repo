@@ -12,6 +12,8 @@ import {useRouter} from 'next/router'
 import {useState, useEffect} from 'react'
 import MyHint from '../../comps/Hints';
 import {ImCross} from 'react-icons/im'
+import {MenuReferences} from '../../data/text'
+import {MenuReferences2} from '../../data/text'
 import styles from '../../styles/main.module.css'
 
 
@@ -160,7 +162,12 @@ export default function Quiz ({
 {   
     const router = useRouter()
     const {quiz} = router.query
-    
+        var references = MenuReferences
+    const[moveHam, setMoveHam] = useState (true)
+    if (moveHam === false)
+    {
+        references = MenuReferences2
+    }
     var audio =  ("/audio/incorrect.wav")
     const Incorrect = () => {
     new Audio(audio).play()
@@ -409,16 +416,32 @@ const correct = () =>
         <div className="mainContainer"> 
                
                
-               
-                <div className="iconHeader blur">
-                    <Menu
+                    {/* <Menu
                      routeToChain = {routeToChain2} hintChain3="There are a total of three questions.You may click on the hint button at any time to help yourself throughout the quiz."
                      displayToggleChain = "0" 
                      displayHintChain1 = "none"
-                    />
+                    /> */}
+               
+                <div className="iconHeader blur">
+                {references.map((value, index)=>{
+                           return <Menu 
+                           key = {index}
+                           routeToChain = {routeToChain2}
+                           
+                           rightPosition = {value.rightPositionChain}
+                           contVisble = {value.contVisbleChain}
+                           revealMenu = {value.revealMenuChain}
+                           menuHeight = {value.menuHeightChain}
+                           hideIcons ={value.hideIconsChain}
+                           toggle = {value.toggleChain}
+                           menuBg = {value.menuBgChain}
+                           displayToggleChain= "0"
+                            displayHintChain1= "none"
+                           onClick = {()=> setMoveHam (!moveHam)}/>
+                        })} 
                 </div>  
                     
-
+            {moveHam &&
                 <div className="banner blur" >
                     <MyBanner 
                     text="Test Your Knowledge" 
@@ -426,10 +449,10 @@ const correct = () =>
                     bgColor="#F5F1ED"
                     justifyText="center"/>   
                 </div>
-
+            }
                
                 
-
+               {moveHam &&
                 <div className="answersCont blur">
                     <RadioComp
                     question={questionChain}
@@ -439,8 +462,8 @@ const correct = () =>
                     label3={q3}
                     fillColor = {fillColorChain}
                     labelCol = {label}
-
                     />
+
 
             {help &&    
                     <MyHint 
@@ -452,7 +475,7 @@ const correct = () =>
                     onClick = {()=>setHelp(!help)}/>
             }        
                 </div>
-                
+            } 
                 { prompt &&
                     <div className = "promptCont">
                         
@@ -477,7 +500,7 @@ const correct = () =>
                 }
 
 
-
+            {moveHam &&
                 <div className="buttonCont blur">
                     <MyButton 
                     text="hint"
@@ -491,7 +514,7 @@ const correct = () =>
                      {/* <MyButton onClick={()=> setTheme(!theme)}/>        */}
                         
                 </div>
-
+            }
             
 
         </div>

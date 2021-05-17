@@ -10,7 +10,8 @@ import Button from '../../comps/Button'
 import {OrganicHelp} from '../../data/text'
 import {InorganicHelp} from '../../data/text'
 import styles from '../../styles/main.module.css'
-
+import {MenuReferences} from '../../data/text'
+import {MenuReferences2} from '../../data/text'
 
 const EvaluationCont = styled.div `
         display:flex;
@@ -77,14 +78,6 @@ export default function Evalution ({
     bgColorTrackChain1= "#5EBA92",
     bgColorCont = "#5EBA9250",
     buttonBg = "#70B794",
-    rightPositionChain = "-55em",
-    contVisbleChain = "hidden",
-    revealMenuChain = "flex",
-    menuHeightChain = "10vh",
-    hideIconsChain = 1,
-    toggleChain = false,
-    menuBgChain = ""
-
 })
 
 
@@ -94,6 +87,8 @@ export default function Evalution ({
     const router = useRouter();
     const {evaluation} = router.query;
 
+    var references = MenuReferences
+
     if (evaluation === "inorganic")
 
     {
@@ -101,10 +96,11 @@ export default function Evalution ({
         labelTextChain2= "Do you remember to recycle items properly at home?",
         labelTextChain3= "Do you purchase second-hand items (Clothes, Appliances, Furniture)?",
         routeToChain2="/subcat/inorganic"
-        hintChain4 = InorganicHelp.Evaluation.content,
+        hintChain4 = InorganicHelp.Evaluation.content
         bgColorTrackChain1= "#71C4CA"
         bgColorCont = "#CBE3E270"
         buttonBg = "#71C4CA"
+        
     }
 
     const [valOne, setVal] = useState (0)
@@ -115,15 +111,9 @@ export default function Evalution ({
 
     if (moveHam === false)
     {
-
-            rightPositionChain="-7.8em"
-            contVisbleChain = "visible"
-            revealMenuChain = "flex"
-            menuHeightChain = "100vh"
-            hideIconsChain = 0
-            toggleChain = (!toggleChain)
-            menuBgChain = "#5EBA9240"
+        references = MenuReferences2
     }
+
     
 
 const handleResult = ()=>
@@ -164,17 +154,23 @@ const handleResult = ()=>
                 <div className="EvHeader">
                     
                     <div className="hamburger">
-                        <Menu 
-                            routeToChain = {routeToChain2}
-                            hintChain3 =    {hintChain4}
-                            rightPosition = {rightPositionChain} 
-                            contVisble = {contVisbleChain}
-                            revealMenu = {revealMenuChain}
-                            menuHeight = { menuHeightChain}
-                            hideIcons = {hideIconsChain}
-                            toggle = {toggleChain}
-                            menuBg = {menuBgChain}
-                            onClick = {()=> setMoveHam (!moveHam)}/>
+                       {references.map((value, index)=>{
+                           return <Menu 
+                           key = {index}
+                           routeToChain = {routeToChain2}
+                           hintChain3 =    {hintChain4}
+                           rightPosition = {value.rightPositionChain}
+                           contVisble = {value.contVisbleChain}
+                           revealMenu = {value.revealMenuChain}
+                           menuHeight = {value.menuHeightChain}
+                           hideIcons ={value.hideIconsChain}
+                           toggle = {value.toggleChain}
+                           menuBg = {value.menuBgChain}
+                           onClick = {()=> setMoveHam (!moveHam)}/>
+                        })} 
+
+
+                       
                     </div>
 
                 </div>  

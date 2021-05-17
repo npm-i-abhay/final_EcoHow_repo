@@ -9,6 +9,8 @@ import {useState} from 'react'
 import {useRouter} from 'next/router'
 import HeroContainer from '../comps/HeroImage'
 import {OrganicHelp} from '../data/text'
+import {MenuReferences} from '../data/text'
+import {MenuReferences2} from '../data/text'
 import CategoryCards from '../comps/CategoryCards'
 import styles from '../styles/main.module.css'
 const CategoryContainer = styled.div`    
@@ -90,6 +92,12 @@ const [textChain2, setText2] = useState("Inorganic");
 const [sourceChain2, setSource2] = useState("./inorganic.gif");
 const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
 
+var references = MenuReferences
+const[moveHam, setMoveHam] = useState (true)
+if (moveHam === false)
+{
+    references = MenuReferences2
+}
     const router = useRouter();
 
     const HandleClickOrganic = () => 
@@ -130,20 +138,32 @@ const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
                     
                     
                 <div >
-                    <Menu
-                    routeToChain = {routeToChain2}
-                    hintChain3 = {hintChain4} 
-                   />
+                {references.map((value, index)=>{
+                           return <Menu 
+                           key = {index}
+                           routeToChain =   {routeToChain2}
+                           hintChain3 =     {hintChain4}
+                           rightPosition =  {value.rightPositionChain}
+                           contVisble =     {value.contVisbleChain}
+                           revealMenu =     {value.revealMenuChain}
+                           menuHeight =     {value.menuHeightChain}
+                           hideIcons =      {value.hideIconsChain}
+                           toggle =         {value.toggleChain}
+                           menuBg =         {value.menuBgChain}
+                           onClick =        {()=> setMoveHam (!moveHam)}/>
+                        })}
                     
                 </div>  
                 
-         
+            {moveHam &&
                 <div className="textCont">
                     <h1>Pick a Category</h1>
                     <p className="par">To learn about a category, tap the respective category, then hit the select button to move on to that section.</p>
                 </div>
             
-           
+            }
+
+            {moveHam &&
                 <CategoryCards
                 bgcolor={bgcolorChain}
                 text={textChain}
@@ -151,9 +171,9 @@ const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
                 boxShadowDefault={shadowChain}
                 onClick={HandleClickOrganic}
                 />   
+            }
             
-
-            
+            {moveHam &&
                 <CategoryCards
                 bgcolor={bgcolorChain2}
                 text={textChain2}
@@ -161,9 +181,11 @@ const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
                 boxShadowDefault={shadowChain2}
                 onClick={HandleClickInorganic}
                 />             
-            
+            }
+
+            {moveHam &&
                 <Button text="Select" onClick={onClickChain} bgcolor="#368B8B"/>
-            
+            }
 
             </div>
              

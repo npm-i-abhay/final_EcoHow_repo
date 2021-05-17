@@ -19,7 +19,7 @@ display:flex;
 background-color:${props => props.bgMenu};
 justify-content:center;
 position:realtive;
-transition:all .2s;
+transition:all .4s;
 
 `
 
@@ -39,7 +39,7 @@ justify-content:space-evenly;
 align-items:center;
 position:relative;
 left:${props=> props.righty};
-transition: all .7s; 
+transition: all .5s; 
 visibility:${props=> props.visibleCont};
 
 .headCont
@@ -116,19 +116,7 @@ const Menu = ({
     // const[moveHam, setMoveHam] = useState (false)
     const[position, setPosition] = useState (false)
     
-    // if (moveHam)
-    // {
-    //     // setTimeout(function()
-    //     // {
 
-    //         rightPosition="-7.8em"
-    //         contVisble = "visible"
-    //         revealMenu = "flex"
-    //         menuHeight = "100vh"
-    //         hideIcons = 0
-    //         toggle = (!toggle)
-    //         menuBg = "#5EBA9240"
-    // }
      
         
 
