@@ -5,10 +5,13 @@ import MyBanner from '../../comps/Banner'
 import Menu from '../../comps/Menu'
 import Expander from '../../comps/ExpandCat'
 import MyButton from '../../comps/Button'
+import {useState} from 'react'
 import {useRouter} from 'next/router'
 import {OrganicHelp} from '../../data/text'
 import {OrganicCards} from '../../data/text'
 import {InorganicCards} from '../../data/text'
+import {MenuReferences} from '../../data/text'
+import {MenuReferences2} from '../../data/text'
 import styles from '../../styles/main.module.css'
 const SubCatCont = styled.div `
 
@@ -52,8 +55,14 @@ export default function SubCatMapped (
 {   
     const router = useRouter();
     const {subcat} = router.query
+    const[moveHam, setMoveHam] = useState (true)
     var cards = []
-     
+    var references = MenuReferences 
+    if (moveHam === false)
+    {
+        references = MenuReferences2
+    }
+
     if (subcat === "organic")
     {
         cards = OrganicCards
@@ -82,12 +91,23 @@ export default function SubCatMapped (
                
                <div className ="header">
                     
-                    <Menu
-                    hintChain3={hintChain4}
-                    routeToChain = {routeToChain2}/>
+               {references.map((value, index)=>{
+                           return <Menu 
+                           key = {index}
+                           routeToChain = {routeToChain2}
+                           hintChain3 =    {hintChain4}
+                           rightPosition = {value.rightPositionChain}
+                           contVisble = {value.contVisbleChain}
+                           revealMenu = {value.revealMenuChain}
+                           menuHeight = {value.menuHeightChain}
+                           hideIcons ={value.hideIconsChain}
+                           toggle = {value.toggleChain}
+                           menuBg = {value.menuBgChain}
+                           onClick = {()=> setMoveHam (!moveHam)}/>
+                        })} 
                
                </div>
-
+            {moveHam&&            
                 <div className = "banner">
 
                     <MyBanner     
@@ -100,7 +120,9 @@ export default function SubCatMapped (
                     Expand the Cards to read about each of the item, close when you are done. 
                     </p>
                 </div>
-
+            
+            }
+            {moveHam&&
                 <div className = "expandingConts">
                 
                 {cards.map((value,index)=>{
@@ -111,15 +133,17 @@ export default function SubCatMapped (
                     textLong = {value.textLongNew}
                     contBg = {contBgchain}/>
                
-
                 })}
                 </div>
+            }
 
+            {moveHam &&
                 <MyButton
                     onClick={onClickChain}
                     text="Next Section"
                     bgcolor = {subCatButton}
                     />
+            }
         </div>
         </SubCatCont>
 }

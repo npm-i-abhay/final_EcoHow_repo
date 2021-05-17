@@ -12,7 +12,7 @@ width:85%;
 background-color:#D7E6DB;
 border-radius:20px;
 opacity:${props=>props.opacity};
-transition:2s;
+transition:.5s;
 position:absolute;
 z-index:3;
 display:${props => props.hintDisplay};
@@ -23,13 +23,14 @@ top:${props=>props.top}em;
     {   display:flex;
         justify-content:flex-end;
         font-size:2em;
+        margin:.5em .5em 0 0 ;
         // border:2px solid red;
         width:93%;
     }
     .hintTexts
     {   display:flex;
         flex-direction:column;
-        margin-bottom:5em;
+        margin-bottom:2.5em;
         // border:2px solid red;
         width:90%;
         
@@ -68,7 +69,7 @@ const HintCard =({
         
         return <HintCont 
                 opacity={op1} l
-                eft={leftValue} 
+                left={leftValue} 
                 top={top}
                 hintDisplay = {displayHint}>
                 

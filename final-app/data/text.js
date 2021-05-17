@@ -282,6 +282,43 @@ export const InorganicCards =
 
 // ====================================================
 
+
+export const MenuReferences = 
+[
+    {
+        hintChain4: OrganicHelp.Evaluation.content,
+        rightPositionChain: "-55em",
+        contVisbleChain: "hidden",
+        revealMenuChain: "flex",
+        menuHeightChain: "10vh",
+        bgColorTrackChain: "#5EBA92",
+        hideIconsChain: 1,
+        bgColorCont: "#5EBA9250",
+        toggleChain: false,
+        menuBgChain: "",
+        buttonBg: "#70B794",   
+    }
+]
+
+export const MenuReferences2 = 
+[
+    {
+        hintChain4: OrganicHelp.Evaluation.content,
+        rightPositionChain: "-7.8em",
+        contVisbleChain: "visible",
+        revealMenuChain: "flex",
+        menuHeightChain: "100vh",
+        hideIconsChain: 0,
+        bgColorCont: "#5EBA9250",
+        toggleChain: false,
+        menuBgChain: "#5EBA9240",
+       
+        
+    
+    }
+]
+
+// =======================================================
 var people = 
  `[
         {"head": "Vegetables",  "sub": "Green Bin", "source": "../../veg.gif", "body":"Vegetables belong in the green bin as they are compostable"},

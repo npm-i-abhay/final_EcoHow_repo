@@ -15,6 +15,8 @@ import {InorganicTips} from '../../data/text'
 import {OrganicTips} from '../../data/text'
 import {InorganicHelp} from '../../data/text'
 import {OrganicHelp} from '../../data/text'
+import {MenuReferences} from '../../data/text'
+import {MenuReferences2} from '../../data/text'
 
 
 
@@ -82,7 +84,12 @@ export default function Tips ({
     
     const router = useRouter()
     const {tips} = router.query
-
+    var references = MenuReferences
+    const[moveHam, setMoveHam] = useState (true)
+    if (moveHam === false)
+    {
+        references = MenuReferences2
+    }
     if (tips === "inorganicgood")
     {
         resultText = InorganicTips.GoodTips.content
@@ -146,11 +153,22 @@ export default function Tips ({
         
         <div className="mainContainer"> 
                 <div className="hamburger">
-                        <Menu 
-                        routeToChain = {routeToChain2}
-                        hintChain3 =    {hintChain4} />
+                {references.map((value, index)=>{
+                           return <Menu 
+                           key = {index}
+                           routeToChain = {routeToChain2}
+                           
+                           rightPosition = {value.rightPositionChain}
+                           contVisble = {value.contVisbleChain}
+                           revealMenu = {value.revealMenuChain}
+                           menuHeight = {value.menuHeightChain}
+                           hideIcons ={value.hideIconsChain}
+                           toggle = {value.toggleChain}
+                           menuBg = {value.menuBgChain}
+                           onClick = {()=> setMoveHam (!moveHam)}/>
+                        })} 
                 </div>
-                    
+        {moveHam &&                
                 <Results
                 text = {resultText}
                 gifSource={newSource}
@@ -158,8 +176,9 @@ export default function Tips ({
                 heading={newHeading}
                 headingColour={newHeadingColour}
                 />
-                    
-                
+        }            
+
+        {moveHam &&        
                 <div className="buttonCont">
                     <Button 
                     text="Test Your Knowledge"
@@ -167,6 +186,7 @@ export default function Tips ({
                     bgcolor="#376293"
                     />
                 </div>    
+        }        
              </div>
         </TipsCont>
 }

@@ -4,8 +4,11 @@ import styled from 'styled-components'
 import Button from '../../comps/Button'
 import Menu from '../../comps/Menu'
 import {useRouter} from 'next/router'
+import {useState} from 'react'
 import HeroContainer from '../../comps/HeroImage'
 import {OrganicHelp} from '../../data/text'
+import {MenuReferences} from '../../data/text'
+import {MenuReferences2} from '../../data/text'
 import styles from '../../styles/main.module.css'
 
 const CategoryContainer = styled.div`    
@@ -115,7 +118,12 @@ export default function Category ({
 {
     const router = useRouter();
     const {categoryDescription} = router.query
-  
+    var references = MenuReferences
+    const[moveHam, setMoveHam] = useState (true)
+    if (moveHam === false)
+    {
+        references = MenuReferences2
+    }
 
     if (categoryDescription == "organic"){
         heading="Organic",
@@ -143,11 +151,22 @@ export default function Category ({
                             
                             
                         <div className="CatHeader">
-                            <Menu
-                            routeToChain = {routeToChain2}
-                            hintChain3 = {hintChain4} />
+                        {references.map((value, index)=>{
+                           return <Menu 
+                           key = {index}
+                           routeToChain =   {routeToChain2}
+                           hintChain3 =     {hintChain4}
+                           rightPosition =  {value.rightPositionChain}
+                           contVisble =     {value.contVisbleChain}
+                           revealMenu =     {value.revealMenuChain}
+                           menuHeight =     {value.menuHeightChain}
+                           hideIcons =      {value.hideIconsChain}
+                           toggle =         {value.toggleChain}
+                           menuBg =         {value.menuBgChain}
+                           onClick =        {()=> setMoveHam (!moveHam)}/>
+                        })} 
                         </div>  
-                            
+                {moveHam &&            
                     <div className ="spacer">
                         <div className ="flexContainer">    
                             <div className="animCont">
@@ -167,7 +186,7 @@ export default function Category ({
                             </div>
                     
                      </div>
-
+                }
                 </div>
              
              

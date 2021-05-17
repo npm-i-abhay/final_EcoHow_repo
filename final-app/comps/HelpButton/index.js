@@ -17,6 +17,7 @@ display:flex;
 margin:7.9px;
 justify-content:center;
 align-items:center;
+
 font-size:1.02em;
 animation: shake 0.5s;
 cursor:pointer;
@@ -52,12 +53,6 @@ const MakeHelp = ({
     var helpFadeIn = 0
     var leftIn = -500
     const[help, setHelp] = useState(false)
-    const [animationCount, setAnimationCount] = useState("infinite");
- 
-        if (IconContainer.onClick){
-            setAnimationCount("0")
-        }
-
 
         if (help)
         {
@@ -68,7 +63,6 @@ const MakeHelp = ({
     return <Wrapper> 
     <IconContainer 
     onClick={()=>setHelp(!help)} 
-    count={animationCount}
    toggleDisplay = {displayToggle} > 
     
         <IconText> 
