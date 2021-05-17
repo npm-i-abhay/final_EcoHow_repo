@@ -15,14 +15,14 @@ transition:all .5s;
 const DropCont2 = styled.img`
 
 object-fit:cover;
-border:2px solid black;
+// border:2px solid black;
 height:100%;
 width:100%;
 `;
 const DropCont3 = styled.img`
 
 object-fit:cover;
-border:2px solid black;
+// border:2px solid black;
 height:100%;
 width:100%;
 `;
@@ -30,26 +30,49 @@ width:100%;
 
 const DragBox = styled.img`
 cursor:pointer;
+object-fit:contain;
 border:1px solid black;
 margin:1em;
+height:60%;
+// width:50%;
 
 `;
 const Wrapper = styled.div`
+height:100vh;
+width:100%;
+display:flex;
+flex-direction:column;
+border:5px solid blue;
+justify-content:flex-end;
+background-image: url(/sortingBg.png);
+background-size:cover;
+background-repeat:no-repeat;
+// background-position-x: 1em;
+// background-position-y: 20em;
+
+.sortingItems
+{
+    border:2px solid magenta;
+    height:8%;
+    display:flex;
+}
 
 .dropTragetsCont
 {
-    // background-color:#fad;
+
     display:flex;
     border:2px solid red;
+    align-items:flex-end;
+
     justify-content:space-around;
-    height:60vh;
+    height:40vh;
     width:100%;
 
     .imgConts
     {
         border:2px solid yellow;
-        height:80%;
-        width:80%;
+        height:50%;
+        width:50%;
     }
 }
 
@@ -244,28 +267,8 @@ export default function DnD({
     }
     return<Wrapper>
   
-        {box[0] && 
-            <DragBox 
-                draggable = {true}
-                onDragStart = {()=>onDragStart(0)}
-                onDrag = {onDrag}
-                onDragEnd = {onDragEnd}
-                src = "/broccoli.png"
-             /> 
-        }
-            
-             
-           
-        {box[1] && 
-            <DragBox 
-                draggable = {true}
-                onDragStart = {()=>onDragStart(1)}
-                onDrag = {onDrag}
-                onDragEnd = {onDragEnd}
-                src = "/broccoli.png"/> 
-            
+    
 
-        }
 
         <div className = "dropTragetsCont">     
             
@@ -299,8 +302,39 @@ export default function DnD({
                 onDragLeave = {onDragLeave3}
                 src = {changeSrc3}
                 /> 
-            </div>   
-
+            </div> 
         </div>  
+
+
+
+            <div className = "sortingItems">
+            {box[0] && 
+                    <DragBox 
+                        draggable = {true}
+                        onDragStart = {()=>onDragStart(0)}
+                        onDrag = {onDrag}
+                        onDragEnd = {onDragEnd}
+                        src = "/broccoli.png"
+                    /> 
+            }
+            
+             
+           
+        {box[1] && 
+                <DragBox 
+                    draggable = {true}
+                    onDragStart = {()=>onDragStart(1)}
+                    onDrag = {onDrag}
+                    onDragEnd = {onDragEnd}
+                    src = "/broccoli.png"/> 
+        }
+            
+        </div>
+
+
+                
+
+
+
             </Wrapper>
 }
