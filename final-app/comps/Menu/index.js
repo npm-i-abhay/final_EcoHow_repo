@@ -19,7 +19,7 @@ display:flex;
 background-color:${props => props.bgMenu};
 justify-content:center;
 position:realtive;
-transition:all 1s;
+transition:all .2s;
 
 `
 
@@ -39,7 +39,7 @@ justify-content:space-evenly;
 align-items:center;
 position:relative;
 left:${props=> props.righty};
-transition: all 1s; 
+transition: all .7s; 
 visibility:${props=> props.visibleCont};
 
 .headCont
@@ -108,28 +108,29 @@ const Menu = ({
     menuBg = "none",
     contVisble = "hidden",
     displayToggleChain = "",
-    displayHintChain1 = ""
+    displayHintChain1 = "",
+    onClick = ()=> {}
 })=> 
 {
     const router = useRouter()
-    const[moveHam, setMoveHam] = useState (false)
+    // const[moveHam, setMoveHam] = useState (false)
     const[position, setPosition] = useState (false)
-    if (moveHam)
-    {
-        // setTimeout(function()
-        // {
+    
+    // if (moveHam)
+    // {
+    //     // setTimeout(function()
+    //     // {
 
-            rightPosition="-7.8em"
-            contVisble = "visible"
-            revealMenu = "flex"
-            menuHeight = "100vh"
-            hideIcons = 0
-            toggle = (!toggle)
-            menuBg = "#5EBA9240"
-        // },100)
+    //         rightPosition="-7.8em"
+    //         contVisble = "visible"
+    //         revealMenu = "flex"
+    //         menuHeight = "100vh"
+    //         hideIcons = 0
+    //         toggle = (!toggle)
+    //         menuBg = "#5EBA9240"
+    // }
      
         
-    }
 
    
     console.log(toggle);
@@ -152,7 +153,7 @@ const Menu = ({
 
 
                     <HamContainer 
-                    onClick = {()=> setMoveHam (!moveHam)}
+                    onClick = {onClick}
                     hamRight = {rightHam}>
                         
                         <HamIcon> 

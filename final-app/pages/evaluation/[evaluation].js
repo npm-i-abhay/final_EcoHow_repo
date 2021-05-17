@@ -77,11 +77,18 @@ export default function Evalution ({
     bgColorTrackChain1= "#5EBA92",
     bgColorCont = "#5EBA9250",
     buttonBg = "#70B794",
-
-
-
+    rightPositionChain = "-55em",
+    contVisbleChain = "hidden",
+    revealMenuChain = "flex",
+    menuHeightChain = "10vh",
+    hideIconsChain = 1,
+    toggleChain = false,
+    menuBgChain = ""
 
 })
+
+
+
 
 {
     const router = useRouter();
@@ -104,6 +111,20 @@ export default function Evalution ({
     const [valTwo, setValTwo] = useState (0)
     const [valThree, setValThree] = useState (0)
     const [newEvRoute, setEvRoute] = useState("/home")
+    const[moveHam, setMoveHam] = useState (true)
+
+    if (moveHam === false)
+    {
+
+            rightPositionChain="-7.8em"
+            contVisbleChain = "visible"
+            revealMenuChain = "flex"
+            menuHeightChain = "100vh"
+            hideIconsChain = 0
+            toggleChain = (!toggleChain)
+            menuBgChain = "#5EBA9240"
+    }
+    
 
 const handleResult = ()=>
      {
@@ -145,19 +166,28 @@ const handleResult = ()=>
                     <div className="hamburger">
                         <Menu 
                             routeToChain = {routeToChain2}
-                            hintChain3 =    {hintChain4} />
+                            hintChain3 =    {hintChain4}
+                            rightPosition = {rightPositionChain} 
+                            contVisble = {contVisbleChain}
+                            revealMenu = {revealMenuChain}
+                            menuHeight = { menuHeightChain}
+                            hideIcons = {hideIconsChain}
+                            toggle = {toggleChain}
+                            menuBg = {menuBgChain}
+                            onClick = {()=> setMoveHam (!moveHam)}/>
                     </div>
 
                 </div>  
-
+                
+            {moveHam &&
                 <div className="EvBanner">
                     <MyBanner 
                     bgColor="#E5E5E5" 
                     text="Your Habits"/>
                 </div>
-
+            }
                
-
+            {moveHam &&
                         <div className = "SliderQuestion" > 
                             <Slider 
                             Labeltext={labelTextChain1}
@@ -175,9 +205,12 @@ const handleResult = ()=>
                             bgColor = {bgColorCont}/>
 
                         </div>
+                }
+                {moveHam &&
                 <Button 
                 text="Lets See How You Did"
                 onClick = {handleResult}
                 bgcolor = {buttonBg} />
+                }
             </EvaluationCont>
 }
