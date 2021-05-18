@@ -30,6 +30,8 @@ const CategoryContainer = styled.div`
             flex-direction:column;
             justify-content:space-between;
             align-items:center;
+            height:65%;
+            // border:1px solid red;
         }
 
         .searchBar{
@@ -56,8 +58,8 @@ const CategoryContainer = styled.div`
         .searchImage
         {
             // border:2px solid blue;
-            height:90%;
-            width:90%;
+            height:140%;
+            width:140%;
         }
 
         .dynamicCont
@@ -72,6 +74,15 @@ const CategoryContainer = styled.div`
 
             .smallHead 
             {
+                text-align:center;
+                font-family: 'Montserrat', sans-serif;
+                font-size:1.5em;
+                color:${props=> props.colText};
+            }
+            .bigHead
+            {
+                font-family: 'Montserrat', sans-serif;
+                font-size:3.3em;
                 text-align:center;
             }
         }
@@ -122,9 +133,12 @@ width:70%;
 justify-content:flex-start;
 text-align:center;
 margin-bottom:2em;
-
-
+font-family: 'Montserrat', sans-serif;
+font-size:1.5em;
 `;
+
+
+
 
 
 
@@ -135,7 +149,7 @@ export default function SearchResults ({
     hintChain4 = "search for an item to see which bin to properly dispose of it.",
     newLabel="Next",
     onClick = () =>{},
-    dummyText = "sssdd"
+    textCol = "black"
 })
 
 
@@ -153,6 +167,14 @@ export default function SearchResults ({
        references = MenuReferences2
    }
 
+   if(imgSource == "../../transparent-greenbin.gif")
+    {
+        textCol = "#5EBA92"
+    }     
+   if(imgSource == "../../transparent-bluebins.gif")
+    {
+        textCol = "#376293"
+    }   
 
 
    if (process.browser) 
@@ -185,7 +207,9 @@ export default function SearchResults ({
 
  
 
-    return   <CategoryContainer className = {styles.scroller}>
+    return   <CategoryContainer 
+                className = {styles.scroller}
+                colText = {textCol}>
         <div className="CatContainer">
 
            
@@ -227,8 +251,10 @@ export default function SearchResults ({
             </div>
             }
             
-            {moveHam&&        <div className = "dynamicCont">
+            {moveHam&&        
+            
 
+            <div className = "dynamicCont">
                 <div className = "headings">
                     <h1 className="bigHead"> {bigText} </h1>
                     <h3 className="smallHead"> {smallText} </h3>
@@ -245,7 +271,7 @@ export default function SearchResults ({
                     {resultText}
                 </TextCont>
               
-        </div>
+            </div>
         
             }
             </div>
