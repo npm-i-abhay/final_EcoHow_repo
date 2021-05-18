@@ -37,8 +37,9 @@ opacity:0.8;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    width:80%;
-    color:#f5f1ed;
+    width:100%;
+    color:black;
+    font-size:1.2em;
     font-family: 'Montserrat', sans-serif;
     // height:60%;
 }

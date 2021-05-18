@@ -102,14 +102,14 @@ const QuizCont = styled.div `
             {   
                 display:flex;
                 font-size:2em;
-                margin:.5em;
+                // margin:.5em;
             }
                
         .flex-Icon
         {
             display:flex;
-            margin-top:1em;
-            width:100%;
+            // margin-top:1em;
+            width:90%;
             justify-content:flex-end;
         }
         .wrongAns
@@ -118,8 +118,8 @@ const QuizCont = styled.div `
             display:flex;
             width:80%;
             font-family: 'Montserrat', sans-serif;
-            font-size:2em;
-            margin-bottom:2em;
+            font-size:1.5em;
+            // margin-bottom:2em;
         }
     }
 }
@@ -505,7 +505,7 @@ const correct = () =>
                     <MyButton 
                     text="hint"
                     onClick={()=>setHelp(!help)}
-                    bgcolor="#376293"/>
+                    bgcolor="#368B8B"/>
                     <MyButton 
                     text={buttonText}
                     onClick= {handleResult}
