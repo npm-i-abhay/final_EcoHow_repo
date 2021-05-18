@@ -296,7 +296,10 @@ export const MenuReferences =
         bgColorCont: "#5EBA9250",
         toggleChain: false,
         menuBgChain: "",
-        buttonBg: "#70B794",   
+        buttonBg: "#70B794",
+        transLine1Chain: "rotate(0deg) translate(0,0)",
+        transLineOp2Chain: "1",
+        transLine3Chain: "rotate(0deg) translate(0,0)",   
     }
 ]
 
@@ -312,6 +315,9 @@ export const MenuReferences2 =
         bgColorCont: "#5EBA9250",
         toggleChain: false,
         menuBgChain: "#5EBA9240",
+        transLine1Chain: "rotate(405deg) translate(12px, 6px)",
+        transLineOp2Chain: "0",
+        transLine3Chain: "rotate(-405deg) translate(11px, -6px)",   
        
         
     

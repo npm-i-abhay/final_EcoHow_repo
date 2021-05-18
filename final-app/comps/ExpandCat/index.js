@@ -68,6 +68,7 @@ transition:all 1s;
             transition-delay:.5s;
             margin:1em;
             font-size:.9em;
+            color:${props=> props.lotsTextCol};
             display:${props => props.displayLots};
             
         }
@@ -95,7 +96,7 @@ transition:all 1s;
  align-items:center;
  justify-content:center;
  font-size:1.3em;
- color:black;
+ color:${props=> props.labelTextCol};
  text-shadow:0px 8px 8px rgba(0, 0, 0, 0.25);
  
     // border:2px solid red;
@@ -122,18 +123,20 @@ transition-delay:.5s;
  const Expander = ({
      text ="Vegetables",
      textLong="blarg blarg some more blarg",
+     textLotsCol = "black",
      expandHeight = "15vh",
      showDisplay= 0,
      imageHeight = "100%",
      imageblur = "blur(2px)",
      source = "/team4.gif",
      expandBorder = "1px solid black",
-     shadowShad = "2px 2px 10px 1px  lightgrey",
+     shadowShad = "2px 2px 10px 1px  grey",
      labelDisplay = "1",
      lotsDisplay = "none",
      statHeight = "0",
      statWidth = "0", 
-     contBg = "#21AAB540"
+     contBg = "#21AAB540",
+     textLabelCol = "black"
 
  }) =>
 {   
@@ -146,7 +149,7 @@ transition-delay:.5s;
         imageHeight = "50%"
         imageblur = "blur(0px)"
         expandBorder = "1px solid green"
-        shadowShad = "4px 4px 10px 3px  lightgrey"
+        shadowShad = "4px 4px 10px 3px  grey"
         labelDisplay = "0"
         statHeight = "50%"
         statWidth = "50%"
@@ -165,12 +168,14 @@ transition-delay:.5s;
                     reveal = {showDisplay}
                     bgCont = {contBg}
                     onClick = {()=>setExpand(!expand)}
-                    displayLots = {lotsDisplay}>
+                    displayLots = {lotsDisplay}
+                    lotsTextCol = {textLotsCol}>
                          
                      
                         <div className = "labelContainer" > 
                             <LabelText 
-                            displayLabel = {labelDisplay}>
+                            displayLabel = {labelDisplay}
+                            labelTextCol = {textLabelCol}>
                                 {text}
                             </LabelText>
                         </div>
@@ -186,8 +191,8 @@ transition-delay:.5s;
                        <div className="textAndStatFlex">
                             <div className={"textLots"}> 
                             {textLong}</div>
-
                         </div>
+
                        
 
             

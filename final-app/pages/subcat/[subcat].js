@@ -5,7 +5,7 @@ import MyBanner from '../../comps/Banner'
 import Menu from '../../comps/Menu'
 import Expander from '../../comps/ExpandCat'
 import MyButton from '../../comps/Button'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
 import {OrganicHelp} from '../../data/text'
 import {OrganicCards} from '../../data/text'
@@ -21,14 +21,22 @@ const SubCatCont = styled.div `
     flex-direction:column;
     height:100%;
     width:100vw;
-    background-color:#F5F1ED;
+    background-color:${props=> props.themeColor};
     align-items:center;
+    transition:all .5s;
 
     .banner
     {
         // margin:2em;
         width:90%;
 
+
+            // .pageDescrip
+            // {
+            //     font-family: 'Montserrat', sans-serif;
+            //     font-size:1.2em;
+            //     color = ${props=> props.descripText}
+            // }
     }
 
     .expandingConts
@@ -39,6 +47,13 @@ const SubCatCont = styled.div `
 
 }
 `
+const DescriptionText = styled.p`
+font-family: 'Montserrat', sans-serif;
+font-size:1.2em;
+color : ${props=> props.descripText};
+transition:all 1s;
+
+`
 
 export default function SubCatMapped (
     {
@@ -48,6 +63,7 @@ export default function SubCatMapped (
         onClickChain = ()=> {},
         contBgchain = "#21AAB535",
         subCatButton = "#71C4CA",
+        textDescrip = "blue"
     }
 
         
@@ -56,6 +72,33 @@ export default function SubCatMapped (
     const router = useRouter();
     const {subcat} = router.query
     const[moveHam, setMoveHam] = useState (true)
+    const [banner, setBanner] = useState ("black")
+    const [description, setDescription] = useState ("black")
+    const [background, setBackground] = useState ("#F5F1ED")
+    const [label, setLabels] = useState ("black")
+    const [bodyText, setBody] = useState ("black")
+    const [theme, setTheme] = useState (false)
+
+    useEffect(()=>
+          {
+            if(theme)
+            {
+                setLabels("white")
+                setBanner("white")
+                setBackground("Black")
+                setDescription("white")
+                setBody ("white")
+            }
+            if(theme == false)
+            {
+                setLabels("black")
+                setBanner("black")
+                setBackground("#F5F1ED")
+                setDescription("black")
+                setBody ("black")
+            }
+            }, [theme]);
+
     var cards = []
     var references = MenuReferences 
     if (moveHam === false)
@@ -75,10 +118,11 @@ export default function SubCatMapped (
         {
             cards = InorganicCards
             bannerText="Inorganic"
-          onClickChain = ()=>router.push("/evaluation/inorganic")
+            onClickChain = ()=>router.push("/evaluation/inorganic")
         }
 
-    return <SubCatCont className = {styles.scroller}>
+    return <SubCatCont className = {styles.scroller}
+     themeColor={background}>
        
        <Head>
         <title> 
@@ -103,6 +147,9 @@ export default function SubCatMapped (
                            hideIcons ={value.hideIconsChain}
                            toggle = {value.toggleChain}
                            menuBg = {value.menuBgChain}
+                           transLine1={value.transLine1Chain}
+                           transLineOp2={value.transLineOp2Chain}
+                           transLine3={value.transLine3Chain}
                            onClick = {()=> setMoveHam (!moveHam)}/>
                         })} 
                
@@ -113,12 +160,14 @@ export default function SubCatMapped (
                     <MyBanner     
                     bgColor="#E5E5E5" 
                     text={bannerText}
+                    textColor = {banner}
                     justifyText="left"
                     bannerHeight="50px"/>
-
-                    <p className={styles.content}> 
+                    
+                    <DescriptionText descripText={description} > 
                     Expand the Cards to read about each of the item, close when you are done. 
-                    </p>
+                    </DescriptionText>
+
                 </div>
             
             }
@@ -131,7 +180,9 @@ export default function SubCatMapped (
                     source = {value.sourceNew}
                     text=   {value.textHeadNew}
                     textLong = {value.textLongNew}
-                    contBg = {contBgchain}/>
+                    contBg = {contBgchain}
+                    textLabelCol = {label}
+                    textLotsCol = {bodyText}/>
                
                 })}
                 </div>
@@ -144,6 +195,12 @@ export default function SubCatMapped (
                     bgcolor = {subCatButton}
                     />
             }
+
+            <MyButton
+                    onClick={()=> setTheme(!theme)}
+                    text="dark Mode"
+                    bgcolor = {subCatButton}
+                    />
         </div>
         </SubCatCont>
 }

@@ -444,7 +444,10 @@ const correct = () =>
                            toggle = {value.toggleChain}
                            menuBg = {value.menuBgChain}
                            displayToggleChain= "0"
-                            displayHintChain1= "none"
+                           displayHintChain1= "none"
+                           transLine1={value.transLine1Chain}
+                           transLineOp2={value.transLineOp2Chain}
+                           transLine3={value.transLine3Chain}
                            onClick = {()=> setMoveHam (!moveHam)}/>
                         })} 
                 </div>  
