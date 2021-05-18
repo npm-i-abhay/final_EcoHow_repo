@@ -380,7 +380,7 @@ const correct = () =>
 	const [radioVal, setRadioVal] = useState("");
     var helpFadeIn = 1
     var leftIn = -500
-    var topIn=10
+    var topIn=20
     const[help, setHelp] = useState(false)
  
         if (help)

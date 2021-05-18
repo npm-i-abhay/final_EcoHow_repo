@@ -110,6 +110,7 @@ const Menu = ({
     contVisble = "hidden",
     displayToggleChain = "",
     displayHintChain1 = "",
+    displayBackToggleChain="1",
     onClick = ()=> {}
 })=> 
 {
@@ -130,7 +131,9 @@ const Menu = ({
                <TopBarContainer> 
 
                     <CircleIconsCont hiddenIcons = {hideIcons}>
-                         <MakeIcon routeTo = {routeToChain}/>
+                         <MakeIcon routeTo = {routeToChain}
+                         displayBackToggle = {displayBackToggleChain}
+                         />
                          <HelpButton 
                          text="?"
                          hintChain2 = {hintChain3}

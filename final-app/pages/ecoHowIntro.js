@@ -102,7 +102,7 @@ font-size:1.2em;
 
 export default function Category ({
     routeToChain2 = "/teamIntro",
-    hintChain4 = "Here at EcoHow we place the utmost priority on cleaning up our earth and adjusting our harmful habits. In this app you will learsn valuable knowledge in a fun and interactive way.",
+    hintChain4 = "Here at EcoHow we place the utmost priority on cleaning up our earth and adjusting our harmful habits. In this app you will learn valuable knowledge in a fun and interactive way.",
     newLabel="Next",
     onClick = () =>{}
 })
