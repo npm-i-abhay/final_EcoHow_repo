@@ -83,7 +83,7 @@ const MakeHelp = ({
     hint={hintChain2}
     leftValue={leftIn}
     displayHint = {displayHintChain}
-    onClick={onClickChain}
+    onClick={()=>setHelp(false)}
     />
     </Wrapper>
 }

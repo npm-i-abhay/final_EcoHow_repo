@@ -135,6 +135,7 @@ export default function Category ({
                             <p>Our team wants to Inspire you to be considerate of your waste habits while we pass on knowledge. </p>
                         
                             <p>We are taking steps to create real change</p>
+                            <br></br>
                         </TextCont>
                     
 

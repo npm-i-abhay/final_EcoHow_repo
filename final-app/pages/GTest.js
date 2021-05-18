@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
-import Menu from '../comps/Menu'
+import '../DragDropTouch'
 
 const GoodJob = styled.img `
 height:100%;

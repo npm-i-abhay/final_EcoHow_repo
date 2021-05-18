@@ -7,7 +7,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:space-around;
-height:40%;
+height:30%;
 width:85%;
 background-color:#D7E6DB;
 border-radius:20px;
