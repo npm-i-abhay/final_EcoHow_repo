@@ -67,6 +67,7 @@ transition:all 1s;
             transition:all 1s;
             transition-delay:.5s;
             margin:1em;
+            font-size:.9em;
             display:${props => props.displayLots};
             
         }
@@ -140,7 +141,7 @@ transition-delay:.5s;
 
     if (expand)
     {
-        expandHeight = "75vh"
+        expandHeight = "85vh"
         showDisplay= 1
         imageHeight = "50%"
         imageblur = "blur(0px)"

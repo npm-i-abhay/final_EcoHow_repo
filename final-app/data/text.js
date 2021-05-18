@@ -32,39 +32,39 @@ export const OrganicContent = {
 
 export const InorganicContent = {
     Plastic:{
-        title:"Plastic Bags and Wrappers",
+        title:"Bags and Wrappers",
         content:"It is estimated that consumers use 500 billion to 1 trillion bags one year. The issue is that plastic is non-biodegradable. In addition, only 1 to 3% is actually recycled. The rest goes to the landfill, or is littered in the ocean. The good news is there are many alternatives to this material that are more sustainable and reusable, using a fabric bag or pouch instead of purchasing plastic bags when you go to the supermarket can already make a huge difference. "
     },
     PlasticStraws:{
         title:"Plastic Straws",
-        content:"Almost 14 700 000 tons of fruits are wasted every year in Canada.  However, fruits contain Nitrogen.Therefore, It is a great addition to your compost.Be sure to avoid citrus as it is too acidic and can kill worms and microorganisms, this can slow down the decomposition in your pile."
+        content:"Plastic straws cannot be recycled, as a result, they end up in our landfills. Often they get caught in waterways, poor waste management has also caused these straws to wash up on beaches. The problem is that plastic straws are heavily used, furthermore they are made of polypropylene, making them non-renewable and single-use.Avoid plastic straws at all costs, you can switch to paper and steel alternatives instead."
     },
 
     Styrofoam:{
         title:"Styrofoam",
-        content:"Garden waste makes up 14% of the average household bin.We should note that garden waste contains a good amount of carbon. As a result, this provides energy to break down materials in your compost.Without garden waste, compost cannot progress effectively. "
+        content:"Styrofoam is a widely used material that is rarely recycled, this is because of its makeup.  Styrofoam contains Polystyrene. Which makes this product non-biodegradable. Not to mention, there are health concerns associated with the usage of styrofoam, especially when the container is heated. Therefore, stick to long-lasting options like steel, ceramic, and glass for your containers."
     },
     Cardboard:{
         title:"Cardboard and Paper",
-        content:"It takes up to 24 for hours for a single drop of water to be treated in the Treatment Plant Process and be safe for consumption.If you own a pet, you might be interested to know that animal manure is a great add addition to your compost as it is rich in Nitrogren."
+        content:"For every 1 ton of paper that’s produced, roughly 390 gallons of non-renewable oil is used to make it. Recycle your paper products because there's a wide range of products that can be created from recycled paper."
     },
     Aluminium:{
         title:"Aluminium",
-        content:"Producing meat requires excessive amounts of resources, this includes land, water, and energy. With that said, we still should not add meat to your compost since meat may be infected with bacteria like Salmonella and E. coli that can make you ill. Furthermore, as compost material It also attracts pests and rodents. "
+        content:"Always recycle aluminum! Aluminum is an infinitely recyclable material, and it takes up to 95 percent less energy to recycle it than to produce it from scratch. The residue from aluminum production as well as secondary recycling operations is called white dross, it has useful quantities of usable aluminum which can be extracted industrially."
     },
     Electronics:{
         title:"Electronics",
-        content:"In the United States alone, it was estimated that 18.1 million tons of wood was wasted in 2018. 90% of that waste was wood palettes for packaging.Wood chips and sawdust contains high levels of carbon which is a great addition to your compost."
+        content:"We throw away around 50m tonnes of electrical waste globally every year. Including  televisions, radios, computers, and cell phones. E-waste constitutes more than 5 percent of all municipal solid waste and is increasing. It is important to make better choices when purchasing electronics, and to choose long-lasting brands. Ask yourself whether you need that phone upgrade even though your phone is still fully functioning."
     },
     
     Reuse:{
         title:"Reuse",
-        content:"The average person generates 4.4 pounds of solid waste every day. This needs to change, we all need to look out for our planet. We hope this knowledge can generate momentum. We should all be responsible for handling our waste properly, as it can help our environemnt so much. Remember, consume less and  think abut your purchases often. Always ask youself whether  what you are buying is essential, and whether you can use it for many years to come. "
+        content:"The average person generates 4.4 pounds of solid waste every day. This needs to change, we all need to look out for our planet. We hope this knowledge can generate momentum. We should all be responsible for handling our waste properly, as it can help our environment so much. Remember, consume less and think about your purchases often. Always ask yourself whether what you are buying is essential and whether you can use it for many years to come. "
     },
 
     Glass:{
         title:"Glass",
-        content:"Glass has an endless capasource to be recycled. Therefore, it is a great alternative to plastic.   The crux is that billions of glass bottles are directly thrown into the garbage bin, this is an issue because glass is non-degradable. It belongs in the blue bin. "
+        content:"Glass has an endless capacity to be recycled. Therefore, it is a great alternative to plastic. The crux is that billions of glass bottles are directly thrown into the garbage bin, this is an issue because glass is non-degradable. It belongs in the blue bin."
     }
    
 }
@@ -318,31 +318,32 @@ export const MenuReferences2 =
     }
 ]
 
+
 // =======================================================
 var people = 
  `[
-        {"head": "Vegetables",  "sub": "Green Bin", "source": "../../veg.gif", "body":"Vegetables belong in the green bin as they are compostable"},
+        {"head": "Vegetables",  "sub": "Green Bin", "source": "../../transparent-greenbin.gif", "body":"Vegetables belong in the green bin as they are compostable"},
         
-        {"head": "Fruits", "sub": "Green Bin", "source": "../../fruit.gif","body": "Fruits belong in the green bin as they are compostable."},
+        {"head": "Fruits", "sub": "Green Bin", "source": "../../transparent-greenbin.gif","body": "Fruits belong in the green bin as they are compostable."},
         
-        {"head": "Garden waste", "sub": "Green Bin", "source": "../../garden waste.gif","body": "Garden waste belongs in the Green Bin as it is compostable."},
+        {"head": "Garden waste", "sub": "Green Bin", "source": "../../transparent-greenbin.gif","body": "Garden waste belongs in the Green Bin as it is compostable."},
         
-        {"head": "Animal Poo",   "sub": "Green Bin", "source": "../../sewage_3.gif","body": "Animal poo is accepted in the green bin either loose or in a compostable bag"},
+        {"head": "Animal Poo",   "sub": "Green Bin", "source": "../../transparent-greenbin.gif","body": "Animal poo is accepted in the green bin either loose or in a compostable bag"},
         
-        {"head": "Meat",  "sub": "Black Bin", "source": "../../meat.gif","body": "Meat is not compostable, please put it in the Black Bin instead"},
-        {"head": "Wood", "sub":"Green Bin", "source": "../../wood.gif","body": "Wood belongs in the green bin as it is compostable."},
+        {"head": "Meat",  "sub": "Black Bin", "source": "../../transparent-blackbin.gif","body": "Meat is not compostable, please put it in the Black Bin instead"},
+        {"head": "Wood", "sub":"Green Bin", "source": "../../transparent-greenbin.gif","body": "Wood belongs in the green bin as it is compostable."},
        
-        {"head": "Plastic Bags & wrappers",  "sub":"Blue Bin", "source": "../../plasticbag.gif","body": "Plastic bags and wrappers belong in the blue bin as they are recyclable."},
+        {"head": "Bags & wrappers",  "sub":"Blue Bin", "source": "../../transparent-bluebins.gif","body": "Plastic bags and wrappers belong in the blue bin as they are recyclable."},
        
-        {"head": "Plastic Straws",  "sub":"Blue Bin", "source": "../../plastic-straws-scene.gif","body": "Plastic straws and wrappers belong in the blue bin as they are recyclable."},
+        {"head": "Plastic Straws",  "sub":"Blue Bin", "source": "../../transparent-bluebins.gif","body": "Plastic straws and wrappers belong in the blue bin as they are recyclable."},
        
-        {"head": "Styrofoam", "sub":"Black Bin", "source": "../../styrofoam-scene.gif","body": "Sometimes styrofoam can be recycled, however, most times it belongs in the Black Bin. Check the bottom of your container to confirm."},
+        {"head": "Styrofoam", "sub":"Black Bin", "source": "../../transparent-blackbin.gif","body": "Sometimes styrofoam can be recycled, however, most times it belongs in the Black Bin. Check the bottom of your container to confirm."},
         
-        {"head": "Cardboard & Paper",  "sub":"Blue Bin","source": "../../cardboard-scene.gif","body": "Cardboard and paper belong in the blue bin as they are recyclable."},
+        {"head": "Cardboard & Paper",  "sub":"Blue Bin","source": "../../transparent-bluebins.gif","body": "Cardboard and paper belong in the blue bin as they are recyclable."},
         
-        {"head": "Glass", "sub":"Blue Bin","source": "../../glass-scene.gif","body": "Glass belongs in the blue bin as it is recyclable."},
+        {"head": "Glass", "sub":"Blue Bin","source": "../../transparent-bluebins.gif","body": "Glass belongs in the blue bin as it is recyclable."},
        
-        {"head": "Aluminum", "sub":"Blue Bin","source": "../../aluminium-scene.gif","body": "Aluminum belongs in the blue bin as it is recyclable."}
+        {"head": "Aluminum", "sub":"Blue Bin","source": "../../transparent-bluebins.gif","body": "Aluminum belongs in the blue bin as it is recyclable."}
     ]`
 
     export default people;

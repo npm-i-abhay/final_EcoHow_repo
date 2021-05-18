@@ -97,7 +97,7 @@ export default function Tips ({
         onClickChain = ()=>router.push("/quiz/question-one-inorg")
         hintChain4 = InorganicHelp.TipsGood.content
         newSource="/transparent-bluebins.gif"
-        newbgcolor="#5EBA92"
+        newbgcolor="#5EBA9200"
         newHeading="Great job!"
     }
     
@@ -108,7 +108,7 @@ export default function Tips ({
         hintChain4 = InorganicHelp.TipsBad.content
         onClickChain = ()=>router.push("/quiz/question-one-inorg")
         newSource="/transparent-blackbin.gif"
-        newbgcolor="#BA5E5E"
+        newbgcolor="#BA5E5E00"
         newHeadingColour="#C67B7B"
         tipsBackground="url(../backgroundTree2.svg)"
         backgroundPosition="100% 60%"
@@ -120,7 +120,7 @@ export default function Tips ({
         routeToChain2 = "/evaluation/organic"
         onClickChain = ()=>router.push("/quiz/question-one-org")
         newSource="/transparent-pot.gif"
-        newbgcolor="#5EBA92"
+        newbgcolor="#5EBA9200"
         newHeading="Great job!"
     
     //ADD ALL SOURCES IN CONDTIONS
@@ -134,7 +134,7 @@ export default function Tips ({
         routeToChain2 = "/evaluation/organic"
         onClickChain = ()=>router.push("/quiz/question-one-org")
         newSource="/transparent-greenbin.gif"
-        newbgcolor="#BA5E5E"
+        newbgcolor="#368B8B00"
         newHeadingColour="#C67B7B"
         tipsBackground="url(../backgroundTree2.svg)"
         backgroundPosition="100% 70%"
@@ -157,7 +157,7 @@ export default function Tips ({
                            return <Menu 
                            key = {index}
                            routeToChain = {routeToChain2}
-                           
+                           hintChain3={hintChain4}
                            rightPosition = {value.rightPositionChain}
                            contVisble = {value.contVisbleChain}
                            revealMenu = {value.revealMenuChain}
@@ -183,7 +183,7 @@ export default function Tips ({
                     <Button 
                     text="Test Your Knowledge"
                     onClick = {onClickChain}
-                    bgcolor="#376293"
+                    bgcolor="#368B8B"
                     />
                 </div>    
         }        

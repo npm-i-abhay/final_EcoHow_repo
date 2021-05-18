@@ -8,23 +8,37 @@ import HeroContainer from '../comps/HeroImage'
 import {useRouter} from 'next/router'
 import {useState} from 'react'
 import {BiSearchAlt} from 'react-icons/bi'
+import {MenuReferences} from '../data/text'
+import {MenuReferences2} from '../data/text'
+import styles from '../styles/main.module.css'
 
 const CategoryContainer = styled.div`    
 
     .CatContainer 
     {
         display:flex;
-        juatify-content:center;
+        // justify-content:space-;
         flex-direction:column;
         align-items: center;
         height:100vh;
         width:100vw;
         background-color:#F5F1ED;
 
+
+        .flexContainer{
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            align-items:center;
+            height:65%;
+            // border:1px solid red;
+        }
+
         .searchBar{
             display:flex;
             // border:2px solid red;
             width:90%;
+            margin-bottom:1em;
             .searchButton
             {
                 // border:1px solid red;
@@ -44,8 +58,8 @@ const CategoryContainer = styled.div`
         .searchImage
         {
             // border:2px solid blue;
-            height:50%;
-            width:50%;
+            height:140%;
+            width:140%;
         }
 
         .dynamicCont
@@ -60,6 +74,15 @@ const CategoryContainer = styled.div`
 
             .smallHead 
             {
+                text-align:center;
+                font-family: 'Montserrat', sans-serif;
+                font-size:1.5em;
+                color:${props=> props.colText};
+            }
+            .bigHead
+            {
+                font-family: 'Montserrat', sans-serif;
+                font-size:3.3em;
                 text-align:center;
             }
         }
@@ -110,9 +133,12 @@ width:70%;
 justify-content:flex-start;
 text-align:center;
 margin-bottom:2em;
-
-
+font-family: 'Montserrat', sans-serif;
+font-size:1.5em;
 `;
+
+
+
 
 
 
@@ -120,21 +146,37 @@ margin-bottom:2em;
 
 export default function SearchResults ({
     routeToChain2 = "/home",
-    hintChain4 = "",
+    hintChain4 = "search for an item to see which bin to properly dispose of it.",
     newLabel="Next",
     onClick = () =>{},
-    dummyText = "sssdd"
+    textCol = "black"
 })
 
 
 {
    const router = useRouter();
-   const [resultText, setResultText] = useState("test");
+   const [resultText, setResultText] = useState("");
    const [imgSource, setImgSource] = useState("/bluearrow.png");
-   const [bigText, setBigText] = useState("bigText");
-   const [smallText, setSmallText] = useState("smallText");
+   const [bigText, setBigText] = useState("");
+   const [smallText, setSmallText] = useState("");
    onClick = ()=>router.push("ecoHowIntro")
- 
+   var references = MenuReferences
+   const[moveHam, setMoveHam] = useState (true)
+   if (moveHam === false)
+   {
+       references = MenuReferences2
+   }
+
+   if(imgSource == "../../transparent-greenbin.gif")
+    {
+        textCol = "#5EBA92"
+    }     
+   if(imgSource == "../../transparent-bluebins.gif")
+    {
+        textCol = "#376293"
+    }   
+
+
    if (process.browser) 
     { 
         localStorage.setItem("people", people)
@@ -165,16 +207,33 @@ export default function SearchResults ({
 
  
 
-    return   <CategoryContainer>
+    return   <CategoryContainer 
+                className = {styles.scroller}
+                colText = {textCol}>
         <div className="CatContainer">
+
+           
                     
+                            
+                    <div className="CatHeader">
+                        {references.map((value, index)=>{
+                           return <Menu 
+                           key = {index}
+                           routeToChain =   {routeToChain2}
+                           hintChain3 =     {hintChain4}
+                           rightPosition =  {value.rightPositionChain}
+                           contVisble =     {value.contVisbleChain}
+                           revealMenu =     {value.revealMenuChain}
+                           menuHeight =     {value.menuHeightChain}
+                           hideIcons =      {value.hideIconsChain}
+                           toggle =         {value.toggleChain}
+                           menuBg =         {value.menuBgChain}
+                           onClick =        {()=> setMoveHam (!moveHam)}/>
+                        })} 
+                        </div>      
                     
-            <div className="CatHeader">
-                    <Menu
-                    routeToChain = {routeToChain2}
-                    hintChain3 = {hintChain4} />
-            </div>  
-                
+            <div className="flexContainer">
+            {moveHam&&   
             <div className= "searchBar">
 
                     <input 
@@ -190,8 +249,12 @@ export default function SearchResults ({
                     
                     </div>
             </div>
-        <div className = "dynamicCont">
+            }
+            
+            {moveHam&&        
+            
 
+            <div className = "dynamicCont">
                 <div className = "headings">
                     <h1 className="bigHead"> {bigText} </h1>
                     <h3 className="smallHead"> {smallText} </h3>
@@ -208,15 +271,14 @@ export default function SearchResults ({
                     {resultText}
                 </TextCont>
               
-        </div>
-                <div className = "buttonCont">                    
-                <Button text={newLabel} onClick= {onClick} bgcolor="#368B8B"/>
-                </div>
-       
+            </div>
+        
+            }
+            </div>
 
                 </div>
+        
              
-             
-             
+            
              </CategoryContainer>
 }

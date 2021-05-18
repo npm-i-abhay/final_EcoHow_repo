@@ -7,7 +7,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:space-around;
-height:40vh;
+height:30%;
 width:85%;
 background-color:#D7E6DB;
 border-radius:20px;
@@ -18,19 +18,21 @@ z-index:3;
 display:${props => props.hintDisplay};
 left:${props=>props.left}px;
 top:${props=>props.top}em;
+// padding:1em;
 
     .closeIcon
     {   display:flex;
+        // position:absolute;
+        // justify-self:flex-start;
         justify-content:flex-end;
-        font-size:2em;
-        margin:.5em .5em 0 0 ;
+        font-size:1.5em;
         // border:2px solid red;
-        width:93%;
+        width:100%;
     }
     .hintTexts
     {   display:flex;
         flex-direction:column;
-        margin-bottom:2.5em;
+        // margin-bottom:2.5em;
         // border:2px solid red;
         width:90%;
         
@@ -40,16 +42,19 @@ top:${props=>props.top}em;
 
 
 const Text1 = styled.span`
-font-size:2.5em;
+font-size:1.5em;
 width:80%
+font-weight:bold;
+font-family: 'Montserrat', sans-serif;
+// border:2px solid red;
 `
 
 
 const Text3 = styled.span`
-font-size:1em;
 font-family: 'Montserrat', sans-serif;
-font-size:1.5em;
+font-size:0.8em;
 // margin-bottom:2.5em;
+// border:2px solid red;
 width:80%;
 `;
 
@@ -63,7 +68,8 @@ const HintCard =({
     top=3.5,
     hintHeader="Help",
     displayHint = "",
-    onClick = ()=> {}
+    onClick = ()=> {
+    }
 })=> 
 {
         
@@ -73,18 +79,18 @@ const HintCard =({
                 top={top}
                 hintDisplay = {displayHint}>
                 
-                <div className="closeIcon">
+                <div className="hintTexts">
+                    
+                    <div className="closeIcon">
 
                     <ImCross onClick = {onClick}>
                     </ImCross>
-                </div>
-                
-                <div className="hintTexts">
+                    </div>
+                    
                     <Text1>
                         {hintHeader}
                     </Text1>
-                    <br>
-                    </br>
+                    <br></br>
                     <Text3>
                         {hint}    
                     </Text3> 

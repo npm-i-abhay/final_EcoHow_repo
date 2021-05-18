@@ -73,7 +73,7 @@ const CategoryContainer = styled.div`
 
 
 export default function Category ({
-    routeToChain2 = "/home",
+    routeToChain2 = "/ecoHowIntro",
     hintChain4 = "Organics include things like produce and meat. Inorganics include things like plastic cardboard and electronics.",
     onClickChain = ()=> {},
     
