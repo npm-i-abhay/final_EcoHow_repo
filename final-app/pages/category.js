@@ -18,7 +18,7 @@ const CategoryContainer = styled.div`
     .CatContainer 
     {
         display:flex;
-        juatify-content:center;
+        justify-content:center;
         flex-direction:column;
         align-items: center;
         height:100%;
