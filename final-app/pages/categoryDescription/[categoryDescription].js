@@ -136,7 +136,7 @@ export default function Category ({
 
     if (categoryDescription == "inorganic"){
         heading="Inorganic",
-        catDescription="The inorganic section will talk about non-green waste, we will teach you about the proper ways to dispose of waste and recycle. Click “enter” to begin",
+        catDescription="The inorganic section will teach you about non-green waste, as well as the proper ways to dispose of waste and recycle. Click “enter” to begin",
         bgcolor1="#71C4CA",
         gifSource="../inorganic-2.gif"
         onClickChain = ()=>router.push("/subcat/inorganic")
