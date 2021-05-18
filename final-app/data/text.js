@@ -49,7 +49,7 @@ export const InorganicContent = {
         content:"For every 1 ton of paper that’s produced, roughly 390 gallons of non-renewable oil is used to make it. Recycle your paper products because there's a wide range of products that can be created from recycled paper."
     },
     Aluminium:{
-        title:"Aluminium",
+        title:"Aluminum",
         content:"Always recycle aluminum! Aluminum is an infinitely recyclable material, and it takes up to 95 percent less energy to recycle it than to produce it from scratch. The residue from aluminum production as well as secondary recycling operations is called white dross, it has useful quantities of usable aluminum which can be extracted industrially."
     },
     Electronics:{
