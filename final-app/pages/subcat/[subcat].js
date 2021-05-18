@@ -117,7 +117,7 @@ export default function SubCatMapped (
                     bannerHeight="50px"/>
 
                     <p className={styles.content}> 
-                    Expand the Cards to read about each of the item, close when you are done. 
+                    Expand the cards to read about each of the item, close when you are done. 
                     </p>
                 </div>
             

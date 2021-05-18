@@ -92,6 +92,9 @@ font-size:1.2em;
 .boldFont{
     font-weight:bold
 }
+    .spanColor{
+        color: #3AB5A5;
+    }
 
 
 `;
@@ -159,7 +162,7 @@ export default function Category ({
             {moveHam &&                        
                 <div className = "spacer">
                 <TextCont>
-                    <p>While you are enjoying EcoHow, you will gain knowledge, tips and have fun while doing so.</p>
+                    <p>While you are enjoying EcoHow, you will <span className="spanColor">gain knowledge, tips</span> and <span className="spanColor">have fun</span> while doing so.</p>
                 </TextCont>
                
             
@@ -171,7 +174,7 @@ export default function Category ({
                 </div>
  
                 <TextCont>
-                    <p>Always check the help button if you are feeling lost. Now, enjoy learning! </p>
+                    <p>Always check the <span className="spanColor">help button</span> if you are feeling lost. Now, enjoy learning! </p>
                 </TextCont>
               
 

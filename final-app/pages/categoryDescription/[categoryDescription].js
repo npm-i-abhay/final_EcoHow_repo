@@ -108,7 +108,7 @@ export default function Category ({
     hintChain4 = "Organics include things like produce and meat. Inorganics include things like plastic cardboard and electronics.",
     newLabel="Next",
     heading="Organic",
-    catDescription="The organic sectcion will teach you about composting, we will share insight on different materials that can help create balanced compost Click “enter” to begin",
+    catDescription="The organic section will teach you about composting, we will share insight on different materials that can help create balanced compost Click “enter” to begin",
     bgcolor1="#5EBA92",
     gifSource="",
     onClickChain = ()=> {},
@@ -127,7 +127,7 @@ export default function Category ({
 
     if (categoryDescription == "organic"){
         heading="Organic",
-        catDescription="The organic sectcion will teach you about composting, we will share insight on different materials that can help create balanced compost Click “enter” to begin",
+        catDescription="The organic section will teach you about composting, we will share insight on different materials that can help create balanced compost Click “enter” to begin",
         bgcolor1="#5EBA92",
         gifSource="../organic-2.gif"
         onClickChain = ()=>router.push("/subcat/organic")
@@ -136,7 +136,7 @@ export default function Category ({
 
     if (categoryDescription == "inorganic"){
         heading="Inorganic",
-        catDescription="The inorganic sectcion will talk about non-green waste, we will teach you about the proper ways to dispose of waste and recycle. Click “enter” to begin",
+        catDescription="The inorganic section will talk about non-green waste, we will teach you about the proper ways to dispose of waste and recycle. Click “enter” to begin",
         bgcolor1="#71C4CA",
         gifSource="../inorganic-2.gif"
         onClickChain = ()=>router.push("/subcat/inorganic")

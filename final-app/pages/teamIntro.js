@@ -77,6 +77,9 @@ justify-content:flex-start;
 text-align:center;
 font-family: 'Montserrat', sans-serif;
 font-size:1.2em;
+    .spanColor{
+        color: #3AB5A5;
+    }
 `;
 
 export default function Category ({
@@ -132,9 +135,9 @@ export default function Category ({
                         </div>
                     
                         <TextCont>
-                            <p>Our team wants to Inspire you to be considerate of your waste habits while we pass on knowledge. </p>
+                            <p>Our team wants to <span className="spanColor">inspire you</span> to be considerate of your waste habits while we pass on knowledge. We are <span className="spanColor">taking steps to create real change.</span></p>
                         
-                            <p>We are taking steps to create real change</p>
+                            
                             <br></br>
                         </TextCont>
                     

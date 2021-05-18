@@ -15,7 +15,7 @@ export const OrganicContent = {
     },
     Sewage:{
         title:"Sewage",
-        content:"It takes up to 24 for hours for a single drop of water to be treated in the Treatment Plant Process and be safe for consumption.If you own a pet, you might be interested to know that animal manure is a great add addition to your compost as it is rich in Nitrogren."
+        content:"It takes up to 24 for hours for a single drop of water to be treated in the Treatment Plant Process and be safe for consumption.If you own a pet, you might be interested to know that animal manure is a great add addition to your compost as it is rich in Nitrogen."
     },
     Meat:{
         title:"Meat",
@@ -33,7 +33,7 @@ export const OrganicContent = {
 export const InorganicContent = {
     Plastic:{
         title:"Bags and Wrappers",
-        content:"It is estimated that consumers use 500 billion to 1 trillion bags one year. The issue is that plastic is non-biodegradable. In addition, only 1 to 3% is actually recycled. The rest goes to the landfill, or is littered in the ocean. The good news is there are many alternatives to this material that are more sustainable and reusable, using a fabric bag or pouch instead of purchasing plastic bags when you go to the supermarket can already make a huge difference. "
+        content:"It is estimated that consumers use 500 billion to 1 trillion plastic bags in one year. The issue is that plastic is non-biodegradable. In addition, only 1 to 3% of plastic is actually recycled. The rest goes to the landfill, or is littered in the ocean. The good news is there are many alternatives to this material that are more sustainable and reusable, using a fabric bag or pouch instead of purchasing plastic bags when you go to the supermarket can already make a huge difference. "
     },
     PlasticStraws:{
         title:"Plastic Straws",
@@ -72,7 +72,7 @@ export const InorganicContent = {
 export const OrganicHelp = {
 
     CategorySelection:{
-        content:"The organic sectcion will teach you about composting, we will share insight on different materials that can be added to create balanced compost. Click “enter” to begin"
+        content:"The organic section will teach you about composting, we will share insight on different materials that can be added to create balanced compost. Click “enter” to begin"
     },
 
     Subcat:{
@@ -107,7 +107,7 @@ export const OrganicHelp = {
 
 export const OrganicHints = {
     Quiz1:{
-        content:"One element creates engergy and the other breaks organic matter. "
+        content:"One element creates energy and the other breaks organic matter. "
     },
     Quiz2:{
         content:"Citrus is very acidic and takes a very long time to decompose."
@@ -118,7 +118,7 @@ export const OrganicHints = {
     },
 
     OrganicResults:{
-        content:"You have shown that you are very knowledgeable in this category! Great job! If you would like to try the next catagory, click on “Back to Categories”."}
+        content:"You have shown that you are very knowledgeable in this category! Great job! If you would like to try the next category, click on “Back to Categories”."}
 }
 
 
@@ -127,18 +127,18 @@ export const OrganicTips = {
         content:"Based on your score, you are helping to reduce waste in our landfills and green house gases in our environment. Great job!"
     },
     BadTips:{
-        content:"Based on your score, you may want to continue to do research on proper composting. Remember that if you do not compost your yard or food waste, it will decompose in the landfill. Overtime, it releases methane gas, a potent greenhouse gas.It is best to always compost you vegetables, fruits, scrap food, pet manure, garden waste, and wood "
+        content:"Based on your score, you may want to continue to do research on proper composting. Remember that if you do not compost your yard or food waste, it will decompose in the landfill. Overtime, the process of decomposition releases methane gas, a potent greenhouse gas. It is best to always compost you vegetables, fruits, scrap food, pet manure, garden waste, and wood "
     },
 }
 
 export const InorganicHelp = {
 
     CategorySelection:{
-        content:"The inorganic sectcion will teach you about waste and recycling, we will share facts and insight on domestic waste and how to minimize your indivual impact.  Click “enter” to begin"
+        content:"The inorganic section will teach you about waste and recycling, we will share facts and insight on domestic waste and how to minimize your individual impact.  Click “enter” to begin"
     },
 
     Subcat:{
-        content:"Read each category carefully! This will help you gain the most from using this app.Once you have finished this section and completed your evaluation. You can skip ahead to the quiz"
+        content:"Read each category carefully! This will help you gain the most from using this app. Once you have finished this section and completed your evaluation. You can skip ahead to the quiz"
     },
 
     Evaluation:{
@@ -172,14 +172,14 @@ export const InorganicTips = {
         content:"Based on your score, you are doing a great job at keeping your personal waste generation at a minimum. You are keeping our environment healthy"
     },
     BadTips:{
-        content: "Based on your score, you may want to continue to do research on proper recycling. The canadian governemnt has a great resource that guides you and helps you become more knowledgeable. Finally, consider shopping at second-hand stores, this resourceful act can reduce waste generation "
+        content: "Based on your score, you may want to continue to do research on proper recycling. The canadian government has a great resource that guides you and helps you become more knowledgeable. Finally, consider shopping at second-hand stores, this resourceful act can reduce waste generation "
     },
 }
 
 
 export const InorganicHints = {
     Quiz1:{
-        content:"Remember, the blue bin is where we place all our recylable items.  "
+        content:"Remember, the blue bin is where we place all our recyclable items.  "
     },
     Quiz2:{ 
         content:"Our priority is to reduce waste, which of the following actions will help us do that"
@@ -190,7 +190,7 @@ export const InorganicHints = {
     },
 
     InOrganicResults:{
-        content:"You have shown that you are very knowledgeable in this category! Great job! If you would like to try the next catagory, click on “Back to Categories”."}
+        content:"You have shown that you are very knowledgeable in this category! Great job! If you would like to try the next category, click on “Back to Categories”."}
 }
 
 
