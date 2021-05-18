@@ -41,19 +41,25 @@ font-family: 'Spartan', sans-serif;
 
 
 
+
 const MakeHelp = ({
 
     text= '\u21FD',
     hintChain2 = "whatever whatever sometimes Coding is  pain but I like using the rusted gears in my brain",
     displayToggle = "1",
-    displayHintChain = ""
+    displayHintChain = "",
+    leftIn = -500,
+
     
 })=>
 {   
     var helpFadeIn = 0
-    var leftIn = -500
     const[help, setHelp] = useState(false)
 
+        const onClickChain = ()=> {
+        leftIn = -500
+        }
+    
         if (help)
         {
             helpFadeIn=1
@@ -77,6 +83,7 @@ const MakeHelp = ({
     hint={hintChain2}
     leftValue={leftIn}
     displayHint = {displayHintChain}
+    onClick={onClickChain}
     />
     </Wrapper>
 }

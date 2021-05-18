@@ -44,8 +44,8 @@ const CategoryContainer = styled.div`
         .searchImage
         {
             // border:2px solid blue;
-            height:50%;
-            width:50%;
+            height:70%;
+            width:70%;
         }
 
         .dynamicCont
@@ -120,7 +120,7 @@ margin-bottom:2em;
 
 export default function SearchResults ({
     routeToChain2 = "/home",
-    hintChain4 = "",
+    hintChain4 = "search for an item to see which bin to properly dispose of it.",
     newLabel="Next",
     onClick = () =>{},
     dummyText = "sssdd"
@@ -129,10 +129,10 @@ export default function SearchResults ({
 
 {
    const router = useRouter();
-   const [resultText, setResultText] = useState("test");
+   const [resultText, setResultText] = useState("");
    const [imgSource, setImgSource] = useState("/bluearrow.png");
-   const [bigText, setBigText] = useState("bigText");
-   const [smallText, setSmallText] = useState("smallText");
+   const [bigText, setBigText] = useState("");
+   const [smallText, setSmallText] = useState("");
    onClick = ()=>router.push("ecoHowIntro")
  
    if (process.browser) 
@@ -209,9 +209,7 @@ export default function SearchResults ({
                 </TextCont>
               
         </div>
-                <div className = "buttonCont">                    
-                <Button text={newLabel} onClick= {onClick} bgcolor="#368B8B"/>
-                </div>
+                
        
 
                 </div>
