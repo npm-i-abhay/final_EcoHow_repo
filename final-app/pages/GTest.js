@@ -180,12 +180,7 @@ export default function DnD({
             }
 
        }, [counter]);
-    
 
-
- 
-    const showImage = ()=>
-    {}
     
     const onDragStart = (ind) =>
     {
