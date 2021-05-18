@@ -157,7 +157,7 @@ export default function Tips ({
                            return <Menu 
                            key = {index}
                            routeToChain = {routeToChain2}
-                           
+                           hintChain3={hintChain4}
                            rightPosition = {value.rightPositionChain}
                            contVisble = {value.contVisbleChain}
                            revealMenu = {value.revealMenuChain}
