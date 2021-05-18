@@ -9,6 +9,7 @@ import {GiMonsteraLeaf} from 'react-icons/gi'
 import {AiTwotoneHome} from 'react-icons/ai'
 import {RiRecycleFill} from 'react-icons/ri'
 import {CgDatabase} from 'react-icons/cg'
+import {ImBin2} from 'react-icons/im'
 
 
 const MenuContainer = styled.div `
@@ -186,6 +187,14 @@ const Menu = ({
                             >Inorganic Info
                             </MenuItemsHead>
                             <RiRecycleFill className = {styles.hamIcons}/>
+                        </div>
+
+                        <div onClick = {()=> router.push("/searchResult")} 
+                        className="headCont">
+                            <MenuItemsHead className = {styles.hamHead} 
+                            >Bin Sorter
+                            </MenuItemsHead>
+                            <ImBin2 className = {styles.hamIcons}/>
                         </div>
                            
                 
