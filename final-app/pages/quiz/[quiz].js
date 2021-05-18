@@ -395,13 +395,21 @@ const correct = () =>
         const [theme, setTheme] = useState (false)
 
 
-        //   useEffect(()=>{
-
-        //       setLabels("white")
-        //       setBanner("white")
-        //       setBackground("Black")
-            
-        //      }, [theme]);
+          useEffect(()=>
+          {
+            if(theme)
+            {
+                setLabels("white")
+                setBanner("white")
+                setBackground("Black")
+            }
+            if(theme == false)
+            {
+                setLabels("black")
+                setBanner("black")
+                setBackground("#F5F1ED")
+            }
+            }, [theme]);
         
     return <QuizCont    
             imageBg = {bgImage}
@@ -511,7 +519,7 @@ const correct = () =>
                     onClick= {handleResult}
                     bgcolor={bgColorChain1}/>
                    
-                     {/* <MyButton onClick={()=> setTheme(!theme)}/>        */}
+                     <MyButton onClick={()=> setTheme(!theme)}/>       
                         
                 </div>
             }
