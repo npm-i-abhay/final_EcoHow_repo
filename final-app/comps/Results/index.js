@@ -38,9 +38,10 @@ opacity:0.8;
     justify-content:center;
     align-items:center;
     width:100%;
-    color:black;
+    color:${props=> props.resultTextCol};
     font-size:1.2em;
     font-family: 'Montserrat', sans-serif;
+    transition:all 1s;
     // height:60%;
 }
 
@@ -82,14 +83,16 @@ const Results = ({
     gifSource = "../blackbin.gif",
     heading="You are doing a great job!",
     headingColour="#7CC5A4",
-    bgcolor="#5EBA92"
+    bgcolor="#5EBA92",
+    textResultCol = "black"
 }) => {
 
     return (<Wrapper>
     
             <Heading color={headingColour}>{heading}</Heading>
             
-            <ResultsCont bgcolor={bgcolor}>          
+            <ResultsCont bgcolor={bgcolor}
+            resultTextCol = {textResultCol}>          
                 <GifContainer>
                     
                     <GifImage src={gifSource}></GifImage>

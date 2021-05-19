@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Button from '../comps/Button'
 import Menu from '../comps/Menu'
 import HeroContainer from '../comps/HeroImage'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
 import {MenuReferences} from '../data/text'
 import {MenuReferences2} from '../data/text'
@@ -19,7 +19,8 @@ const CategoryContainer = styled.div`
         align-items: center;
         height:100vh;
         width:100%;
-        background-color:#F5F1ED;
+        transition:all 1s;
+        background-color:${props => props.mainBg};
         background-image:url("./teamIntro.svg");
         background-repeat:no-repeat;
         background-position:50% 10%;
@@ -77,6 +78,7 @@ justify-content:flex-start;
 text-align:center;
 font-family: 'Montserrat', sans-serif;
 font-size:1.2em;
+color:${props => props.descripTextCol};
 `;
 
 export default function Category ({
@@ -99,9 +101,27 @@ export default function Category ({
         references = MenuReferences2
     }
 
- 
+    const [background, setBackground] = useState ("black")
+    const [bodyText, setBody] = useState ("black")
+    const [theme, setTheme] = useState (false)
 
-    return   <CategoryContainer className = {styles.scroller}>
+    useEffect(()=>
+          {
+            if(theme)
+            {
+                setBackground("Black")
+                setBody ("white")
+            }
+            if(theme == false)
+            {
+                setBackground("#F5F1ED")
+                setBody ("black")
+            }
+            }, [theme]);
+
+
+    return   <CategoryContainer className = {styles.scroller}
+                                mainBg = {background} >
                 <div className="CatContainer">
                     
                             

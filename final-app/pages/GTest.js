@@ -112,6 +112,14 @@ background-position-x:-20em;
         display:flex;
     }
 
+    .sortingSubAlone
+    {
+        // border:2px solid green;
+        width:17%;
+        display:flex;
+        align-items:flex-start;
+        justify-content:space-around;
+    }
     .sortingSub1
     {
         // border:2px solid green;
@@ -182,21 +190,24 @@ export default function DnD({
     
 })
 {
-    var audio =  ("/audio/correct.wav")
-    const correct = () => 
-    {
-        new Audio(audio).play()
-    }
-    var audio2 =  ("/audio/incorrect.wav")
-    const incorrect = () => 
-    {
-        new Audio(audio2).play()
-    }
-    var audio3 =  ("/audio/SoClean.mp3")
-    const soClean = () => 
-    {
-        new Audio(audio3).play()
-    }
+    // var audio =  ("/audio/correct.wav")
+    // const correct = () => 
+    // {
+    //     new Audio(audio).play()
+    // }
+
+   
+
+    // var audio2 =  ("/audio/incorrect.wav")
+    // const incorrect = () => 
+    // {
+    //     new Audio(audio2).play()
+    // }
+    // var audio3 =  ("/audio/SoClean.mp3")
+    // const soClean = () => 
+    // {
+    //     new Audio(audio3).play()
+    // }
 
 
     const router = useRouter()
@@ -261,7 +272,8 @@ export default function DnD({
 
         
         {
-            correct()
+            new Audio("/audio/correct.wav").play()
+            // correct()
             box[boxInd] = false;
             setBox([...box]);
             counter += 1
@@ -271,7 +283,8 @@ export default function DnD({
         
         else
         {
-           incorrect()
+            new Audio("/audio/incorrect.wav").play()
+        //    incorrect()
         }
 
     }
@@ -287,7 +300,8 @@ export default function DnD({
         if(boxInd === 0||boxInd === 1 || boxInd === 4 )
 
         {
-            correct()
+            // correct()
+            new Audio("/audio/correct.wav").play()
             box[boxInd] = false;
             setBox([...box]);
             counter += 1
@@ -295,7 +309,8 @@ export default function DnD({
 
         else
         {
-            incorrect()
+            // incorrect()
+            new Audio("/audio/incorrect.wav").play()
         }
     }
     const onDrop3 = (e) =>
@@ -309,14 +324,16 @@ export default function DnD({
         if(boxInd === 2 || boxInd === 3 ||boxInd === 8)
 
         {
-            correct()
+            // correct()
+            new Audio("/audio/correct.wav").play()
             box[boxInd] = false;
             setBox([...box]);
             counter += 1
         }
         else
         {
-            incorrect()
+            // incorrect()
+            new Audio("/audio/incorrect.wav").play()
         }
     }
 
@@ -445,7 +462,8 @@ export default function DnD({
         </div>
 
         <div className = "dropTragetsCont">     
-            
+
+
             <div className= "imgConts">  
                 <DropCont
                 onDragOver = {onDragOver}
@@ -482,16 +500,18 @@ export default function DnD({
 
 
             <div className = "sortingItems">
-                {box[0] && 
-                        <DragBox 
-                            draggable = {true}
-                            onDragStart = {()=>onDragStart(0)}
-                            onDrag = {onDrag}
-                            onDragEnd = {onDragEnd}
-                            src = "/sorting/can.png"
-                        /> 
-                }
-                
+               
+                <div className = "sortingSubAlone spacer">              
+                        {box[0] && 
+                                <DragBox 
+                                    draggable = {true}
+                                    onDragStart = {()=>onDragStart(0)}
+                                    onDrag = {onDrag}
+                                    onDragEnd = {onDragEnd}
+                                    src = "/sorting/can.png"
+                                /> 
+                        }
+                </div>
                 
                 <div className = "sortingSub1  spacer" id = "one" >
                         {box[1] && 

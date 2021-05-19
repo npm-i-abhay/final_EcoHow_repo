@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Button from '../../comps/Button'
 import Menu from '../../comps/Menu'
 import {useRouter} from 'next/router'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import HeroContainer from '../../comps/HeroImage'
 import {OrganicHelp} from '../../data/text'
 import {MenuReferences} from '../../data/text'
@@ -21,7 +21,8 @@ const CategoryContainer = styled.div`
         align-items: center;
         height:100%;
         width:100vw;
-        background-color:#F5F1ED;
+        transition:all 1s;
+        background-color:${props=> props.themeDark};
 
         .spacer
         {
@@ -80,6 +81,8 @@ align-items:center;
 width:70%;
 justify-content:flex-start;
 text-align:center;
+transition:all 1s;
+color:${props => props.textToggleCol};
 font-family: 'Spartan', sans-serif;
 
 
@@ -111,6 +114,7 @@ export default function Category ({
     catDescription="The organic sectcion will teach you about composting, we will share insight on different materials that can help create balanced compost Click “enter” to begin",
     bgcolor1="#5EBA92",
     gifSource="",
+    toggleTextCol = "black",
     onClickChain = ()=> {},
 })
 
@@ -143,10 +147,29 @@ export default function Category ({
 
     }
 
+    const [background, setBackground] = useState ("#F5F1ED")
+    const [bodyText, setBody] = useState ("black")
+    const [theme, setTheme] = useState (false)
 
+    useEffect(()=>
+          {
+            if(theme)
+            {
+
+                setBackground("Black")
+                setBody ("white")
+            }
+            if(theme == false)
+            {
+
+                setBackground("#F5F1ED")
+                setBody ("black")
+            }
+            }, [theme]);
 
     return   <CategoryContainer
-             className = {styles.scroller} >
+             className = {styles.scroller} 
+              themeDark = {background}>
                 <div className="CatContainer">
                             
                             
@@ -176,7 +199,7 @@ export default function Category ({
                                 <DiscImg src = {gifSource}/>
                             </div>
         
-                            <TextCont>
+                            <TextCont textToggleCol= {bodyText} >
                                 <h1 className = "heading" >{heading}</h1>
                                 <p className="par">{catDescription}</p>
                             </TextCont>
@@ -186,6 +209,8 @@ export default function Category ({
                             <div className = "buttonCont">                    
                             <Button onClick = { ()=>router.push("/category")}text="Categories" bgcolor="#368B8B"/>
                             <Button text="Enter"  bgcolor={bgcolor1} onClick={onClickChain}/>
+                            <Button text="darkMode"  bgcolor={bgcolor1} 
+                            onClick={()=> setTheme(!theme)}/>
                             </div>
                     
                      </div>
