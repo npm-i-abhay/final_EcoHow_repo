@@ -206,7 +206,7 @@ const correct = () =>
         routeToChain2= "question-one-org"
         q1="Nothing, its perfectly fine to add to your compost"
         q2="It speeds up the decomposition rate"
-        q3="It may kill the kill worms, and the microorganisms"
+        q3="It may kill the worms, and the microorganisms"
         hintText="Citrus is very acidic and takes a very long time to decompose."
         bgImage = "/leafbg"
         bgColorChain1 = "#7CC39F"

@@ -250,7 +250,7 @@ const handleResult = ()=>
 
                             <div className ="wrongAns">
                             <p>
-                                    Sorry, due to accessibility reasons, the dark mode is unavailable on this image.
+                                    Sorry, due to accessibility reasons, the dark mode is unavailable on this page.
                             </p>   
                             </div>
                         </Prompt>
