@@ -55,6 +55,8 @@ transition:all 1s;
 
 `
 
+
+
 export default function SubCatMapped (
     {
         bannerText = "",
@@ -78,16 +80,17 @@ export default function SubCatMapped (
     const [label, setLabels] = useState ("black")
     const [bodyText, setBody] = useState ("black")
     const [theme, setTheme] = useState (false)
-
+    const [iconColor, setIcon] = useState ("#21AAB5")
     useEffect(()=>
           {
             if(theme)
             {
-                setLabels("white")
-                setBanner("white")
+                setLabels("#F5F1ED")
+                setBanner("#F5F1ED")
                 setBackground("Black")
-                setDescription("white")
-                setBody ("white")
+                setDescription("#F5F1ED")
+                setBody ("#F5F1ED")
+                setIcon("#F5F1ED")
             }
             if(theme == false)
             {
@@ -96,6 +99,7 @@ export default function SubCatMapped (
                 setBackground("#F5F1ED")
                 setDescription("black")
                 setBody ("black")
+                setIcon("#21AAB5")
             }
             }, [theme]);
 
@@ -111,7 +115,7 @@ export default function SubCatMapped (
         cards = OrganicCards
         bannerText="Organic"
         onClickChain = ()=>router.push("/evaluation/organic")
-        contBgchain = "#D7E6DB"
+        contBgchain  = "#D7E6DB"
         subCatButton = "#5EBA92"
     }
     if (subcat === "inorganic")
@@ -150,6 +154,8 @@ export default function SubCatMapped (
                            transLine1={value.transLine1Chain}
                            transLineOp2={value.transLineOp2Chain}
                            transLine3={value.transLine3Chain}
+                           onClickDarkChain = {()=> setTheme(!theme)}
+                           darkIconColorChain = {iconColor}
                            onClick = {()=> setMoveHam (!moveHam)}/>
                         })} 
                
@@ -165,7 +171,7 @@ export default function SubCatMapped (
                     bannerHeight="50px"/>
                     
                     <DescriptionText descripText={description} > 
-                    Expand the Cards to read about each of the item, close when you are done. 
+                    Expand the cards to read about each of the item, close when you are done. 
                     </DescriptionText>
 
                 </div>
@@ -196,11 +202,6 @@ export default function SubCatMapped (
                     />
             }
 
-            <MyButton
-                    onClick={()=> setTheme(!theme)}
-                    text="dark Mode"
-                    bgcolor = {subCatButton}
-                    />
         </div>
         </SubCatCont>
 }

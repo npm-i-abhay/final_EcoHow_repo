@@ -2,28 +2,28 @@
 export const OrganicContent = {
     Vegetable:{
         title:"Vegetable",
-        content:"Vegetables, plus roots, and tubers have the highest wastage rates of any food.It is important to know that vegetables contain nitrogen, an ideal chemical compound for  compost. Just remember to bury it deep in the pile to avoid a rodent infestation."
+        content:"Vegetables, plus roots, and tubers have the highest wastage rates of any food. It is important to know that vegetables contain nitrogen, an ideal chemical compound for compost. Just remember to bury it deep in the pile to avoid a rodent infestation."
     },
     Fruits:{
         title:"Fruit",
-        content:"Almost 14 700 000 tons of fruits are wasted every year in Canada.  However, fruits contain Nitrogen.Therefore, It is a great addition to your compost.Be sure to avoid citrus as it is too acidic and can kill worms and microorganisms, this can slow down the decomposition in your pile."
+        content:"Almost 14 700 000 tons of fruits are wasted every year in Canada.  However, fruits contain Nitrogen. Therefore, It is a great addition to your compost. Be sure to avoid citrus as it is too acidic and can kill worms and microorganisms, this can slow down the decomposition in your pile."
     },
 
     GardenWaste:{
         title:"Garden Waste",
-        content:"Garden waste makes up 14% of the average household bin.We should note that garden waste contains a good amount of carbon. As a result, this provides energy to break down materials in your compost.Without garden waste, compost cannot progress effectively. "
+        content:"Garden waste makes up 14% of the average household bin. We should note that garden waste contains a good amount of carbon. As a result, this provides energy to break down materials in your compost. Without garden waste, compost cannot progress effectively. "
     },
     Sewage:{
         title:"Sewage",
-        content:"It takes up to 24 for hours for a single drop of water to be treated in the Treatment Plant Process and be safe for consumption.If you own a pet, you might be interested to know that animal manure is a great add addition to your compost as it is rich in Nitrogren."
+        content:"It takes up to 24 for hours for a single drop of water to be treated in the Treatment Plant Process and be safe for consumption. If you own a pet, you might be interested to know that animal manure is a great add addition to your compost as it is rich in Nitrogen."
     },
     Meat:{
         title:"Meat",
-        content:"Producing meat requires excessive amounts of resources, this includes land, water, and energy. With that said, we still should not add meat to your compost since meat may be infected with bacteria like Salmonella and E. coli that can make you ill. Furthermore, as compost material It also attracts pests and rodents. "
+        content:"Producing meat requires excessive amounts of resources, this includes land, water, and energy. With that said, we still should not add meat to your compost since meat may be infected with bacteria like Salmonella and E.coli that can make you ill. Furthermore, as compost material It also attracts pests and rodents. "
     },
     Wood:{
         title:"Wood",
-        content:"In the United States alone, it was estimated that 18.1 million tons of wood was wasted in 2018. 90% of that waste was wood palettes for packaging.Wood chips and sawdust contains high levels of carbon which is a great addition to your compost."
+        content:"In the United States alone, it was estimated that 18.1 million tons of wood was wasted in 2018. 90% of that waste was wood palettes for packaging. Wood chips and sawdust contains high levels of carbon which is a great addition to your compost."
     }
 
    
@@ -37,7 +37,7 @@ export const InorganicContent = {
     },
     PlasticStraws:{
         title:"Plastic Straws",
-        content:"Plastic straws cannot be recycled, as a result, they end up in our landfills. Often they get caught in waterways, poor waste management has also caused these straws to wash up on beaches. The problem is that plastic straws are heavily used, furthermore they are made of polypropylene, making them non-renewable and single-use.Avoid plastic straws at all costs, you can switch to paper and steel alternatives instead."
+        content:"Plastic straws cannot be recycled, as a result, they end up in our landfills. Often they get caught in waterways, poor waste management has also caused these straws to wash up on beaches. The problem is that plastic straws are heavily used, furthermore they are made of polypropylene, making them non-renewable and single-use. Avoid plastic straws at all costs, you can switch to paper and steel alternatives instead."
     },
 
     Styrofoam:{
@@ -49,7 +49,7 @@ export const InorganicContent = {
         content:"For every 1 ton of paper that’s produced, roughly 390 gallons of non-renewable oil is used to make it. Recycle your paper products because there's a wide range of products that can be created from recycled paper."
     },
     Aluminium:{
-        title:"Aluminium",
+        title:"Aluminum",
         content:"Always recycle aluminum! Aluminum is an infinitely recyclable material, and it takes up to 95 percent less energy to recycle it than to produce it from scratch. The residue from aluminum production as well as secondary recycling operations is called white dross, it has useful quantities of usable aluminum which can be extracted industrially."
     },
     Electronics:{
@@ -72,7 +72,7 @@ export const InorganicContent = {
 export const OrganicHelp = {
 
     CategorySelection:{
-        content:"The organic sectcion will teach you about composting, we will share insight on different materials that can be added to create balanced compost. Click “enter” to begin"
+        content:"The organic section will teach you about composting, we will share insight on different materials that can be added to create balanced compost. Click “enter” to begin."
     },
 
     Subcat:{
@@ -80,7 +80,7 @@ export const OrganicHelp = {
     },
 
     Evaluation:{
-        content:"This evaluation section is intended to help you reflect on your current habits. Reflecting on your results can help you progress and make actionable changes"
+        content:"This evaluation section is intended to help you reflect on your current habits. Reflecting on your results can help you progress and make actionable changes."
     },
     Quiz1:{
         content:"There are a total of three questions. You may click on the hint button at any time to help yourself throughout the quiz. "
@@ -94,7 +94,7 @@ export const OrganicHelp = {
     },
 
     TipsGood:{
-        content:"Click on “Test Your Knowledge” button to continue to quiz"
+        content:"Click on “Test Your Knowledge” button to continue to quiz."
     },
 
     
@@ -107,7 +107,7 @@ export const OrganicHelp = {
 
 export const OrganicHints = {
     Quiz1:{
-        content:"One element creates engergy and the other breaks organic matter. "
+        content:"One element creates energy and the other breaks organic matter. "
     },
     Quiz2:{
         content:"Citrus is very acidic and takes a very long time to decompose."
@@ -118,7 +118,7 @@ export const OrganicHints = {
     },
 
     OrganicResults:{
-        content:"You have shown that you are very knowledgeable in this category! Great job! If you would like to try the next catagory, click on “Back to Categories”."}
+        content:"You have shown that you are very knowledgeable in this category! Great job! If you would like to try the next category, click on “Back to Categories”."}
 }
 
 
@@ -127,18 +127,18 @@ export const OrganicTips = {
         content:"Based on your score, you are helping to reduce waste in our landfills and green house gases in our environment. Great job!"
     },
     BadTips:{
-        content:"Based on your score, you may want to continue to do research on proper composting. Remember that if you do not compost your yard or food waste, it will decompose in the landfill. Overtime, it releases methane gas, a potent greenhouse gas.It is best to always compost you vegetables, fruits, scrap food, pet manure, garden waste, and wood "
+        content:"Based on your score, you may want to continue to do research on proper composting. Remember that if you do not compost your yard or food waste, it will decompose in the landfill. Overtime, it releases methane gas, a potent greenhouse gas.It is best to always compost you vegetables, fruits, scrap food, pet manure, garden waste, and wood. "
     },
 }
 
 export const InorganicHelp = {
 
     CategorySelection:{
-        content:"The inorganic sectcion will teach you about waste and recycling, we will share facts and insight on domestic waste and how to minimize your indivual impact.  Click “enter” to begin"
+        content:"The inorganic section will teach you about waste and recycling, we will share facts and insight on domestic waste and how to minimize your individual impact. Click “enter” to begin"
     },
 
     Subcat:{
-        content:"Read each category carefully! This will help you gain the most from using this app.Once you have finished this section and completed your evaluation. You can skip ahead to the quiz"
+        content:"Read each category carefully! This will help you gain the most from using this app. Once you have finished this section and completed your evaluation. You can skip ahead to the quiz."
     },
 
     Evaluation:{
@@ -172,14 +172,14 @@ export const InorganicTips = {
         content:"Based on your score, you are doing a great job at keeping your personal waste generation at a minimum. You are keeping our environment healthy"
     },
     BadTips:{
-        content: "Based on your score, you may want to continue to do research on proper recycling. The canadian governemnt has a great resource that guides you and helps you become more knowledgeable. Finally, consider shopping at second-hand stores, this resourceful act can reduce waste generation "
+        content: "Based on your score, you may want to continue to do research on proper recycling. The canadian government has a great resource that guides you and helps you become more knowledgeable. Finally, consider shopping at second-hand stores, this resourceful act can reduce waste generation "
     },
 }
 
 
 export const InorganicHints = {
     Quiz1:{
-        content:"Remember, the blue bin is where we place all our recylable items.  "
+        content:"Remember, the blue bin is where we place all our recyclable items.  "
     },
     Quiz2:{ 
         content:"Our priority is to reduce waste, which of the following actions will help us do that"
@@ -190,7 +190,7 @@ export const InorganicHints = {
     },
 
     InOrganicResults:{
-        content:"You have shown that you are very knowledgeable in this category! Great job! If you would like to try the next catagory, click on “Back to Categories”."}
+        content:"You have shown that you are very knowledgeable in this category! Great job! If you would like to try the next category, click on “Back to Categories”."}
 }
 
 
@@ -307,7 +307,7 @@ export const MenuReferences2 =
 [
     {
         hintChain4: OrganicHelp.Evaluation.content,
-        rightPositionChain: "-7.8em",
+        rightPositionChain: "-12em",
         contVisbleChain: "visible",
         revealMenuChain: "flex",
         menuHeightChain: "100vh",

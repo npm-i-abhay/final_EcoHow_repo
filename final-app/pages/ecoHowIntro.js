@@ -155,6 +155,7 @@ export default function Category ({
                            transLine1={value.transLine1Chain}
                            transLineOp2={value.transLineOp2Chain}
                            transLine3={value.transLine3Chain}
+                           darkDisplayToggleChain="0"
                            onClick = {()=> setMoveHam (!moveHam)}/>
                         })} 
                 </div>  
@@ -162,7 +163,7 @@ export default function Category ({
             {moveHam &&                        
                 <div className = "spacer">
                 <TextCont>
-                    <p>While you are enjoying EcoHow, you will gain knowledge, tips and have fun while doing so.</p>
+                    <p>While you are enjoying EcoHow, you will gain knowledge, tips, and have fun while doing so.</p>
                 </TextCont>
                
             
@@ -177,6 +178,9 @@ export default function Category ({
                     <p>Always check the help button if you are feeling lost. Now, enjoy learning! </p>
                 </TextCont>
               
+
+                <br></br>
+                <br></br>
 
                 <div className = "buttonCont">                    
                 <Button text={newLabel} onClick= {onClick} bgcolor="#368B8B" text="Let's Begin"/>
