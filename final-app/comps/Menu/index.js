@@ -161,7 +161,7 @@ const Menu = ({
 
                     <CircleIconsCont hiddenIcons = {hideIcons}>
                          <MakeIcon routeTo = {routeToChain}
-                         displayBackToggle = {displayBackToggleChain}
+                        //  displayBackToggle = {displayBackToggleChain}
                          />
                          <HelpButton 
                          text="?"
