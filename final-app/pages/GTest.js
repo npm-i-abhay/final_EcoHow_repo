@@ -13,7 +13,7 @@ const GoodJobCont = styled.div`
 // position:absolute;
 // border:2px solid green;
 display:flex;
-height:40%;
+height:50%;
 left:40%;
 width:95%;
 justify-content:center;
@@ -434,7 +434,7 @@ export default function DnD({
                     origin={heroOrigin} 
                     duration={heroDuration}
                     text="Return Home"
-                    bgcolor="#5eba92"
+                    bgcolor="#21aab5"
                     onClick = {()=> router.push ("/home")}/>
             }    
                 

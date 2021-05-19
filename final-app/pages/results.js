@@ -86,7 +86,7 @@ export default function Tips ({
                 <div className="yourResult">
                     
                     
-                    <ResultVisual src="/positiveresult.png"/>
+                    <ResultVisual src="/results.gif"/>
                     <p className="resultText">
                         Great job! You can now apply what you’ve learned today in your daily habits, remeber that you can continue learning about organic and inorganic waste by revisting the categories. 
                     </p>
