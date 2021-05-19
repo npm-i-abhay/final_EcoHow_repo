@@ -11,6 +11,7 @@ import {OrganicHelp} from '../../data/text'
 import {InorganicHelp} from '../../data/text'
 import styles from '../../styles/main.module.css'
 import {MenuReferences} from '../../data/text'
+import {ImCross} from 'react-icons/im'
 import {MenuReferences2} from '../../data/text'
 
 const EvaluationCont = styled.div `
@@ -20,13 +21,26 @@ const EvaluationCont = styled.div `
         height:100%;
         width:100vw;
         background-color:#F5F1ED;
-        
         background-image: url(/tree.png);
         background-size:cover;
         background-repeat:no-repeat;
         background-position-x: -10em;
         background-position-y: 20em;
         
+        
+        .promptCont
+        {
+            height:25%;
+            display:flex;
+            // border:2px solid red;
+            align-items:flex-start;
+            justify-content:center;
+            position:absolute;
+            top:5%;
+            width:100%;
+        }
+
+
         .EvHeader
         {
             display:flex;
@@ -68,6 +82,22 @@ const EvaluationCont = styled.div `
 
 `
 
+const Prompt = styled.div`
+height:20vh;
+width:85%;
+position:absolute;
+display:flex;
+flex-direction:column;
+justify-content:space-around;
+align-items:center;
+background-color:#21aab5;
+color:#F5F1ED;
+border-radius:20px;
+z-index:2;
+top:20%;
+`
+
+
 export default function Evalution ({
     labelTextChain1= "How often do use your compost a week?",
     labelTextChain2= "How often do you educate yourself on proper ways to compost?",
@@ -102,7 +132,7 @@ export default function Evalution ({
         buttonBg = "#71C4CA"
         
     }
-
+    const [theme, setTheme] = useState (false)
     const [valOne, setVal] = useState (0)
     const [valTwo, setValTwo] = useState (0)
     const [valThree, setValThree] = useState (0)
@@ -169,6 +199,7 @@ const handleResult = ()=>
                            transLine1={value.transLine1Chain}
                            transLineOp2={value.transLineOp2Chain}
                            transLine3={value.transLine3Chain}
+                           onClickDarkChain = {()=> setTheme(!theme)}
                            onClick = {()=> setMoveHam (!moveHam)}/>
                         })} 
 
@@ -205,6 +236,29 @@ const handleResult = ()=>
 
                         </div>
                 }
+
+
+                { theme &&
+                    <div className = "promptCont">
+                        
+                        <Prompt>
+                            <div className="flex-Icon">
+                            <ImCross className="closeIcon"
+                            onClick = {()=> setTheme(!theme)} >
+                            </ImCross>
+                            </div>
+
+                            <div className ="wrongAns">
+                            <p>
+                                    Sorry, due to accessibility reasons, the dark mode is unavailable on this image.
+                            </p>   
+                            </div>
+                        </Prompt>
+                        
+                    </div>
+                }
+
+
                 {moveHam &&
                 <Button 
                 text="Lets See How You Did"

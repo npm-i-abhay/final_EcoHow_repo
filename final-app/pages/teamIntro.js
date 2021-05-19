@@ -102,7 +102,7 @@ export default function Category ({
     }
 
     const [background, setBackground] = useState ("black")
-    const [bodyText, setBody] = useState ("black")
+    const [bodyText, setBody] = useState ("#F5F1ED")
     const [theme, setTheme] = useState (false)
 
     useEffect(()=>
@@ -141,6 +141,7 @@ export default function Category ({
                            transLine1={value.transLine1Chain}
                            transLineOp2={value.transLineOp2Chain}
                            transLine3={value.transLine3Chain}
+                           darkDisplayToggleChain = "0"
                            onClick = {()=> setMoveHam (!moveHam)}/>
                         })} 
                         </div>  
@@ -155,12 +156,14 @@ export default function Category ({
                         </div>
                     
                         <TextCont>
-                            <p>Our team wants to <span className="spanColor">inspire you</span> to be considerate of your waste habits while we pass on knowledge. We are <span className="spanColor">taking steps to create real change.</span></p>
+                            <p>Our team wants to inspire you to be considerate of your waste habits while we pass on knowledge. </p>
                         
+                            <p>We are taking steps to create real change</p>
                             
-                            <br></br>
                         </TextCont>
                     
+                        <br></br>
+                        <br></br>
 
                         <div className = "buttonCont">                    
                         <Button text={newLabel} onClick= {onClick} bgcolor="#368B8B"/>

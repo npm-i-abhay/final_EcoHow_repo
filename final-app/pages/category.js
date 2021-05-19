@@ -99,19 +99,22 @@ const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
 
 const [banner, setBanner] = useState ("black")
 const [background, setBackground] = useState ("#F5F1ED")
+const [iconColor, setIcon] = useState ("#21AAB5")
 const [theme, setTheme] = useState (false)
 
 useEffect(()=>
 {
   if(theme)
   {
-      setBanner("white")
+      setBanner("#F5F1ED")
       setBackground("Black")
+      setIcon("#F5F1ED")
   }
   if(theme == false)
   {  
       setBanner("black")
       setBackground("#F5F1ED")
+      setIcon("#21AAB5")
   }
   }, [theme]);
 
@@ -179,9 +182,11 @@ if (moveHam === false)
                            toggle =         {value.toggleChain}
                            menuBg =         {value.menuBgChain}
                            transLine1   =  {value.transLine1Chain}
-                           transLineOp2={value.transLineOp2Chain}
+                           transLineOp2=    {value.transLineOp2Chain}
                            transLine3={value.transLine3Chain}
-                           onClick =        {()=> setMoveHam (!moveHam)}/>
+                           onClick =        {()=> setMoveHam (!moveHam)}
+                           onClickDarkChain = {()=> setTheme(!theme)}
+                           darkIconColorChain = {iconColor} />
                         })}
                     
                 </div>  
@@ -217,9 +222,7 @@ if (moveHam === false)
             {moveHam &&
                 <Button text="Select" onClick={onClickChain} bgcolor="#368B8B"/>
             }
-            {moveHam &&
-                <Button text="darkModeSelect" onClick={()=> setTheme(!theme)} bgcolor="#368B8B"/>
-            }
+
 
             </div>
              

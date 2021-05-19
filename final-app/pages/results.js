@@ -86,9 +86,9 @@ export default function Tips ({
                 <div className="yourResult">
                     
                     
-                    <ResultVisual src="/positiveresult.png"/>
+                    <ResultVisual src="/quiz-ani.gif"/>
                     <p className="resultText">
-                        Great job! You can now apply what you’ve learned today in your daily habits, remeber that you can continue learning about organic and inorganic waste by revisting the categories. 
+                        Great job! You can now apply what you’ve learned today in your daily habits, remember that you can continue learning about organic and inorganic waste by revisiting the categories or take a walk to the park! 
                     </p>
                     
                 </div>
@@ -96,7 +96,7 @@ export default function Tips ({
             <div className = "buttonCont">
                 <MyButton 
                     text="Back to Categories"
-                    bgcolor="#3AB5A5"
+                    bgcolor="#376293"
                     onClick = {()=> router.push ("/category")}/>
                 <MyButton 
                     text="Walk To The Park"

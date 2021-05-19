@@ -16,7 +16,7 @@ const CategoryContainer = styled.div`
     .CatContainer 
     {
         display:flex;
-        juatify-content:center;
+        justify-content:center;
         flex-direction:column;
         align-items: center;
         height:100%;
@@ -133,22 +133,23 @@ export default function Category ({
         heading="Organic",
         catDescription="The organic section will teach you about composting, we will share insight on different materials that can help create balanced compost Click “enter” to begin",
         bgcolor1="#5EBA92",
-        gifSource="../organic-2.gif"
+        gifSource="../new-organic.gif"
         onClickChain = ()=>router.push("/subcat/organic")
 
     }
 
     if (categoryDescription == "inorganic"){
         heading="Inorganic",
-        catDescription="The inorganic section will teach you about non-green waste, as well as the proper ways to dispose of waste and recycle. Click “enter” to begin",
+        catDescription="The inorganic section will teach you about non-green waste, and the proper ways to dispose of waste and recycle. Click “enter” to begin",
         bgcolor1="#71C4CA",
-        gifSource="../inorganic-2.gif"
+        gifSource="../inorganicA.gif"
         onClickChain = ()=>router.push("/subcat/inorganic")
 
     }
 
     const [background, setBackground] = useState ("#F5F1ED")
     const [bodyText, setBody] = useState ("black")
+    const [iconColor, setIcon] = useState ("#21AAB5")
     const [theme, setTheme] = useState (false)
 
     useEffect(()=>
@@ -158,12 +159,14 @@ export default function Category ({
 
                 setBackground("Black")
                 setBody ("white")
+                setIcon("#F5F1ED")
             }
             if(theme == false)
             {
 
                 setBackground("#F5F1ED")
                 setBody ("black")
+                setIcon("#21AAB5")
             }
             }, [theme]);
 
@@ -189,7 +192,9 @@ export default function Category ({
                            transLine1   =  {value.transLine1Chain}
                            transLineOp2={value.transLineOp2Chain}
                            transLine3={value.transLine3Chain}
-                           onClick =        {()=> setMoveHam (!moveHam)}/>
+                           onClick =        {()=> setMoveHam (!moveHam)}
+                           onClickDarkChain = {()=> setTheme(!theme)}
+                           darkIconColorChain = {iconColor} />
                         })} 
                         </div>  
                 {moveHam &&            
@@ -209,8 +214,6 @@ export default function Category ({
                             <div className = "buttonCont">                    
                             <Button onClick = { ()=>router.push("/category")}text="Categories" bgcolor="#368B8B"/>
                             <Button text="Enter"  bgcolor={bgcolor1} onClick={onClickChain}/>
-                            <Button text="darkMode"  bgcolor={bgcolor1} 
-                            onClick={()=> setTheme(!theme)}/>
                             </div>
                     
                      </div>
