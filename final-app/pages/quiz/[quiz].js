@@ -28,6 +28,7 @@ const QuizCont = styled.div `
     background-color:${props => props.bgColMain};
     background-image: url(${props => props.imageBg}.png);
     background-size:contain;
+    transition:all 1s;
     background-repeat:no-repeat;
     background-position-x: -10em;
     background-position-y: 20em;
@@ -380,7 +381,7 @@ const correct = () =>
 	const [radioVal, setRadioVal] = useState("");
     var helpFadeIn = 1
     var leftIn = -500
-    var topIn=10
+    var topIn=20
     const[help, setHelp] = useState(false)
  
         if (help)
@@ -444,7 +445,10 @@ const correct = () =>
                            toggle = {value.toggleChain}
                            menuBg = {value.menuBgChain}
                            displayToggleChain= "0"
-                            displayHintChain1= "none"
+                           displayHintChain1= "none"
+                           transLine1={value.transLine1Chain}
+                           transLineOp2={value.transLineOp2Chain}
+                           transLine3={value.transLine3Chain}
                            onClick = {()=> setMoveHam (!moveHam)}/>
                         })} 
                 </div>  

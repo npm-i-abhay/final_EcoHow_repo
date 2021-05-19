@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
+import MyButton from '../comps/Button'
+import {useRouter} from 'next/router'
 import '../DragDropTouch'
+import HeroContainer from '../comps/HeroImage'
 
 const GoodJob = styled.img `
 height:100%;
@@ -10,8 +13,8 @@ const GoodJobCont = styled.div`
 // position:absolute;
 // border:2px solid green;
 display:flex;
-height:50%;
-left:50%;
+height:40%;
+left:40%;
 width:95%;
 justify-content:center;
 `
@@ -68,6 +71,31 @@ background-repeat:no-repeat;
 background-position-x:-20em;
 //  background-position-y: 20em;
 
+
+
+.buttonCont{
+    display:flex;
+    flex-direction:columm;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:50%;
+    transform:${props=>props.scale};
+    transform-origin:${props=>props.origin};
+    transition-duration:${props=>props.duration};
+}
+
+// .heroCont{
+//     display:flex;
+//     justify-content:center;
+//     // height:10%
+//     border:2px solid red;
+//     transform:${props=>props.scale};
+//     transform-origin:${props=>props.origin};
+//     transition-duration:${props=>props.duration};
+
+// }
+
 .sortingItems
 {
     // border:2px solid magenta;
@@ -84,6 +112,14 @@ background-position-x:-20em;
         display:flex;
     }
 
+    .sortingSubAlone
+    {
+        // border:2px solid green;
+        width:17%;
+        display:flex;
+        align-items:flex-start;
+        justify-content:space-around;
+    }
     .sortingSub1
     {
         // border:2px solid green;
@@ -129,7 +165,17 @@ background-position-x:-20em;
     }
 }
 
+
 `
+const HeroCont = styled.div`
+display:flex;
+justify-content:center;
+// height:10%
+// border:2px solid red;
+transform:${props=>props.scale};
+transform-origin:${props=>props.origin};
+transition-duration:${props=>props.duration};
+`;
 
 
 var boxInd = null
@@ -140,34 +186,40 @@ var timer3 = null
 var counter = 1
 
 export default function DnD({
-    
    
     
 })
 {
-    var audio =  ("/audio/correct.wav")
-    const correct = () => 
-    {
-        new Audio(audio).play()
-    }
-    var audio2 =  ("/audio/incorrect.wav")
-    const incorrect = () => 
-    {
-        new Audio(audio2).play()
-    }
-    var audio3 =  ("/audio/SoClean.mp3")
-    const soClean = () => 
-    {
-        new Audio(audio3).play()
-    }
+    // var audio =  ("/audio/correct.wav")
+    // const correct = () => 
+    // {
+    //     new Audio(audio).play()
+    // }
+
+   
+
+    // var audio2 =  ("/audio/incorrect.wav")
+    // const incorrect = () => 
+    // {
+    //     new Audio(audio2).play()
+    // }
+    // var audio3 =  ("/audio/SoClean.mp3")
+    // const soClean = () => 
+    // {
+    //     new Audio(audio3).play()
+    // }
 
 
-
+    const router = useRouter()
     const [box, setBox] = useState([true, true,true, true,true, true,true, true,true])
     const [changeSrc, setSource] = useState("/blackbins/black1.png")
     const [changeSrc2, setSource2] = useState("/bluebins/blue1.png")
     const [changeSrc3, setSource3] = useState("/greenbins/green1.png")
     const [showGoodJob, setGoodJob] = useState (false)
+    const [showButton, setButton] = useState (false)
+    const[heroScale, setScale] = useState("scale(0,0)")
+    const[heroOrigin, setOrigin] = useState("50% 50%")
+    const[heroDuration, setDuration] = useState("0s")
     // const [box2, setBox2] = useState(true)
  
     
@@ -176,7 +228,10 @@ export default function DnD({
             if (counter == 10)
             {
                 setGoodJob(true)
+                setButton(true)
                 soClean()
+                setScale("scale(1,1)")
+                setDuration("1.5s")
             }
 
        }, [counter]);
@@ -217,7 +272,8 @@ export default function DnD({
 
         
         {
-            correct()
+            new Audio("/audio/correct.wav").play()
+            // correct()
             box[boxInd] = false;
             setBox([...box]);
             counter += 1
@@ -227,7 +283,8 @@ export default function DnD({
         
         else
         {
-           incorrect()
+            new Audio("/audio/incorrect.wav").play()
+        //    incorrect()
         }
 
     }
@@ -243,7 +300,8 @@ export default function DnD({
         if(boxInd === 0||boxInd === 1 || boxInd === 4 )
 
         {
-            correct()
+            // correct()
+            new Audio("/audio/correct.wav").play()
             box[boxInd] = false;
             setBox([...box]);
             counter += 1
@@ -251,7 +309,8 @@ export default function DnD({
 
         else
         {
-            incorrect()
+            // incorrect()
+            new Audio("/audio/incorrect.wav").play()
         }
     }
     const onDrop3 = (e) =>
@@ -265,14 +324,16 @@ export default function DnD({
         if(boxInd === 2 || boxInd === 3 ||boxInd === 8)
 
         {
-            correct()
+            // correct()
+            new Audio("/audio/correct.wav").play()
             box[boxInd] = false;
             setBox([...box]);
             counter += 1
         }
         else
         {
-            incorrect()
+            // incorrect()
+            new Audio("/audio/incorrect.wav").play()
         }
     }
 
@@ -374,9 +435,35 @@ export default function DnD({
         </GoodJobCont>
     }
 
+       
+       <HeroCont scale={heroScale} origin={heroOrigin} duration={heroDuration}>
+            <HeroContainer
+            source="./logo.svg"
+            borderRadius="0px"
+            />
+        </HeroCont>
+        
+        <div className="buttonCont">
+            
+            {showButton &&    
+                    <MyButton 
+                    scale={heroScale} 
+                    origin={heroOrigin} 
+                    duration={heroDuration}
+                    text="Return Home"
+                    bgcolor="#5eba92"
+                    onClick = {()=> router.push ("/home")}/>
+            }    
+                
+            
+
+
+
+        </div>
 
         <div className = "dropTragetsCont">     
-            
+
+
             <div className= "imgConts">  
                 <DropCont
                 onDragOver = {onDragOver}
@@ -413,16 +500,18 @@ export default function DnD({
 
 
             <div className = "sortingItems">
-                {box[0] && 
-                        <DragBox 
-                            draggable = {true}
-                            onDragStart = {()=>onDragStart(0)}
-                            onDrag = {onDrag}
-                            onDragEnd = {onDragEnd}
-                            src = "/sorting/can.png"
-                        /> 
-                }
-                
+               
+                <div className = "sortingSubAlone spacer">              
+                        {box[0] && 
+                                <DragBox 
+                                    draggable = {true}
+                                    onDragStart = {()=>onDragStart(0)}
+                                    onDrag = {onDrag}
+                                    onDragEnd = {onDragEnd}
+                                    src = "/sorting/can.png"
+                                /> 
+                        }
+                </div>
                 
                 <div className = "sortingSub1  spacer" id = "one" >
                         {box[1] && 

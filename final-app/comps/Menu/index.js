@@ -68,19 +68,45 @@ cursor:pointer;`
 
 const HamIcon = styled.div
 `   
-    .hamLines
-    {
-        height:.25em;
-        width:30px;
-        margin:.5em;
-        background-color:#21AAB5;
-        transition:all 1s;
-    }
+    transition:all .5s;
+    // .hamLines
+    // {
+    //     height:.25em;
+    //     width:30px;
+    //     margin:.5em;
+    //     background-color:#21AAB5;
+    //     transition:all 1s;
+    // }
 `
 const TopBarContainer = styled.div `
 display:flex;
 justify-content:center;
 
+`
+
+const HamLine1 = styled.div`
+height:.25em;
+width:35px;
+margin:.5em;
+background-color:#376293;
+transition:all 1s;
+transform:${props=> props.LineTrans1};
+`
+const HamLine2 = styled.div`
+height:.25em;
+width:35px;
+margin:.5em;
+background-color:#21AAB5;
+transition:all 1s;
+opacity:${props => props.LineTransOp2};
+`
+const HamLine3 = styled.div`
+height:.25em;
+width:35px;
+margin:.5em;
+background-color:#5eba92;
+transition:all 1s;
+transform:${props=> props.LineTrans3};
 `
 
 
@@ -110,7 +136,11 @@ const Menu = ({
     contVisble = "hidden",
     displayToggleChain = "",
     displayHintChain1 = "",
-    onClick = ()=> {}
+    onClick = ()=> {},
+    transLine1 = "rotate(0deg) translate(0,0)",
+    transLineOp2 = "1",
+    transLine3 = "rotate(0deg) translate(0,0)",
+
 })=> 
 {
     const router = useRouter()
@@ -130,7 +160,9 @@ const Menu = ({
                <TopBarContainer> 
 
                     <CircleIconsCont hiddenIcons = {hideIcons}>
-                         <MakeIcon routeTo = {routeToChain}/>
+                         <MakeIcon routeTo = {routeToChain}
+                        //  displayBackToggle = {displayBackToggleChain}
+                         />
                          <HelpButton 
                          text="?"
                          hintChain2 = {hintChain3}
@@ -146,9 +178,13 @@ const Menu = ({
                     hamRight = {rightHam}>
                         
                         <HamIcon> 
-                            <div className="hamLines" >  </div>
+                            {/* <div className="hamLines" >  </div>
                             <div className="hamLines">  </div>
-                            <div className="hamLines">  </div>
+                            <div className="hamLines">  </div> */}
+                            <HamLine1 LineTrans1 = {transLine1} > </HamLine1>
+                            <HamLine2 LineTransOp2 = {transLineOp2}> </HamLine2>
+                            <HamLine3 LineTrans3 = {transLine3}> </HamLine3>
+
                         </HamIcon>
                     
                     </HamContainer>

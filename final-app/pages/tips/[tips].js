@@ -9,7 +9,7 @@ import styled from 'styled-components'
 import styles from '../../styles/main.module.css'
 import MyHelp from '../../comps/HelpButton'
 import Menu from '../../comps/Menu'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
 import {InorganicTips} from '../../data/text'
 import {OrganicTips} from '../../data/text'
@@ -24,8 +24,9 @@ const TipsCont = styled.div `
 display:flex;
 flex-direction:column;
 height:100%;
+transition:all 1s;
 justify-content:center;
-background-color:#F5F1ED;
+background-color:${props=> props.mainBg};
 background-image:${props => props.bg};
 background-repeat:no-repeat;
 background-position:${props => props.bgPos};
@@ -90,6 +91,36 @@ export default function Tips ({
     {
         references = MenuReferences2
     }
+
+
+
+
+
+    const [bodyText, setBody] = useState ("black")
+    const [background, setBackground] = useState ("F5F1ED")
+    const [theme, setTheme] = useState (false)
+
+    useEffect(()=>
+          {
+            if(theme)
+            {
+                setBackground("black")
+                setBody ("white")
+
+            }
+            if(theme == false)
+            {
+
+                setBackground("#F5F1ED")
+                setBody ("black")
+
+            }
+            }, [theme]);
+
+
+
+
+
     if (tips === "inorganicgood")
     {
         resultText = InorganicTips.GoodTips.content
@@ -144,7 +175,8 @@ export default function Tips ({
     return <TipsCont 
             bg={tipsBackground} 
             bgPos={backgroundPosition}
-            className= {styles.scroller}>
+            className= {styles.scroller}
+            mainBg= {background}>
        
        <Head>
         <title> tips page </title>    
@@ -165,6 +197,9 @@ export default function Tips ({
                            hideIcons ={value.hideIconsChain}
                            toggle = {value.toggleChain}
                            menuBg = {value.menuBgChain}
+                           transLine1={value.transLine1Chain}
+                           transLineOp2={value.transLineOp2Chain}
+                           transLine3={value.transLine3Chain}
                            onClick = {()=> setMoveHam (!moveHam)}/>
                         })} 
                 </div>
@@ -175,6 +210,7 @@ export default function Tips ({
                 bgcolor={newbgcolor}
                 heading={newHeading}
                 headingColour={newHeadingColour}
+                textResultCol = {bodyText}
                 />
         }            
 
@@ -183,6 +219,11 @@ export default function Tips ({
                     <Button 
                     text="Test Your Knowledge"
                     onClick = {onClickChain}
+                    bgcolor="#368B8B"
+                    />
+                    <Button 
+                    text="darkMode"
+                    onClick={()=> setTheme(!theme)}
                     bgcolor="#368B8B"
                     />
                 </div>    

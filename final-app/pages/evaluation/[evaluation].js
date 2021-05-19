@@ -20,7 +20,7 @@ const EvaluationCont = styled.div `
         height:100%;
         width:100vw;
         background-color:#F5F1ED;
-        background-color:#F5F1ED;
+        
         background-image: url(/tree.png);
         background-size:cover;
         background-repeat:no-repeat;
@@ -166,6 +166,9 @@ const handleResult = ()=>
                            hideIcons ={value.hideIconsChain}
                            toggle = {value.toggleChain}
                            menuBg = {value.menuBgChain}
+                           transLine1={value.transLine1Chain}
+                           transLineOp2={value.transLineOp2Chain}
+                           transLine3={value.transLine3Chain}
                            onClick = {()=> setMoveHam (!moveHam)}/>
                         })} 
 

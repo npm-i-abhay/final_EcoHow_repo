@@ -10,6 +10,7 @@ font-family: 'Spartan', sans-serif;
 // text-align:left;
 font-size:2.5em;
 display:flex;
+transition:all 1s;
 justify-content:${props => props.alignment};
 align-items:center;
 color:${props => props.colorOfText};
