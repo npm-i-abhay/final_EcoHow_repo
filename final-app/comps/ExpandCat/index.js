@@ -144,7 +144,7 @@ transition-delay:.5s;
 
     if (expand)
     {
-        expandHeight = "85vh"
+        expandHeight = "90vh"
         showDisplay= 1
         imageHeight = "50%"
         imageblur = "blur(0px)"
