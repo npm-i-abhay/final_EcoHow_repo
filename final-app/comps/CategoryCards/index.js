@@ -13,12 +13,14 @@ align-items:center;
 border-radius:50px;
 box-shadow: ${props => props.boxShadow};
 margin:1em;
+
 transition:0.5s;
 
 .textCont{
     font-size:2em;
     font-family: 'Spartan', sans-serif;
     font-weight:bold;
+    
 }
 
 `

@@ -5,7 +5,7 @@ import MakeIcon from '../comps/CircleIcons'
 import MyBanner from '../comps/Banner'
 import Button from '../comps/Button'
 import Menu from '../comps/Menu'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
 import HeroContainer from '../comps/HeroImage'
 import {OrganicHelp} from '../data/text'
@@ -22,8 +22,9 @@ const CategoryContainer = styled.div`
         flex-direction:column;
         align-items: center;
         height:100%;
+        transition:all 1s;
         width:100vw;
-        background-color:#F5F1ED;
+        background-color:${props=> props.themeBg};
 
 
             .CatHeader
@@ -61,10 +62,13 @@ const CategoryContainer = styled.div`
                 width:70%;
                 justify-content:flex-start;
                 text-align:center;
+                transition:all 1s;
+                color:${props => props.Header};
                 font-family: 'Spartan', sans-serif;
 
                 .par{
                     font-family: 'Montserrat', sans-serif;
+                    color:${props => props.descripCol};
                 }
             }
     }
@@ -91,6 +95,28 @@ const [bgcolorChain2, setbgcolor2] = useState("#85817D50");
 const [textChain2, setText2] = useState("Inorganic");
 const [sourceChain2, setSource2] = useState("./inorganic.gif");
 const [shadowChain2, setShadow2] = useState("0px 1px 1px rgba(0, 0, 0, 0.25)");
+// ======================================================================
+
+const [banner, setBanner] = useState ("black")
+const [background, setBackground] = useState ("#F5F1ED")
+const [theme, setTheme] = useState (false)
+
+useEffect(()=>
+{
+  if(theme)
+  {
+      setBanner("white")
+      setBackground("Black")
+  }
+  if(theme == false)
+  {  
+      setBanner("black")
+      setBackground("#F5F1ED")
+  }
+  }, [theme]);
+
+
+
 
 var references = MenuReferences
 const[moveHam, setMoveHam] = useState (true)
@@ -133,7 +159,9 @@ if (moveHam === false)
 
 
 
-    return   <CategoryContainer className ={styles.scroller} >
+    return   <CategoryContainer className ={styles.scroller}
+                Header = {banner}
+                themeBg = {background} >
             <div className="CatContainer">
                     
                     
@@ -150,7 +178,7 @@ if (moveHam === false)
                            hideIcons =      {value.hideIconsChain}
                            toggle =         {value.toggleChain}
                            menuBg =         {value.menuBgChain}
-                           transLine1={value.transLine1Chain}
+                           transLine1   =  {value.transLine1Chain}
                            transLineOp2={value.transLineOp2Chain}
                            transLine3={value.transLine3Chain}
                            onClick =        {()=> setMoveHam (!moveHam)}/>
@@ -188,6 +216,9 @@ if (moveHam === false)
 
             {moveHam &&
                 <Button text="Select" onClick={onClickChain} bgcolor="#368B8B"/>
+            }
+            {moveHam &&
+                <Button text="darkModeSelect" onClick={()=> setTheme(!theme)} bgcolor="#368B8B"/>
             }
 
             </div>
