@@ -70,7 +70,7 @@ background-position:${props => props.bgPos};
 
 export default function Tips ({
    
-    resultText = "ojhjkjhh",
+    resultText = "something about Henry here",
     routeToChain2 ="",
     hintChain4 = "",
     onClickChain = ()=>{},
@@ -97,15 +97,17 @@ export default function Tips ({
 
 
     const [bodyText, setBody] = useState ("black")
-    const [background, setBackground] = useState ("F5F1ED")
+    const [background, setBackground] = useState ("#F5F1ED")
+    const [iconColor, setIcon] = useState ("#21AAB5")
     const [theme, setTheme] = useState (false)
 
     useEffect(()=>
           {
             if(theme)
-            {
+            {   
+                setIcon("#F5F1ED")
                 setBackground("black")
-                setBody ("white")
+                setBody ("#21AAB5")
 
             }
             if(theme == false)
@@ -113,7 +115,7 @@ export default function Tips ({
 
                 setBackground("#F5F1ED")
                 setBody ("black")
-
+                setIcon("#21AAB5")
             }
             }, [theme]);
 
@@ -130,6 +132,7 @@ export default function Tips ({
         newSource="/transparent-bluebins.gif"
         newbgcolor="#5EBA9200"
         newHeading="Great job!"
+        
     }
     
     if (tips === "inorganicbad")
@@ -200,7 +203,9 @@ export default function Tips ({
                            transLine1={value.transLine1Chain}
                            transLineOp2={value.transLineOp2Chain}
                            transLine3={value.transLine3Chain}
-                           onClick = {()=> setMoveHam (!moveHam)}/>
+                           onClick = {()=> setMoveHam (!moveHam)}
+                           onClickDarkChain = {()=> setTheme(!theme)}
+                           darkIconColorChain = {iconColor}/>
                         })} 
                 </div>
         {moveHam &&                
@@ -221,11 +226,7 @@ export default function Tips ({
                     onClick = {onClickChain}
                     bgcolor="#368B8B"
                     />
-                    <Button 
-                    text="darkMode"
-                    onClick={()=> setTheme(!theme)}
-                    bgcolor="#368B8B"
-                    />
+
                 </div>    
         }        
              </div>

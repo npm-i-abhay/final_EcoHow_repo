@@ -2,14 +2,16 @@ import styled from 'styled-components';
 import Button from '../Button';
 import HelpButton from '../HelpButton';
 import MakeIcon from '../CircleIcons';
+import DarkIcon from '../DarkMode';
 import {useRouter} from 'next/router';
 import React, {useState} from 'react';
-import styles from '../../styles/main.module.css'
-import {GiMonsteraLeaf} from 'react-icons/gi'
-import {AiTwotoneHome} from 'react-icons/ai'
-import {RiRecycleFill} from 'react-icons/ri'
-import {CgDatabase} from 'react-icons/cg'
-import {ImBin2} from 'react-icons/im'
+import styles from '../../styles/main.module.css';
+import {GiMonsteraLeaf} from 'react-icons/gi';
+import {AiTwotoneHome} from 'react-icons/ai';
+import {RiRecycleFill} from 'react-icons/ri';
+import {CgDatabase} from 'react-icons/cg';
+import {ImBin2} from 'react-icons/im';
+import {GiMoon} from 'react-icons/gi';
 
 
 const MenuContainer = styled.div `
@@ -115,7 +117,9 @@ const CircleIconsCont = styled.div`
 
 display:flex;
 margin-left:7em;
-
+justify-content:center;
+// border:2px solid red;
+width:40%;
 opacity : ${props => props.hiddenIcons};
 transition:all 1s;
 `
@@ -140,6 +144,10 @@ const Menu = ({
     transLine1 = "rotate(0deg) translate(0,0)",
     transLineOp2 = "1",
     transLine3 = "rotate(0deg) translate(0,0)",
+    darkDisplayToggleChain = "",
+    darkIconColorChain = "#21AAB5",
+    onClickDarkChain = ()=>{}
+
 
 })=> 
 {
@@ -161,7 +169,6 @@ const Menu = ({
 
                     <CircleIconsCont hiddenIcons = {hideIcons}>
                          <MakeIcon routeTo = {routeToChain}
-                        //  displayBackToggle = {displayBackToggleChain}
                          />
                          <HelpButton 
                          text="?"
@@ -169,6 +176,11 @@ const Menu = ({
                          displayToggle = {displayToggleChain} 
                          displayHintChain = {displayHintChain1}
                          />
+                         <DarkIcon 
+                         darkDisplayToggle =  {darkDisplayToggleChain}
+                         darkIconColor = {darkIconColorChain}
+                         onClick={onClickDarkChain}
+                             />
                     </CircleIconsCont>
 
 

@@ -64,7 +64,7 @@ display:flex;
 flex-direction:column;
 // border:5px solid blue;
 justify-content:flex-end;
-background-image: url(/sortingBg.png);
+background-image: url(/sortingBg1.png);
 background-size:cover;
 background-repeat:no-repeat;
 // background-attachment:fixed;
@@ -115,7 +115,7 @@ background-position-x:-20em;
     .sortingSubAlone
     {
         // border:2px solid green;
-        width:17%;
+        width:6%;
         display:flex;
         align-items:flex-start;
         justify-content:space-around;
@@ -229,7 +229,8 @@ export default function DnD({
             {
                 setGoodJob(true)
                 setButton(true)
-                soClean()
+                // soClean()
+                new Audio("/audio/SoClean.mp3").play()
                 setScale("scale(1,1)")
                 setDuration("1.5s")
             }

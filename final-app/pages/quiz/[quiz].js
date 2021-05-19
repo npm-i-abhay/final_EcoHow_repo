@@ -234,14 +234,14 @@ const correct = () =>
         q1="Glass bottles"
         q2="Plastic Bags"
         q3="Aluminium can"
-        hintText="Remember, the blue bin is where we place all our recylable items. "
+        hintText="Remember, the blue bin is where we place all our recyclable items. "
     }
     if (quiz === "question-two-inorg")
     {
         questionChain = "Which of the following can minimize electronic waste?"
         routeToChain2= "/quiz/question-one-inorg"
-        q1="Planning and researching carefully aproduct before purchasing  "
-        q2="Recyling your electronic waste"
+        q1="Planning and researching carefully a product before purchasing  "
+        q2="Recycling your electronic waste"
         q3="Encouraging others to get a newest and latest models available"
         hintText="Our priority is to reduce waste, which of the following actions will help us do that"
     }
@@ -394,18 +394,21 @@ const correct = () =>
         const [banner, setBanner] = useState ("black")
         const [background, setBackground] = useState ("#F5F1ED")
         const [theme, setTheme] = useState (false)
+        const [iconColor, setIcon] = useState ("#21AAB5")
 
 
           useEffect(()=>
           {
             if(theme)
             {
-                setLabels("white")
-                setBanner("white")
+                setLabels("#F5F1ED")
+                setBanner("#F5F1ED")
                 setBackground("Black")
+                setIcon("#F5F1ED")
             }
             if(theme == false)
             {
+                setIcon("#21AAB5")
                 setLabels("black")
                 setBanner("black")
                 setBackground("#F5F1ED")
@@ -425,12 +428,6 @@ const correct = () =>
         <div className="mainContainer"> 
                
                
-                    {/* <Menu
-                     routeToChain = {routeToChain2} hintChain3="There are a total of three questions.You may click on the hint button at any time to help yourself throughout the quiz."
-                     displayToggleChain = "0" 
-                     displayHintChain1 = "none"
-                    /> */}
-               
                 <div className="iconHeader blur">
                 {references.map((value, index)=>{
                            return <Menu 
@@ -449,7 +446,9 @@ const correct = () =>
                            transLine1={value.transLine1Chain}
                            transLineOp2={value.transLineOp2Chain}
                            transLine3={value.transLine3Chain}
-                           onClick = {()=> setMoveHam (!moveHam)}/>
+                           onClick = {()=> setMoveHam (!moveHam)}
+                           onClickDarkChain = {()=> setTheme(!theme)}
+                           darkIconColorChain = {iconColor}/>
                         })} 
                 </div>  
                     
@@ -522,8 +521,7 @@ const correct = () =>
                     text={buttonText}
                     onClick= {handleResult}
                     bgcolor={bgColorChain1}/>
-                   
-                     <MyButton onClick={()=> setTheme(!theme)}/>       
+                        
                         
                 </div>
             }
