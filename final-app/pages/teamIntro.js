@@ -118,7 +118,10 @@ export default function Category ({
                            hideIcons =      {value.hideIconsChain}
                            toggle =         {value.toggleChain}
                            menuBg =         {value.menuBgChain}
-                           onClick =        {()=> setMoveHam (!moveHam)}/>
+                           transLine1={value.transLine1Chain}
+                           transLineOp2={value.transLineOp2Chain}
+                           transLine3={value.transLine3Chain}
+                           onClick = {()=> setMoveHam (!moveHam)}/>
                         })} 
                         </div>  
 
@@ -126,7 +129,7 @@ export default function Category ({
                     <div className = "spacer">
                         <div className="animCont">
                             <HeroContainer
-                                source="./ourTeam.gif"
+                                source="./team4names.gif"
                                 borderRadius="0px"
                                 />
                         </div>

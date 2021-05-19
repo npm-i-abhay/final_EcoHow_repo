@@ -380,7 +380,7 @@ const correct = () =>
 	const [radioVal, setRadioVal] = useState("");
     var helpFadeIn = 1
     var leftIn = -500
-    var topIn=10
+    var topIn=20
     const[help, setHelp] = useState(false)
  
         if (help)
@@ -395,13 +395,21 @@ const correct = () =>
         const [theme, setTheme] = useState (false)
 
 
-        //   useEffect(()=>{
-
-        //       setLabels("white")
-        //       setBanner("white")
-        //       setBackground("Black")
-            
-        //      }, [theme]);
+          useEffect(()=>
+          {
+            if(theme)
+            {
+                setLabels("white")
+                setBanner("white")
+                setBackground("Black")
+            }
+            if(theme == false)
+            {
+                setLabels("black")
+                setBanner("black")
+                setBackground("#F5F1ED")
+            }
+            }, [theme]);
         
     return <QuizCont    
             imageBg = {bgImage}
@@ -436,7 +444,10 @@ const correct = () =>
                            toggle = {value.toggleChain}
                            menuBg = {value.menuBgChain}
                            displayToggleChain= "0"
-                            displayHintChain1= "none"
+                           displayHintChain1= "none"
+                           transLine1={value.transLine1Chain}
+                           transLineOp2={value.transLineOp2Chain}
+                           transLine3={value.transLine3Chain}
                            onClick = {()=> setMoveHam (!moveHam)}/>
                         })} 
                 </div>  
@@ -511,7 +522,7 @@ const correct = () =>
                     onClick= {handleResult}
                     bgcolor={bgColorChain1}/>
                    
-                     {/* <MyButton onClick={()=> setTheme(!theme)}/>        */}
+                     <MyButton onClick={()=> setTheme(!theme)}/>       
                         
                 </div>
             }
