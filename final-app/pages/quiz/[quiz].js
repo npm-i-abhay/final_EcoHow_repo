@@ -28,6 +28,7 @@ const QuizCont = styled.div `
     background-color:${props => props.bgColMain};
     background-image: url(${props => props.imageBg}.png);
     background-size:contain;
+    transition:all 1s;
     background-repeat:no-repeat;
     background-position-x: -10em;
     background-position-y: 20em;

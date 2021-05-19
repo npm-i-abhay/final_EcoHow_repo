@@ -20,7 +20,7 @@ const EvaluationCont = styled.div `
         height:100%;
         width:100vw;
         background-color:#F5F1ED;
-        background-color:#F5F1ED;
+        
         background-image: url(/tree.png);
         background-size:cover;
         background-repeat:no-repeat;
