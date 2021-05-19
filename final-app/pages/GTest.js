@@ -214,7 +214,7 @@ export default function DnD({
     
         useEffect(()=>
         {
-            if (counter == 2)
+            if (counter == 10)
             {
                 setGoodJob(true)
                 setButton(true)
