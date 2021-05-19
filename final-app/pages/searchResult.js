@@ -30,7 +30,7 @@ const CategoryContainer = styled.div`
             flex-direction:column;
             justify-content:space-between;
             align-items:center;
-            height:65%;
+            height:75%;
             // border:1px solid red;
         }
 
@@ -145,7 +145,7 @@ font-size:1.5em;
 
 
 export default function SearchResults ({
-    routeToChain2 = "/home",
+    routeToChain2 = "/category",
     hintChain4 = "search for an item to see which bin to properly dispose of it.",
     newLabel="Next",
     onClick = () =>{},

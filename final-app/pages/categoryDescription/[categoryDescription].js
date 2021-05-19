@@ -104,7 +104,7 @@ margin-top:-1.5em;
 
 
 export default function Category ({
-    routeToChain2 = "/home",
+    routeToChain2 = "/category",
     hintChain4 = "Organics include things like produce and meat. Inorganics include things like plastic cardboard and electronics.",
     newLabel="Next",
     heading="Organic",

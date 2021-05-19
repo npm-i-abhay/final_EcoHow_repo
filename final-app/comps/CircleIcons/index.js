@@ -11,7 +11,10 @@ display:flex;
 margin:10px;
 justify-content:center;
 align-items:center;
-cursor:pointer;`;
+cursor:pointer;
+opacity:${props => props.togglebackdisplay};
+`;
+
 
 const IconText = styled.span`
 font-size:2.5em;
@@ -22,14 +25,15 @@ font-family: 'Spartan', sans-serif;
 const MakeIcon = ({
     
     text= '\u21FD',
-    routeTo=""
+    routeTo="",
+    displayBackToggle="1"
 })=>
 {   const router = useRouter();
-    return <Wrapper> <IconContainer onClick={()=>router.push(routeTo)}> 
+    return <Wrapper> <IconContainer onClick={()=>router.push(routeTo)} togglebackdisplay = {displayBackToggle}> 
     
       
-        <IconText> 
-      <IoArrowBackCircleOutline/>
+        <IconText > 
+      <IoArrowBackCircleOutline />
         </IconText>
 
 

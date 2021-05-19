@@ -129,7 +129,7 @@ export default function Category ({
                     <div className = "spacer">
                         <div className="animCont">
                             <HeroContainer
-                                source="./ourTeam.gif"
+                                source="./team4names.gif"
                                 borderRadius="0px"
                                 />
                         </div>

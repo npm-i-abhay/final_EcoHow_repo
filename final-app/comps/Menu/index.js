@@ -160,7 +160,9 @@ const Menu = ({
                <TopBarContainer> 
 
                     <CircleIconsCont hiddenIcons = {hideIcons}>
-                         <MakeIcon routeTo = {routeToChain}/>
+                         <MakeIcon routeTo = {routeToChain}
+                         displayBackToggle = {displayBackToggleChain}
+                         />
                          <HelpButton 
                          text="?"
                          hintChain2 = {hintChain3}
